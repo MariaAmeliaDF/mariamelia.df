@@ -968,3 +968,45 @@ section { padding: 5.5rem 0; }
   .c-form            { padding: 1.4rem; }
   .insta-embed-item  { flex: 0 0 90%; }
 }
+
+/* ══════════════════════════════════════
+   CURSOR PERSONALIZADO — coração verde
+   Segue o mouse em toda a página.
+   Desativado em touch (mobile) automaticamente.
+   ══════════════════════════════════════ */
+
+/* Esconde o cursor padrão do sistema */
+html, body, a, button, input, select, textarea, [role="button"] {
+  cursor: none !important;
+}
+
+/* O coração que segue o mouse */
+#cursor-heart {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  font-size: 20px;
+  color: var(--vm);          /* verde médio */
+  text-shadow: 0 0 8px rgba(26,92,8,.45);
+  pointer-events: none;      /* não interfere em cliques */
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform .12s ease, opacity .2s ease;
+  user-select: none;
+  line-height: 1;
+  display: none;             /* escondido até o mouse mover */
+}
+
+/* Pulsa levemente ao clicar */
+#cursor-heart.click {
+  transform: translate(-50%, -50%) scale(1.55);
+  color: var(--am);          /* amarelo no clique */
+}
+
+/* Em dispositivos touch: mostra cursor padrão, esconde o coração */
+@media (hover: none) and (pointer: coarse) {
+  html, body, a, button, input, select, textarea, [role="button"] {
+    cursor: auto !important;
+  }
+  #cursor-heart { display: none !important; }
+}
