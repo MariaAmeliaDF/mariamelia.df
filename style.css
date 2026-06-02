@@ -574,3 +574,22 @@ section { padding: 5.5rem 0; }
 #contato .ct-grid > .rl h2 { font-size: clamp(1.6rem,2.7vw,2.2rem); font-weight: 800; margin-bottom: .85rem; color: var(--ve); line-height: 1.2; }
 #contato .ct-grid > .rl h2 span { color: var(--vm); }
 #contato .ct-grid > .rl > p { color: var(--tx2); font-size: .93rem; line-height: 1.75; margin-bottom: 1.75rem; }
+
+/* ── FIX PROPORÇÃO DESKTOP ── */
+.container { max-width: 1280px; }
+#hero .container { max-width: 1280px; }
+.h-inner { gap: 2rem; padding: 7rem 0 3rem; }
+.h-tit { font-size: clamp(2.2rem, 4.5vw, 4rem); }
+.h-foto { max-width: 480px; }
+.h-img-wr::before { max-width: 480px; height: 580px; }
+
+/* Garante que a foto aparece */
+.h-img-wr { display: flex !important; }
+
+/* Logo no header sem fundo preto visível */
+.nav-logo img { 
+  mix-blend-mode: multiply;
+  height: 44px !important;
+}
+#hdr { background: rgba(255,255,255,0.95) !important; }
+#hdr.sc { background: #fff !important; }
