@@ -593,3 +593,51 @@ section { padding: 5.5rem 0; }
 }
 #hdr { background: rgba(255,255,255,0.95) !important; }
 #hdr.sc { background: #fff !important; }
+
+/* ══════════════════════════════════════
+   FIX GERAL — LAYOUT DESKTOP COMPLETO
+   ══════════════════════════════════════ */
+
+/* Aumenta container para usar toda a largura */
+.container { max-width: 1280px !important; }
+
+/* HERO: mostra foto em telas >= 768px */
+@media (min-width: 768px) {
+  .h-inner { 
+    grid-template-columns: 1fr 1fr !important; 
+    text-align: left !important;
+    padding: 8rem 0 3rem !important;
+  }
+  .h-img-wr { display: flex !important; }
+  .h-btns { justify-content: flex-start !important; }
+  .h-tags { align-items: flex-start !important; }
+  .h-bdg-row { justify-content: flex-start !important; }
+
+  /* QUEM É: mostra fotos */
+  .q-grid { grid-template-columns: 1fr 1fr !important; }
+  .q-imgs { display: block !important; }
+
+  /* VILA: mostra foto */
+  .vila-grid { grid-template-columns: 1fr 1fr !important; }
+  .vila-img-wrap { display: block !important; }
+
+  /* CONTATO: duas colunas */
+  .ct-grid { grid-template-columns: 1fr 1.55fr !important; }
+}
+
+/* Foto oficial tamanho correto */
+.h-foto { 
+  width: 100% !important;
+  max-width: 460px !important;
+  height: auto !important;
+}
+
+/* Logo sem fundo preto */
+.nav-logo img { mix-blend-mode: multiply; height: 44px !important; }
+.mob-h img { mix-blend-mode: multiply; }
+
+/* Header sempre claro para o logo preto funcionar */
+#hdr { background: rgba(255,255,255,0.92) !important; backdrop-filter: blur(16px); }
+
+/* Título hero maior */
+.h-tit { font-size: clamp(2.4rem, 4.5vw, 4.2rem) !important; }
