@@ -459,12 +459,20 @@ section { padding: 5.5rem 0; }
 
 /* ══════════════════════════════════════
    10. AÇÃO SOCIAL — Vila do Pequenino Jesus
-   Fundo cinza claro.
+   Fundo cinza claro com imagem de fundo sutil (fundo_pequenino.png).
+   .vila-bg       = imagem de fundo com transparência
    .vila-img-box  = container com a foto
    .vila-badge    = badge sobre a foto
    .vila-info-cards = lista de cards de info
    ══════════════════════════════════════ */
-#vila { background: var(--cz); }
+#vila { background: var(--cz); position: relative; overflow: hidden; }
+#vila .vila-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  opacity: 0.28; /* mesma transparência da seção Quem É */
+  pointer-events: none;
+}
+#vila .container { position: relative; z-index: 1; }
 .vila-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
 .vila-img-wrap { position: relative; }
 .vila-img-box { border-radius: var(--rd); overflow: hidden; box-shadow: var(--s2); position: relative; }
