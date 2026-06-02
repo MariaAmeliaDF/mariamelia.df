@@ -126,43 +126,71 @@ section { padding: 5.5rem 0; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
   padding: 8rem 0 3rem;
 }
-.h-bdg { display: inline-flex; align-items: center; gap: .5rem; background: rgba(254,220,80,.15); border: 1px solid rgba(254,220,80,.4); color: var(--am); padding: .36rem 1rem; border-radius: 50px; font-size: .74rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 1.2rem; }
-/* Badge com "Faça Parte" ao lado da localização */
-.h-bdg-row { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.2rem; justify-content: flex-start; }
-.h-bdg-part { display: inline-flex; align-items: center; gap: .5rem; background: var(--am); color: var(--ve); padding: .36rem 1rem; border-radius: 50px; font-size: .74rem; font-weight: 700; text-decoration: none; transition: var(--tr); }
-.h-bdg-part:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(254,220,80,.5); }
-.h-tit { font-size: clamp(2rem,4.2vw,3.5rem); font-weight: 800; color: #fff; line-height: 1.13; margin-bottom: 1.1rem; text-shadow: 0 2px 12px rgba(0,0,0,.22); }
-.h-tit .yl { color: var(--am); }
-.h-sub { font-size: 1.02rem; color: rgba(255,255,255,.85); line-height: 1.8; margin-bottom: 2rem; max-width: 490px; font-weight: 300; }
-.h-btns { display: flex; gap: .9rem; flex-wrap: wrap; margin-bottom: 2.2rem; }
-.h-tags { display: flex; flex-direction: column; gap: .45rem; }
-.h-tag { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.1); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.9); padding: .32rem .9rem; border-radius: 50px; font-size: .76rem; font-weight: 500; width: fit-content; }
+.h-bdg-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:1.4rem;
+}
 
-/* HERO IMAGE — foto_oficial alinhada ao título */
-.h-img-wr { position: relative; display: flex; justify-content: center; align-items: flex-end; }
-.h-glow { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 68%; height: 55%; background: rgba(142,204,32,.28); filter: blur(42px); border-radius: 50%; pointer-events: none; }
-/* A foto_oficial deve ocupar toda a coluna e alinhar com título/subtítulo */
-.h-foto {
-  position: relative; z-index: 2;
-  width: 100%; max-width: 420px;
-  height: auto;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 200px 200px 0 0;
-  filter: drop-shadow(0 -8px 28px rgba(0,0,0,.28));
+.h-bdg,
+.h-bdg-part{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  height:48px;
+  padding:0 20px;
+
+  border-radius:999px;
+
+  font-size:.78rem;
+  font-weight:700;
+  line-height:1;
+
+  white-space:nowrap;
 }
-/* Placeholder caso a imagem não exista */
-.h-img-wr::before {
-  content: '';
-  position: absolute;
-  width: 100%; max-width: 420px;
-  height: 520px;
-  background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, rgba(254,220,80,.25) 50%, rgba(142,204,32,.15) 100%);
-  border-radius: 200px 200px 0 0;
-  z-index: 1;
-  pointer-events: none;
+
+.h-bdg{
+  background:rgba(254,220,80,.15);
+  border:1px solid rgba(254,220,80,.35);
+  color:var(--am);
+  letter-spacing:.04em;
+  text-transform:uppercase;
 }
-.h-foto[src*='.png']:not([src*='data']),
+
+.h-bdg-part{
+  background:var(--am);
+  color:var(--ve);
+  font-weight:800;
+  transition:all .3s ease;
+}
+
+.h-bdg-part:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(254,220,80,.45);
+}
+
+.h-bdg i,
+.h-bdg-part i{
+  font-size:.9rem;
+  flex-shrink:0;
+}
+
+@media (max-width:768px){
+  .h-bdg-row{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .h-bdg,
+  .h-bdg-part{
+    width:100%;
+    justify-content:center;
+  }
+}.h-foto[src*='.png']:not([src*='data']),
 .h-foto[src*='.jpg']:not([src*='data']) {
   opacity: 0;
   position: absolute;
