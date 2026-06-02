@@ -641,3 +641,32 @@ section { padding: 5.5rem 0; }
 
 /* Título hero maior */
 .h-tit { font-size: clamp(2.4rem, 4.5vw, 4.2rem) !important; }
+
+/* ── FIX LOGO FUNDO PRETO ── */
+/* O PNG tem fundo preto — multiply faz ele desaparecer sobre fundo claro */
+#hdr .nav-logo img,
+.mob-h img {
+  mix-blend-mode: multiply !important;
+  background: transparent !important;
+}
+
+/* Header sempre branco para o multiply funcionar */
+#hdr {
+  background: rgba(255,255,255,0.97) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* ── FIX FOTO OFICIAL ── */
+/* Garante que o wrapper da foto aparece e a imagem ocupa o espaço */
+.h-img-wr {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.h-foto {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 400px;
+  background: rgba(255,255,255,0.08);
+}
