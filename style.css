@@ -158,7 +158,7 @@ section { padding: 5.5rem 0; }
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: .9rem 0;
-  background: rgba(255,255,255,0.97);
+  background: #ffffff;   /* branco sólido — necessário para mix-blend-mode:multiply funcionar no logo */
   backdrop-filter: blur(20px);
   box-shadow: 0 2px 24px rgba(26,92,8,.08);
   transition: var(--tr);
@@ -178,7 +178,9 @@ section { padding: 5.5rem 0; }
   height: 44px;
   width: auto;
   display: block;
-  mix-blend-mode: multiply; /* faz o fundo preto do PNG desaparecer */
+  /* mix-blend-mode: multiply apaga o fundo preto do PNG sobre fundo branco.
+     Funciona pois #hdr tem background branco opaco. */
+  mix-blend-mode: multiply;
 }
 
 .nl {
@@ -371,26 +373,23 @@ section { padding: 5.5rem 0; }
 .h-foto-frame {
   position: relative;
   border-radius: 24px;
-  /* borda interior suave */
-  padding: 6px;
-  background: linear-gradient(145deg, rgba(254,220,80,.4), rgba(255,255,255,.15), rgba(74,170,26,.3));
+  padding: 5px;
+  background: linear-gradient(145deg, rgba(254,220,80,.45), rgba(255,255,255,.12), rgba(74,170,26,.35));
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.15),
-    0 24px 64px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.2);
-  max-width: 440px;
-  width: 100%;
+    0 0 0 1px rgba(255,255,255,.18),
+    0 24px 64px rgba(0,0,0,.38),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  width: fit-content;   /* frame se ajusta exatamente à foto */
+  max-width: 460px;
 }
 
 .h-foto {
-  width: 100%;
-  height: auto;
   display: block;
-  border-radius: 20px; /* levemente menor que o frame */
-  object-fit: cover;
-  object-position: top center;
-  aspect-ratio: 3/4;
-  max-height: 580px;
+  width: 100%;
+  height: auto;           /* altura natural da imagem, sem crop */
+  max-width: 440px;
+  border-radius: 20px;
+  /* SEM object-fit, SEM aspect-ratio — a foto aparece no seu tamanho real */
 }
 
 /* "Rolar" foi REMOVIDO — era .h-scr */
