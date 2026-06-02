@@ -601,10 +601,18 @@ section { padding: 5.5rem 0; }
 .ldr-logo { mix-blend-mode: screen; }
 /* Footer (fundo escuro): idem */
 .ftr-logo img { mix-blend-mode: screen !important; filter: none !important; }
-/* Header logo: multiply torna o fundo branco do PNG invisível sobre fundo claro */
-.nav-logo img { mix-blend-mode: multiply; }
-/* Menu mobile logo */
-.mob-h img { mix-blend-mode: multiply; }
+/* Header logo */
+.nav-logo{
+  display:flex;
+  align-items:center;
+}
+
+.nav-logo img{
+  height:60px;
+  width:auto;
+  display:block;
+  mix-blend-mode:multiply;
+}
 
 /* ── CONTATO: fix seletor (HTML usa .rl direto em vez de .ct-inf) ── */
 #contato .ct-grid > .rl h2 { font-size: clamp(1.6rem,2.7vw,2.2rem); font-weight: 800; margin-bottom: .85rem; color: var(--ve); line-height: 1.2; }
