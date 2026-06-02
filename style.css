@@ -256,16 +256,45 @@ section { padding: 5.5rem 0; }
   background: linear-gradient(135deg,#0e3505 0%,#1a5c08 25%,#2d7a0f 50%,#4aaa1a 75%,#8ecc20 100%);
 }
 
+/* ── Vídeo de fundo do hero ── */
+/* Cobre toda a seção, atrás de tudo (z-index: 0) */
+.h-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* preenche sem distorcer */
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Overlay semitransparente verde escuro sobre o vídeo */
+/* Mantém a identidade visual verde e garante legibilidade do texto */
+.h-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(14,53,5,.82) 0%,
+    rgba(26,92,8,.72) 40%,
+    rgba(45,122,15,.60) 70%,
+    rgba(74,170,26,.45) 100%
+  );
+  pointer-events: none;
+}
+
 /* Pontilhado de fundo decorativo */
 .h-dots {
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; z-index: 2;
   background-image: radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px);
   background-size: 36px 36px;
   pointer-events: none;
 }
 
 /* Esferas decorativas flutuantes */
-.h-sh { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.04); pointer-events: none; }
+.h-sh { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.04); pointer-events: none; z-index: 2; }
 .sh1 { width: 580px; height: 580px; top: -180px; right: -80px; animation: flt 14s ease-in-out infinite; }
 .sh2 { width: 380px; height: 380px; bottom: -140px; left: -80px; animation: flt 18s ease-in-out infinite reverse; }
 .sh3 { width: 180px; height: 180px; top: 38%; left: 24%; opacity: .04; animation: flt 10s ease-in-out infinite 2s; }
@@ -273,7 +302,7 @@ section { padding: 5.5rem 0; }
 
 /* Grid de duas colunas: texto | foto */
 .h-inner {
-  position: relative; z-index: 2;
+  position: relative; z-index: 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
