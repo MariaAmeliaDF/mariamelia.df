@@ -50,16 +50,16 @@
 <script>
   // Variações a tentar, em ordem de prioridade
   var LOGO_BRANCO_OPTS = [
-    'LOGO_MARIA_AM\u00c9LIA_BRANCO .png',   // nome exato com acento+espaço
-    'LOGO_MARIA_AM%C3%89LIA_BRANCO%20.png', // URL-encoded
-    'LOGO_MARIA_AMELIA_BRANCO.png',          // sem acento nem espaço (renomeado)
-    'logo-branco.png'                        // slug simples
+    'LOGO_BRANCO .png',   // nome exato com acento+espaço
+    'LOGO_BRANCO.png', // URL-encoded
+    'LOGO_BRANCO.png',          // sem acento nem espaço (renomeado)
+    'LOGO_BRANCO.png'                        // slug simples
   ];
   var LOGO_PRETO_OPTS = [
-    'LOGO_MARIA_AM\u00c9LIA_PRETO .png',
-    'LOGO_MARIA_AM%C3%89LIA_PRETO%20.png',
-    'LOGO_MARIA_AMELIA_PRETO.png',
-    'logo-preto.png'
+    'LOGO_PRETO .png',
+    'LOGO_PRETO.png',
+    'LOGO_PRETO.png',
+    'LOGO_PRETO.png'
   ];
   function tryLogo(imgs, opts) {
     imgs.forEach(function(img) {
@@ -95,7 +95,7 @@
      ficar visível sobre o fundo verde.
      ══════════════════════════════════════ -->
 <div id="ldr" aria-hidden="true">
-  <img src="LOGO_MARIA_AMÉLIA_BRANCO .png" alt="Maria Amélia" class="ldr-logo" width="180" height="60"
+  <img src="LOGO_BRANCO.png" alt="Maria Amélia" class="ldr-logo" width="180" height="60"
        onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
   <span class="ldr-logo-fallback" style="display:none; color:#fff; font-size:1.6rem; font-weight:800; letter-spacing:.05em;">Maria Amélia</span>
   <div class="ldr-bar">
@@ -115,7 +115,7 @@
      ══════════════════════════════════════ -->
 <nav class="mob-m" id="mob-m" aria-label="Menu mobile">
   <div class="mob-h">
-    <img src="LOGO_MARIA_AMÉLIA_PRETO .png" alt="Maria Amélia" width="120" height="40"
+    <img src="LOGO_PRETO.png" alt="Maria Amélia" width="120" height="40"
          style="height:38px;width:auto;"
          onerror="this.style.display='none'">
     <button class="mob-x" id="mob-x" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
