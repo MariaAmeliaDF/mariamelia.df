@@ -127,70 +127,78 @@ section { padding: 5.5rem 0; }
   padding: 8rem 0 3rem;
 }
 .h-bdg-row{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:1.4rem;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:1.4rem;
 }
 
 .h-bdg,
 .h-bdg-part{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 
-  height:48px;
-  padding:0 20px;
+    min-height:48px;
+    padding:12px 20px;
 
-  border-radius:999px;
+    border-radius:999px;
 
-  font-size:.78rem;
-  font-weight:700;
-  line-height:1;
+    font-size:.78rem;
+    font-weight:700;
+    line-height:1;
 
-  white-space:nowrap;
+    white-space:nowrap;
 }
 
 .h-bdg{
-  background:rgba(254,220,80,.15);
-  border:1px solid rgba(254,220,80,.35);
-  color:var(--am);
-  letter-spacing:.04em;
-  text-transform:uppercase;
+    background:rgba(254,220,80,.15);
+    border:1px solid rgba(254,220,80,.35);
+    color:var(--am);
+    text-transform:uppercase;
+    letter-spacing:.04em;
 }
 
 .h-bdg-part{
-  background:var(--am);
-  color:var(--ve);
-  font-weight:800;
-  transition:all .3s ease;
+    background:var(--am);
+    color:var(--ve);
+    text-decoration:none;
+    font-weight:800;
+    transition:all .3s ease;
 }
 
 .h-bdg-part:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(254,220,80,.45);
+    transform:translateY(-2px);
+    box-shadow:0 8px 22px rgba(254,220,80,.45);
 }
 
 .h-bdg i,
 .h-bdg-part i{
-  font-size:.9rem;
-  flex-shrink:0;
+    font-size:.9rem;
+    flex-shrink:0;
 }
 
 @media (max-width:768px){
-  .h-bdg-row{
-    flex-direction:column;
-    align-items:flex-start;
-  }
 
-  .h-bdg,
-  .h-bdg-part{
-    width:100%;
-    justify-content:center;
-  }
-}.h-foto[src*='.png']:not([src*='data']),
+    .h-bdg-row{
+        flex-direction:column;
+        align-items:flex-start;
+        width:100%;
+    }
+
+    .h-bdg,
+    .h-bdg-part{
+        width:100%;
+        justify-content:center;
+    }
+
+}
+
+}
+.h-foto[src*='.png']:not([src*='data']),
 .h-foto[src*='.jpg']:not([src*='data']) {
   opacity: 0;
   position: absolute;
