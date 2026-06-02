@@ -975,10 +975,7 @@ section { padding: 5.5rem 0; }
    Desativado em touch (mobile) automaticamente.
    ══════════════════════════════════════ */
 
-/* Esconde o cursor padrão do sistema */
-html, body, a, button, input, select, textarea, [role="button"] {
-  cursor: none !important;
-}
+/* Cursor padrão do sistema mantido — o coração é apenas um acompanhante */
 
 /* O coração que segue o mouse */
 #cursor-heart {
@@ -1003,10 +1000,7 @@ html, body, a, button, input, select, textarea, [role="button"] {
   color: var(--am);          /* amarelo no clique */
 }
 
-/* Em dispositivos touch: mostra cursor padrão, esconde o coração */
+/* Em dispositivos touch: esconde o coração */
 @media (hover: none) and (pointer: coarse) {
-  html, body, a, button, input, select, textarea, [role="button"] {
-    cursor: auto !important;
-  }
   #cursor-heart { display: none !important; }
 }
