@@ -626,3 +626,44 @@ section { padding: 5.5rem 0; }
 @media (hover: none) and (pointer: coarse) {
   #cursor-heart { display: none !important; }
 }
+
+/* ══ PLACEHOLDER "HEITOR" — aguardando imagens ══ */
+.heitor-cloud {
+  width: 100%; height: 100%;
+  min-height: 160px;
+  background: linear-gradient(135deg, rgba(45,122,15,.07), rgba(254,220,80,.10));
+  border: 2px dashed rgba(45,122,15,.28);
+  border-radius: var(--rd);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: .45rem; overflow: hidden; position: relative;
+}
+.heitor-cloud .hc-cloud {
+  font-size: 2.4rem; animation: heitor-float 3s ease-in-out infinite;
+  display: block; line-height: 1; filter: drop-shadow(0 2px 8px rgba(45,122,15,.2));
+}
+.heitor-cloud .hc-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: .72rem; font-weight: 800;
+  color: var(--vm); text-transform: uppercase; letter-spacing: .18em;
+  animation: heitor-float 3s ease-in-out infinite .35s;
+}
+.heitor-cloud .hc-sub {
+  font-size: .62rem; color: var(--tx2);
+  font-family: 'Poppins', sans-serif; opacity: .7;
+}
+.heitor-cloud .hc-star1,
+.heitor-cloud .hc-star2 {
+  position: absolute; font-size: .7rem;
+  color: rgba(254,220,80,.65);
+}
+.heitor-cloud .hc-star1 { top: 14px; left: 18px; animation: heitor-spin 4s linear infinite; }
+.heitor-cloud .hc-star2 { bottom: 14px; right: 18px; animation: heitor-spin 4s linear infinite reverse; }
+@keyframes heitor-float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+@keyframes heitor-spin { to { transform: rotate(360deg); } }
+
+/* Garante que tl-img-col sem foto não quebre */
+.tl-img-col { background: transparent; }
