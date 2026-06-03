@@ -876,3 +876,59 @@ section { padding: 5.5rem 0; }
   .abrace-inner { padding: 2rem 1.5rem; }
   .abrace-stats  { gap: 1rem; }
 }
+
+
+/* ══ #abrace — SEÇÃO PRÓPRIA separada da Vila ══ */
+#abrace {
+  position: relative;
+  overflow: hidden;
+  padding: 5.5rem 0;
+  background: #110602; /* base escura ABRACE */
+}
+
+/* Fundo: imagem do site da ABRACE em baixa opacidade */
+.abrace-section-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('https://abrace.com.br/wp-content/uploads/2025/06/Banners-Abrace-5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  pointer-events: none;
+}
+/* Overlay degradê sobre o fundo */
+#abrace::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(135deg,
+    rgba(17,6,2,.96) 0%,
+    rgba(50,15,4,.90) 40%,
+    rgba(80,22,5,.85) 70%,
+    rgba(110,35,8,.80) 100%
+  );
+  pointer-events: none;
+}
+/* Faixa laranja no topo */
+#abrace::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 5px; z-index: 3;
+  background: linear-gradient(90deg, #e8622a, #c0392b, #e8622a);
+}
+#abrace .container { position: relative; z-index: 2; }
+.abrace-inner-wrap { /* wrapper extra dentro do container */ }
+
+/* Remove o antigo fundo embutido no card (era para dentro do #vila) */
+.abrace-section-full {
+  margin-top: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+.abrace-section-full::before,
+.abrace-section-full::after,
+.abrace-bg-layer { display: none !important; }
+
+/* Inner grid já definido acima — apenas garantir z-index */
+.abrace-inner { position: relative; z-index: 2; }
