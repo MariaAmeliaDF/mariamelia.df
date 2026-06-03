@@ -667,3 +667,212 @@ section { padding: 5.5rem 0; }
 
 /* Garante que tl-img-col sem foto não quebre */
 .tl-img-col { background: transparent; }
+
+
+/* ══ DEPOIMENTOS — fix cortando texto ══ */
+.dep-sl { overflow: visible; }
+.dep-c {
+  min-width: calc(33.33% - .95rem);
+  background: var(--cz);
+  border-radius: var(--rd);
+  padding: 1.75rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,.04);
+  display: flex; flex-direction: column;
+  height: auto; /* nunca cortar */
+}
+.dep-c p {
+  font-size: .86rem; color: var(--tx2);
+  line-height: 1.8; margin-bottom: 1.2rem;
+  font-style: italic;
+  flex: 1; /* empurra o autor para baixo */
+}
+/* Slider tem altura auto baseado no card mais alto */
+.dep-tr {
+  display: flex; gap: 1.4rem;
+  transition: transform .6s cubic-bezier(.4,0,.2,1);
+  align-items: stretch;
+}
+
+/* ══ INSTAGRAM GRADE ══ */
+#insta-feed { background: var(--br); padding: 4rem 0; }
+.insta-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+.insta-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .6rem;
+  width: 100%;
+}
+.insta-photo-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  background: var(--cz);
+}
+.insta-photo-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.insta-photo-item:hover img { transform: scale(1.07); }
+.insta-photo-ov {
+  position: absolute; inset: 0;
+  background: rgba(26,92,8,.5);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .3s;
+  color: #fff; font-size: 1.4rem;
+}
+.insta-photo-item:hover .insta-photo-ov { opacity: 1; }
+/* item 1 maior */
+.insta-photo-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+  border-radius: 12px;
+}
+.insta-grid-loading {
+  grid-column: span 4;
+  text-align: center; padding: 3rem;
+  color: var(--tx2); display: flex;
+  flex-direction: column; align-items: center; gap: .75rem;
+}
+.insta-grid-loading i { font-size: 2.5rem; color: #c13584; }
+.insta-grid-loading span { font-size: .88rem; }
+.insta-cta { text-align: center; margin-top: 1.5rem; }
+@media(max-width:768px){
+  .insta-photo-grid { grid-template-columns: repeat(3, 1fr); }
+  .insta-photo-item:first-child { grid-column: span 2; grid-row: span 2; }
+  .insta-grid-loading { grid-column: span 3; }
+}
+@media(max-width:480px){
+  .insta-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .insta-photo-item:first-child { grid-column: span 2; grid-row: span 1; }
+  .insta-grid-loading { grid-column: span 2; }
+}
+
+/* ══ ABRACE — seção com identidade própria ══ */
+/* Cores ABRACE: laranja #e8622a, vermelho #c0392b, fundo escuro */
+.abrace-section-full {
+  margin-top: 4rem;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background: #1a0a02;
+  box-shadow: 0 20px 60px rgba(232,98,42,.25);
+}
+.abrace-bg-layer {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    url('https://abrace.com.br/wp-content/uploads/2025/06/Banners-Abrace-5.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #1a0a02 0%, #3d1205 40%, #5c1a05 70%, #7a2a08 100%);
+  opacity: 0.28;
+  pointer-events: none;
+}
+.abrace-section-full::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(135deg,
+    rgba(26,10,2,.95) 0%,
+    rgba(61,18,5,.88) 40%,
+    rgba(92,26,5,.82) 70%,
+    rgba(122,42,8,.75) 100%
+  );
+  pointer-events: none;
+}
+/* Top accent stripe */
+.abrace-section-full::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 5px; z-index: 3;
+  background: linear-gradient(90deg, #e8622a, #c0392b, #e8622a);
+}
+.abrace-inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3.5rem; padding: 3.5rem;
+  align-items: start;
+}
+.abrace-logo-row { margin-bottom: 1.2rem; }
+.abrace-logo-img { height: 46px; width: auto; filter: brightness(10); opacity: .92; }
+.abrace-tag {
+  display: inline-block;
+  background: rgba(232,98,42,.25); border: 1px solid rgba(232,98,42,.4);
+  color: #f0a070; font-size: .72rem; font-weight: 700;
+  padding: .22rem .7rem; border-radius: 4px;
+  letter-spacing: .1em; text-transform: uppercase; margin-bottom: .9rem;
+}
+.abrace-title {
+  font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 800;
+  color: #fff; line-height: 1.22; margin-bottom: .9rem;
+}
+.abrace-title span { color: #e8622a; }
+.abrace-desc {
+  font-size: .9rem; color: rgba(255,255,255,.72);
+  line-height: 1.8; margin-bottom: .85rem;
+}
+.abrace-desc strong { color: #f0a070; }
+.abrace-stats {
+  display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.4rem 0;
+}
+.abrace-stat { display: flex; flex-direction: column; gap: .18rem; }
+.abrace-stat strong {
+  font-size: 1.25rem; font-weight: 800; color: #e8622a; line-height: 1;
+}
+.abrace-stat span { font-size: .72rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .06em; }
+.abrace-btns { display: flex; gap: .85rem; flex-wrap: wrap; margin-top: 1.6rem; }
+.abrace-btn-main {
+  background: linear-gradient(135deg, #e8622a, #c0392b);
+  color: #fff; box-shadow: 0 4px 18px rgba(232,98,42,.4);
+}
+.abrace-btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(232,98,42,.55); }
+.abrace-btn-out {
+  background: transparent; color: rgba(255,255,255,.8);
+  border: 1.5px solid rgba(255,255,255,.3);
+}
+.abrace-btn-out:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); color: #fff; }
+
+/* Direita: foto + cards */
+.abrace-right { display: flex; flex-direction: column; gap: 1.4rem; }
+.abrace-photo-wrap {
+  position: relative; border-radius: 16px; overflow: hidden;
+  height: 260px; background: rgba(255,255,255,.04);
+  border: 1px solid rgba(232,98,42,.25);
+}
+.abrace-heitor { border-color: rgba(232,98,42,.35) !important; border-radius: 16px !important; }
+.abrace-heitor .hc-name { color: #e8622a !important; }
+.abrace-heitor .hc-star1,
+.abrace-heitor .hc-star2 { color: rgba(232,98,42,.6) !important; }
+/* When real photo is added: */
+.abrace-photo-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.abrace-photo-badge {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  background: rgba(26,10,2,.85); backdrop-filter: blur(8px);
+  border: 1px solid rgba(232,98,42,.35); border-radius: 50px;
+  padding: .45rem 1rem; white-space: nowrap;
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .73rem; font-weight: 600; color: rgba(255,255,255,.85);
+}
+.abrace-photo-badge i { color: #e8622a; }
+.abrace-impact-cards { display: flex; flex-direction: column; gap: .7rem; }
+.abrace-ic {
+  display: flex; align-items: flex-start; gap: .8rem;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(232,98,42,.15);
+  border-radius: 10px; padding: .9rem 1rem;
+  transition: all .3s;
+}
+.abrace-ic:hover { background: rgba(232,98,42,.1); border-color: rgba(232,98,42,.35); }
+.abrace-ic > i { color: #e8622a; font-size: 1rem; margin-top: .15rem; flex-shrink: 0; }
+.abrace-ic > div strong { display: block; font-size: .82rem; font-weight: 700; color: #fff; margin-bottom: .14rem; }
+.abrace-ic > div p { font-size: .74rem; color: rgba(255,255,255,.5); line-height: 1.45; margin: 0; }
+
+@media(max-width:1024px){
+  .abrace-inner { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem; }
+}
+@media(max-width:768px){
+  .abrace-inner { padding: 2rem 1.5rem; }
+  .abrace-stats  { gap: 1rem; }
+}
