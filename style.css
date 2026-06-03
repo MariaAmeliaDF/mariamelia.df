@@ -752,183 +752,132 @@ section { padding: 5.5rem 0; }
   .insta-grid-loading { grid-column: span 2; }
 }
 
-/* ══ ABRACE — seção com identidade própria ══ */
-/* Cores ABRACE: laranja #e8622a, vermelho #c0392b, fundo escuro */
-.abrace-section-full {
-  margin-top: 4rem;
-  border-radius: 24px;
-  overflow: hidden;
+/* ══ ABRACE — seção própria ══ */
+#abrace {
   position: relative;
-  background: #1a0a02;
-  box-shadow: 0 20px 60px rgba(232,98,42,.25);
+  padding: 5.5rem 0;
+  overflow: hidden;
+  isolation: isolate; /* garante que nada de fora interfira no stacking */
 }
-.abrace-bg-layer {
-  position: absolute; inset: 0; z-index: 0;
-  background:
-    url('https://abrace.com.br/wp-content/uploads/2025/06/Banners-Abrace-5.jpg') center/cover no-repeat,
-    linear-gradient(135deg, #1a0a02 0%, #3d1205 40%, #5c1a05 70%, #7a2a08 100%);
-  opacity: 0.28;
-  pointer-events: none;
+.abrace-bg {
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(135deg, rgba(17,6,2,.97) 0%, rgba(55,16,4,.92) 45%, rgba(90,24,5,.88) 75%, rgba(120,38,8,.85) 100%),
+    url('https://abrace.com.br/wp-content/uploads/2025/06/Banners-Abrace-5.jpg');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
 }
-.abrace-section-full::before {
-  content: '';
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg,
-    rgba(26,10,2,.95) 0%,
-    rgba(61,18,5,.88) 40%,
-    rgba(92,26,5,.82) 70%,
-    rgba(122,42,8,.75) 100%
-  );
-  pointer-events: none;
-}
-/* Top accent stripe */
-.abrace-section-full::after {
+/* Faixa laranja no topo */
+#abrace::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
-  height: 5px; z-index: 3;
+  height: 5px; z-index: 2;
   background: linear-gradient(90deg, #e8622a, #c0392b, #e8622a);
+  pointer-events: none;
 }
-.abrace-inner {
-  position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3.5rem; padding: 3.5rem;
-  align-items: start;
+/* Logo ABRACE no topo do cabeçalho */
+.abrace-logo-header {
+  height: 52px; width: auto;
+  display: block; margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.5));
 }
-.abrace-logo-row { margin-bottom: 1.2rem; }
-.abrace-logo-img { height: 46px; width: auto; filter: brightness(10); opacity: .92; }
-.abrace-tag {
+.abrace-desde-badge {
   display: inline-block;
-  background: rgba(232,98,42,.25); border: 1px solid rgba(232,98,42,.4);
+  background: rgba(232,98,42,.22); border: 1px solid rgba(232,98,42,.45);
   color: #f0a070; font-size: .72rem; font-weight: 700;
-  padding: .22rem .7rem; border-radius: 4px;
-  letter-spacing: .1em; text-transform: uppercase; margin-bottom: .9rem;
+  padding: .28rem .85rem; border-radius: 4px;
+  letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem;
 }
-.abrace-title {
-  font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 800;
-  color: #fff; line-height: 1.22; margin-bottom: .9rem;
+.abrace-main-title {
+  font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 800;
+  color: #fff; line-height: 1.2; margin-bottom: .5rem;
 }
-.abrace-title span { color: #e8622a; }
-.abrace-desc {
-  font-size: .9rem; color: rgba(255,255,255,.72);
-  line-height: 1.8; margin-bottom: .85rem;
+.abrace-main-title span { color: #e8622a; }
+.abrace-ln {
+  width: 50px; height: 4px;
+  background: linear-gradient(90deg, #e8622a, #c0392b);
+  border-radius: 2px; margin: .6rem auto 1rem;
 }
-.abrace-desc strong { color: #f0a070; }
-.abrace-stats {
-  display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.4rem 0;
+#abrace .s-hd .s-sub { color: rgba(255,255,255,.65); }
+
+/* Grid 2 colunas */
+.abrace-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 4rem; align-items: start;
+  margin-top: 1rem;
 }
-.abrace-stat { display: flex; flex-direction: column; gap: .18rem; }
-.abrace-stat strong {
-  font-size: 1.25rem; font-weight: 800; color: #e8622a; line-height: 1;
+.abrace-txt-col p {
+  color: rgba(255,255,255,.75); font-size: .93rem;
+  line-height: 1.8; margin-bottom: 1rem;
 }
-.abrace-stat span { font-size: .72rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .06em; }
-.abrace-btns { display: flex; gap: .85rem; flex-wrap: wrap; margin-top: 1.6rem; }
-.abrace-btn-main {
+.abrace-txt-col strong { color: #f0a070; }
+.abrace-stats-row {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.abrace-stat-item { display: flex; flex-direction: column; gap: .15rem; }
+.abrace-stat-item strong { font-size: 1.3rem; font-weight: 800; color: #e8622a; line-height: 1; }
+.abrace-stat-item span  { font-size: .7rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .06em; }
+
+/* Info cards */
+.abrace-cards { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 1.5rem; }
+.abrace-card-item {
+  display: flex; align-items: flex-start; gap: .85rem;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(232,98,42,.18);
+  border-radius: 10px; padding: .9rem 1rem; transition: all .3s;
+}
+.abrace-card-item:hover { background: rgba(232,98,42,.12); border-color: rgba(232,98,42,.4); }
+.abrace-card-item > i { color: #e8622a; font-size: 1rem; margin-top: .15rem; flex-shrink: 0; }
+.abrace-card-item > div strong { display: block; font-size: .82rem; font-weight: 700; color: #fff; margin-bottom: .12rem; }
+.abrace-card-item > div p { font-size: .75rem; color: rgba(255,255,255,.5); line-height: 1.45; margin: 0; }
+
+/* Botões */
+.abrace-btns-row { display: flex; gap: .85rem; flex-wrap: wrap; }
+.abrace-btn-primary {
   background: linear-gradient(135deg, #e8622a, #c0392b);
-  color: #fff; box-shadow: 0 4px 18px rgba(232,98,42,.4);
+  color: #fff; box-shadow: 0 4px 18px rgba(232,98,42,.38);
 }
-.abrace-btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(232,98,42,.55); }
-.abrace-btn-out {
+.abrace-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(232,98,42,.55); color: #fff; }
+.abrace-btn-secondary {
   background: transparent; color: rgba(255,255,255,.8);
   border: 1.5px solid rgba(255,255,255,.3);
 }
-.abrace-btn-out:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); color: #fff; }
+.abrace-btn-secondary:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); color: #fff; }
 
-/* Direita: foto + cards */
-.abrace-right { display: flex; flex-direction: column; gap: 1.4rem; }
-.abrace-photo-wrap {
+/* Coluna da foto */
+.abrace-photo-frame {
   position: relative; border-radius: 16px; overflow: hidden;
-  height: 260px; background: rgba(255,255,255,.04);
-  border: 1px solid rgba(232,98,42,.25);
+  height: 360px;
+  border: 1px solid rgba(232,98,42,.3);
+  background: rgba(255,255,255,.04);
 }
-.abrace-heitor { border-color: rgba(232,98,42,.35) !important; border-radius: 16px !important; }
-.abrace-heitor .hc-name { color: #e8622a !important; }
-.abrace-heitor .hc-star1,
-.abrace-heitor .hc-star2 { color: rgba(232,98,42,.6) !important; }
-/* When real photo is added: */
-.abrace-photo-wrap img {
+.abrace-photo-frame img {
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
-.abrace-photo-badge {
+.abrace-heitor-cloud {
+  height: 100% !important; min-height: 100% !important;
+  border-color: rgba(232,98,42,.3) !important;
+  background: linear-gradient(135deg, rgba(232,98,42,.06), rgba(192,57,43,.08)) !important;
+}
+.abrace-heitor-cloud .hc-name { color: #e8622a !important; }
+.abrace-heitor-cloud .hc-star1,
+.abrace-heitor-cloud .hc-star2 { color: rgba(232,98,42,.6) !important; }
+.abrace-photo-label {
   position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-  background: rgba(26,10,2,.85); backdrop-filter: blur(8px);
+  background: rgba(17,6,2,.85); backdrop-filter: blur(8px);
   border: 1px solid rgba(232,98,42,.35); border-radius: 50px;
   padding: .45rem 1rem; white-space: nowrap;
   display: flex; align-items: center; gap: .5rem;
   font-size: .73rem; font-weight: 600; color: rgba(255,255,255,.85);
 }
-.abrace-photo-badge i { color: #e8622a; }
-.abrace-impact-cards { display: flex; flex-direction: column; gap: .7rem; }
-.abrace-ic {
-  display: flex; align-items: flex-start; gap: .8rem;
-  background: rgba(255,255,255,.06); border: 1px solid rgba(232,98,42,.15);
-  border-radius: 10px; padding: .9rem 1rem;
-  transition: all .3s;
-}
-.abrace-ic:hover { background: rgba(232,98,42,.1); border-color: rgba(232,98,42,.35); }
-.abrace-ic > i { color: #e8622a; font-size: 1rem; margin-top: .15rem; flex-shrink: 0; }
-.abrace-ic > div strong { display: block; font-size: .82rem; font-weight: 700; color: #fff; margin-bottom: .14rem; }
-.abrace-ic > div p { font-size: .74rem; color: rgba(255,255,255,.5); line-height: 1.45; margin: 0; }
+.abrace-photo-label i { color: #e8622a; }
 
 @media(max-width:1024px){
-  .abrace-inner { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem; }
+  .abrace-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .abrace-photo-frame { height: 280px; }
 }
 @media(max-width:768px){
-  .abrace-inner { padding: 2rem 1.5rem; }
-  .abrace-stats  { gap: 1rem; }
+  .abrace-stats-row { gap: 1.2rem; }
+  .abrace-btns-row  { flex-direction: column; }
 }
-
-
-/* ══ #abrace — SEÇÃO PRÓPRIA separada da Vila ══ */
-#abrace {
-  position: relative;
-  overflow: hidden;
-  padding: 5.5rem 0;
-  background: #110602; /* base escura ABRACE */
-}
-
-/* Fundo: imagem do site da ABRACE em baixa opacidade */
-.abrace-section-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background-image: url('https://abrace.com.br/wp-content/uploads/2025/06/Banners-Abrace-5.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.18;
-  pointer-events: none;
-}
-/* Overlay degradê sobre o fundo */
-#abrace::before {
-  content: '';
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg,
-    rgba(17,6,2,.96) 0%,
-    rgba(50,15,4,.90) 40%,
-    rgba(80,22,5,.85) 70%,
-    rgba(110,35,8,.80) 100%
-  );
-  pointer-events: none;
-}
-/* Faixa laranja no topo */
-#abrace::after {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 5px; z-index: 3;
-  background: linear-gradient(90deg, #e8622a, #c0392b, #e8622a);
-}
-#abrace .container { position: relative; z-index: 2; }
-.abrace-inner-wrap { /* wrapper extra dentro do container */ }
-
-/* Remove o antigo fundo embutido no card (era para dentro do #vila) */
-.abrace-section-full {
-  margin-top: 0;
-  border-radius: 0;
-  overflow: visible;
-  background: transparent;
-  box-shadow: none;
-}
-.abrace-section-full::before,
-.abrace-section-full::after,
-.abrace-bg-layer { display: none !important; }
-
-/* Inner grid já definido acima — apenas garantir z-index */
-.abrace-inner { position: relative; z-index: 2; }
