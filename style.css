@@ -695,91 +695,126 @@ section { padding: 4.5rem 0; }
   align-items: stretch;
 }
 
-/* ══ INSTAGRAM — GRADE LIMPA SEM MOLDURA ══ */
+/* ══ INSTAGRAM — GRADE COM IFRAME CLIPADO ══ */
 #insta-feed { background: var(--br); padding: 4.5rem 0; }
 .insta-header {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
 }
 
-/* Grade: 3 colunas, primeira foto ocupa 2 linhas */
+/* Grade 3 colunas */
 .insta-grade {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: .6rem;
+  gap: .7rem;
 }
+
+/* Cada célula */
 .insta-gi {
-  display: block;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  aspect-ratio: 1;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
   background: var(--cz);
   cursor: pointer;
-  text-decoration: none;
 }
-/* Primeira foto: 2 colunas × 2 linhas */
 .insta-gi-large {
   grid-column: span 2;
   grid-row: span 2;
-  border-radius: 14px;
+  aspect-ratio: auto; /* deixa altura natural para 2 linhas */
+  border-radius: 16px;
 }
-.insta-gi img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-  transition: transform .45s ease;
-}
-.insta-gi:hover img { transform: scale(1.06); }
 
-/* Overlay verde suave ao hover */
+/* Máscara que envolve o iframe e corta a UI do Instagram */
+/* O embed tem: header ~60px, foto, legenda, footer ~50px  */
+/* Usamos translateY negativo + height extra para só mostrar a foto */
+.insta-iframe-mask {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  /* Esconde tudo exceto a área da imagem */
+  clip-path: inset(0 round 12px);
+}
+
+.insta-iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  /* Altura grande o suficiente para o embed renderizar */
+  height: 500px;
+  /* Sobe o iframe para esconder o header do embed (~57px) */
+  margin-top: -57px;
+  /* Remove background branco enquanto carrega */
+  background: var(--cz);
+  /* Pointer-events off — o link overlay cuida do clique */
+  pointer-events: none;
+}
+
+/* Para célula grande, iframe precisa de mais altura */
+.insta-gi-large .insta-iframe {
+  height: 700px;
+}
+
+/* Link transparente por cima de tudo para interceptar clique */
+.insta-gi-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: block;
+}
+
+/* Overlay verde no hover */
 .insta-gi-ov {
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; z-index: 4;
   background: rgba(26,92,8,.42);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; transition: opacity .3s;
-  color: #fff; font-size: 1.6rem;
+  color: #fff; font-size: 1.8rem;
+  pointer-events: none;
 }
 .insta-gi:hover .insta-gi-ov { opacity: 1; }
 
-/* ── Corações flutuantes ── */
+/* ── Corações flutuantes verdes sutis ── */
 .insta-hearts {
-  position: absolute; inset: 0;
-  pointer-events: none; overflow: hidden;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
 }
 .ih {
   position: absolute;
-  bottom: -20px;              /* começam fora de vista */
+  bottom: 0;
   color: var(--vm);
-  font-size: 1rem;
   opacity: 0;
-  animation: ih-rise 4s ease-in infinite;
+  font-size: .9rem;
+  animation: ih-rise 5s ease-in infinite;
   will-change: transform, opacity;
-  text-shadow: 0 0 6px rgba(45,122,15,.4);
+  text-shadow: 0 0 8px rgba(45,122,15,.5);
 }
-/* Posições horizontais variadas */
-.ih1 { left: 18%;  font-size: .85rem; animation-delay: 0s;    animation-duration: 4.2s; }
-.ih2 { left: 50%;  font-size: 1.1rem; animation-delay: 1.4s;  animation-duration: 3.8s; }
-.ih3 { left: 76%;  font-size: .75rem; animation-delay: 2.6s;  animation-duration: 4.6s; }
+.ih1 { left: 15%;  font-size: .8rem;  animation-duration: 4.5s; }
+.ih2 { left: 52%;  font-size: 1rem;   animation-duration: 5.2s; }
+.ih3 { left: 78%;  font-size: .7rem;  animation-duration: 4s;   }
 
 @keyframes ih-rise {
-  0%   { transform: translateY(0)    scale(.8); opacity: 0;   }
-  15%  { opacity: .55; }
-  60%  { opacity: .3; }
-  100% { transform: translateY(-110px) scale(1.1) rotate(12deg); opacity: 0; }
+  0%   { transform: translateY(0) scale(.7);    opacity: 0;   }
+  10%  { opacity: .45; }
+  70%  { opacity: .2; }
+  100% { transform: translateY(-120px) scale(1) rotate(15deg); opacity: 0; }
 }
-
-/* Coração pausa quando hover */
-.insta-gi:hover .ih { animation-play-state: paused; opacity: 0; }
+.insta-gi:hover .ih { opacity: 0 !important; animation-play-state: paused; }
 
 .insta-cta { text-align: center; margin-top: 1.5rem; }
 
 @media(max-width:768px){
   .insta-grade { grid-template-columns: repeat(2,1fr); gap: .45rem; }
   .insta-gi-large { grid-column: span 2; grid-row: span 1; }
+  .insta-gi-large .insta-iframe { height: 500px; }
 }
 @media(max-width:480px){
-  .insta-grade { grid-template-columns: repeat(2,1fr); gap: .35rem; }
+  .insta-grade { grid-template-columns: 1fr 1fr; gap: .35rem; }
 }
 
 
