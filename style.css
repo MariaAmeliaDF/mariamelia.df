@@ -695,7 +695,7 @@ section { padding: 4.5rem 0; }
   align-items: stretch;
 }
 
-/* ══ INSTAGRAM — GRADE COM IFRAME CLIPADO ══ */
+/* ══ INSTAGRAM — GRADE COM EMBEDS OFICIAIS ══ */
 #insta-feed { background: var(--br); padding: 4.5rem 0; }
 .insta-header {
   display: flex; align-items: center; justify-content: space-between;
@@ -706,115 +706,102 @@ section { padding: 4.5rem 0; }
 .insta-grade {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: .7rem;
+  gap: .8rem;
+  align-items: start;
 }
 
-/* Cada célula */
+/* Célula */
 .insta-gi {
   position: relative;
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 12px;
-  aspect-ratio: 1 / 1;
   background: var(--cz);
-  cursor: pointer;
+  min-height: 300px;
 }
 .insta-gi-large {
   grid-column: span 2;
   grid-row: span 2;
-  aspect-ratio: auto; /* deixa altura natural para 2 linhas */
-  border-radius: 16px;
 }
 
-/* Máscara que envolve o iframe e corta a UI do Instagram */
-/* O embed tem: header ~60px, foto, legenda, footer ~50px  */
-/* Usamos translateY negativo + height extra para só mostrar a foto */
-.insta-iframe-mask {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: inherit;
-  /* Esconde tudo exceto a área da imagem */
-  clip-path: inset(0 round 12px);
-}
-
-.insta-iframe {
-  display: block;
-  border: none;
+/* Clip do embed — esconde moldura Instagram via overflow + margem negativa */
+.insta-embed-clip {
+  position: relative;
   width: 100%;
-  /* Altura grande o suficiente para o embed renderizar */
-  height: 500px;
-  /* Sobe o iframe para esconder o header do embed (~57px) */
-  margin-top: -57px;
-  /* Remove background branco enquanto carrega */
-  background: var(--cz);
-  /* Pointer-events off — o link overlay cuida do clique */
-  pointer-events: none;
+  overflow: hidden;
+  /* Altura fixa: só mostra a foto, corta header/footer do embed */
+  height: 100%;
+  min-height: 300px;
 }
 
-/* Para célula grande, iframe precisa de mais altura */
-.insta-gi-large .insta-iframe {
-  height: 700px;
+/* O blockquote vira um iframe após o embed.js rodar */
+/* Escondemos as bordas e o chrome do Instagram */
+.insta-embed-clip .instagram-media,
+.insta-embed-clip iframe {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
 }
 
-/* Link transparente por cima de tudo para interceptar clique */
+/* Link invisível por cima intercepta o clique */
 .insta-gi-link {
   position: absolute;
-  inset: 0;
-  z-index: 3;
+  inset: 0; z-index: 10;
   display: block;
 }
 
-/* Overlay verde no hover */
+/* Hover overlay verde */
 .insta-gi-ov {
-  position: absolute; inset: 0; z-index: 4;
-  background: rgba(26,92,8,.42);
+  position: absolute; inset: 0; z-index: 11;
+  background: rgba(26,92,8,.4);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; transition: opacity .3s;
-  color: #fff; font-size: 1.8rem;
+  color: #fff; font-size: 2rem;
   pointer-events: none;
 }
 .insta-gi:hover .insta-gi-ov { opacity: 1; }
 
-/* ── Corações flutuantes verdes sutis ── */
+/* ── Corações verdes sutis subindo ── */
 .insta-hearts {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 100%;
+  inset: 0; z-index: 9;
   pointer-events: none;
   overflow: hidden;
-  z-index: 2;
 }
 .ih {
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   color: var(--vm);
   opacity: 0;
-  font-size: .9rem;
   animation: ih-rise 5s ease-in infinite;
   will-change: transform, opacity;
-  text-shadow: 0 0 8px rgba(45,122,15,.5);
+  filter: drop-shadow(0 0 4px rgba(45,122,15,.4));
 }
-.ih1 { left: 15%;  font-size: .8rem;  animation-duration: 4.5s; }
-.ih2 { left: 52%;  font-size: 1rem;   animation-duration: 5.2s; }
-.ih3 { left: 78%;  font-size: .7rem;  animation-duration: 4s;   }
+.ih1 { left: 14%;  font-size: .85rem; animation-delay: 0s;   animation-duration: 4.8s; }
+.ih2 { left: 52%;  font-size: 1rem;   animation-delay: 1.6s; animation-duration: 5.4s; }
+.ih3 { left: 80%;  font-size: .7rem;  animation-delay: 3.2s; animation-duration: 4.2s; }
 
 @keyframes ih-rise {
-  0%   { transform: translateY(0) scale(.7);    opacity: 0;   }
-  10%  { opacity: .45; }
-  70%  { opacity: .2; }
-  100% { transform: translateY(-120px) scale(1) rotate(15deg); opacity: 0; }
+  0%   { transform: translateY(0) scale(.6);            opacity: 0; }
+  12%  { opacity: .5; }
+  65%  { opacity: .22; }
+  100% { transform: translateY(-130px) scale(1.1) rotate(18deg); opacity: 0; }
 }
-.insta-gi:hover .ih { opacity: 0 !important; animation-play-state: paused; }
+.insta-gi:hover .ih { animation-play-state: paused; opacity: 0 !important; }
 
 .insta-cta { text-align: center; margin-top: 1.5rem; }
 
-@media(max-width:768px){
-  .insta-grade { grid-template-columns: repeat(2,1fr); gap: .45rem; }
+@media(max-width:900px){
+  .insta-grade { grid-template-columns: repeat(2,1fr); }
   .insta-gi-large { grid-column: span 2; grid-row: span 1; }
-  .insta-gi-large .insta-iframe { height: 500px; }
 }
 @media(max-width:480px){
-  .insta-grade { grid-template-columns: 1fr 1fr; gap: .35rem; }
+  .insta-grade { grid-template-columns: 1fr; }
+  .insta-gi-large { grid-column: span 1; }
 }
 
 
