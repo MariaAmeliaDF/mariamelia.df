@@ -283,15 +283,7 @@ section { padding: 4.5rem 0; }
   border: 1px solid rgba(45,122,15,.15); border-radius: var(--rd);
   padding: 1.4rem; text-align: center; transition: var(--tr);
 }
-.abrace-card:hover { transform: translateY(-4px); box-shadow: var(--s2); border-color: var(--vm); }
-.abrace-card-ico {
-  width: 48px; height: 48px; margin: 0 auto .85rem;
-  background: linear-gradient(135deg,var(--vd),var(--vl));
-  border-radius: 13px; display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.1rem;
-}
-.abrace-card h4 { font-size: .88rem; font-weight: 700; color: var(--ve); margin-bottom: .38rem; }
-.abrace-card p { font-size: .77rem; color: var(--tx2); line-height: 1.55; }
+
 
 /* ══ 11. PAUTAS ══ */
 #pautas { background: var(--br); }
@@ -425,24 +417,82 @@ section { padding: 4.5rem 0; }
 .yt-inf p { font-size: .83rem; color: var(--tx2); }
 .yt-cta { margin-top: 1.5rem; text-align: center; }
 
-/* ══ 17. DEPOIMENTOS ══ */
-#deps { background: var(--br); overflow: hidden; }
-.dep-sl { overflow: hidden; position: relative; width: 100%; }
-.dep-tr { display: flex; gap: 1.4rem; transition: transform .6s cubic-bezier(.4,0,.2,1); }
-.dep-c { min-width: calc(33.33% - 1rem); background: var(--cz); border-radius: var(--rd); padding: 1.75rem; flex-shrink: 0; border: 1px solid rgba(0,0,0,.04); }
-.dep-st { color: var(--am); font-size: .8rem; margin-bottom: .45rem; }
-.dep-q { font-size: 2.8rem; color: rgba(45,122,15,.18); line-height: 1; font-family: Georgia, serif; margin-bottom: .55rem; }
-.dep-c p { font-size: .86rem; color: var(--tx2); line-height: 1.8; margin-bottom: 1.2rem; font-style: italic; }
-.dep-au { display: flex; align-items: center; gap: .65rem; }
-.dep-av { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg,var(--vd),var(--vm)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: .95rem; font-weight: 700; flex-shrink: 0; }
+/* ══ 17. DEPOIMENTOS — grade completa visível ══ */
+#deps { background: var(--br); overflow: visible; }
+
+/* Grade 3 colunas — todos os cards visíveis, sem corte */
+.deps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.dep-c {
+  background: var(--cz);
+  border-radius: var(--rd);
+  padding: 1.6rem;
+  border: 1px solid rgba(0,0,0,.04);
+  display: flex;
+  flex-direction: column;
+  height: auto; /* nunca cortar */
+  transition: var(--tr);
+}
+.dep-c:hover { box-shadow: var(--s2); transform: translateY(-3px); }
+
+.dep-st { color: var(--am); font-size: .85rem; margin-bottom: .4rem; letter-spacing: .05em; }
+.dep-q  { font-size: 2.6rem; color: rgba(45,122,15,.15); line-height: 1; font-family: Georgia, serif; margin-bottom: .4rem; }
+
+/* Texto completo sem overflow nem clamp */
+.dep-c p {
+  font-size: .86rem;
+  color: var(--tx2);
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+  flex: 1;
+  /* Sem line-clamp, sem overflow hidden — texto completo sempre visível */
+}
+
+.dep-au { display: flex; align-items: center; gap: .65rem; margin-top: auto; }
+.dep-av {
+  width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg,var(--vd),var(--vm));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: .95rem; font-weight: 700;
+}
 .dep-in strong { display: block; font-size: .84rem; font-weight: 700; color: var(--ve); }
-.dep-in span { font-size: .73rem; color: var(--tx2); }
-.sl-ctrl { display: flex; align-items: center; justify-content: center; gap: .85rem; margin-top: 2.2rem; }
-.sl-btn { width: 42px; height: 42px; border-radius: 50%; border: 2px solid rgba(45,122,15,.28); background: none; color: var(--vm); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--tr); font-size: .86rem; }
+.dep-in span   { font-size: .73rem; color: var(--tx2); }
+
+/* Controles de navegação (mantidos no HTML para compatibilidade JS) */
+.deps-nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: .85rem; margin-top: .5rem;
+}
+.sl-btn {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 2px solid rgba(45,122,15,.28); background: none;
+  color: var(--vm); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--tr); font-size: .86rem;
+}
 .sl-btn:hover { background: var(--vm); border-color: var(--vm); color: #fff; }
 .sl-dots { display: flex; gap: .45rem; }
-.sl-d { width: 8px; height: 8px; border-radius: 50%; background: rgba(45,122,15,.22); transition: var(--tr); cursor: pointer; border: none; }
+.sl-d {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(45,122,15,.22); transition: var(--tr);
+  cursor: pointer; border: none;
+}
 .sl-d.on { background: var(--vm); transform: scale(1.3); }
+
+/* Responsive */
+@media(max-width:1024px){
+  .deps-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:600px){
+  .deps-grid { grid-template-columns: 1fr; }
+}
+
 
 /* ══ 18. REDES SOCIAIS ══ */
 #redes { background: var(--cz); }
@@ -695,7 +745,7 @@ section { padding: 4.5rem 0; }
   align-items: stretch;
 }
 
-/* ══ INSTAGRAM — GRADE COM EMBEDS OFICIAIS ══ */
+/* ══ INSTAGRAM — GRADE FOTOS PURAS ══ */
 #insta-feed { background: var(--br); padding: 4.5rem 0; }
 .insta-header {
   display: flex; align-items: center; justify-content: space-between;
@@ -706,57 +756,64 @@ section { padding: 4.5rem 0; }
 .insta-grade {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: .8rem;
-  align-items: start;
+  gap: .7rem;
+  align-items: stretch;
 }
 
-/* Célula */
+/* Célula clicável */
 .insta-gi {
+  display: block;
   position: relative;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
+  aspect-ratio: 1;
   background: var(--cz);
-  min-height: 300px;
+  text-decoration: none;
+  cursor: pointer;
 }
 .insta-gi-large {
   grid-column: span 2;
   grid-row: span 2;
+  aspect-ratio: auto;
+  border-radius: 16px;
 }
 
-/* Clip do embed — esconde moldura Instagram via overflow + margem negativa */
-.insta-embed-clip {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  /* Altura fixa: só mostra a foto, corta header/footer do embed */
-  height: 100%;
-  min-height: 300px;
-}
-
-/* O blockquote vira um iframe após o embed.js rodar */
-/* Escondemos as bordas e o chrome do Instagram */
-.insta-embed-clip .instagram-media,
-.insta-embed-clip iframe {
-  display: block !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  margin: 0 !important;
-}
-
-/* Link invisível por cima intercepta o clique */
-.insta-gi-link {
+/* Container da imagem */
+.insta-gi-img {
   position: absolute;
-  inset: 0; z-index: 10;
-  display: block;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cz);
+}
+.insta-gi-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .4s ease;
+}
+.insta-gi:hover .insta-gi-img img { transform: scale(1.06); }
+
+/* Loading spinner */
+.insta-gi-loading {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; min-height: 200px;
+  color: rgba(45,122,15,.3); font-size: 2rem;
+  animation: pulse-op 1.5s ease-in-out infinite;
+}
+@keyframes pulse-op { 0%,100%{opacity:.3} 50%{opacity:.7} }
+
+/* Fallback */
+.insta-gi-fallback {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; min-height: 200px;
+  background: linear-gradient(135deg, rgba(45,122,15,.06), rgba(254,220,80,.08));
+  color: rgba(45,122,15,.35); font-size: 2.5rem;
 }
 
-/* Hover overlay verde */
+/* Hover overlay */
 .insta-gi-ov {
-  position: absolute; inset: 0; z-index: 11;
+  position: absolute; inset: 0; z-index: 3;
   background: rgba(26,92,8,.4);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; transition: opacity .3s;
@@ -765,30 +822,24 @@ section { padding: 4.5rem 0; }
 }
 .insta-gi:hover .insta-gi-ov { opacity: 1; }
 
-/* ── Corações verdes sutis subindo ── */
+/* Corações verdes flutuando */
 .insta-hearts {
-  position: absolute;
-  inset: 0; z-index: 9;
-  pointer-events: none;
-  overflow: hidden;
+  position: absolute; inset: 0; z-index: 2;
+  pointer-events: none; overflow: hidden;
 }
 .ih {
-  position: absolute;
-  bottom: -10px;
-  color: var(--vm);
-  opacity: 0;
+  position: absolute; bottom: -10px;
+  color: var(--vm); opacity: 0;
   animation: ih-rise 5s ease-in infinite;
-  will-change: transform, opacity;
-  filter: drop-shadow(0 0 4px rgba(45,122,15,.4));
+  filter: drop-shadow(0 0 4px rgba(45,122,15,.35));
 }
-.ih1 { left: 14%;  font-size: .85rem; animation-delay: 0s;   animation-duration: 4.8s; }
-.ih2 { left: 52%;  font-size: 1rem;   animation-delay: 1.6s; animation-duration: 5.4s; }
-.ih3 { left: 80%;  font-size: .7rem;  animation-delay: 3.2s; animation-duration: 4.2s; }
-
+.ih1 { left: 15%;  font-size: .85rem; animation-duration: 4.8s; }
+.ih2 { left: 52%;  font-size: 1rem;   animation-duration: 5.4s; }
+.ih3 { left: 80%;  font-size: .7rem;  animation-duration: 4.2s; }
 @keyframes ih-rise {
-  0%   { transform: translateY(0) scale(.6);            opacity: 0; }
+  0%   { transform: translateY(0) scale(.6);  opacity: 0; }
   12%  { opacity: .5; }
-  65%  { opacity: .22; }
+  65%  { opacity: .2; }
   100% { transform: translateY(-130px) scale(1.1) rotate(18deg); opacity: 0; }
 }
 .insta-gi:hover .ih { animation-play-state: paused; opacity: 0 !important; }
@@ -800,8 +851,8 @@ section { padding: 4.5rem 0; }
   .insta-gi-large { grid-column: span 2; grid-row: span 1; }
 }
 @media(max-width:480px){
-  .insta-grade { grid-template-columns: 1fr; }
-  .insta-gi-large { grid-column: span 1; }
+  .insta-grade { grid-template-columns: 1fr 1fr; }
+  .insta-gi-large { grid-column: span 2; grid-row: span 1; }
 }
 
 
