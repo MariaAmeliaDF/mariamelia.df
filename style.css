@@ -695,63 +695,93 @@ section { padding: 4.5rem 0; }
   align-items: stretch;
 }
 
-/* ══ INSTAGRAM GRADE ══ */
-#insta-feed { background: var(--br); padding: 4rem 0; }
-.insta-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-.insta-photo-grid {
+/* ══ INSTAGRAM — GRADE LIMPA SEM MOLDURA ══ */
+#insta-feed { background: var(--br); padding: 4.5rem 0; }
+.insta-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+}
+
+/* Grade: 3 colunas, primeira foto ocupa 2 linhas */
+.insta-grade {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
   gap: .6rem;
-  width: 100%;
 }
-.insta-photo-item {
-  aspect-ratio: 1;
-  overflow: hidden;
-  border-radius: 8px;
-  cursor: pointer;
-  position: relative;
-  background: var(--cz);
-}
-.insta-photo-item img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+.insta-gi {
   display: block;
-  transition: transform .4s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  background: var(--cz);
+  cursor: pointer;
+  text-decoration: none;
 }
-.insta-photo-item:hover img { transform: scale(1.07); }
-.insta-photo-ov {
-  position: absolute; inset: 0;
-  background: rgba(26,92,8,.5);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity .3s;
-  color: #fff; font-size: 1.4rem;
-}
-.insta-photo-item:hover .insta-photo-ov { opacity: 1; }
-/* item 1 maior */
-.insta-photo-item:first-child {
+/* Primeira foto: 2 colunas × 2 linhas */
+.insta-gi-large {
   grid-column: span 2;
   grid-row: span 2;
-  border-radius: 12px;
+  border-radius: 14px;
 }
-.insta-grid-loading {
-  grid-column: span 4;
-  text-align: center; padding: 3rem;
-  color: var(--tx2); display: flex;
-  flex-direction: column; align-items: center; gap: .75rem;
+.insta-gi img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .45s ease;
 }
-.insta-grid-loading i { font-size: 2.5rem; color: #c13584; }
-.insta-grid-loading span { font-size: .88rem; }
+.insta-gi:hover img { transform: scale(1.06); }
+
+/* Overlay verde suave ao hover */
+.insta-gi-ov {
+  position: absolute; inset: 0;
+  background: rgba(26,92,8,.42);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .3s;
+  color: #fff; font-size: 1.6rem;
+}
+.insta-gi:hover .insta-gi-ov { opacity: 1; }
+
+/* ── Corações flutuantes ── */
+.insta-hearts {
+  position: absolute; inset: 0;
+  pointer-events: none; overflow: hidden;
+}
+.ih {
+  position: absolute;
+  bottom: -20px;              /* começam fora de vista */
+  color: var(--vm);
+  font-size: 1rem;
+  opacity: 0;
+  animation: ih-rise 4s ease-in infinite;
+  will-change: transform, opacity;
+  text-shadow: 0 0 6px rgba(45,122,15,.4);
+}
+/* Posições horizontais variadas */
+.ih1 { left: 18%;  font-size: .85rem; animation-delay: 0s;    animation-duration: 4.2s; }
+.ih2 { left: 50%;  font-size: 1.1rem; animation-delay: 1.4s;  animation-duration: 3.8s; }
+.ih3 { left: 76%;  font-size: .75rem; animation-delay: 2.6s;  animation-duration: 4.6s; }
+
+@keyframes ih-rise {
+  0%   { transform: translateY(0)    scale(.8); opacity: 0;   }
+  15%  { opacity: .55; }
+  60%  { opacity: .3; }
+  100% { transform: translateY(-110px) scale(1.1) rotate(12deg); opacity: 0; }
+}
+
+/* Coração pausa quando hover */
+.insta-gi:hover .ih { animation-play-state: paused; opacity: 0; }
+
 .insta-cta { text-align: center; margin-top: 1.5rem; }
+
 @media(max-width:768px){
-  .insta-photo-grid { grid-template-columns: repeat(3, 1fr); }
-  .insta-photo-item:first-child { grid-column: span 2; grid-row: span 2; }
-  .insta-grid-loading { grid-column: span 3; }
+  .insta-grade { grid-template-columns: repeat(2,1fr); gap: .45rem; }
+  .insta-gi-large { grid-column: span 2; grid-row: span 1; }
 }
 @media(max-width:480px){
-  .insta-photo-grid { grid-template-columns: repeat(2, 1fr); }
-  .insta-photo-item:first-child { grid-column: span 2; grid-row: span 1; }
-  .insta-grid-loading { grid-column: span 2; }
+  .insta-grade { grid-template-columns: repeat(2,1fr); gap: .35rem; }
 }
+
 
 /* ══ ABRACE — identidade visual Maria Amélia ══ */
 #abrace {
