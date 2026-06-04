@@ -59,16 +59,31 @@ section { padding: 4.5rem 0; }
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: .9rem 0;
-  background: #ffffff;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 2px 24px rgba(26,92,8,.08);
-  transition: var(--tr);
+  /* Transparência verde no topo da página */
+  background: rgba(26,92,8,.18);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  box-shadow: none;
+  transition: background .4s ease, box-shadow .4s ease, padding .3s ease;
 }
+/* Logo e links brancos quando header transparente */
+#hdr:not(.sc) .nl { color: rgba(255,255,255,.92); }
+#hdr:not(.sc) .nl:hover { color: #fff; background: rgba(255,255,255,.12); }
+#hdr:not(.sc) .nl-active { color: #fff !important; border-color: rgba(255,255,255,.8); }
+#hdr:not(.sc) .nav-logo img { filter: brightness(10); }
+#hdr:not(.sc) .ham span { background: #fff; }
+/* Ao rolar — vira branco sólido */
 #hdr.sc {
-  background: #fff;
-  box-shadow: 0 2px 24px rgba(26,92,8,.13);
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 24px rgba(26,92,8,.1);
   padding: .6rem 0;
 }
+#hdr.sc .nl { color: var(--ve); }
+#hdr.sc .nl:hover { color: var(--vm); background: rgba(45,122,15,.08); }
+#hdr.sc .nav-logo img { filter: none; }
+#hdr.sc .ham span { background: var(--ve); }
 .nav-inner  { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .nav-links  { display: flex; align-items: center; gap: .2rem; flex: 1; justify-content: center; }
 .nav-logo { display: flex; align-items: center; }
@@ -144,8 +159,8 @@ section { padding: 4.5rem 0; }
 
 .h-inner {
   position: relative; z-index: 3;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 2rem; align-items: center;
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 3rem; align-items: center;
   padding: 6rem 0 2.5rem;
 }
 .h-bdg-row {
@@ -162,17 +177,18 @@ section { padding: 4.5rem 0; }
 .h-bdg-part i { font-size: .9rem; flex-shrink: 0; }
 
 .h-tit {
-  font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 800;
-  color: #fff; line-height: 1.05; margin-bottom: 1rem; letter-spacing: -.03em;
+  font-size: clamp(2.8rem, 4.8vw, 4.6rem); font-weight: 800;
+  color: #fff; line-height: 1.08; margin-bottom: 1.1rem; letter-spacing: -.03em;
   text-shadow: 0 2px 16px rgba(0,0,0,.25);
   text-align: left;
-  white-space: nowrap;
+  white-space: normal;
 }
 .yl { color: var(--am); }
 .h-sub {
-  font-size: 1rem; color: rgba(255,255,255,.85);
-  line-height: 1.8; margin-bottom: 1.5rem; max-width: 580px;
-  text-align: left;
+  font-size: 1rem; color: rgba(255,255,255,.88);
+  line-height: 1.85; margin-bottom: 1.5rem; max-width: 580px;
+  text-align: justify;
+  hyphens: auto;
 }
 .h-sub strong { color: #fff; font-weight: 600; }
 .h-tags { display: flex; flex-direction: column; gap: .42rem; align-items: flex-start; }
@@ -193,19 +209,23 @@ section { padding: 4.5rem 0; }
   border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;
 }
 .h-foto-frame {
-  position: relative; border-radius: 24px; padding: 5px;
-  background: linear-gradient(145deg, rgba(254,220,80,.45), rgba(255,255,255,.12), rgba(74,170,26,.35));
-  box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 24px 64px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.25);
-  width: fit-content; max-width: 460px;
+  position: relative; border-radius: 28px; padding: 6px;
+  background: linear-gradient(145deg, rgba(254,220,80,.55), rgba(255,255,255,.15), rgba(74,170,26,.45));
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.22),
+    0 30px 80px rgba(0,0,0,.45),
+    0 0 60px rgba(74,170,26,.2),
+    inset 0 1px 0 rgba(255,255,255,.3);
+  width: fit-content; max-width: 560px;
 }
 .h-foto {
   display: block; width: 100%; height: auto;
-  max-width: 440px; border-radius: 20px;
+  max-width: 540px; border-radius: 22px;
 }
 
 /* ══ 8. HELPERS DE SEÇÃO ══ */
-.s-pre { font-size: .82rem; font-weight: 700; color: var(--vm); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .38rem; }
-.s-tit { font-size: clamp(2rem,3.5vw,3rem); font-weight: 800; color: var(--ve); line-height: 1.2; }
+.s-pre { font-size: .9rem; font-weight: 700; color: var(--vm); text-transform: uppercase; letter-spacing: .12em; margin-bottom: .45rem; }
+.s-tit { font-size: clamp(2.2rem,3.8vw,3.2rem); font-weight: 800; color: var(--ve); line-height: 1.18; }
 .s-tit span { color: var(--vm); }
 .s-ln { width: 50px; height: 4px; background: linear-gradient(90deg,var(--vm),var(--am)); border-radius: 2px; margin: 10px 0 18px; }
 .s-sub { font-size: .97rem; color: var(--tx2); max-width: 580px; }
@@ -593,7 +613,7 @@ section { padding: 4.5rem 0; }
 
 @media(max-width:1024px){
   .h-inner           { grid-template-columns: 1fr; text-align: center; }
-  .h-img-wr          { display: none; }
+  .h-img-wr          { display: none; } /* shown on mobile via separate block */
   .h-tags            { align-items: center; }
   .h-bdg-row         { justify-content: center; }
   .q-grid            { grid-template-columns: 1fr; }
@@ -994,3 +1014,24 @@ section { padding: 4.5rem 0; }
   100% { transform: scale(1); }
 }
 .nl-active { animation: nl-pop .3s ease; }
+
+/* Header transparente no topo — ajustes de contraste */
+#hdr:not(.sc) .nl::after {
+  background: rgba(255,255,255,.6);
+}
+#hdr:not(.sc) .nl:hover::after { width: 60%; }
+
+/* Timeline / seção títulos maiores */
+.tl-c h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .45rem; color: var(--ve); }
+.tl-c p  { font-size: .88rem; color: var(--tx2); line-height: 1.7; }
+.tl-yr   { font-size: .78rem; }
+
+/* Quem é — título maior */
+.q-txt h2 { font-size: clamp(1.9rem,3vw,2.6rem); }
+
+/* Vila título maior */
+.vila-txt h2 { font-size: clamp(1.9rem,3vw,2.6rem); }
+
+/* ABRACE título */
+.abrace-grid .s-tit,
+#abrace .s-tit { font-size: clamp(2rem,3.2vw,2.8rem); }
