@@ -829,9 +829,12 @@ section { padding: 4.5rem 0; }
 }
 .ih {
   position: absolute; bottom: -10px;
-  color: var(--vm); opacity: 0;
+  color: var(--vm) !important; opacity: 0;
   animation: ih-rise 5s ease-in infinite;
   filter: drop-shadow(0 0 4px rgba(45,122,15,.35));
+  /* Força renderização como texto (não emoji colorido) */
+  font-variant-emoji: text;
+  -webkit-text-fill-color: var(--vm);
 }
 .ih1 { left: 15%;  font-size: .85rem; animation-duration: 4.8s; }
 .ih2 { left: 52%;  font-size: 1rem;   animation-duration: 5.4s; }
