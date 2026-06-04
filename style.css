@@ -261,8 +261,8 @@ section { padding: 4.5rem 0; }
 .q-txt h2 span { color: var(--vm); }
 .q-txt p { color: var(--tx2); margin-bottom: 1rem; font-size: .95rem; line-height: 1.8; }
 .q-txt strong { color: var(--ve); font-weight: 600; }
-.vals { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .8rem; margin: 1.4rem 0; }
-.vi { display: flex; align-items: center; gap: .52rem; font-size: .84rem; font-weight: 500; color: var(--tx); }
+.vals { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem .8rem; margin: 1.2rem 0; }
+.vi { display: flex; align-items: center; gap: .48rem; font-size: .82rem; font-weight: 500; color: var(--tx); padding: .15rem 0; }
 .vi i { color: var(--vm); font-size: .82rem; flex-shrink: 0; }
 
 /* ══ 10. AÇÕES SOCIAIS ══ */
