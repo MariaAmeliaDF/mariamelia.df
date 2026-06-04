@@ -155,7 +155,7 @@ section { padding: 4.5rem 0; }
   padding: 6rem 0 2.5rem;
 }
 .h-bdg-row {
-  display: flex; align-items: center; justify-content: flex-start;
+  display: flex; align-items: center; justify-content: center;
   gap: 12px; flex-wrap: wrap; margin-bottom: 1.1rem;
 }
 .h-bdg-part {
@@ -171,14 +171,16 @@ section { padding: 4.5rem 0; }
   font-size: clamp(2.6rem, 4.8vw, 4.2rem); font-weight: 800;
   color: #fff; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -.03em;
   text-shadow: 0 2px 16px rgba(0,0,0,.25);
+  text-align: center;
 }
 .yl { color: var(--am); }
 .h-sub {
   font-size: .93rem; color: rgba(255,255,255,.82);
-  line-height: 1.75; margin-bottom: 1.5rem; max-width: 520px;
+  line-height: 1.75; margin-bottom: 1.5rem; max-width: 540px;
+  text-align: center;
 }
 .h-sub strong { color: #fff; font-weight: 600; }
-.h-tags { display: flex; flex-direction: column; gap: .42rem; }
+.h-tags { display: flex; flex-direction: column; gap: .42rem; align-items: center; }
 .h-tag {
   display: inline-flex; align-items: center; gap: .55rem;
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
@@ -752,7 +754,6 @@ section { padding: 4.5rem 0; }
   margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
 }
 
-/* Grade 3 colunas */
 .insta-grade {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -761,45 +762,44 @@ section { padding: 4.5rem 0; }
 
 /* Célula */
 .insta-gi {
-  display: block; position: relative;
-  border-radius: 12px; overflow: hidden;
-  aspect-ratio: 1; background: var(--cz);
-  text-decoration: none; cursor: pointer;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  /* Altura fixa quadrada */
+  aspect-ratio: 1;
+  background: var(--cz);
+  /* Clip agressivo do iframe */
+  isolation: isolate;
 }
 .insta-gi-large {
-  grid-column: span 2; grid-row: span 2;
-  aspect-ratio: auto; border-radius: 16px;
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+  border-radius: 16px;
 }
 
-/* Wrapper da imagem — preenche toda a célula */
-.ig-img-wrap {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-}
-.ig-img-wrap img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-  transition: transform .4s ease;
-}
-.insta-gi:hover .ig-img-wrap img { transform: scale(1.06); }
-
-/* Loading — coração pulsando */
-.ig-loading {
-  font-size: 1.8rem; color: var(--vm);
-  opacity: .3; animation: ig-pulse 1.4s ease-in-out infinite;
-}
-@keyframes ig-pulse { 0%,100%{opacity:.2;transform:scale(1)} 50%{opacity:.6;transform:scale(1.2)} }
-
-/* Fallback */
-.ig-fallback {
-  width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(45,122,15,.25); font-size: 2.2rem;
+/* iframe do Instagram /embed/ (sem caption) — só mostra a mídia */
+.ig-frame {
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  pointer-events: none; /* link overlay cuida do clique */
 }
 
-/* Hover overlay verde */
+/* Link transparente por cima */
+.ig-link {
+  position: absolute;
+  inset: 0; z-index: 4;
+  display: block;
+}
+
+/* Hover overlay */
 .insta-gi-ov {
-  position: absolute; inset: 0; z-index: 3;
+  position: absolute; inset: 0; z-index: 5;
   background: rgba(26,92,8,.42);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; transition: opacity .3s;
@@ -807,9 +807,9 @@ section { padding: 4.5rem 0; }
 }
 .insta-gi:hover .insta-gi-ov { opacity: 1; }
 
-/* Corações verdes flutuando */
+/* Corações */
 .insta-hearts {
-  position: absolute; inset: 0; z-index: 2;
+  position: absolute; inset: 0; z-index: 3;
   pointer-events: none; overflow: hidden;
 }
 .ih {
