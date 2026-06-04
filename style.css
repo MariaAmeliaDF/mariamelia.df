@@ -155,7 +155,7 @@ section { padding: 4.5rem 0; }
   padding: 6rem 0 2.5rem;
 }
 .h-bdg-row {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: flex-start;
   gap: 12px; flex-wrap: wrap; margin-bottom: 1.1rem;
 }
 .h-bdg-part {
@@ -168,19 +168,20 @@ section { padding: 4.5rem 0; }
 .h-bdg-part i { font-size: .9rem; flex-shrink: 0; }
 
 .h-tit {
-  font-size: clamp(2.6rem, 4.8vw, 4.2rem); font-weight: 800;
-  color: #fff; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -.03em;
+  font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 800;
+  color: #fff; line-height: 1.05; margin-bottom: 1rem; letter-spacing: -.03em;
   text-shadow: 0 2px 16px rgba(0,0,0,.25);
-  text-align: center;
+  text-align: left;
+  white-space: nowrap;
 }
 .yl { color: var(--am); }
 .h-sub {
-  font-size: .93rem; color: rgba(255,255,255,.82);
-  line-height: 1.75; margin-bottom: 1.5rem; max-width: 540px;
-  text-align: center;
+  font-size: 1rem; color: rgba(255,255,255,.85);
+  line-height: 1.8; margin-bottom: 1.5rem; max-width: 580px;
+  text-align: left;
 }
 .h-sub strong { color: #fff; font-weight: 600; }
-.h-tags { display: flex; flex-direction: column; gap: .42rem; align-items: center; }
+.h-tags { display: flex; flex-direction: column; gap: .42rem; align-items: flex-start; }
 .h-tag {
   display: inline-flex; align-items: center; gap: .55rem;
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
@@ -209,8 +210,8 @@ section { padding: 4.5rem 0; }
 }
 
 /* ══ 8. HELPERS DE SEÇÃO ══ */
-.s-pre { font-size: .76rem; font-weight: 700; color: var(--vm); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .38rem; }
-.s-tit { font-size: clamp(1.75rem,3.2vw,2.5rem); font-weight: 800; color: var(--ve); line-height: 1.2; }
+.s-pre { font-size: .82rem; font-weight: 700; color: var(--vm); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .38rem; }
+.s-tit { font-size: clamp(2rem,3.5vw,3rem); font-weight: 800; color: var(--ve); line-height: 1.2; }
 .s-tit span { color: var(--vm); }
 .s-ln { width: 50px; height: 4px; background: linear-gradient(90deg,var(--vm),var(--am)); border-radius: 2px; margin: 10px 0 18px; }
 .s-sub { font-size: .97rem; color: var(--tx2); max-width: 580px; }
@@ -654,7 +655,7 @@ section { padding: 4.5rem 0; }
 }
 
 @media(max-width:480px){
-  .h-tit             { font-size: 1.75rem; }
+  .h-tit             { font-size: 2rem; white-space: normal; }
   .redes-grid        { grid-template-columns: 1fr; }
   .pautas-grid       { grid-template-columns: 1fr; }
   .insta-embed-item  { flex: 0 0 90%; }
@@ -966,3 +967,13 @@ section { padding: 4.5rem 0; }
 .abrace-impact-cards,
 .abrace-ic,
 .abrace-heitor-cloud { all: unset; display: revert; }
+
+/* Tags lado a lado */
+.h-tags-row {
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-items: center !important;
+  justify-content: flex-start;
+  gap: .5rem !important;
+}
+.h-tags-row .h-tag { width: auto; }
