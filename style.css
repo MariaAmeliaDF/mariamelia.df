@@ -137,8 +137,9 @@ section { padding: 4.5rem 0; }
   display: none;
   position: absolute; inset: 0; z-index: 0;
   background-image: url('foto_oficial.jpeg');
-  background-size: cover;
-  background-position: center top;
+  background-size: 130%; /* zoom in slightly so face fills more of frame */
+  background-position: center 8%; /* 8% = face at top, not cropped */
+  background-repeat: no-repeat;
   pointer-events: none;
 }
 .h-video-overlay {
@@ -1110,29 +1111,30 @@ section { padding: 4.5rem 0; }
 /* ══ MOBILE — Hero enxuto e foto com foco no rosto ══ */
 @media(max-width:768px) {
 
-  /* Foto de fundo mobile: posiciona para mostrar o rosto (top) */
+  /* Foto de fundo mobile: foco no rosto */
   .h-mobile-bg {
-    background-position: center 15% !important;
-    /* 15% from top = rosto aparece no centro-superior */
+    background-position: center top !important;
+    background-size: cover !important;
   }
-  /* Overlay mais forte no mobile para texto legível */
+  /* Overlay mobile: transparente no topo (mostra rosto), escuro embaixo (texto legível) */
   .h-video-overlay {
     background: linear-gradient(
       180deg,
-      rgba(14,53,5,.85) 0%,
-      rgba(26,92,8,.80) 40%,
-      rgba(26,92,8,.75) 70%,
-      rgba(14,53,5,.88) 100%
+      rgba(14,53,5,.25) 0%,
+      rgba(14,53,5,.35) 25%,
+      rgba(26,92,8,.72) 55%,
+      rgba(14,53,5,.92) 80%,
+      rgba(14,53,5,.97) 100%
     ) !important;
   }
 
   /* Hero: texto mais enxuto no mobile */
-  .h-inner { padding: 5rem 0 2rem !important; }
+  .h-inner { padding: 5rem 0 3.5rem !important; }
 
-  /* Subtítulo mobile: sem justify (evita quebras feias), fonte menor */
+  /* Subtítulo mobile: limpo e legível */
   .h-sub {
-    font-size: .88rem !important;
-    line-height: 1.7 !important;
+    font-size: .95rem !important;
+    line-height: 1.75 !important;
     text-align: left !important;
     hyphens: none !important;
     -webkit-hyphens: none !important;
@@ -1171,4 +1173,12 @@ section { padding: 4.5rem 0; }
 @media(max-width:390px) {
   .h-tit { font-size: 1.75rem !important; }
   .h-sub { font-size: .83rem !important; }
+}
+
+/* ══ QUEM É — mobile fix: fundo menos intrusivo ══ */
+@media(max-width:768px) {
+  #quem .quem-bg {
+    opacity: .25 !important;
+    background-position: right center !important;
+  }
 }
