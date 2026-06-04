@@ -84,13 +84,7 @@ section { padding: 4.5rem 0; }
 }
 .nl:hover::after { width: 60%; }
 .nl:hover { color: var(--vm); background: rgba(45,122,15,.08); }
-.nl-cta {
-  background: var(--am); color: var(--ve) !important;
-  font-weight: 700; border-radius: 50px; padding: .45rem 1.15rem;
-  box-shadow: 0 3px 12px rgba(254,220,80,.4);
-}
-.nl-cta:hover { transform: translateY(-1px) !important; box-shadow: 0 6px 18px rgba(254,220,80,.55) !important; }
-.nl-cta::after { display: none !important; }
+/* nl-cta removed */
 .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
 .ham span { display: block; width: 26px; height: 2.5px; background: var(--ve); border-radius: 3px; transition: var(--tr); }
 .ham.on span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
@@ -977,3 +971,26 @@ section { padding: 4.5rem 0; }
   gap: .5rem !important;
 }
 .h-tags-row .h-tag { width: auto; }
+
+/* ── Nav scroll-spy: item ativo com borda verde ── */
+.nl-active {
+  color: var(--vm) !important;
+  background: transparent !important;
+  border: 2px solid var(--vm);
+  border-radius: 50px;
+  padding: .35rem .8rem;
+  font-weight: 600;
+  transition: border-color .4s ease, color .4s ease, background .4s ease;
+}
+.nl-active::after { display: none !important; }
+.nl-active:hover {
+  background: rgba(45,122,15,.06) !important;
+  transform: none;
+}
+/* Subtle entrance animation when item becomes active */
+@keyframes nl-pop {
+  0%   { transform: scale(.92); }
+  60%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+.nl-active { animation: nl-pop .3s ease; }
