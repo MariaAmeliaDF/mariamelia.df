@@ -160,9 +160,9 @@ section { padding: 4.5rem 0; }
 
 .h-inner {
   position: relative; z-index: 3;
-  display: grid; grid-template-columns: 1.1fr 1fr;
-  gap: 3rem; align-items: center;
-  padding: 6rem 0 2.5rem;
+  display: grid; grid-template-columns: 1fr .75fr;
+  gap: 2.5rem; align-items: center;
+  padding: 5rem 0 2.5rem;
 }
 .h-bdg-row {
   display: flex; align-items: center; justify-content: center;
@@ -210,18 +210,18 @@ section { padding: 4.5rem 0; }
   border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;
 }
 .h-foto-frame {
-  position: relative; border-radius: 28px; padding: 6px;
-  background: linear-gradient(145deg, rgba(254,220,80,.55), rgba(255,255,255,.15), rgba(74,170,26,.45));
+  position: relative; border-radius: 22px; padding: 5px;
+  background: linear-gradient(145deg, rgba(254,220,80,.5), rgba(255,255,255,.12), rgba(74,170,26,.4));
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.22),
-    0 30px 80px rgba(0,0,0,.45),
-    0 0 60px rgba(74,170,26,.2),
-    inset 0 1px 0 rgba(255,255,255,.3);
-  width: fit-content; max-width: 560px;
+    0 0 0 1px rgba(255,255,255,.2),
+    0 20px 60px rgba(0,0,0,.4),
+    0 0 40px rgba(74,170,26,.15),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  width: fit-content; max-width: 380px;
 }
 .h-foto {
   display: block; width: 100%; height: auto;
-  max-width: 540px; border-radius: 22px;
+  max-width: 360px; border-radius: 18px;
 }
 
 /* ══ 8. HELPERS DE SEÇÃO ══ */
