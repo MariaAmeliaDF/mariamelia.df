@@ -165,7 +165,7 @@ section { padding: 4.5rem 0; }
   padding: 6rem 0 2.5rem;
 }
 .h-bdg-row {
-  display: flex; align-items: center; justify-content: flex-start;
+  display: flex; align-items: center; justify-content: center;
   gap: 12px; flex-wrap: wrap; margin-bottom: 1.1rem;
 }
 .h-bdg-part {
@@ -181,7 +181,7 @@ section { padding: 4.5rem 0; }
   font-size: clamp(2.8rem, 4.8vw, 4.6rem); font-weight: 800;
   color: #fff; line-height: 1.08; margin-bottom: 1.1rem; letter-spacing: -.03em;
   text-shadow: 0 2px 16px rgba(0,0,0,.25);
-  text-align: left;
+  text-align: center;
   white-space: normal;
 }
 .yl { color: var(--am); }
@@ -192,7 +192,7 @@ section { padding: 4.5rem 0; }
   hyphens: auto;
 }
 .h-sub strong { color: #fff; font-weight: 600; }
-.h-tags { display: flex; flex-direction: column; gap: .42rem; align-items: flex-start; }
+.h-tags { display: flex; flex-direction: column; gap: .42rem; align-items: center; }
 .h-tag {
   display: inline-flex; align-items: center; gap: .55rem;
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
@@ -1184,8 +1184,8 @@ section { padding: 4.5rem 0; }
 }
 
 /* ══ HERO BADGE — desktop acima, mobile abaixo das tags ══ */
-.h-bdg-desktop { display: flex; }  /* visível no desktop */
-.h-bdg-mobile  { display: none; }  /* oculto no desktop */
+.h-bdg-desktop { display: none; }  /* hidden — badge fica abaixo das tags */
+.h-bdg-mobile  { display: flex; justify-content: center; margin-top: 1.2rem; }  /* visível em todas as telas */
 
 @media(max-width:768px) {
   /* Mobile: esconde badge do topo, mostra o de baixo */
