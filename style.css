@@ -1319,3 +1319,22 @@ section { padding: 4.5rem 0; }
     word-break: normal;
   }
 }
+
+/* ══ HERO TAGS — coluna (uma embaixo da outra) ══ */
+.h-tags-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: .5rem !important;
+  align-items: flex-start !important;
+}
+.h-tags-col .h-tag {
+  width: auto;
+}
+
+/* Desktop: tags em coluna centralizada */
+@media(min-width:769px) {
+  .h-tags-col { align-items: center !important; }
+}
+
+/* Badge "Faça Parte" — mais espaço acima */
+.h-bdg-mobile { margin-top: 1.8rem !important; }
