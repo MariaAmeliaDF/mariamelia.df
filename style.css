@@ -1298,9 +1298,24 @@ section { padding: 4.5rem 0; }
 /* ══ QUEM É — mobile: foto centralizada no rosto ══ */
 @media(max-width:768px) {
   #quem .quem-bg {
-    opacity: .6 !important;
-    background-position: center 18% !important;
-    /* 18% posiciona o rosto dela (upper-center) no centro da tela */
-    background-size: cover !important;
+    opacity: .65 !important;
+    background-position: 70% 25% !important;
+    /* 70% direita, 25% topo = rosto aparece centralizado na tela */
+    background-size: 200% !important;
+    /* zoom para cortar bordas e focar no rosto */
+  }
+}
+
+/* ══ TRAJETÓRIA — título sem corte no mobile ══ */
+@media(max-width:768px) {
+  #historia .s-tit {
+    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  /* Todos os títulos de seção menores no mobile para não cortar */
+  .s-tit {
+    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+    word-break: normal;
   }
 }
