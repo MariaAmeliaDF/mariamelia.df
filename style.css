@@ -1216,3 +1216,49 @@ section { padding: 4.5rem 0; }
     padding: 4.5rem 0 2.5rem !important;
   }
 }
+
+/* ══ QUEM É — mobile: foto centralizada como no screenshot ══ */
+@media(max-width:768px) {
+
+  /* Seção com altura mínima para mostrar a foto atrás */
+  #quem {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Fundo mais visível no mobile — mostra o rosto centralizado */
+  #quem .quem-bg {
+    opacity: .55 !important;
+    background-position: center 10% !important; /* rosto no topo */
+    background-size: cover !important;
+  }
+
+  /* Overlay suave para legibilidade do texto */
+  #quem::after {
+    content: '';
+    position: absolute; inset: 0; z-index: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,.15) 0%,
+      rgba(255,255,255,.5) 40%,
+      rgba(255,255,255,.82) 65%,
+      rgba(255,255,255,.95) 100%
+    );
+    pointer-events: none;
+  }
+  #quem .container { position: relative; z-index: 1; }
+  #quem .q-grid { position: relative; z-index: 1; }
+
+  /* Texto escuro e legível sobre o fundo */
+  .q-txt p, .q-txt h2, .q-txt .pre-l { position: relative; z-index: 2; }
+
+  /* Remove o h-sub margin extra sem o vals */
+  .q-txt .btn { margin-top: 1.2rem; }
+}
+
+/* ══ H-SUB removido — ajustar espaçamento hero ══ */
+.h-sub { margin-bottom: 0; }  /* sem subtítulo, sem espaço */
+
+/* H-tags ficam logo após o título */
+.h-tit + .h-tags,
+.h-tit + .h-tags-row { margin-top: .8rem; }
