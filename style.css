@@ -1182,3 +1182,37 @@ section { padding: 4.5rem 0; }
     background-position: right center !important;
   }
 }
+
+/* ══ HERO BADGE — desktop acima, mobile abaixo das tags ══ */
+.h-bdg-desktop { display: flex; }  /* visível no desktop */
+.h-bdg-mobile  { display: none; }  /* oculto no desktop */
+
+@media(max-width:768px) {
+  /* Mobile: esconde badge do topo, mostra o de baixo */
+  .h-bdg-desktop { display: none !important; }
+  .h-bdg-mobile  { display: flex !important; width: 100%; margin-top: .6rem; }
+  .h-bdg-mobile .h-bdg-part { width: 100%; justify-content: center; }
+
+  /* Foto mobile: foco abaixo do pescoço/no busto */
+  /* A foto_oficial.jpeg tem o rosto no terço superior */
+  /* Queremos mostrar do pescoço para cima — position: top */
+  .h-mobile-bg {
+    background-position: center 5% !important;
+    background-size: 160% !important;
+  }
+
+  /* Quem é mobile: esconder cards Heitor (placeholders) */
+  .q-imgs,
+  .q-imgs-mobile { display: none !important; }
+
+  /* Título hero mobile: compacto, sem espaço desnecessário */
+  .h-tit {
+    font-size: clamp(2rem, 9vw, 2.8rem) !important;
+    margin-bottom: .7rem !important;
+  }
+
+  /* Texto abaixo do título: mais espaço interno */
+  .h-inner {
+    padding: 4.5rem 0 2.5rem !important;
+  }
+}
