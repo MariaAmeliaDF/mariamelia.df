@@ -1166,7 +1166,7 @@ section { padding: 4.5rem 0; }
   #abrace .s-pre { display: none; }
 
   /* Quem é mobile: garantir fundo mais visível */
-  #quem .quem-bg { opacity: .5 !important; }
+
 }
 
 /* ══ Extra small mobile ══ */
@@ -1175,13 +1175,7 @@ section { padding: 4.5rem 0; }
   .h-sub { font-size: .83rem !important; }
 }
 
-/* ══ QUEM É — mobile fix: fundo menos intrusivo ══ */
-@media(max-width:768px) {
-  #quem .quem-bg {
-    opacity: .25 !important;
-    background-position: right center !important;
-  }
-}
+
 
 /* ══ HERO BADGE — desktop acima, mobile abaixo das tags ══ */
 .h-bdg-desktop { display: none; }  /* hidden — badge fica abaixo das tags */
@@ -1226,12 +1220,7 @@ section { padding: 4.5rem 0; }
     overflow: hidden;
   }
 
-  /* Fundo mais visível no mobile — mostra o rosto centralizado */
-  #quem .quem-bg {
-    opacity: .55 !important;
-    background-position: center 10% !important; /* rosto no topo */
-    background-size: cover !important;
-  }
+
 
   /* Overlay suave para legibilidade do texto */
   #quem::after {
@@ -1304,4 +1293,14 @@ section { padding: 4.5rem 0; }
   /* Espaçamento entre título e tags */
   .h-tit { margin-bottom: 1.2rem !important; }
   .h-tags-row { gap: .5rem !important; margin-bottom: .2rem; }
+}
+
+/* ══ QUEM É — mobile: foto centralizada no rosto ══ */
+@media(max-width:768px) {
+  #quem .quem-bg {
+    opacity: .6 !important;
+    background-position: center 18% !important;
+    /* 18% posiciona o rosto dela (upper-center) no centro da tela */
+    background-size: cover !important;
+  }
 }
