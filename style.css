@@ -1338,3 +1338,97 @@ section { padding: 4.5rem 0; }
 
 /* Badge "Faça Parte" — mais espaço acima */
 .h-bdg-mobile { margin-top: 1.8rem !important; }
+
+/* ══ BOTÃO WHATSAPP PULSANTE ══ */
+#wpp-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 800;
+  animation: wpp-pulse 2.2s ease-in-out infinite;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+}
+.wpp-btn-img {
+  width: 100%; height: 100%;
+  object-fit: cover; border-radius: 50%;
+  display: block;
+}
+.wpp-btn-fallback {
+  width: 58px; height: 58px;
+  background: #25d366;
+  border-radius: 50%;
+  align-items: center; justify-content: center;
+  font-size: 1.8rem; color: #fff;
+}
+@keyframes wpp-pulse {
+  0%,100% { transform: scale(1);    box-shadow: 0 4px 20px rgba(37,211,102,.45); }
+  50%      { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,.7); }
+}
+#wpp-btn:hover { animation-play-state: paused; transform: scale(1.18); }
+
+/* ══ SOCIAL EXTRA (enchentes, dom orione, igrejas) ══ */
+.social-extra { margin-top: 3rem; }
+.social-extra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.4rem;
+}
+.social-extra-card {
+  background: var(--br);
+  border: 1px solid #daeac0;
+  border-radius: var(--rd);
+  padding: 1.5rem;
+  box-shadow: var(--s1);
+  display: flex; flex-direction: column; gap: .8rem;
+  transition: var(--tr);
+}
+.social-extra-card:hover { box-shadow: var(--s2); transform: translateY(-3px); }
+.social-extra-card.social-rs {
+  grid-column: span 1;
+  border-left: 4px solid #3b82f6; /* azul água */
+}
+.social-extra-ico {
+  width: 46px; height: 46px;
+  background: linear-gradient(135deg, var(--vd), var(--vl));
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.1rem; flex-shrink: 0;
+}
+.social-rs .social-extra-ico { background: linear-gradient(135deg, #1e40af, #3b82f6); }
+.social-extra-txt h3 { font-size: .95rem; font-weight: 700; color: var(--ve); margin-bottom: .4rem; }
+.social-extra-txt p  { font-size: .83rem; color: var(--tx2); line-height: 1.7; margin: 0; }
+.social-extra-txt strong { color: var(--ve); }
+.social-yt-lbl { font-size: .78rem; font-weight: 600; color: var(--vm); margin: .8rem 0 .4rem; display: flex; align-items: center; gap: .4rem; }
+.social-yt-wrap { border-radius: var(--rds); overflow: hidden; }
+@media(max-width:900px){
+  .social-extra-grid { grid-template-columns: 1fr; }
+  .social-extra-card.social-rs { grid-column: span 1; }
+}
+
+/* ══ FOOTER — bandeiras novas ══ */
+
+/* ══ LIBERDADE — destaque na seção Quem é ══ */
+.liberdade-destaque {
+  display: flex; align-items: flex-start; gap: .85rem;
+  background: linear-gradient(135deg, rgba(45,122,15,.07), rgba(254,220,80,.1));
+  border: 1px solid rgba(45,122,15,.2);
+  border-left: 4px solid var(--vm);
+  border-radius: var(--rds);
+  padding: .9rem 1rem;
+  margin: 1rem 0 1.2rem;
+}
+.liberdade-destaque i {
+  color: var(--vm); font-size: 1.1rem; flex-shrink: 0; margin-top: .2rem;
+}
+.liberdade-destaque p {
+  font-size: .88rem !important;
+  color: var(--tx) !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  font-style: normal !important;
+}
+.liberdade-destaque strong { color: var(--vm) !important; }
