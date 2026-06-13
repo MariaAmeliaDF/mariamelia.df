@@ -1474,3 +1474,14 @@ section { padding: 4.5rem 0; }
   #wpp-btn { right: 4.5rem; width: 80px; height: 80px; }
   .wpp-btn-img { width: 80px; height: 80px; }
 }
+
+/* ══ LOGO — garantir coração verde visível ao rolar ══ */
+#hdr.sc .nav-logo img {
+  filter: none !important;
+  /* Force SVG color channels intact */
+  image-rendering: crisp-edges;
+}
+/* Transição suave entre estados */
+.nav-logo img {
+  transition: filter .35s ease;
+}
