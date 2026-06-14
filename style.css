@@ -1590,3 +1590,20 @@ section { padding: 4.5rem 0; }
 @media(max-width:600px){
   .deps-track .dep-c { min-width: calc(100% - 0px); }
 }
+
+/* Vila: esconde título interno já que s-hd foi adicionado */
+#vila .vila-txt h2 { display: none; }
+#vila .vila-txt .s-ln { display: none; }
+
+/* WPP button — garantir fundo totalmente transparente */
+#wpp-btn {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+#wpp-btn svg {
+  overflow: visible !important;
+  background: transparent !important;
+}
