@@ -70,7 +70,7 @@ section { padding: 4.5rem 0; }
 #hdr:not(.sc) .nl { color: rgba(255,255,255,.92); }
 #hdr:not(.sc) .nl:hover { color: #fff; background: rgba(255,255,255,.12); }
 #hdr:not(.sc) .nl-active { color: #fff !important; border-color: rgba(255,255,255,.8); }
-#hdr:not(.sc) .nav-logo img { filter: brightness(10); }
+#hdr:not(.sc) .nav-logo img { filter: none; } /* BRANCO.svg already white */
 #hdr:not(.sc) .ham span { background: #fff; }
 /* Ao rolar — vira branco sólido */
 #hdr.sc {
@@ -82,7 +82,7 @@ section { padding: 4.5rem 0; }
 }
 #hdr.sc .nl { color: var(--ve); }
 #hdr.sc .nl:hover { color: var(--vm); background: rgba(45,122,15,.08); }
-#hdr.sc .nav-logo img { filter: none; }
+#hdr.sc .nav-logo img { filter: none; } /* swap to PRETO.svg via JS */
 #hdr.sc .ham span { background: var(--ve); }
 .nav-inner  { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .nav-links  { display: flex; align-items: center; gap: .2rem; flex: 1; justify-content: center; }
@@ -1345,16 +1345,19 @@ section { padding: 4.5rem 0; }
   bottom: 1.6rem;
   right: 5.5rem;
   width: 100px; height: 100px;
-  border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   z-index: 800;
   animation: wpp-pulse 2.2s ease-in-out infinite;
   text-decoration: none;
   overflow: visible;
-  background: transparent !important;
-  background-color: transparent !important;
+  background: none !important;
+  background-color: rgba(0,0,0,0) !important;
   box-shadow: none !important;
   border: none !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .wpp-btn-img {
   width: 100px; height: 100px;
@@ -1472,7 +1475,7 @@ section { padding: 4.5rem 0; }
 @media(max-width:600px){
   .social-extra-grid { grid-template-columns: 1fr; }
   #wpp-btn { right: 4.5rem; width: 80px; height: 80px; }
-  .wpp-btn-img { width: 80px; height: 80px; }
+  #wpp-btn svg { width: 80px; height: 80px; }
 }
 
 /* ══ LOGO — garantir coração verde visível ao rolar ══ */
@@ -1484,4 +1487,31 @@ section { padding: 4.5rem 0; }
 /* Transição suave entre estados */
 .nav-logo img {
   transition: filter .35s ease;
+}
+
+/* ══ LOGO SWAP — branco no topo, colorido ao rolar ══ */
+#hdr.sc #nav-logo-img { filter: none; }
+#hdr:not(.sc) #nav-logo-img { filter: none; }
+/* Logo transition */
+#nav-logo-img { transition: filter .3s ease; }
+
+/* ══ FOOTER — compacto e proporcional ══ */
+#ftr { padding: 2.5rem 0 0; }
+.ftr-grid {
+  grid-template-columns: 1.6fr 1fr 1.4fr 1fr !important;
+  gap: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.ftr-abt p { font-size: .77rem !important; line-height: 1.65 !important; }
+.f-col ul { gap: .38rem !important; }
+.f-col ul li a { font-size: .76rem !important; }
+.f-col h4 { margin-bottom: .7rem !important; font-size: .75rem !important; }
+.ftr-btm { padding: 1rem 0 !important; }
+.ftr-btm p, .ftr-btm a { font-size: .7rem !important; }
+
+/* Social extra section title banner */
+.social-title-banner {
+  background: var(--cz);
+  padding: 3rem 0 0;
+  text-align: center;
 }
