@@ -1344,14 +1344,14 @@ section { padding: 4.5rem 0; }
   position: fixed;
   bottom: 1.6rem;
   right: 5.5rem;
-  width: 100px; height: 100px;
+  width: 72px; height: 72px;
   display: flex; align-items: center; justify-content: center;
   z-index: 800;
   animation: wpp-pulse 2.2s ease-in-out infinite;
   text-decoration: none;
   overflow: visible;
   background: none !important;
-  background-color: rgba(0,0,0,0) !important;
+  background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
   border-radius: 0 !important;
@@ -1539,6 +1539,7 @@ section { padding: 4.5rem 0; }
   overflow: hidden;
   border-radius: var(--rd);
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .deps-track {
@@ -1547,16 +1548,18 @@ section { padding: 4.5rem 0; }
   transition: transform .55s cubic-bezier(.4,0,.2,1);
   will-change: transform;
   align-items: flex-start;
+  width: max-content; /* track grows as needed */
 }
 
-/* cada card no carrossel */
+/* cada card no carrossel — largura FIXA baseada no container */
 .deps-track .dep-c {
-  flex: 0 0 calc(33.33% - .95rem);
-  min-width: 0; /* allow shrinking */
-  width: calc(33.33% - .95rem);
+  flex-shrink: 0;
+  flex-grow: 0;
+  /* largura calculada em JS e aplicada via atributo style */
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
+  box-sizing: border-box;
 }
 
 /* Setas de navegação */
