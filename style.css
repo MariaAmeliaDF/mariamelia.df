@@ -1546,13 +1546,17 @@ section { padding: 4.5rem 0; }
   gap: 1.4rem;
   transition: transform .55s cubic-bezier(.4,0,.2,1);
   will-change: transform;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 /* cada card no carrossel */
 .deps-track .dep-c {
-  min-width: calc(33.33% - .94rem);
-  flex-shrink: 0;
+  flex: 0 0 calc(33.33% - .95rem);
+  min-width: 0; /* allow shrinking */
+  width: calc(33.33% - .95rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 /* Setas de navegação */
@@ -1585,10 +1589,10 @@ section { padding: 4.5rem 0; }
 .deps-dot.on { background: var(--vm); transform: scale(1.35); }
 
 @media(max-width:1024px){
-  .deps-track .dep-c { min-width: calc(50% - .7rem); }
+  .deps-track .dep-c { flex: 0 0 calc(50% - .7rem); width: calc(50% - .7rem); }
 }
 @media(max-width:600px){
-  .deps-track .dep-c { min-width: calc(100% - 0px); }
+  .deps-track .dep-c { flex: 0 0 100%; width: 100%; }
 }
 
 /* Vila: esconde título interno já que s-hd foi adicionado */
