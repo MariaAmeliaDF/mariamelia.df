@@ -1515,3 +1515,14 @@ section { padding: 4.5rem 0; }
   padding: 3rem 0 0;
   text-align: center;
 }
+
+/* ══ SOCIAL SECTIONS — ícone centralizado tipo ABRACE ══ */
+.social-sec-ico {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, var(--vd), var(--vl));
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; color: #fff;
+  margin: 0 auto 1rem;
+  box-shadow: 0 6px 20px rgba(26,92,8,.28);
+}
