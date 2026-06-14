@@ -1511,10 +1511,14 @@ section { padding: 4.5rem 0; }
 
 /* Social extra section title banner */
 .social-title-banner {
-  background: var(--cz);
-  padding: 3rem 0 0;
+  background: var(--br);
+  padding: 3.5rem 0 2.5rem;
   text-align: center;
+  border-bottom: 1px solid #daeac0;
 }
+.social-title-banner .s-pre { text-align: center; }
+.social-title-banner .s-tit { text-align: center; }
+.social-title-banner .s-ln  { margin: 10px auto 0; }
 
 /* ══ SOCIAL SECTIONS — ícone centralizado tipo ABRACE ══ */
 .social-sec-ico {
@@ -1525,4 +1529,64 @@ section { padding: 4.5rem 0; }
   font-size: 1.6rem; color: #fff;
   margin: 0 auto 1rem;
   box-shadow: 0 6px 20px rgba(26,92,8,.28);
+}
+
+/* ══ DEPOIMENTOS — carrossel automático ══ */
+#deps { background: var(--br); overflow: hidden; }
+
+.deps-carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--rd);
+  margin-bottom: 1.5rem;
+}
+
+.deps-track {
+  display: flex;
+  gap: 1.4rem;
+  transition: transform .55s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+  align-items: stretch;
+}
+
+/* cada card no carrossel */
+.deps-track .dep-c {
+  min-width: calc(33.33% - .94rem);
+  flex-shrink: 0;
+}
+
+/* Setas de navegação */
+.deps-nav-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.deps-arrow {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 2px solid rgba(45,122,15,.28);
+  background: var(--br);
+  color: var(--vm);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem;
+  transition: var(--tr);
+  box-shadow: var(--s1);
+}
+.deps-arrow:hover { background: var(--vm); border-color: var(--vm); color: #fff; box-shadow: var(--s2); }
+.deps-dots { display: flex; gap: .45rem; }
+.deps-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(45,122,15,.22); border: none; cursor: pointer;
+  transition: var(--tr); padding: 0;
+}
+.deps-dot.on { background: var(--vm); transform: scale(1.35); }
+
+@media(max-width:1024px){
+  .deps-track .dep-c { min-width: calc(50% - .7rem); }
+}
+@media(max-width:600px){
+  .deps-track .dep-c { min-width: calc(100% - 0px); }
 }
