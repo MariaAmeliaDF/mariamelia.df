@@ -2113,3 +2113,20 @@ section { padding: 4.5rem 0; }
   .ftr-abt { grid-column: span 1; }
   .ftr-mid-col { grid-column: span 1; }
 }
+
+/* ══ WPP — coração maior ══ */
+#wpp-btn {
+  width: 90px !important;
+  height: 90px !important;
+  bottom: 1.5rem !important;
+  right: 5.5rem !important;
+}
+#wpp-btn img {
+  width: 90px !important;
+  height: 90px !important;
+  filter: drop-shadow(0 6px 18px rgba(37,211,102,.6));
+}
+@media(max-width: 768px) {
+  #wpp-btn { width: 74px !important; height: 74px !important; right: 4.5rem !important; }
+  #wpp-btn img { width: 74px !important; height: 74px !important; }
+}
