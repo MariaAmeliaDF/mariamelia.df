@@ -1,2018 +1,1374 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Maria Amélia, Empresária, confeiteira, Vice-presidente do PL Mulher, esposa e mãe! apoiadora da Vila Pequenino Jesus e pré-candidata a Deputada Federal pelo Distrito Federal pelo PL.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mariaameliadf.github.io/mariamelia.df/">
+<title>Maria Amélia | Pré-candidata a Deputada Federal pelo DF</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mariaameliadf.github.io/mariamelia.df/">
+<meta property="og:title" content="Maria Amélia | Pré-candidata a Deputada Federal pelo DF">
+<meta property="og:description" content="Mais voz para o DF, mais força para o Brasil.">
+<meta property="og:image" content="https://mariaameliadf.github.io/mariamelia.df/foto_oficial.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Maria Amélia - Pré-candidata a Deputada Federal pelo DF">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mariaameliadf.github.io/mariamelia.df/">
+<meta property="twitter:title" content="Maria Amélia | Pré-candidata a Deputada Federal pelo DF">
+<meta property="twitter:description" content="Mais voz para o DF, mais força para o Brasil.">
+<meta property="twitter:image" content="https://mariaameliadf.github.io/mariamelia.df/foto_oficial.jpeg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='90' fill='%231a5c08'>♥︎</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><text y='150' font-size='155' fill='%231a5c08'>♥︎</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+<link rel="stylesheet" href="style.css">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ftr-logo img, .nav-logo img, .mob-h img').forEach(function(img) {
+    img.onerror = function() {
+      this.style.display = 'none';
+      var fb = this.nextElementSibling;
+      if (fb && fb.classList.contains('logo-txt-fb')) fb.style.display = 'block';
+    };
+  });
+});
+</script>
+</head>
+<body>
 
-/* ══ 1. VARIÁVEIS ══ */
-:root {
-  --vd:   #1a5c08;
-  --vm:   #2d7a0f;
-  --vl:   #4aaa1a;
-  --vlim: #8ecc20;
-  --vlima:#c8e820;
-  --am:   #fedc50;
-  --aml:  #fff8c0;
-  --ve:   #0e3505;
-  --vn:   #061a02;
-  --br:   #ffffff;
-  --cz:   #f4f8f0;
-  --tx:   #162b07;
-  --tx2:  #3d5c1a;
-  --s1:   0 4px 24px rgba(26,92,8,.13);
-  --s2:   0 14px 44px rgba(26,92,8,.22);
-  --rd:   16px;
-  --rds:  8px;
-  --tr:   all .32s cubic-bezier(.4,0,.2,1);
-}
+<!-- OVERLAY ESCURO, fundo do menu mobile -->
+<div class="mob-ov" id="mob-ov"></div>
 
-/* ══ 2. RESET ══ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--tx);
-  background: var(--br);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-img { max-width: 100%; height: auto; display: block; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-.container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
-section { padding: 4.5rem 0; }
+<!-- MENU MOBILE -->
+<nav class="mob-m" id="mob-m" aria-label="Menu mobile">
+  <div class="mob-h">
+    <img src="LOGO_MARIA_AMELIA_PRETO.svg" alt="Maria Amélia" width="120" height="40"
+         style="height:38px;width:auto;"
+         onerror="this.style.display='none'">
+    <button class="mob-x" id="mob-x" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="mob-ls">
+    <a href="#hero"     class="mob-l"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#quem"     class="mob-l"><i class="fa-solid fa-user"></i> História</a>
+    <a href="#historia" class="mob-l"><i class="fa-solid fa-timeline"></i> Trajetória</a>
+    <a href="#vila"     class="mob-l"><i class="fa-solid fa-heart"></i> Ações Sociais</a>
+    <a href="#pautas"   class="mob-l"><i class="fa-solid fa-list-check"></i> Bandeiras</a>
+    <a href="#redes"    class="mob-l"><i class="fa-solid fa-share-nodes"></i> Redes Sociais</a>
+  </div>
+</nav>
 
-/* ══ 3. BOTÕES ══ */
-.btn {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .8rem 1.9rem; border-radius: 50px;
-  font-family: 'Poppins', sans-serif; font-size: .92rem; font-weight: 600;
-  cursor: pointer; border: none; transition: var(--tr); text-decoration: none;
-}
-.btn-g  { background: linear-gradient(135deg,var(--vd),var(--vl)); color: #fff; box-shadow: 0 4px 18px rgba(26,92,8,.32); }
-.btn-g:hover  { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(26,92,8,.42); }
-.btn-y  { background: var(--am); color: var(--ve); font-weight: 700; box-shadow: 0 4px 18px rgba(254,220,80,.38); }
-.btn-y:hover  { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(254,220,80,.52); }
-.btn-o  { background: transparent; color: var(--vm); border: 2px solid var(--vm); }
-.btn-o:hover  { background: var(--vm); color: #fff; transform: translateY(-2px); }
-.btn-w  { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.6); }
-.btn-w:hover  { background: rgba(255,255,255,.12); border-color: #fff; transform: translateY(-2px); }
+<!-- HEADER -->
+<header id="hdr">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Maria Amélia - Início">
+        <img src="LOGO_MARIA_AMELIA_BRANCO.svg" alt="Maria Amélia" id="nav-logo-img"
+             onerror="this.onerror=null; this.src=''; this.alt='Maria Amélia'; this.style.cssText='font-size:1.1rem;font-weight:800;color:#0e3505;font-family:Poppins,sans-serif;';">
+      </a>
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="#hero"    class="nl" data-nav="hero">Home</a>
+        <a href="#quem"    class="nl" data-nav="quem">História</a>
+        <a href="#historia" class="nl" data-nav="historia">Trajetória</a>
+        <a href="#vila"    class="nl" data-nav="vila">Ações Sociais</a>
+        <a href="#pautas"  class="nl" data-nav="pautas">Bandeiras</a>
+        <a href="#redes"   class="nl" data-nav="redes">Redes Sociais</a>
+      </nav>
+      <button class="ham" id="ham" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-/* ══ 5. HEADER ══ */
-#hdr {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: .9rem 0;
-  /* Transparência verde no topo da página */
-  background: rgba(26,92,8,.18);
-  backdrop-filter: blur(16px) saturate(1.4);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  box-shadow: none;
-  transition: background .4s ease, box-shadow .4s ease, padding .3s ease;
-}
-/* Logo e links brancos quando header transparente */
-#hdr:not(.sc) .nl { color: rgba(255,255,255,.92); }
-#hdr:not(.sc) .nl:hover { color: #fff; background: rgba(255,255,255,.12); }
-#hdr:not(.sc) .nl-active { color: #fff !important; border-color: rgba(255,255,255,.8); }
-#hdr:not(.sc) .nav-logo img { filter: none; } /* BRANCO.svg already white */
-#hdr:not(.sc) .ham span { background: #fff; }
-/* Ao rolar — vira branco sólido */
-#hdr.sc {
-  background: rgba(255,255,255,.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 24px rgba(26,92,8,.1);
-  padding: .6rem 0;
-}
-#hdr.sc .nl { color: var(--ve); }
-#hdr.sc .nl:hover { color: var(--vm); background: rgba(45,122,15,.08); }
-#hdr.sc .nav-logo img { filter: none; } /* swap to PRETO.svg via JS */
-#hdr.sc .ham span { background: var(--ve); }
-.nav-inner  { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-.nav-links  { display: flex; align-items: center; gap: .2rem; flex: 1; justify-content: center; }
-.nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 44px; width: auto; display: block; }
-.nl {
-  padding: .45rem .85rem; font-size: .86rem; font-weight: 500;
-  color: var(--ve); border-radius: 6px; transition: var(--tr); position: relative;
-}
-.nl::after {
-  content: ''; position: absolute; bottom: 2px; left: 50%;
-  transform: translateX(-50%); width: 0; height: 2px;
-  background: var(--am); border-radius: 2px; transition: var(--tr);
-}
-.nl:hover::after { width: 60%; }
-.nl:hover { color: var(--vm); background: rgba(45,122,15,.08); }
-/* nl-cta removed */
-.ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
-.ham span { display: block; width: 26px; height: 2.5px; background: var(--ve); border-radius: 3px; transition: var(--tr); }
-.ham.on span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-.ham.on span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.ham.on span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+<!-- HERO -->
+<section id="hero">
+  <video
+    class="h-video-bg"
+    autoplay muted loop playsinline
+    poster="foto_oficial.jpeg"
+    aria-hidden="true"
+  >
+    <source src="FUNDO.mp4" type="video/mp4">
+  </video>
+  <div class="h-video-overlay" aria-hidden="true"></div>
+  <!-- Foto de fundo mobile -->
+  <div class="h-mobile-bg" aria-hidden="true"></div>
+  <div class="h-dots" aria-hidden="true"></div>
+  <div class="h-sh sh1" aria-hidden="true"></div>
+  <div class="h-sh sh2" aria-hidden="true"></div>
+  <div class="h-sh sh3" aria-hidden="true"></div>
+  <div class="container">
+    <div class="h-inner">
 
-/* ══ 6. MENU MOBILE ══ */
-.mob-ov { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 1040; opacity: 0; pointer-events: none; transition: opacity .35s; }
-.mob-ov.on { opacity: 1; pointer-events: all; }
-.mob-m { position: fixed; top: 0; right: -100%; width: 82%; max-width: 340px; height: 100vh; background: #fff; z-index: 1050; padding: 1.75rem; box-shadow: -10px 0 40px rgba(0,0,0,.12); transition: right .4s cubic-bezier(.4,0,.2,1); overflow-y: auto; }
-.mob-m.on { right: 0; }
-.mob-h { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 1px solid #daeac0; }
-.mob-x { width: 34px; height: 34px; border-radius: 8px; border: none; background: var(--cz); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--tx2); }
-.mob-ls { display: flex; flex-direction: column; gap: .2rem; }
-.mob-l { display: flex; align-items: center; gap: .7rem; padding: .8rem 1rem; border-radius: 10px; font-size: .93rem; font-weight: 500; color: var(--tx); transition: var(--tr); }
-.mob-l i { width: 20px; text-align: center; color: var(--vm); }
-.mob-l:hover { background: var(--cz); color: var(--vm); }
+      <!-- Coluna esquerda: texto -->
+      <div class="h-txt">
 
-/* ══ 7. HERO ══ */
-#hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding: 0;
-  background: linear-gradient(135deg,#0e3505 0%,#1a5c08 25%,#2d7a0f 50%,#4aaa1a 75%,#8ecc20 100%);
-}
-.h-video-bg {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: center; z-index: 0; pointer-events: none;
-}
-/* Fundo mobile com a foto oficial */
-.h-mobile-bg {
-  display: none;
-  position: absolute; inset: 0; z-index: 0;
-  background-image: url('foto_oficial.jpeg');
-  background-size: 130%; /* zoom in slightly so face fills more of frame */
-  background-position: center 8%; /* 8% = face at top, not cropped */
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
-.h-video-overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg,rgba(14,53,5,.82) 0%,rgba(26,92,8,.72) 40%,rgba(45,122,15,.60) 70%,rgba(74,170,26,.45) 100%);
-  pointer-events: none;
-}
-.h-dots {
-  position: absolute; inset: 0; z-index: 2;
-  background-image: radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px);
-  background-size: 36px 36px; pointer-events: none;
-}
-.h-sh { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.04); pointer-events: none; z-index: 2; }
-.sh1 { width: 580px; height: 580px; top: -180px; right: -80px; animation: flt 14s ease-in-out infinite; }
-.sh2 { width: 380px; height: 380px; bottom: -140px; left: -80px; animation: flt 18s ease-in-out infinite reverse; }
-.sh3 { width: 180px; height: 180px; top: 38%; left: 24%; opacity: .04; animation: flt 10s ease-in-out infinite 2s; }
-@keyframes flt { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(16px,-16px) scale(1.04)} }
+        <!-- Badge desktop: aparece acima do título no desktop -->
+        <div class="h-bdg-row h-bdg-desktop">
+          <a href="https://maria-amelia.xyz/cadastro/8BFA5A71"
+             target="_blank" rel="noopener noreferrer"
+             class="h-bdg-part">
+            <i class="fa-solid fa-heart"></i>
+            <span>Faça Parte da Nossa Caminhada!</span>
+          </a>
+        </div>
 
-.h-inner {
-  position: relative; z-index: 3;
-  display: grid; grid-template-columns: 1fr .75fr;
-  gap: 2.5rem; align-items: center;
-  padding: 5rem 0 2.5rem;
-}
-.h-bdg-row {
-  display: flex; align-items: center; justify-content: center;
-  gap: 12px; flex-wrap: wrap; margin-bottom: 1.1rem;
-}
-.h-bdg-part {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 48px; padding: 12px 24px; border-radius: 999px;
-  font-size: .82rem; font-weight: 800; line-height: 1;
-  background: var(--am); color: var(--ve); transition: all .3s ease;
-}
-.h-bdg-part:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(254,220,80,.45); }
-.h-bdg-part i { font-size: .9rem; flex-shrink: 0; }
+        <!-- Título principal -->
+        <h1 class="h-tit">
+          Mais voz para o <span class="yl">DF</span>.<br>
+          Mais força para o <span class="yl">Brasil</span>.
+        </h1>
 
-.h-tit {
-  font-size: clamp(2.8rem, 4.8vw, 4.6rem); font-weight: 800;
-  color: #fff; line-height: 1.08; margin-bottom: 1.1rem; letter-spacing: -.03em;
-  text-shadow: 0 2px 16px rgba(0,0,0,.25);
-  text-align: center;
-  white-space: normal;
-}
-.yl { color: var(--am); }
-.h-sub {
-  font-size: 1rem; color: rgba(255,255,255,.88);
-  line-height: 1.85; margin-bottom: 1.5rem; max-width: 580px;
-  text-align: justify;
-  hyphens: auto;
-}
-.h-sub strong { color: #fff; font-weight: 600; }
-.h-tags { display: flex; flex-direction: column; gap: .42rem; align-items: center; }
-.h-tag {
-  display: inline-flex; align-items: center; gap: .55rem;
-  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
-  color: rgba(255,255,255,.88); padding: .5rem 1rem; border-radius: 8px;
-  font-size: .82rem; font-weight: 500; width: fit-content;
-}
-.h-tag i { color: var(--am); font-size: .8rem; }
+        <!-- Tags de identificação -->
+        <div class="h-tags h-tags-col">
+          <span class="h-tag"><i class="fa-solid fa-people-roof"></i> Vice-presidente do PL Mulher DF</span>
+          <span class="h-tag"><i class="fa-solid fa-building-columns"></i> Pré-candidata a Deputada Federal, PL</span>
+          <span class="h-tag"><i class="fa-solid fa-cake-candles"></i> Fundadora da Maria Amélia Doces</span>
+        </div>
 
-.h-img-wr {
-  display: flex; align-items: center; justify-content: center; position: relative;
-}
-.h-glow {
-  position: absolute; width: 420px; height: 520px;
-  background: radial-gradient(ellipse,rgba(254,220,80,.18) 0%,transparent 70%);
-  border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;
-}
-.h-foto-frame {
-  position: relative; border-radius: 22px; padding: 5px;
-  background: linear-gradient(145deg, rgba(254,220,80,.5), rgba(255,255,255,.12), rgba(74,170,26,.4));
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.2),
-    0 20px 60px rgba(0,0,0,.4),
-    0 0 40px rgba(74,170,26,.15),
-    inset 0 1px 0 rgba(255,255,255,.25);
-  width: fit-content; max-width: 380px;
-}
-.h-foto {
-  display: block; width: 100%; height: auto;
-  max-width: 360px; border-radius: 18px;
-}
+        <!-- Badge mobile: aparece abaixo das tags -->
+        <div class="h-bdg-row h-bdg-mobile" style="margin-top:1.8rem;">
+          <a href="https://maria-amelia.xyz/cadastro/8BFA5A71"
+             target="_blank" rel="noopener noreferrer"
+             class="h-bdg-part">
+            <i class="fa-solid fa-heart"></i>
+            <span>Faça Parte da Nossa Caminhada!</span>
+          </a>
+        </div>
 
-/* ══ 8. HELPERS DE SEÇÃO ══ */
-.s-pre { font-size: .9rem; font-weight: 700; color: var(--vm); text-transform: uppercase; letter-spacing: .12em; margin-bottom: .45rem; }
-.s-tit { font-size: clamp(2.2rem,3.8vw,3.2rem); font-weight: 800; color: var(--ve); line-height: 1.18; }
-.s-tit span { color: var(--vm); }
-.s-ln { width: 50px; height: 4px; background: linear-gradient(90deg,var(--vm),var(--am)); border-radius: 2px; margin: 10px 0 18px; }
-.s-sub { font-size: .97rem; color: var(--tx2); max-width: 580px; }
-.s-hd { text-align: center; margin-bottom: 2.8rem; }
-.s-hd .s-ln { margin: 10px auto 18px; }
-.s-hd .s-sub { margin: 0 auto; }
-.pre-l {
-  display: inline-block; color: var(--vm); font-weight: 700;
-  font-size: .74rem; text-transform: uppercase; letter-spacing: .12em;
-  margin-bottom: .6rem; padding: .26rem .7rem;
-  background: rgba(45,122,15,.09); border-radius: 4px;
-  border-left: 3px solid var(--vm);
-}
+      </div>
 
-/* ══ 9. QUEM É MARIA AMÉLIA ══ */
-#quem { background: var(--br); position: relative; overflow: hidden; }
-#quem .quem-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background-size: cover; background-position: center; background-repeat: no-repeat;
-  opacity: 0.42; pointer-events: none;
-}
-#quem .container { position: relative; z-index: 1; }
-.q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
-.q-imgs { position: relative; height: 490px; }
-.qi { position: absolute; border-radius: var(--rd); overflow: hidden; box-shadow: var(--s2); }
-.qi1 { width: 280px; height: 380px; top: 0; left: 0; z-index: 2; background: var(--ve); }
-.qi2 { width: 265px; height: 340px; bottom: 0; right: 0; z-index: 3; border: 4px solid #fff; background: linear-gradient(135deg,var(--am),var(--vlima)); }
-.qi img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-/* Mobile: foto centralizada */
-.q-imgs-mobile { display: none; justify-content: center; margin-bottom: 2rem; }
-.q-imgs-mobile img { width: 220px; height: 280px; object-fit: cover; border-radius: var(--rd); box-shadow: var(--s2); margin: 0 auto; }
-.q-txt h2 { font-size: clamp(1.65rem,2.7vw,2.3rem); font-weight: 800; color: var(--ve); margin-bottom: 1.2rem; line-height: 1.2; }
-.q-txt h2 span { color: var(--vm); }
-.q-txt p { color: var(--tx2); margin-bottom: 1rem; font-size: .95rem; line-height: 1.8; }
-.q-txt strong { color: var(--ve); font-weight: 600; }
-.vals { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem .8rem; margin: 1.2rem 0; }
-.vi { display: flex; align-items: center; gap: .48rem; font-size: .82rem; font-weight: 500; color: var(--tx); padding: .15rem 0; }
-.vi i { color: var(--vm); font-size: .82rem; flex-shrink: 0; }
+      <!-- Coluna direita: foto oficial com moldura (desktop) -->
+      <div class="h-img-wr">
+        <div class="h-glow" aria-hidden="true"></div>
+        <div class="h-foto-frame">
+          <img
+            src="foto_oficial.jpeg"
+            alt="Maria Amélia - Pré-candidata a Deputada Federal"
+            class="h-foto"
+            loading="eager"
+            width="420"
+            height="550"
+          >
+        </div>
+      </div>
 
-/* ══ 10. AÇÕES SOCIAIS ══ */
-#vila { background: var(--cz); position: relative; overflow: hidden; }
-#vila .vila-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background-size: cover; background-position: center; background-repeat: no-repeat;
-  opacity: 0.28; pointer-events: none;
-}
-#vila .container { position: relative; z-index: 1; }
-.vila-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem; }
-.vila-img-wrap { position: relative; }
-.vila-img-box { border-radius: var(--rd); overflow: hidden; box-shadow: var(--s2); position: relative; }
-.vila-img-main { width: 100%; height: 360px; object-fit: cover; object-position: center; display: block; }
-.vila-txt { padding-top: 1.5rem; }
-.vila-txt h2 { font-size: clamp(1.6rem,2.7vw,2.2rem); font-weight: 800; color: var(--ve); margin-bottom: .7rem; line-height: 1.2; }
-.vila-txt h2 span { color: var(--vm); }
-.vila-txt > p { color: var(--tx2); font-size: .95rem; line-height: 1.8; margin-bottom: 1.2rem; }
-.vila-info-cards { display: flex; flex-direction: column; gap: .75rem; margin: 1.4rem 0; }
-.vic { display: flex; align-items: flex-start; gap: .8rem; padding: 1rem; background: #fff; border-radius: var(--rds); border: 1px solid #daeac0; box-shadow: var(--s1); }
-.vic-ico { width: 38px; height: 38px; background: linear-gradient(135deg,var(--vd),var(--vl)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: .9rem; flex-shrink: 0; }
-.vic-txt strong { display: block; font-size: .84rem; font-weight: 700; color: var(--ve); margin-bottom: .15rem; }
-.vic-txt p { font-size: .8rem; color: var(--tx2); line-height: 1.55; }
-.vila-btns { display: flex; gap: .85rem; flex-wrap: wrap; margin-top: 1.4rem; }
+    </div>
+  </div>
+</section>
 
-/* ABRACE */
-.abrace-section { background: var(--br); border-radius: 20px; padding: 3rem; box-shadow: var(--s1); border: 1px solid #daeac0; }
-.abrace-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.abrace-txt h2 { font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 800; color: var(--ve); margin-bottom: .7rem; line-height: 1.2; }
-.abrace-txt h2 span { color: var(--vm); }
-.abrace-txt > p { color: var(--tx2); font-size: .93rem; line-height: 1.8; margin-bottom: 1rem; }
-.abrace-feed-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.abrace-card {
-  background: linear-gradient(135deg, rgba(45,122,15,.06), rgba(254,220,80,.08));
-  border: 1px solid rgba(45,122,15,.15); border-radius: var(--rd);
-  padding: 1.4rem; text-align: center; transition: var(--tr);
-}
+<!-- QUEM É MARIA AMÉLIA -->
+<section id="quem">
+  <div class="quem-bg" style="background-image:url('fundo_quem.jpeg')"></div>
+  <div class="container">
+    <div class="q-grid">
+
+      <!-- Coluna esquerda: fotos empilhadas -->
+      <div class="q-imgs rl" aria-hidden="true">
+        <div class="qi qi1">
+          <div class="heitor-cloud">
+              <span class="hc-star1">✦</span>
+              <span class="hc-cloud">☁️</span>
+              <span class="hc-name">Heitor</span>
+              <span class="hc-sub">foto a enviar</span>
+              <span class="hc-star2">✦</span>
+            </div>
+        </div>
+        <div class="qi qi2">
+          <div class="heitor-cloud">
+              <span class="hc-star1">✦</span>
+              <span class="hc-cloud">☁️</span>
+              <span class="hc-name">Heitor</span>
+              <span class="hc-sub">foto a enviar</span>
+              <span class="hc-star2">✦</span>
+            </div>
+        </div>
+      </div>
 
 
-/* ══ 11. PAUTAS ══ */
-#pautas { background: var(--br); }
-.pautas-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; }
-.pc {
-  padding: 1.75rem; background: var(--cz);
-  border-radius: var(--rd); border: 1px solid transparent;
-  transition: var(--tr); cursor: pointer;
-  position: relative; overflow: hidden;
-}
-.pc::before {
-  content: ''; position: absolute; top: 0; left: 0;
-  width: 4px; height: 100%;
-  background: linear-gradient(180deg,var(--vm),var(--vlim));
-  transform: scaleY(0); transition: var(--tr);
-  border-radius: 0 2px 2px 0;
-}
-.pc:hover { background: var(--br); border-color: rgba(45,122,15,.16); box-shadow: var(--s2); transform: translateY(-6px); }
-.pc:hover::before { transform: scaleY(1); }
-.pc-ico { width: 54px; height: 54px; border-radius: 15px; background: linear-gradient(135deg,var(--vd),var(--vl)); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.3rem; color: #fff; transition: var(--tr); box-shadow: 0 4px 14px rgba(26,92,8,.26); }
-.pc:hover .pc-ico { transform: scale(1.1) rotate(-5deg); }
-.pc h3 { font-size: .98rem; font-weight: 700; margin-bottom: .6rem; color: var(--ve); }
-.pc p { font-size: .83rem; color: var(--tx2); line-height: 1.7; margin-bottom: 1rem; }
-.pc-more { font-size: .79rem; font-weight: 600; color: var(--vm); display: inline-flex; align-items: center; gap: .4rem; transition: var(--tr); }
-.pc:hover .pc-more { gap: .7rem; }
+      <!-- Foto mobile centralizada -->
+      <div class="q-imgs-mobile">
+        <div style="width:220px;height:280px;margin:0 auto;">
+          <div class="heitor-cloud">
+            <span class="hc-star1">✦</span>
+            <span class="hc-cloud">☁️</span>
+            <span class="hc-name">Heitor</span>
+            <span class="hc-sub">foto a enviar</span>
+            <span class="hc-star2">✦</span>
+          </div>
+        </div>
+      </div>
 
-/* ══ 12. TRAJETÓRIA ══ */
-#historia { background: var(--cz); position: relative; overflow: hidden; }
-.historia-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background-image: url('fundo_historia.jpeg');
-  background-size: cover; background-position: center; background-repeat: no-repeat;
-  opacity: 0.18; pointer-events: none;
-}
-#historia .container { position: relative; z-index: 1; }
+      <!-- Coluna direita: texto biográfico -->
+      <div class="q-txt rr">
+        <span class="pre-l">Conheça a trajetória</span>
+        <h2>Quem é <span>Maria Amélia</span></h2>
+        <div class="s-ln"></div>
+        <p>Natural de <strong>Bambuí, Minas Gerais</strong>, Maria Amélia escolheu Brasília para construir sua vida, sua família e sua história.</p>
+        <p>Mulher de fé, esposa, mãe, avó e empresária, acredita que valores como <strong>responsabilidade, trabalho, família e liberdade</strong> são a base para transformar realidades.</p>
+        <p>Sua trajetória no empreendedorismo, na política e no trabalho social reforça seu compromisso com pessoas, oportunidades e desenvolvimento para o Distrito Federal.</p>
 
-/* Nova linha do tempo com fotos alternadas */
-.tl { position: relative; max-width: 900px; margin: 0 auto; }
-.tl::before {
-  content: ''; position: absolute; left: 50%; transform: translateX(-50%);
-  top: 0; bottom: 0; width: 3px;
-  background: linear-gradient(180deg,var(--vm),rgba(142,204,32,.3));
-  border-radius: 2px;
-}
-.tl-i {
-  display: grid;
-  grid-template-columns: 1fr 40px 1fr;
-  gap: 0 1rem;
-  margin-bottom: 2.5rem;
-  position: relative;
-  align-items: start;
-}
-/* Para eventos ímpares: imagem esquerda, ponto central, card direita */
-.tl-i:nth-child(odd) .tl-img-col { grid-column: 1; grid-row: 1; }
-.tl-i:nth-child(odd) .tl-dot     { grid-column: 2; grid-row: 1; }
-.tl-i:nth-child(odd) .tl-c       { grid-column: 3; grid-row: 1; }
-/* Para eventos pares: card esquerda, ponto central, imagem direita */
-.tl-i:nth-child(even) .tl-c       { grid-column: 1; grid-row: 1; text-align: right; }
-.tl-i:nth-child(even) .tl-dot     { grid-column: 2; grid-row: 1; }
-.tl-i:nth-child(even) .tl-img-col { grid-column: 3; grid-row: 1; }
+        <div class="liberdade-destaque">
+          <i class="fa-solid fa-flag"></i>
+          <p>Maria Amélia defende a <strong>liberdade</strong> como um princípio fundamental para o desenvolvimento do Brasil. Liberdade para acreditar, se expressar, educar os filhos e empreender. Um dos pilares para a construção de um país mais forte, justo, próspero e livre.</p>
+        </div>
 
-.tl-img-col { border-radius: var(--rd); overflow: hidden; box-shadow: var(--s2); height: 200px; }
-.tl-foto { width: 100%; height: 100%; object-fit: cover; display: block; }
-.tl-dot {
-  width: 17px; height: 17px;
-  background: var(--vm); border: 4px solid #fff;
-  border-radius: 50%; z-index: 2;
-  box-shadow: 0 0 0 3px rgba(45,122,15,.22);
-  margin: .5rem auto 0;
-  justify-self: center;
-}
-.tl-c {
-  background: var(--br); border-radius: var(--rd);
-  padding: 1.35rem; box-shadow: var(--s1); transition: var(--tr);
-}
-.tl-c:hover { box-shadow: var(--s2); transform: translateY(-3px); }
-.tl-yr { display: inline-block; background: var(--vm); color: #fff; font-size: .7rem; font-weight: 700; padding: .17rem .58rem; border-radius: 4px; margin-bottom: .6rem; letter-spacing: .05em; }
-.tl-c h3 { font-size: .95rem; font-weight: 700; margin-bottom: .42rem; color: var(--ve); }
-.tl-c p { font-size: .81rem; color: var(--tx2); line-height: 1.65; }
+        <a href="#pautas" class="btn btn-g"><i class="fa-solid fa-list-check"></i> Ver Minhas Bandeiras</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ══ 13. INSTAGRAM FEED ══ */
-#insta-feed { background: var(--br); padding: 4rem 0; }
-.insta-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-.insta-slider-wrap { position: relative; display: flex; align-items: center; gap: 1rem; }
-.insta-slider { flex: 1; overflow: hidden; border-radius: var(--rd); }
-.insta-embed-wrap {
-  display: flex; gap: 1.25rem;
-  overflow-x: auto; scroll-snap-type: x mandatory;
-  -ms-overflow-style: none; scrollbar-width: none; padding-bottom: 4px;
-}
-.insta-embed-wrap::-webkit-scrollbar { display: none; }
-.insta-embed-item { flex: 0 0 calc(25% - 0.95rem); min-width: 260px; scroll-snap-align: start; }
-.insta-embed-item .instagram-media { max-width: 100% !important; min-width: 100% !important; width: 100% !important; margin: 0 !important; }
-.insta-nav-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(45,122,15,.28); background: var(--br); color: var(--vm); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--tr); font-size: .9rem; flex-shrink: 0; box-shadow: var(--s1); }
-.insta-nav-btn:hover { background: var(--vm); border-color: var(--vm); color: #fff; }
-.insta-cta { text-align: center; margin-top: 1.5rem; }
+<!-- TRAJETÓRIA, linha do tempo -->
+<section id="historia">
+  <div class="historia-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="s-hd rv">
+      <p class="s-pre">Trajetória</p>
+      <h2 class="s-tit">Uma História de <span>Trabalho e Fé</span></h2>
+      <div class="s-ln"></div>
+    </div>
+    <div class="tl">
 
-/* ══ 14. GALERIA ══ */
-#galeria { background: var(--br); }
-.gal-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .85rem; }
-.gi { border-radius: var(--rds); overflow: hidden; cursor: pointer; position: relative; aspect-ratio: 1; }
-.gi:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-.gi img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
-.gi:hover img { transform: scale(1.06); }
-.gi-ov { position: absolute; inset: 0; background: rgba(26,92,8,.62); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--tr); color: #fff; font-size: 1.7rem; }
-.gi:hover .gi-ov { opacity: 1; }
-.gal-loading { text-align: center; padding: 3rem; color: var(--tx2); font-size: .9rem; grid-column: span 3; }
-.gal-loading i { display: block; font-size: 2rem; color: var(--vm); margin-bottom: .75rem; animation: spin 1s linear infinite; }
-@keyframes spin { to{transform:rotate(360deg)} }
-.gal-cta { text-align: center; margin-top: 2rem; }
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto origem</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">Origem · 1968</span>
+          <h3>Bambuí, Minas Gerais</h3>
+          <p>Maria Amélia nasceu em 1968, em Bambuí, Minas Gerais. Criada com os valores de fé, trabalho e amor à família, esses princípios se tornaram a base de tudo o que construiu ao longo da vida.</p>
+        </div>
+      </div>
 
-/* ══ 15. LIGHTBOX ══ */
-.lbx-ov { position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
-.lbx-ov.on { opacity: 1; pointer-events: all; }
-.lbx-img { max-width: 90vw; max-height: 88vh; border-radius: 8px; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,.5); }
-.lbx-close { position: fixed; top: 1.2rem; right: 1.4rem; color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none; line-height: 1; opacity: .8; }
-.lbx-close:hover { opacity: 1; }
-.lbx-nav { position: fixed; top: 50%; transform: translateY(-50%); color: #fff; font-size: 2rem; cursor: pointer; background: rgba(255,255,255,.1); border: none; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s; }
-.lbx-nav:hover { background: rgba(255,255,255,.25); }
-.lbx-prev { left: 1rem; }
-.lbx-next { right: 1rem; }
-.lbx-caption { position: fixed; bottom: 1.2rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,.75); font-size: .82rem; text-align: center; max-width: 80%; }
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto Brasília</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">Chegada a Brasília</span>
+          <h3>Um Novo Começo na Capital</h3>
+          <p>Ainda jovem, Maria Amélia chegou a Brasília em busca de novas oportunidades. A capital federal se tornaria o cenário de toda a sua trajetória, onde construiu sua família, seu negócio e sua vida.</p>
+        </div>
+      </div>
 
-/* ══ 16. YOUTUBE ══ */
-#yt-sec { background: var(--cz); }
-.yt-main-only { max-width: 780px; margin: 0 auto; }
-.yt-vw { border-radius: var(--rd); overflow: hidden; box-shadow: var(--s2); position: relative; padding-bottom: 56.25%; height: 0; }
-.yt-vw iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-.yt-inf { margin-top: 1.2rem; text-align: center; }
-.yt-inf h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .38rem; color: var(--ve); }
-.yt-inf p { font-size: .83rem; color: var(--tx2); }
-.yt-cta { margin-top: 1.5rem; text-align: center; }
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto início confeitaria</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">1989</span>
+          <h3>Os Primeiros Bolos e Encomendas</h3>
+          <p>Em 1989, Maria Amélia começou a fazer bolos e doces em casa, atendendo encomendas para amigos e vizinhos. De encomendas para vizinhos e amigos, uma vocação foi florescendo e se transformaria em uma das maiores referências da confeitaria do Distrito Federal.</p>
+        </div>
+      </div>
 
-/* ══ 17. DEPOIMENTOS — grade completa visível ══ */
-#deps { background: var(--br); overflow: visible; }
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto primeira loja</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">2004</span>
+          <h3>Primeira Loja Física, Lago Sul</h3>
+          <p>Em 2004, abriu sua primeira loja física no Lago Sul, em espaço alugado. Os primeiros atendimentos presenciais marcaram o início de uma empresa que cresceria para se tornar sinônimo de qualidade e carinho no DF.</p>
+        </div>
+      </div>
 
-/* Grade 3 colunas — todos os cards visíveis, sem corte */
-.deps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
-  margin-bottom: 2rem;
-}
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto Jardim Botânico</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">2013</span>
+          <h3>Sede Própria, Jardim Botânico</h3>
+          <p>Em 2013, inaugurou a unidade do Jardim Botânico, que se tornaria a <strong>sede oficial</strong> da Maria Amélia Doces. Um marco que consolidou a empresa e abriu caminho para a expansão que se seguiu.</p>
+        </div>
+      </div>
 
-.dep-c {
-  background: var(--cz);
-  border-radius: var(--rd);
-  padding: 1.6rem;
-  border: 1px solid rgba(0,0,0,.04);
-  display: flex;
-  flex-direction: column;
-  height: auto; /* nunca cortar */
-  transition: var(--tr);
-}
-.dep-c:hover { box-shadow: var(--s2); transform: translateY(-3px); }
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto reconhecimento</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">Reconhecimento</span>
+          <h3>Confeiteira Reconhecida por Autoridades</h3>
+          <p>Seu talento e dedicação fizeram de Maria Amélia uma confeiteira reconhecida pelas maiores autoridades do país, construindo relações pautadas em valores e confiança.</p>
+        </div>
+      </div>
 
-.dep-st { color: var(--am); font-size: .85rem; margin-bottom: .4rem; letter-spacing: .05em; }
-.dep-q  { font-size: 2.6rem; color: rgba(45,122,15,.15); line-height: 1; font-family: Georgia, serif; margin-bottom: .4rem; }
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto ação social</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">Ações Sociais</span>
+          <h3>Uma Vida Dedicada ao Próximo</h3>
+          <p>Ao longo dos anos, Maria Amélia construiu uma trajetória sólida de responsabilidade social, apoiando instituições como a <strong>Vila do Pequenino Jesus</strong>, a <strong>ABRACE</strong>, o <strong>Instituto Dom Orione</strong>, o <strong>Abrigo Nosso Lar</strong> e o <strong>Lar dos Velhinhos Bezerra de Menezes</strong>. Para ela, a fé sem obras é vazia, e cada causa apoiada é uma forma concreta de servir ao próximo.</p>
+        </div>
+      </div>
 
-/* Texto completo sem overflow nem clamp */
-.dep-c p {
-  font-size: .86rem;
-  color: var(--tx2);
-  line-height: 1.75;
-  margin-bottom: 1.2rem;
-  font-style: italic;
-  flex: 1;
-  /* Sem line-clamp, sem overflow hidden — texto completo sempre visível */
-}
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto PL Mulher</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">Vice-Presidente PL Mulher DF</span>
+          <h3>Liderança Política com Propósito</h3>
+          <p>Por convite da Deputada Federal <strong>Bia Kicis</strong>, e reconhecida pela sua trajetória como empresária, mãe e mulher de fé, Maria Amélia assumiu a Vice-Presidência do PL Mulher no Distrito Federal, levando para a política os valores que sempre guiaram sua vida.</p>
+        </div>
+      </div>
 
-.dep-au { display: flex; align-items: center; gap: .65rem; margin-top: auto; }
-.dep-av {
-  width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
-  background: linear-gradient(135deg,var(--vd),var(--vm));
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: .95rem; font-weight: 700;
-}
-.dep-in strong { display: block; font-size: .84rem; font-weight: 700; color: var(--ve); }
-.dep-in span   { font-size: .73rem; color: var(--tx2); }
+      <div class="tl-i rv">
+        <div class="tl-dot"></div>
+        <div class="tl-img-col">
+          <div class="heitor-cloud"><span class="hc-star1">✦</span><span class="hc-cloud">☁️</span><span class="hc-name">Heitor</span><span class="hc-sub">foto lançamento</span><span class="hc-star2">✦</span></div>
+        </div>
+        <div class="tl-c">
+          <span class="tl-yr">19 mai 2025</span>
+          <h3>Lançamento da Pré-Candidatura</h3>
+          <p>Em 19 de maio de 2025, com a presença de <strong>Michelle Bolsonaro</strong> e da Deputada Federal <strong>Bia Kicis</strong>, Maria Amélia lançou oficialmente sua pré-candidatura a Deputada Federal pelo PL no Distrito Federal.</p>
+        </div>
+      </div>
 
-/* Controles de navegação (mantidos no HTML para compatibilidade JS) */
-.deps-nav {
-  display: flex; align-items: center; justify-content: center;
-  gap: .85rem; margin-top: .5rem;
-}
-.sl-btn {
-  width: 42px; height: 42px; border-radius: 50%;
-  border: 2px solid rgba(45,122,15,.28); background: none;
-  color: var(--vm); cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: var(--tr); font-size: .86rem;
-}
-.sl-btn:hover { background: var(--vm); border-color: var(--vm); color: #fff; }
-.sl-dots { display: flex; gap: .45rem; }
-.sl-d {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(45,122,15,.22); transition: var(--tr);
-  cursor: pointer; border: none;
-}
-.sl-d.on { background: var(--vm); transform: scale(1.3); }
+    </div>
+  </div>
+</section>
 
-/* Responsive */
-@media(max-width:1024px){
-  .deps-grid { grid-template-columns: repeat(2,1fr); }
-}
-@media(max-width:600px){
-  .deps-grid { grid-template-columns: 1fr; }
-}
+<!-- AÇÕES SOCIAIS -->
+<section id="acoes" style="background:#f8faf5;padding:5rem 0 4rem;">
+  <div class="container">
+    <div class="s-hd rv" style="margin-bottom:3rem;">
+      <p class="s-pre">Ações Sociais</p>
+      <h2 class="s-tit">Solidariedade e <span>Responsabilidade Social</span></h2>
+      <div class="s-ln"></div>
+      <p class="s-sub">Maria Amélia acredita que cuidar dos mais vulneráveis é o verdadeiro sentido da ação política.</p>
+    </div>
+
+    <div class="acs-mosaic">
+
+      <a href="acao-vila.html?from=acoes" class="acs-item acs-item--xl">
+        <div class="acs-bg" style="--c1:#0a2e04;--c2:#1a5c08"></div>
+        <div class="acs-num">01</div>
+        <div class="acs-ico-lg"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="acs-info">
+          <span class="acs-tag">15 anos · Brasília DF</span>
+          <h3>Vila do Pequenino Jesus</h3>
+          <p>Acolhimento de pessoas com deficiência. Toda terça-feira Maria Amélia abre sua fábrica para os assistidos.</p>
+        </div>
+        <div class="acs-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </a>
+
+      <a href="acao-abrace.html?from=acoes" class="acs-item acs-item--lg">
+        <div class="acs-bg" style="--c1:#7c2d12;--c2:#c2410c"></div>
+        <div class="acs-num">02</div>
+        <div class="acs-ico-lg"><i class="fa-solid fa-ribbon"></i></div>
+        <div class="acs-info">
+          <span class="acs-tag">Desde 1986 · Crianças com câncer</span>
+          <h3>ABRACE</h3>
+          <p>Crianças e adolescentes com câncer recebem apoio integral. Maria Amélia realiza a festa de 15 anos.</p>
+        </div>
+        <div class="acs-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </a>
+
+      <a href="acao-rs.html?from=acoes" class="acs-item">
+        <div class="acs-bg" style="--c1:#1e3a8a;--c2:#2563eb"></div>
+        <div class="acs-num">03</div>
+        <div class="acs-ico-lg"><i class="fa-solid fa-droplet"></i></div>
+        <div class="acs-info">
+          <span class="acs-tag">Campanha 2024</span>
+          <h3>Enchentes RS</h3>
+          <p>Maior campanha humanitária de Brasília.</p>
+        </div>
+        <div class="acs-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </a>
+
+      <a href="acao-orione.html?from=acoes" class="acs-item">
+        <div class="acs-bg" style="--c1:#134e1a;--c2:#16a34a"></div>
+        <div class="acs-num">04</div>
+        <div class="acs-ico-lg"><i class="fa-solid fa-cross"></i></div>
+        <div class="acs-info">
+          <span class="acs-tag">+50 anos · Lago Sul</span>
+          <h3>Instituto Dom Orione</h3>
+          <p>Deficiências múltiplas, missão de caridade.</p>
+        </div>
+        <div class="acs-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </a>
+
+      <a href="acao-nossolar.html?from=acoes" class="acs-item">
+        <div class="acs-bg" style="--c1:#064e3b;--c2:#059669"></div>
+        <div class="acs-num">05</div>
+        <div class="acs-ico-lg"><i class="fa-solid fa-children"></i></div>
+        <div class="acs-info">
+          <span class="acs-tag">Desde 1973 · Núcleo Bandeirante</span>
+          <h3>Abrigo Nosso Lar</h3>
+          <p>Proteção a crianças vulneráveis e enfermas.</p>
+        </div>
+        <div class="acs-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </a>
+
+      <a href="acao-bezerra.html?from=acoes" class="acs-item">
+        <div class="acs-bg" style="--c1:#4c1d95;--c2:#7c3aed"></div>
+        <div class="acs-num">06</div>
+        <div class="acs-ico-lg"><i class="fa-solid fa-person-cane"></i></div>
+        <div class="acs-info">
+          <span class="acs-tag">74 idosos · Sobradinho</span>
+          <h3>Lar dos Velhinhos Bezerra de Menezes</h3>
+          <p>Dignidade e cuidado na terceira idade.</p>
+        </div>
+        <div class="acs-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </a>
+
+      <a href="acao-igrejas.html?from=acoes" class="acs-item">
+        <div class="acs-bg" style="--c1:#78350f;--c2:#b45309"></div>
+        <div class="acs-num">07</div>
+        <div class="acs-ico-lg"><i class="fa-solid fa-church"></i></div>
+        <div class="acs-info">
+          <span class="acs-tag">Fé em ação · DF</span>
+          <h3>Comunidades Católicas</h3>
+          <p>Doações e presença nas comunidades do DF.</p>
+        </div>
+        <div class="acs-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 
-/* ══ 18. REDES SOCIAIS ══ */
-#redes { background: var(--cz); }
-.redes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
-.rc { padding: 1.7rem; border-radius: var(--rd); display: flex; flex-direction: column; gap: .8rem; transition: var(--tr); border: 1px solid rgba(0,0,0,.05); }
-.rc:hover { transform: translateY(-7px); box-shadow: var(--s2); }
-.rc-in  { background: linear-gradient(135deg,#fce9ff,#fff0f0); }
-.rc-fb  { background: linear-gradient(135deg,#e8f0ff,#f0f8ff); }
-.rc-x   { background: linear-gradient(135deg,#f0f0f0,#f8f8f8); }
-.rc-yt  { background: linear-gradient(135deg,#fff0f0,#fff8f8); }
-.rc-wa  { background: linear-gradient(135deg,#e8fff2,#f0fff4); }
-.rc-fk  { background: linear-gradient(135deg,#f0e8ff,#ffe8f0); }
-.rc-ico { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; }
-.rc-in .rc-ico { background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color: #fff; }
-.rc-fb .rc-ico { background: #1877f2; color: #fff; }
-.rc-x  .rc-ico { background: #000; color: #fff; }
-.rc-yt .rc-ico { background: #ff0000; color: #fff; }
-.rc-wa .rc-ico { background: #25d366; color: #fff; }
-.rc-fk .rc-ico { background: linear-gradient(90deg,#ff0084,#0063dc); color: #fff; }
-.rc-info h3 { font-size: .94rem; font-weight: 700; color: var(--ve); margin-bottom: .18rem; }
-.rc-info p { font-size: .78rem; color: var(--tx2); line-height: 1.5; }
-.rc-lk { font-size: .78rem; font-weight: 600; color: var(--vm); display: inline-flex; align-items: center; gap: .4rem; transition: var(--tr); }
-.rc-lk:hover { gap: .7rem; }
 
-/* ══ 20. FOOTER ══ */
-#ftr { background: var(--vn); color: rgba(255,255,255,.68); padding: 3.5rem 0 0; }
-.ftr-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.06); }
-.ftr-abt p { font-size: .81rem; line-height: 1.75; color: rgba(255,255,255,.48); margin-top: .85rem; }
-.ftr-logo { margin-bottom: .5rem; }
-.ftr-logo img { height: 48px; width: auto; display: block; }
-.f-soc { display: flex; gap: .6rem; margin-top: 1.05rem; }
-.f-soc a { width: 33px; height: 33px; border-radius: 8px; background: rgba(255,255,255,.06); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.5); font-size: .86rem; transition: var(--tr); }
-.f-soc a:hover { background: var(--vm); color: #fff; }
-.f-col h4 { font-size: .8rem; font-weight: 700; color: #fff; margin-bottom: 1.05rem; text-transform: uppercase; letter-spacing: .07em; }
-.f-col ul { display: flex; flex-direction: column; gap: .52rem; }
-.f-col ul li a { font-size: .8rem; color: rgba(255,255,255,.48); transition: var(--tr); display: flex; align-items: center; gap: .42rem; }
-.f-col ul li a:hover { color: var(--am); padding-left: 3px; }
-.f-ct-i { display: flex; align-items: flex-start; gap: .68rem; margin-bottom: .75rem; font-size: .78rem; }
-.f-ct-i i { color: var(--vlim); font-size: .8rem; margin-top: .1rem; flex-shrink: 0; }
-.f-ct-i a { color: rgba(255,255,255,.48); transition: var(--tr); }
-.f-ct-i a:hover { color: var(--am); }
-.ftr-btm { padding: 1.25rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem; }
-.ftr-btm p { font-size: .75rem; color: rgba(255,255,255,.28); }
-.ftr-btm a { font-size: .75rem; color: rgba(255,255,255,.38); transition: var(--tr); }
-.ftr-btm a:hover { color: var(--am); }
 
-/* ══ 21. MODAL ══ */
-.m-ov { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(6px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
-.m-ov.on { opacity: 1; pointer-events: all; }
-.m-box { background: #fff; border-radius: var(--rd); max-width: 550px; width: 100%; max-height: 86vh; overflow-y: auto; padding: 2.2rem; position: relative; transform: scale(.93) translateY(18px); transition: transform .32s cubic-bezier(.4,0,.2,1); box-shadow: 0 30px 80px rgba(0,0,0,.28); }
-.m-ov.on .m-box { transform: scale(1) translateY(0); }
-.m-x { position: absolute; top: 1.1rem; right: 1.1rem; width: 33px; height: 33px; border: none; background: var(--cz); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--tx2); font-size: .86rem; transition: var(--tr); }
-.m-x:hover { background: #daeac0; }
-.m-ico { width: 58px; height: 58px; background: linear-gradient(135deg,var(--vd),var(--vl)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; margin-bottom: 1.2rem; }
-.m-tit { font-size: 1.4rem; font-weight: 800; color: var(--ve); margin-bottom: .6rem; }
-.m-des { font-size: .88rem; color: var(--tx2); line-height: 1.75; margin-bottom: 1.25rem; }
-.m-pri h4 { font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--vm); margin-bottom: .62rem; }
-.m-pri ul { display: flex; flex-direction: column; gap: .48rem; }
-.m-pri ul li { display: flex; align-items: center; gap: .52rem; font-size: .86rem; color: var(--tx); padding: .52rem .78rem; background: var(--cz); border-radius: 8px; }
-.m-pri ul li::before { content: ''; width: 8px; height: 8px; background: var(--vm); border-radius: 50%; flex-shrink: 0; }
 
-/* ══ 22. LGPD ══ */
-#lgpd { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1500; background: #fff; border-top: 3px solid var(--vm); box-shadow: 0 -4px 36px rgba(0,0,0,.12); padding: 1.25rem 0; transform: translateY(100%); transition: transform .5s cubic-bezier(.4,0,.2,1); }
-#lgpd.sh { transform: translateY(0); }
-.lg-in { display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
-.lg-ico { font-size: 1.75rem; flex-shrink: 0; }
-.lg-txt { flex: 1; min-width: 250px; }
-.lg-txt h4 { font-size: .9rem; font-weight: 700; color: var(--ve); margin-bottom: .18rem; }
-.lg-txt p { font-size: .78rem; color: var(--tx2); }
-.lg-txt a { color: var(--vm); font-weight: 600; }
-.lg-acts { display: flex; gap: .6rem; flex-wrap: wrap; flex-shrink: 0; }
-.lg-btn { padding: .52rem 1.05rem; font-size: .78rem; font-weight: 600; border-radius: 50px; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; transition: var(--tr); }
-.lg-btn.acc { background: var(--vm); color: #fff; }
-.lg-btn.acc:hover { background: var(--vd); }
-.lg-btn.rej { background: var(--cz); color: var(--tx2); border: 1px solid #c8dca8; }
-.lg-btn.cus { background: none; color: var(--vm); text-decoration: underline; padding: .52rem .3rem; }
+<!-- BANDEIRAS -->
+<section id="pautas">
+  <div class="container">
+    <div class="s-hd rv">
+      <p class="s-pre">Compromissos & Bandeiras</p>
+      <h2 class="s-tit">Minhas <span>Bandeiras</span></h2>
+      <div class="s-ln"></div>
+      <p class="s-sub">Um projeto político construído com base em valores reais. Clique em cada bandeira para conhecer os detalhes.</p>
+    </div>
+    <div class="pautas-grid">
 
-/* ══ 23. BOTÃO VOLTAR AO TOPO ══ */
-#btt { position: fixed; bottom: 2rem; right: 2rem; width: 45px; height: 45px; background: var(--vm); color: #fff; border: none; border-radius: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: .92rem; box-shadow: 0 4px 18px rgba(45,122,15,.4); transition: var(--tr); opacity: 0; transform: translateY(18px); pointer-events: none; z-index: 800; }
-#btt.sh { opacity: 1; transform: translateY(0); pointer-events: all; }
-#btt:hover { background: var(--vd); transform: translateY(-3px); }
+      <div class="pc rv d1" tabindex="0" role="button" aria-label="Família como Alicerce"
+        data-ico="fa-people-roof"
+        data-tit="Família como Alicerce"
+        data-des="A família é o primeiro espaço de cuidado, aprendizado e formação de valores. Maria Amélia acredita que fortalecer as famílias é investir no futuro da sociedade. Por isso, defende iniciativas que promovam proteção, apoio e oportunidades para que pais e responsáveis possam exercer seu papel com segurança, garantindo às crianças um ambiente de amor, respeito e desenvolvimento."
+        data-pri="Proteção da família como base da sociedade|Fortalecimento do papel dos pais na educação|Apoio às famílias em situação de vulnerabilidade|Políticas de suporte à maternidade e paternidade">
+        <div class="pc-ico"><i class="fa-solid fa-people-roof"></i></div>
+        <h3>Família como Alicerce</h3>
+        <p>A família é a base da sociedade. Políticas que fortaleçam os laços familiares e protejam o papel dos pais.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-/* ══ 24. ANIMAÇÕES DE SCROLL ══ */
-.rv  { opacity: 0; transform: translateY(34px); transition: opacity .7s ease, transform .7s ease; }
-.rv.vs  { opacity: 1; transform: translateY(0); }
-.rl  { opacity: 0; transform: translateX(-34px); transition: opacity .7s ease, transform .7s ease; }
-.rl.vs  { opacity: 1; transform: translateX(0); }
-.rr  { opacity: 0; transform: translateX(34px); transition: opacity .7s ease, transform .7s ease; }
-.rr.vs  { opacity: 1; transform: translateX(0); }
-.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s} .d5{transition-delay:.5s}
+      <div class="pc rv d2" tabindex="0" role="button" aria-label="Defesa da Vida"
+        data-ico="fa-heart-pulse"
+        data-tit="Defesa da Vida"
+        data-des="A vida é sagrada desde a concepção. Maria Amélia defende políticas que protejam a vida em todas as suas fases, com dignidade e respeito integral ao ser humano."
+        data-pri="Defesa da vida desde a concepção|Valorização da dignidade humana|Proteção dos mais vulneráveis|Fortalecimento da família e da vida">
+        <div class="pc-ico"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h3>Defesa da Vida</h3>
+        <p>A vida é sagrada. Defesa de políticas que protejam o ser humano em todas as etapas, com dignidade e respeito.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-/* ══ 25. RESPONSIVO ══ */
-@media(max-width:1100px){
-  .ftr-grid          { grid-template-columns: repeat(2,1fr); }
-  .redes-grid        { grid-template-columns: repeat(2,1fr); }
-  .pautas-grid       { grid-template-columns: repeat(2,1fr); } /* 4->2 col */
-  .dep-c             { min-width: calc(50% - .7rem); }
-  .insta-embed-item  { flex: 0 0 calc(50% - 0.65rem); }
-  .abrace-grid       { grid-template-columns: 1fr; }
-}
+      <div class="pc rv d3" tabindex="0" role="button" aria-label="Empreendedorismo"
+        data-ico="fa-briefcase"
+        data-tit="Empreendedorismo"
+        data-des="Desburocratização, redução de impostos e incentivo ao pequeno e médio empreendedor para geração de emprego e renda. Quem empreende transforma realidades."
+        data-pri="Desburocratização para pequenos negócios|Redução de impostos para empreendedores|Incentivo ao pequeno e médio empresário|Geração de emprego e renda local|Apoio ao empreendedorismo feminino">
+        <div class="pc-ico"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Empreendedorismo</h3>
+        <p>Desburocratização, menos impostos e mais incentivo ao empreendedor para gerar emprego e oportunidades.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-@media(max-width:1024px){
-  .h-inner           { grid-template-columns: 1fr; text-align: center; }
-  .h-img-wr          { display: none; } /* shown on mobile via separate block */
-  .h-tags            { align-items: center; }
-  .h-bdg-row         { justify-content: center; }
-  .q-grid            { grid-template-columns: 1fr; }
-  .q-imgs            { display: none; }
-  .q-imgs-mobile     { display: flex; }
-  .vila-grid         { grid-template-columns: 1fr; }
-  .vila-img-wrap     { display: none; }
-}
+      <div class="pc rv d4" tabindex="0" role="button" aria-label="Liberdade Religiosa"
+        data-ico="fa-church"
+        data-tit="Liberdade Religiosa"
+        data-des="Todo cidadão tem o direito de professar sua fé sem restrições. Maria Amélia defende a liberdade religiosa como direito fundamental e a preservação dos valores cristãos na sociedade."
+        data-pri="Garantia da liberdade de culto e expressão religiosa|Proteção dos valores cristãos|Respeito à consciência e às convicções individuais|Combate à intolerância religiosa">
+        <div class="pc-ico"><i class="fa-solid fa-church"></i></div>
+        <h3>Liberdade Religiosa</h3>
+        <p>Todo cidadão tem o direito de viver sua fé. Proteção da liberdade religiosa como direito fundamental.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-@media(max-width:768px){
-  .nav-links         { display: none; }
-  .ham               { display: flex; }
-  section            { padding: 3.8rem 0; }
-  .pautas-grid       { grid-template-columns: repeat(2,1fr); }
-  .redes-grid        { grid-template-columns: 1fr 1fr; }
+      <div class="pc rv d5" tabindex="0" role="button" aria-label="Segurança Pública"
+        data-ico="fa-shield-halved"
+        data-tit="Segurança Pública"
+        data-des="Combate rigoroso à criminalidade, valorização das forças de segurança e endurecimento das leis para coibir a impunidade. O DF merece viver com tranquilidade."
+        data-pri="Combate rigoroso à criminalidade|Valorização das forças de segurança|Endurecimento das leis e fim da impunidade|Proteção das vítimas de violência|Investimento em tecnologia e inteligência policial">
+        <div class="pc-ico"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Segurança Pública</h3>
+        <p>Combate à criminalidade, valorização das forças de segurança e fim da impunidade no DF e no Brasil.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-  /* Linha do tempo mobile: linear */
-  .tl::before        { left: 18px; }
-  .tl-i              { display: flex; flex-direction: column; padding-left: 2.5rem; position: relative; }
-  .tl-i:nth-child(even) { flex-direction: column; }
-  .tl-i:nth-child(even) .tl-c { text-align: left; }
-  .tl-dot            { position: absolute; left: 10px; top: .5rem; margin: 0; }
-  .tl-img-col        { width: 100%; height: 160px; order: -1; }
-  .tl-c              { width: 100%; }
+      <div class="pc rv d1" tabindex="0" role="button" aria-label="Protagonismo Feminino"
+        data-ico="fa-person-dress"
+        data-tit="Protagonismo Feminino"
+        data-des="Incentivo à participação de mulheres na política que defendam os valores de liberdade, família e responsabilidade econômica. Mulheres conservadoras também têm voz e representação."
+        data-pri="Participação feminina com valores conservadores|Representatividade sem abrir mão da família|Formação de novas lideranças femininas|Valorização da mulher empreendedora|Combate à violência contra a mulher">
+        <div class="pc-ico"><i class="fa-solid fa-person-dress"></i></div>
+        <h3>Protagonismo Feminino</h3>
+        <p>Mulheres que defendem liberdade, família e responsabilidade merecem representação real na política.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-  .gal-grid          { grid-template-columns: repeat(2,1fr); }
-  .gi:nth-child(1)   { grid-column: span 2; }
-  .ftr-grid          { grid-template-columns: 1fr; }
-  .dep-c             { min-width: 100%; }
-  .lg-in             { flex-direction: column; align-items: flex-start; }
-  .insta-embed-item  { flex: 0 0 90%; }
-  .insta-nav-btn     { width: 36px; height: 36px; font-size: .8rem; }
-  .abrace-feed-inner { grid-template-columns: 1fr 1fr; }
+      <div class="pc rv d2" tabindex="0" role="button" aria-label="Políticas para os Idosos"
+        data-ico="fa-person-cane"
+        data-tit="Políticas para os Idosos"
+        data-des="Garantia de dignidade, saúde, respeito e qualidade de vida para a terceira idade no Distrito Federal, valorizando a experiência, a participação social e o cuidado com quem ajudou a construir nossa sociedade."
+        data-pri="Ampliação do acesso à saúde especializada para idosos|Fortalecimento de programas de convivência e inclusão social|Combate ao abandono e à violência contra idosos|Incentivo ao envelhecimento ativo e saudável|Melhoria da mobilidade e acessibilidade urbana|Garantia de atendimento prioritário e humanizado nos serviços públicos|Promoção de oportunidades no mercado de trabalho para a terceira idade">
+        <div class="pc-ico"><i class="fa-solid fa-person-cane"></i></div>
+        <h3>Políticas para os Idosos</h3>
+        <p>Dignidade, saúde e respeito para a terceira idade, valorizando quem ajudou a construir nossa sociedade.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
 
-  /* Hero mobile: foto como fundo com transparência */
-  .h-video-bg        { display: none; }
-  .h-mobile-bg       { display: block; }
-  .h-video-overlay   {
-    background: linear-gradient(
-      180deg,
-      rgba(14,53,5,.88) 0%,
-      rgba(26,92,8,.82) 50%,
-      rgba(26,92,8,.78) 100%
-    );
+      <div class="pc rv d3" tabindex="0" role="button" aria-label="Inclusão e Respeito às Pessoas com Deficiência"
+        data-ico="fa-wheelchair"
+        data-tit="Inclusão e Respeito às Pessoas com Deficiência"
+        data-des="Promover acessibilidade, inclusão e oportunidades para pessoas com deficiência, garantindo autonomia, dignidade e participação plena na sociedade."
+        data-pri="Ampliação da acessibilidade em espaços públicos|Inclusão educacional com suporte adequado|Incentivo à empregabilidade e qualificação profissional|Fortalecimento das políticas de inclusão social|Ampliação do acesso à saúde e reabilitação|Garantia de mobilidade e transporte acessível|Incentivo à inclusão nos esportes e atividades físicas adaptadas">
+        <div class="pc-ico"><i class="fa-solid fa-wheelchair"></i></div>
+        <h3>Inclusão de Pessoas com Deficiência</h3>
+        <p>Acessibilidade, autonomia e dignidade para pessoas com deficiência, participação plena na sociedade.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      <div class="pc rv d4" tabindex="0" role="button" aria-label="Educação de Qualidade"
+        data-ico="fa-graduation-cap"
+        data-tit="Educação de Qualidade"
+        data-des="Uma educação sólida forma cidadãos livres, críticos e preparados. Maria Amélia defende uma escola que vai além do conteúdo: que forma o caráter, resgata valores e prepara os jovens para a vida."
+        data-pri="Escolas em tempo integral com suporte pedagógico e social|Aulas práticas e profissionalizantes desde o ensino médio|Resgate da educação moral e cívica nas escolas|Ensino religioso facultativo como opção às famílias|Valorização e melhor remuneração dos professores|Combate à evasão escolar">
+        <div class="pc-ico"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>Educação de Qualidade</h3>
+        <p>Escolas em tempo integral, aulas práticas, educação moral e cívica, formando cidadãos preparados para a vida.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      <div class="pc rv d5" tabindex="0" role="button" aria-label="Meio Ambiente e Proteção Animal"
+        data-ico="fa-leaf"
+        data-tit="Meio Ambiente e Proteção Animal"
+        data-des="O meio ambiente é herança de todos e responsabilidade de cada um. Maria Amélia defende políticas que protejam a fauna silvestre, apoiem resgatistas e garantam o bem-estar dos animais domésticos, com foco especial nos desafios únicos do Distrito Federal."
+        data-pri="Descriminalização e apoio legal a resgatistas de fauna silvestre|Ampliação do acesso ao hospital veterinário público|Proteção da fauna nas rodovias do DF com redutores de velocidade e passagens de fauna|Combate ao abandono de animais domésticos e à soltura de cães em Unidades de Conservação|Proteção da fauna nativa nas áreas do Parque Nacional de Brasília e demais UCs|Políticas de posse responsável de animais|Fiscalização contra maus-tratos e tráfico de animais silvestres">
+        <div class="pc-ico"><i class="fa-solid fa-leaf"></i></div>
+        <h3>Meio Ambiente e Proteção Animal</h3>
+        <p>Defesa da fauna silvestre, apoio a resgatistas, proteção nas rodovias e bem-estar animal, cuidando do DF e do Brasil.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      <div class="pc rv d1" tabindex="0" role="button" aria-label="Agronegócio e Produtores Rurais"
+        data-ico="fa-wheat-awn"
+        data-tit="Agronegócio e Produtores Rurais"
+        data-des="O agro é a espinha dorsal do Brasil. Maria Amélia defende o produtor rural, a segurança alimentar e o reconhecimento de quem coloca comida na mesa dos brasileiros, sem burocracia e com crédito justo."
+        data-pri="Desburocratização e crédito acessível para pequenos e médios produtores|Defesa da propriedade rural e da segurança jurídica no campo|Apoio à agricultura familiar e ao agronegócio regional do DF|Combate ao extremismo que ameaça a produção rural|Valorização da identidade e da cultura do trabalhador rural|Incentivo à inovação e sustentabilidade no campo">
+        <div class="pc-ico"><i class="fa-solid fa-wheat-awn"></i></div>
+        <h3>Agronegócio e Campo</h3>
+        <p>O agro alimenta o Brasil. Defesa do produtor rural, crédito justo e valorização de quem trabalha no campo.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+      <div class="pc rv d2" tabindex="0" role="button" aria-label="Liberdade: O Direito de Escolher"
+        data-ico="fa-flag"
+        data-tit="Liberdade: O Direito de Escolher"
+        data-des="A liberdade é o bem mais precioso de uma democracia. Maria Amélia defende que cada cidadão tem o direito de fazer suas escolhas, na fé, na educação dos filhos, nos negócios e na vida, sem interferência excessiva do Estado."
+        data-pri="Liberdade de expressão e de consciência garantidas|Direito dos pais de educar seus filhos com seus valores|Menos Estado na vida das pessoas, mais responsabilidade individual|Combate ao autoritarismo e à censura em qualquer forma|Defesa do livre mercado e da livre iniciativa|Liberdade religiosa como pilar da sociedade democrática">
+        <div class="pc-ico"><i class="fa-solid fa-flag"></i></div>
+        <h3>Liberdade: O Direito de Escolher</h3>
+        <p>Cada cidadão tem o direito de fazer suas escolhas. Menos Estado, mais liberdade, na fé, na família e nos negócios.</p>
+        <span class="pc-more">Saiba Mais <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM FEED -->
+<section id="insta-feed">
+  <div class="container">
+    <div class="insta-header rv">
+      <div>
+        <p class="s-pre">@mariaamelia.df</p>
+        <h2 class="s-tit"><span>Instagram</span></h2>
+        <div class="s-ln"></div>
+      </div>
+      <a href="https://www.instagram.com/mariaamelia.df/" target="_blank" rel="noopener noreferrer" class="btn btn-g">
+        <i class="fa-brands fa-instagram"></i> Seguir no Instagram
+      </a>
+    </div>
+
+    <div class="insta-grade rv">
+      <div class="insta-gi insta-gi-large">
+        <iframe src="https://www.instagram.com/p/DVoWb6LkdWl/embed/" class="ig-frame" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy" title="Post Instagram"></iframe>
+        <a class="ig-link" href="https://www.instagram.com/reel/DVoWb6LkdWl/" target="_blank" rel="noopener noreferrer" aria-label="Ver no Instagram"></a>
+        <div class="insta-hearts" aria-hidden="true">
+          <span class="ih ih1" style="animation-delay:0.0s">♥︎</span>
+          <span class="ih ih2" style="animation-delay:1.4s">♥︎</span>
+          <span class="ih ih3" style="animation-delay:2.8s">♥︎</span>
+        </div>
+        <div class="insta-gi-ov"><i class="fa-brands fa-instagram"></i></div>
+      </div>
+      <div class="insta-gi">
+        <iframe src="https://www.instagram.com/p/DYkbuQYxCv2/embed/" class="ig-frame" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy" title="Post Instagram"></iframe>
+        <a class="ig-link" href="https://www.instagram.com/reel/DYkbuQYxCv2/" target="_blank" rel="noopener noreferrer" aria-label="Ver no Instagram"></a>
+        <div class="insta-hearts" aria-hidden="true"><span class="ih ih1" style="animation-delay:0.6s">♥︎</span><span class="ih ih2" style="animation-delay:2.0s">♥︎</span><span class="ih ih3" style="animation-delay:3.4s">♥︎</span></div>
+        <div class="insta-gi-ov"><i class="fa-brands fa-instagram"></i></div>
+      </div>
+      <div class="insta-gi">
+        <iframe src="https://www.instagram.com/p/DYsukdJEYAk/embed/" class="ig-frame" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy" title="Post Instagram"></iframe>
+        <a class="ig-link" href="https://www.instagram.com/p/DYsukdJEYAk/" target="_blank" rel="noopener noreferrer" aria-label="Ver no Instagram"></a>
+        <div class="insta-hearts" aria-hidden="true"><span class="ih ih1" style="animation-delay:1.2s">♥︎</span><span class="ih ih2" style="animation-delay:2.6s">♥︎</span><span class="ih ih3" style="animation-delay:4.0s">♥︎</span></div>
+        <div class="insta-gi-ov"><i class="fa-brands fa-instagram"></i></div>
+      </div>
+      <div class="insta-gi">
+        <iframe src="https://www.instagram.com/p/DZGeiefxb5E/embed/" class="ig-frame" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy" title="Post Instagram"></iframe>
+        <a class="ig-link" href="https://www.instagram.com/reel/DZGeiefxb5E/" target="_blank" rel="noopener noreferrer" aria-label="Ver no Instagram"></a>
+        <div class="insta-hearts" aria-hidden="true"><span class="ih ih1" style="animation-delay:1.8s">♥︎</span><span class="ih ih2" style="animation-delay:3.2s">♥︎</span><span class="ih ih3" style="animation-delay:4.6s">♥︎</span></div>
+        <div class="insta-gi-ov"><i class="fa-brands fa-instagram"></i></div>
+      </div>
+      <div class="insta-gi">
+        <iframe src="https://www.instagram.com/p/DZGLBVNttxx/embed/" class="ig-frame" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy" title="Post Instagram"></iframe>
+        <a class="ig-link" href="https://www.instagram.com/reel/DZGLBVNttxx/" target="_blank" rel="noopener noreferrer" aria-label="Ver no Instagram"></a>
+        <div class="insta-hearts" aria-hidden="true"><span class="ih ih1" style="animation-delay:2.4s">♥︎</span><span class="ih ih2" style="animation-delay:3.8s">♥︎</span><span class="ih ih3" style="animation-delay:5.2s">♥︎</span></div>
+        <div class="insta-gi-ov"><i class="fa-brands fa-instagram"></i></div>
+      </div>
+      <div class="insta-gi">
+        <iframe src="https://www.instagram.com/p/DZDk0XsGOCX/embed/" class="ig-frame" scrolling="no" frameborder="0" allowtransparency="true" loading="lazy" title="Post Instagram"></iframe>
+        <a class="ig-link" href="https://www.instagram.com/p/DZDk0XsGOCX/" target="_blank" rel="noopener noreferrer" aria-label="Ver no Instagram"></a>
+        <div class="insta-hearts" aria-hidden="true"><span class="ih ih1" style="animation-delay:3.0s">♥︎</span><span class="ih ih2" style="animation-delay:4.4s">♥︎</span><span class="ih ih3" style="animation-delay:5.8s">♥︎</span></div>
+        <div class="insta-gi-ov"><i class="fa-brands fa-instagram"></i></div>
+      </div>
+    </div>
+
+    <div class="insta-cta rv">
+      <a href="https://www.instagram.com/mariaamelia.df/" target="_blank" rel="noopener noreferrer" class="btn btn-o">
+        <i class="fa-brands fa-instagram"></i> Ver Todos os Posts
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="container">
+    <div class="s-hd rv">
+      <p class="s-pre">Galeria Oficial</p>
+      <h2 class="s-tit">Momentos que <span>Marcam</span></h2>
+      <div class="s-ln"></div>
+      <p class="s-sub">Fotos reais da pré-candidatura, eventos e ações de Maria Amélia no Distrito Federal.</p>
+    </div>
+    <div class="gal-grid rv" id="gal-grid">
+      <div class="gal-loading" id="gal-loading">
+        <i class="fa-solid fa-spinner"></i>
+        Carregando fotos do Flickr...
+      </div>
+    </div>
+    <div class="gal-cta rv">
+      <a href="https://www.flickr.com/photos/204380075@N06/" target="_blank" rel="noopener noreferrer" class="btn btn-o">
+        <i class="fa-brands fa-flickr"></i> Ver Galeria Completa no Flickr
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE -->
+<section id="yt-sec">
+  <div class="container">
+    <div class="s-hd rv">
+      <p class="s-pre">Canal Oficial</p>
+      <h2 class="s-tit">Maria Amélia no <span>YouTube</span></h2>
+      <div class="s-ln"></div>
+      <p class="s-sub">Assista ao lançamento da pré-candidatura com Michelle Bolsonaro e Bia Kicis.</p>
+    </div>
+    <div class="yt-main-only rv">
+      <div class="yt-vw">
+        <iframe src="https://www.youtube.com/embed/YzzE4SIf-Vc" title="Lançamento da Pré-candidatura de Maria Amélia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="yt-inf">
+        <h3>Live, Lançamento da Pré-candidatura</h3>
+        <p>Com a presença de Michelle Bolsonaro e da Dep. Federal Bia Kicis, Maria Amélia apresentou seu projeto político para o Distrito Federal.</p>
+      </div>
+      <div class="yt-cta">
+        <a href="https://www.youtube.com/@mariaameliadf" target="_blank" rel="noopener noreferrer" class="btn btn-g">
+          <i class="fa-brands fa-youtube"></i> Visitar o Canal
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="deps">
+  <div class="container">
+    <div class="s-hd rv">
+      <p class="s-pre">Depoimentos</p>
+      <h2 class="s-tit">Histórias que <span>Inspiram</span></h2>
+      <div class="s-ln"></div>
+    </div>
+
+    <div class="deps-carousel-wrap rv">
+      <div class="deps-track" id="deps-track">
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>Conheço a Maria Amélia há anos pelos doces maravilhosos que ela faz para nossa família. Quando soube da pré-candidatura, não tive dúvida: é exatamente o tipo de mulher que o DF precisa, trabalhadora, de fé e com valores de verdade.</p><div class="dep-au"><div class="dep-av">P</div><div class="dep-in"><strong>Paula M.</strong><span>Cliente da Maria Amélia Doces</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>O apoio dela à Vila do Pequenino Jesus não é de fachada. Ela aparece toda semana, abraça, ajuda de verdade e leva os acolhidos para tomar café na fábrica. Isso é o que a diferencia. Política feita com coração e presença real.</p><div class="dep-au"><div class="dep-av">R</div><div class="dep-in"><strong>Rosana T.</strong><span>Voluntária da Vila Pequenino Jesus</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>Como empreendedora, me identifico muito com a história dela. Veio do nada, construiu uma empresa referência no DF e agora quer fazer pela população o que fez pelos seus clientes: entregar qualidade, compromisso e resultado.</p><div class="dep-au"><div class="dep-av">C</div><div class="dep-in"><strong>Carla F.</strong><span>Empreendedora, Taguatinga, DF</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>Uma mulher conservadora, de família e de fé, que não tem vergonha de defender seus valores. O DF precisa desse tipo de representante na Câmara, com coragem, autenticidade e vontade real de servir ao povo.</p><div class="dep-au"><div class="dep-av">J</div><div class="dep-in"><strong>João G.</strong><span>Empresário, Brasília, DF</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>Fiquei emocionada no lançamento da pré-candidatura. Ver a Michelle e a Bia Kicis ao lado dela mostrou que não é uma candidatura qualquer, é um movimento de mulheres com propósito, fé e amor pelo Brasil.</p><div class="dep-au"><div class="dep-av">A</div><div class="dep-in"><strong>Ana L.</strong><span>Moradora do Gama, DF</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>A Maria Amélia é uma mulher que vive o que prega. Católica praticante, mãe dedicada, avó presente e empresária de sucesso. Ela representa as mulheres reais do Brasil, que trabalham, criam família e ainda encontram tempo para servir ao próximo.</p><div class="dep-au"><div class="dep-av">M</div><div class="dep-in"><strong>Márcia S.</strong><span>Professora, Ceilândia, DF</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>Trabalho com ela há mais de dez anos e posso afirmar: a Maria Amélia trata cada funcionário como família. Ela gerou emprego, renda e dignidade para dezenas de pessoas no DF. Uma candidata que sabe o que é trabalho de verdade.</p><div class="dep-au"><div class="dep-av">F</div><div class="dep-in"><strong>Fernanda B.</strong><span>Colaboradora da Maria Amélia Doces</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>O que mais me impressiona nela é a consistência. Não é candidata de campanha, ela já está nas ruas, nas instituições, nas igrejas e nas comunidades há anos. Quando entrar na política, vai chegar preparada e com raízes profundas no DF.</p><div class="dep-au"><div class="dep-av">L</div><div class="dep-in"><strong>Luciano A.</strong><span>Pastor, Samambaia, DF</span></div></div></div>
+
+        <div class="dep-c"><div class="dep-st">★★★★★</div><div class="dep-q">"</div><p>Como mãe, quero ver na Câmara alguém que entenda minha realidade: filhos, trabalho, fé e família. A Maria Amélia vive isso todos os dias. Ela não fala de pauta feminina pela teoria, ela a vive na prática, todos os dias.</p><div class="dep-au"><div class="dep-av">T</div><div class="dep-in"><strong>Tatiane R.</strong><span>Mãe e empreendedora, Sobradinho, DF</span></div></div></div>
+
+      </div>
+    </div>
+
+    <!-- Setas e dots -->
+    <div class="deps-nav-btns">
+      <button class="deps-arrow" id="deps-prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="deps-dots" id="deps-dots"></div>
+      <button class="deps-arrow" id="deps-next" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+  </div>
+</section>
+
+<!-- REDES SOCIAIS -->
+<section id="redes">
+  <div class="container">
+    <div class="s-hd rv">
+      <p class="s-pre">Redes Sociais</p>
+      <h2 class="s-tit">Siga e <span>Acompanhe</span></h2>
+      <div class="s-ln"></div>
+    </div>
+    <div class="redes-grid">
+      <a href="https://www.instagram.com/mariaamelia.df/" target="_blank" rel="noopener noreferrer" class="rc rc-in rv d1"><div class="rc-ico"><i class="fa-brands fa-instagram"></i></div><div class="rc-info"><h3>Instagram</h3><p>@mariaamelia.df, Fotos, stories e bastidores.</p></div><span class="rc-lk">Seguir <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" class="rc rc-wa rv d2"><div class="rc-ico"><i class="fa-brands fa-whatsapp"></i></div><div class="rc-info"><h3>WhatsApp</h3><p>Canal oficial, clique para entrar em contato.</p></div><span class="rc-lk">Entrar em contato <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="https://x.com/mariaameliadf" target="_blank" rel="noopener noreferrer" class="rc rc-x rv d3"><div class="rc-ico"><i class="fa-brands fa-x-twitter"></i></div><div class="rc-info"><h3>X (Twitter)</h3><p>@mariaameliadf, Posicionamentos e notícias.</p></div><span class="rc-lk">Seguir <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="https://www.youtube.com/@mariaameliadf" target="_blank" rel="noopener noreferrer" class="rc rc-yt rv d4"><div class="rc-ico"><i class="fa-brands fa-youtube"></i></div><div class="rc-info"><h3>YouTube</h3><p>Lives, entrevistas e conteúdo político.</p></div><span class="rc-lk">Inscrever <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="https://www.facebook.com/mariaamelia.df.oficial/" target="_blank" rel="noopener noreferrer" class="rc rc-fb rv d5"><div class="rc-ico"><i class="fa-brands fa-facebook-f"></i></div><div class="rc-info"><h3>Facebook</h3><p>Eventos, publicações e comunidade do DF.</p></div><span class="rc-lk">Curtir <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="https://www.flickr.com/photos/204380075@N06/" target="_blank" rel="noopener noreferrer" class="rc rc-fk rv d1"><div class="rc-ico"><i class="fa-brands fa-flickr"></i></div><div class="rc-info"><h3>Flickr</h3><p>Galeria oficial de fotos e eventos.</p></div><span class="rc-lk">Ver Galeria <i class="fa-solid fa-arrow-right"></i></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="ftr">
+  <div class="container">
+    <div class="ftr-grid">
+
+      <!-- Col 1: Logo + sobre + redes -->
+      <div class="ftr-abt">
+        <div class="ftr-logo"><img src="LOGO_MARIA_AMELIA_BRANCO.svg" alt="Maria Amélia" width="160" height="52" style="height:48px;width:auto;" onerror="this.style.display='none'"></div>
+        <p>Empresária, confeiteira, esposa, mãe, avó e vice-presidente do PL Mulher no Distrito Federal. Pré-candidata a Deputada Federal pelo PL em Brasília. Mais voz para o DF. Mais força para o Brasil!</p>
+        <div class="f-soc">
+          <a href="https://www.instagram.com/mariaamelia.df/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/mariaamelia.df.oficial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/mariaameliadf" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@mariaameliadf" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Links rápidos + Bandeiras em 2 colunas -->
+      <div class="ftr-mid-col">
+        <div class="ftr-mid-inner">
+          <div class="f-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="#hero"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+              <li><a href="#quem"><i class="fa-solid fa-chevron-right"></i> Quem é Maria Amélia</a></li>
+              <li><a href="#historia"><i class="fa-solid fa-chevron-right"></i> Trajetória</a></li>
+              <li><a href="#acoes"><i class="fa-solid fa-chevron-right"></i> Ações Sociais</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Minhas Bandeiras</a></li>
+              <li><a href="#galeria"><i class="fa-solid fa-chevron-right"></i> Galeria</a></li>
+            </ul>
+          </div>
+          <div class="f-col f-col-bandeiras">
+            <h4>Bandeiras</h4>
+            <ul class="f-ul-2col">
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Família</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Defesa da Vida</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Empreendedorismo</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Lib. Religiosa</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Segurança</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Prot. Feminino</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Idosos</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Inclusão PcD</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Educação</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Meio Ambiente</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Agronegócio</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Liberdade</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Contato -->
+      <div class="f-col">
+        <h4>Contato</h4>
+        <div class="f-ct-i"><i class="fa-solid fa-envelope"></i><a href="mailto:mariaameliacomunicacao@gmail.com">E-mail</a></div>
+        <div class="f-ct-i"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+        <div class="f-ct-i"><i class="fa-solid fa-location-dot"></i><span style="color:rgba(255,255,255,.45)">Distrito Federal, Brasil</span></div>
+      </div>
+
+    </div>
+    <div class="ftr-btm">
+      <p>© 2026 Maria Amélia, Todos os direitos reservados. Pré-candidatura pelo PL no Distrito Federal.</p>
+      <a href="#">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="m-ov" id="modal" aria-modal="true" role="dialog" aria-labelledby="m-tit" aria-hidden="true">
+  <div class="m-box">
+    <button class="m-x" id="m-x" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+    <div class="m-ico" id="m-ico"><i class="fa-solid fa-list-check"></i></div>
+    <h2 class="m-tit" id="m-tit"></h2>
+    <p class="m-des" id="m-des"></p>
+    <div class="m-pri"><h4>Prioridades</h4><ul id="m-pris"></ul></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lbx-ov" id="lbx">
+  <button class="lbx-close" id="lbx-close" aria-label="Fechar">×</button>
+  <button class="lbx-nav lbx-prev" id="lbx-prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+  <img class="lbx-img" id="lbx-img" src="" alt="">
+  <button class="lbx-nav lbx-next" id="lbx-next" aria-label="Próxima"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lbx-caption" id="lbx-cap"></div>
+</div>
+
+<!-- LGPD -->
+<div id="lgpd">
+  <div class="container">
+    <div class="lg-in">
+      <span class="lg-ico">🍪</span>
+      <div class="lg-txt">
+        <h4>Privacidade e Cookies</h4>
+        <p>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
+      </div>
+      <div class="lg-acts">
+        <button class="lg-btn cus" id="lg-c">Personalizar</button>
+        <button class="lg-btn rej" id="lg-r">Rejeitar</button>
+        <button class="lg-btn acc" id="lg-a">Aceitar Todos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+<button id="btt" aria-label="Voltar ao topo"><i class="fa-solid fa-chevron-up"></i></button>
+
+
+<script src="main.js" defer></script>
+
+<!-- CURSOR PERSONALIZADO -->
+<div id="cursor-heart" aria-hidden="true">&#10084;</div>
+<script>
+  (function() {
+    var heart = document.getElementById('cursor-heart');
+    if (!heart) return;
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+    document.addEventListener('mousemove', function(e) {
+      heart.style.display = 'block';
+      heart.style.left = e.clientX + 'px';
+      heart.style.top  = e.clientY + 'px';
+    });
+    document.addEventListener('mouseleave', function() { heart.style.opacity = '0'; });
+    document.addEventListener('mouseenter', function() { heart.style.opacity = '1'; });
+    document.addEventListener('mousedown',  function() { heart.classList.add('click'); });
+    document.addEventListener('mouseup',    function() { heart.classList.remove('click'); });
+  })();
+</script>
+
+<script>
+/* ── Header: transparente no topo, branco ao rolar ── */
+(function() {
+  var hdr = document.getElementById('hdr');
+  if (!hdr) return;
+  function onScroll() {
+    if (window.scrollY > 60) { hdr.classList.add('sc'); } else { hdr.classList.remove('sc'); }
   }
-  .h-inner           { padding: 5rem 0 2rem; }
-  .h-img-wr          { display: none !important; }
-  .h-bdg-row         { flex-direction: column; align-items: center; width: 100%; }
-  .h-bdg-part        { width: 100%; justify-content: center; }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 
-  /* Quem é Maria Amélia mobile: foto centralizada */
-  .q-imgs-mobile     { display: flex; justify-content: center; }
-}
-
-@media(max-width:480px){
-  .h-tit             { font-size: 2rem; white-space: normal; }
-  .redes-grid        { grid-template-columns: 1fr; }
-  .pautas-grid       { grid-template-columns: 1fr; }
-  .insta-embed-item  { flex: 0 0 90%; }
-}
-
-/* ══ CURSOR PERSONALIZADO ══ */
-#cursor-heart {
-  position: fixed; top: 0; left: 0;
-  width: 42px; height: 42px;
-  font-size: 32px;
-  color: var(--vm);
-  text-shadow: 0 0 12px rgba(26,92,8,.5);
-  pointer-events: none; z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: transform .12s ease, opacity .2s ease, color .15s ease;
-  user-select: none; line-height: 1; display: none;
-}
-#cursor-heart.click {
-  transform: translate(-50%, -50%) scale(1.7);
-  color: var(--am);
-}
-@media (hover: none) and (pointer: coarse) {
-  #cursor-heart { display: none !important; }
-}
-
-/* ══ PLACEHOLDER "HEITOR" — aguardando imagens ══ */
-.heitor-cloud {
-  width: 100%; height: 100%;
-  min-height: 160px;
-  background: linear-gradient(135deg, rgba(45,122,15,.07), rgba(254,220,80,.10));
-  border: 2px dashed rgba(45,122,15,.28);
-  border-radius: var(--rd);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: .45rem; overflow: hidden; position: relative;
-}
-.heitor-cloud .hc-cloud {
-  font-size: 2.4rem; animation: heitor-float 3s ease-in-out infinite;
-  display: block; line-height: 1; filter: drop-shadow(0 2px 8px rgba(45,122,15,.2));
-}
-.heitor-cloud .hc-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: .72rem; font-weight: 800;
-  color: var(--vm); text-transform: uppercase; letter-spacing: .18em;
-  animation: heitor-float 3s ease-in-out infinite .35s;
-}
-.heitor-cloud .hc-sub {
-  font-size: .62rem; color: var(--tx2);
-  font-family: 'Poppins', sans-serif; opacity: .7;
-}
-.heitor-cloud .hc-star1,
-.heitor-cloud .hc-star2 {
-  position: absolute; font-size: .7rem;
-  color: rgba(254,220,80,.65);
-}
-.heitor-cloud .hc-star1 { top: 14px; left: 18px; animation: heitor-spin 4s linear infinite; }
-.heitor-cloud .hc-star2 { bottom: 14px; right: 18px; animation: heitor-spin 4s linear infinite reverse; }
-@keyframes heitor-float {
-  0%,100% { transform: translateY(0); }
-  50%      { transform: translateY(-9px); }
-}
-@keyframes heitor-spin { to { transform: rotate(360deg); } }
-
-/* Garante que tl-img-col sem foto não quebre */
-.tl-img-col { background: transparent; }
-
-
-/* ══ DEPOIMENTOS — fix cortando texto ══ */
-.dep-sl { overflow: visible; }
-.dep-c {
-  min-width: calc(33.33% - .95rem);
-  background: var(--cz);
-  border-radius: var(--rd);
-  padding: 1.75rem;
-  flex-shrink: 0;
-  border: 1px solid rgba(0,0,0,.04);
-  display: flex; flex-direction: column;
-  height: auto; /* nunca cortar */
-}
-.dep-c p {
-  font-size: .86rem; color: var(--tx2);
-  line-height: 1.8; margin-bottom: 1.2rem;
-  font-style: italic;
-  flex: 1; /* empurra o autor para baixo */
-}
-/* Slider tem altura auto baseado no card mais alto */
-.dep-tr {
-  display: flex; gap: 1.4rem;
-  transition: transform .6s cubic-bezier(.4,0,.2,1);
-  align-items: stretch;
-}
-
-/* ══ INSTAGRAM — GRADE FOTOS PURAS ══ */
-#insta-feed { background: var(--br); padding: 4.5rem 0; }
-.insta-header {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
-}
-
-.insta-grade {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .7rem;
-}
-
-/* Célula */
-.insta-gi {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  /* Altura fixa quadrada */
-  aspect-ratio: 1;
-  background: var(--cz);
-  /* Clip agressivo do iframe */
-  isolation: isolate;
-}
-.insta-gi-large {
-  grid-column: span 2;
-  grid-row: span 2;
-  aspect-ratio: auto;
-  border-radius: 16px;
-}
-
-/* iframe do Instagram /embed/ (sem caption) — só mostra a mídia */
-.ig-frame {
-  display: block;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: transparent;
-  pointer-events: none; /* link overlay cuida do clique */
-}
-
-/* Link transparente por cima */
-.ig-link {
-  position: absolute;
-  inset: 0; z-index: 4;
-  display: block;
-}
-
-/* Hover overlay */
-.insta-gi-ov {
-  position: absolute; inset: 0; z-index: 5;
-  background: rgba(26,92,8,.42);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity .3s;
-  color: #fff; font-size: 2rem; pointer-events: none;
-}
-.insta-gi:hover .insta-gi-ov { opacity: 1; }
-
-/* Corações */
-.insta-hearts {
-  position: absolute; inset: 0; z-index: 3;
-  pointer-events: none; overflow: hidden;
-}
-.ih {
-  position: absolute; bottom: -10px;
-  color: var(--vm) !important; opacity: 0;
-  animation: ih-rise 5s ease-in infinite;
-  filter: drop-shadow(0 0 4px rgba(45,122,15,.35));
-  /* Força renderização como texto (não emoji colorido) */
-  font-variant-emoji: text;
-  -webkit-text-fill-color: var(--vm);
-}
-.ih1 { left: 15%;  font-size: .85rem; animation-duration: 4.8s; }
-.ih2 { left: 52%;  font-size: 1rem;   animation-duration: 5.4s; }
-.ih3 { left: 80%;  font-size: .7rem;  animation-duration: 4.2s; }
-@keyframes ih-rise {
-  0%   { transform: translateY(0) scale(.6); opacity: 0; }
-  12%  { opacity: .5; }
-  65%  { opacity: .2; }
-  100% { transform: translateY(-130px) scale(1.1) rotate(18deg); opacity: 0; }
-}
-.insta-gi:hover .ih { animation-play-state: paused; opacity: 0 !important; }
-
-.insta-cta { text-align: center; margin-top: 1.5rem; }
-
-@media(max-width:900px){
-  .insta-grade { grid-template-columns: repeat(2,1fr); }
-  .insta-gi-large { grid-column: span 2; grid-row: span 1; }
-}
-@media(max-width:480px){
-  .insta-grade { grid-template-columns: 1fr 1fr; }
-  .insta-gi-large { grid-column: span 2; }
-}
-
-
-/* ══ ABRACE — identidade visual Maria Amélia ══ */
-#abrace {
-  background: var(--cz); /* mesmo fundo cinza das seções alternadas */
-  position: relative;
-  padding: 4.5rem 0;
-}
-/* Sem fundo escuro, sem cores da ABRACE — integrado ao site */
-.abrace-bg { display: none; }
-#abrace::before, #abrace::after { display: none; }
-
-/* Logo ABRACE — discreta, centralizada */
-.abrace-logo-header {
-  height: 44px; width: auto;
-  display: block; margin: 0 auto .9rem;
-  /* Filtro para adaptar o logo ao fundo claro, mantendo cor laranja */
-  filter: drop-shadow(0 1px 4px rgba(0,0,0,.12));
-}
-
-/* Badge "desde 1986" — usa paleta verde */
-.abrace-desde-badge {
-  display: inline-block;
-  background: rgba(45,122,15,.1); border: 1px solid rgba(45,122,15,.25);
-  color: var(--vm); font-size: .72rem; font-weight: 700;
-  padding: .22rem .7rem; border-radius: 4px;
-  letter-spacing: .1em; text-transform: uppercase; margin-bottom: .9rem;
-}
-
-/* Título usa paleta do site */
-.abrace-main-title {
-  font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 800;
-  color: var(--ve); line-height: 1.2; margin-bottom: .5rem;
-}
-.abrace-main-title span { color: var(--vm); }
-
-/* Linha decorativa — verde padrão */
-.abrace-ln {
-  width: 50px; height: 4px;
-  background: linear-gradient(90deg, var(--vm), var(--am));
-  border-radius: 2px; margin: .6rem auto 1rem;
-}
-
-/* Grid 2 colunas */
-.abrace-grid {
-  display: grid; grid-template-columns: 1.1fr 1fr;
-  gap: 4rem; align-items: start;
-}
-.abrace-txt-col p {
-  color: var(--tx2); font-size: .93rem; line-height: 1.8; margin-bottom: 1rem;
-}
-.abrace-txt-col strong { color: var(--ve); font-weight: 600; }
-
-/* Stats — verde */
-.abrace-stats-row {
-  display: flex; gap: 2rem; flex-wrap: wrap; margin: 1.4rem 0;
-}
-.abrace-stat-item { display: flex; flex-direction: column; gap: .15rem; }
-.abrace-stat-item strong { font-size: 1.25rem; font-weight: 800; color: var(--vm); line-height: 1; }
-.abrace-stat-item span  { font-size: .7rem; color: var(--tx2); text-transform: uppercase; letter-spacing: .06em; }
-
-/* Cards — idênticos ao vic da Vila */
-.abrace-cards { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 1.5rem; }
-.abrace-card-item {
-  display: flex; align-items: flex-start; gap: .85rem;
-  background: var(--br); border: 1px solid #daeac0;
-  border-radius: var(--rds); padding: .9rem 1rem;
-  box-shadow: var(--s1); transition: var(--tr);
-}
-.abrace-card-item:hover { box-shadow: var(--s2); transform: translateY(-2px); }
-.abrace-card-ico {
-  width: 38px; height: 38px; flex-shrink: 0;
-  background: linear-gradient(135deg,var(--vd),var(--vl));
-  border-radius: 10px; display: flex; align-items: center;
-  justify-content: center; color: #fff; font-size: .9rem;
-}
-.abrace-card-item > div strong { display: block; font-size: .84rem; font-weight: 700; color: var(--ve); margin-bottom: .12rem; }
-.abrace-card-item > div p { font-size: .78rem; color: var(--tx2); line-height: 1.5; margin: 0; }
-
-/* Botões — padrão do site */
-.abrace-btns-row { display: flex; gap: .85rem; flex-wrap: wrap; }
-
-/* Coluna foto */
-.abrace-photo-col { }
-.abrace-photo-frame {
-  position: relative; border-radius: var(--rd); overflow: hidden;
-  height: 340px; background: var(--br);
-  border: 1px solid #daeac0; box-shadow: var(--s2);
-}
-.abrace-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.abrace-photo-label {
-  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-  background: rgba(14,53,5,.85); backdrop-filter: blur(8px);
-  border: 1px solid rgba(74,170,26,.35); border-radius: 50px;
-  padding: .45rem 1rem; white-space: nowrap;
-  display: flex; align-items: center; gap: .5rem;
-  font-size: .73rem; font-weight: 600; color: rgba(255,255,255,.9);
-}
-.abrace-photo-label i { color: var(--am); }
-
-/* Heitor cloud inside abrace photo frame */
-.abrace-photo-frame .heitor-cloud {
-  height: 100%; border-radius: 0;
-}
-
-@media(max-width:1024px){
-  .abrace-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .abrace-photo-frame { height: 260px; }
-}
-@media(max-width:768px){
-  .abrace-stats-row { gap: 1.2rem; }
-  .abrace-btns-row  { flex-direction: column; }
-}
-
-/* Antigos seletores ABRACE escuro — resetar */
-.abrace-section-full,
-.abrace-section-bg,
-.abrace-inner,
-.abrace-inner-wrap,
-.abrace-left,
-.abrace-right,
-.abrace-bg-layer,
-.abrace-btn-primary,
-.abrace-btn-secondary,
-.abrace-impact-cards,
-.abrace-ic,
-.abrace-heitor-cloud { all: unset; display: revert; }
-
-/* Tags lado a lado */
-.h-tags-row {
-  flex-direction: row !important;
-  flex-wrap: wrap;
-  align-items: center !important;
-  justify-content: flex-start;
-  gap: .5rem !important;
-}
-.h-tags-row .h-tag { width: auto; }
-
-/* ── Nav scroll-spy: item ativo com borda verde ── */
-.nl-active {
-  color: var(--vm) !important;
-  background: transparent !important;
-  border: 2px solid var(--vm);
-  border-radius: 50px;
-  padding: .35rem .8rem;
-  font-weight: 600;
-  transition: border-color .4s ease, color .4s ease, background .4s ease;
-}
-.nl-active::after { display: none !important; }
-.nl-active:hover {
-  background: rgba(45,122,15,.06) !important;
-  transform: none;
-}
-/* Subtle entrance animation when item becomes active */
-@keyframes nl-pop {
-  0%   { transform: scale(.92); }
-  60%  { transform: scale(1.04); }
-  100% { transform: scale(1); }
-}
-.nl-active { animation: nl-pop .3s ease; }
-
-/* Header transparente no topo — ajustes de contraste */
-#hdr:not(.sc) .nl::after {
-  background: rgba(255,255,255,.6);
-}
-#hdr:not(.sc) .nl:hover::after { width: 60%; }
-
-/* Timeline / seção títulos maiores */
-.tl-c h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .45rem; color: var(--ve); }
-.tl-c p  { font-size: .88rem; color: var(--tx2); line-height: 1.7; }
-.tl-yr   { font-size: .78rem; }
-
-/* Quem é — título maior */
-.q-txt h2 { font-size: clamp(1.9rem,3vw,2.6rem); }
-
-/* Vila título maior */
-.vila-txt h2 { font-size: clamp(1.9rem,3vw,2.6rem); }
-
-/* ABRACE título */
-.abrace-grid .s-tit,
-#abrace .s-tit { font-size: clamp(2rem,3.2vw,2.8rem); }
-
-/* ══ MOBILE — revisão geral ══ */
-
-/* Hero mobile: título menor mas legível */
-@media(max-width:768px) {
-  .h-tit { font-size: clamp(2rem, 7vw, 2.8rem) !important; white-space: normal; }
-  .h-sub { font-size: .92rem; text-align: left; }
-  .h-tags-row { flex-direction: column !important; }
-  .h-tags-row .h-tag { width: 100%; }
-  .h-bdg-row { justify-content: flex-start; }
-
-  /* Vals mobile — 1 coluna */
-  .vals { grid-template-columns: 1fr 1fr; gap: .4rem; }
-  .vi   { font-size: .8rem; }
-
-  /* Pautas mobile — 1 col */
-  .pautas-grid { grid-template-columns: 1fr !important; }
-
-  /* Depoimentos mobile */
-  .deps-grid { grid-template-columns: 1fr !important; }
-
-  /* ABRACE mobile */
-  .abrace-grid { grid-template-columns: 1fr; gap: 2rem; }
-
-  /* Section títulos mobile */
-  .s-tit { font-size: clamp(1.7rem, 5vw, 2.2rem); }
-  .s-pre { font-size: .78rem; }
-
-  /* Redes mobile — 2 colunas */
-  .redes-grid { grid-template-columns: 1fr 1fr !important; }
-
-  /* Footer mobile — 1 coluna */
-  .ftr-grid { grid-template-columns: 1fr; gap: 2rem; }
-
-  /* Vila mobile */
-  .vila-grid { grid-template-columns: 1fr; }
-  .vila-img-wrap { display: none; }
-
-  /* Quem é mobile */
-  .q-grid { grid-template-columns: 1fr; }
-  .q-imgs { display: none; }
-  .q-imgs-mobile { display: flex; justify-content: center; }
-
-  /* Header transparente mobile */
-  #hdr:not(.sc) .ham span { background: #fff; }
-
-  /* ABRACE foto mobile */
-  .abrace-photo-frame { height: 240px; }
-}
-
-@media(max-width:480px) {
-  .h-tit { font-size: 1.85rem !important; }
-  .vals  { grid-template-columns: 1fr; }
-  .redes-grid { grid-template-columns: 1fr !important; }
-  .insta-grade { grid-template-columns: 1fr 1fr; }
-  .pautas-grid { grid-template-columns: 1fr !important; }
-  .pc { padding: 1.3rem; }
-  .abrace-btns-row { flex-direction: column; }
-  .s-tit { font-size: 1.6rem; }
-}
-
-/* Tablet 1024px */
-@media(max-width:1024px) {
-  .pautas-grid { grid-template-columns: repeat(2,1fr) !important; }
-  .deps-grid   { grid-template-columns: repeat(2,1fr); }
-  .h-inner     { grid-template-columns: 1fr; text-align: left; padding: 5.5rem 0 2rem; }
-  .h-img-wr    { display: none !important; }
-}
-
-/* ══ MOBILE — Hero enxuto e foto com foco no rosto ══ */
-@media(max-width:768px) {
-
-  /* Foto de fundo mobile: foco no rosto */
-  .h-mobile-bg {
-    background-position: center top !important;
-    background-size: cover !important;
+<script>
+/* ── Scroll Spy ── */
+(function() {
+  var sections = ['hero','quem','historia','vila','pautas','redes'];
+  var links = {};
+  sections.forEach(function(id) {
+    var el = document.querySelector('[data-nav="' + id + '"]');
+    if (el) links[id] = el;
+  });
+  function getActive() {
+    var scrollY = window.scrollY + 80;
+    var active = 'hero';
+    sections.forEach(function(id) {
+      var sec = document.getElementById(id);
+      if (sec && sec.offsetTop <= scrollY) active = id;
+    });
+    return active;
   }
-  /* Overlay mobile: transparente no topo (mostra rosto), escuro embaixo (texto legível) */
-  .h-video-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(14,53,5,.25) 0%,
-      rgba(14,53,5,.35) 25%,
-      rgba(26,92,8,.72) 55%,
-      rgba(14,53,5,.92) 80%,
-      rgba(14,53,5,.97) 100%
-    ) !important;
+  function update() {
+    var active = getActive();
+    sections.forEach(function(id) {
+      var link = links[id];
+      if (!link) return;
+      if (id === active) { link.classList.add('nl-active'); } else { link.classList.remove('nl-active'); }
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
+
+
+<script>
+/* ── Depoimentos Carrossel ── */
+(function() {
+  var track  = document.getElementById('deps-track');
+  var dotsWr = document.getElementById('deps-dots');
+  var prev   = document.getElementById('deps-prev');
+  var next   = document.getElementById('deps-next');
+  if (!track) return;
+
+  var cards   = Array.from(track.children);
+  var total   = cards.length;
+  var perView = 3;
+  var steps   = 1;
+  var current = 0;
+  var autoTimer;
+  var GAP = 22.4; // 1.4rem in px
+
+  function calcLayout() {
+    perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+    steps   = Math.max(1, total - perView + 1);
+    // Set explicit pixel width on each card
+    var wrapW = track.parentElement.clientWidth;
+    var cardW = (wrapW - GAP * (perView - 1)) / perView;
+    cards.forEach(function(c) { c.style.width = cardW + 'px'; });
+    // Rebuild dots
+    dotsWr.innerHTML = '';
+    for (var i = 0; i < steps; i++) {
+      var d = document.createElement('button');
+      d.className = 'deps-dot' + (i === 0 ? ' on' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      d.dataset.i = i;
+      dotsWr.appendChild(d);
+    }
   }
 
-  /* Hero: texto mais enxuto no mobile */
-  .h-inner { padding: 5rem 0 3.5rem !important; }
-
-  /* Subtítulo mobile: limpo e legível */
-  .h-sub {
-    font-size: .95rem !important;
-    line-height: 1.75 !important;
-    text-align: left !important;
-    hyphens: none !important;
-    -webkit-hyphens: none !important;
-    max-width: 100% !important;
+  function getCardW() {
+    return cards[0] ? cards[0].getBoundingClientRect().width + GAP : 0;
   }
 
-  /* Título mobile: quebra natural, menor */
-  .h-tit {
-    font-size: clamp(1.9rem, 8vw, 2.6rem) !important;
-    white-space: normal !important;
-    line-height: 1.1 !important;
+  function goTo(n) {
+    current = ((n % steps) + steps) % steps;
+    track.style.transform = 'translateX(-' + (current * getCardW()) + 'px)';
+    Array.from(dotsWr.children).forEach(function(d, idx) {
+      d.classList.toggle('on', idx === current);
+    });
   }
 
-  /* Badge "Faça Parte" — menor no mobile */
-  .h-bdg-part {
-    font-size: .75rem !important;
-    padding: 10px 18px !important;
-    min-height: 42px !important;
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { goTo(current + 1); }, 4500);
   }
 
-  /* Tags mobile: coluna, compactas */
-  .h-tags { gap: .3rem !important; }
-  .h-tag  { font-size: .75rem !important; padding: .4rem .8rem !important; }
+  prev.addEventListener('click', function() { goTo(current - 1); startAuto(); });
+  next.addEventListener('click', function() { goTo(current + 1); startAuto(); });
+  dotsWr.addEventListener('click', function(e) {
+    var d = e.target.closest('.deps-dot');
+    if (d) { goTo(parseInt(d.dataset.i)); startAuto(); }
+  });
 
-  /* Vals mobile: ícone checkmark antes do texto não quebra */
-  .vi { font-size: .8rem !important; }
+  window.addEventListener('resize', function() {
+    calcLayout();
+    goTo(0);
+  });
 
-  /* ABRACE s-pre — já removido do HTML, garantir no CSS */
-  #abrace .s-pre { display: none; }
+  calcLayout();
+  goTo(0);
+  startAuto();
+})();
+</script>
 
-  /* Quem é mobile: garantir fundo mais visível */
 
+<script>
+/* ── Guardar posição do scroll ao clicar nas ações ── */
+document.querySelectorAll('.acao-item').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    sessionStorage.setItem('returnScroll', window.scrollY);
+    sessionStorage.setItem('returnFrom', 'acoes');
+  });
+});
+/* ── Ao voltar, restaurar posição ── */
+if (document.referrer.includes('acao-') && sessionStorage.getItem('returnScroll')) {
+  window.addEventListener('load', function() {
+    var y = parseInt(sessionStorage.getItem('returnScroll'));
+    if (y) { window.scrollTo(0, y); sessionStorage.removeItem('returnScroll'); }
+  });
 }
+</script>
 
-/* ══ Extra small mobile ══ */
-@media(max-width:390px) {
-  .h-tit { font-size: 1.75rem !important; }
-  .h-sub { font-size: .83rem !important; }
-}
+</body>
+</html
+
+</section>
+<!-- OUTRAS AÇÕES SOCIAIS -->
+
+
+="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Maria Amélia, Empresária, confeiteira, Vice-presidente do PL Mulher, esposa e mãe! apoiadora da Vila Pequenino Jesus e pré-candidata a Deputada Federal pelo Distrito Federal pelo PL.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mariaameliadf.github.io/mariamelia.df/">
+<title>Maria Amélia | Pré-candidata a Deputada Federal pelo DF</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mariaameliadf.github.io/mariamelia.df/">
+<meta property="og:title" content="Maria Amélia | Pré-candidata a Deputada Federal pelo DF">
+<meta property="og:description" content="Mais voz para o DF, mais força para o Brasil.">
+<meta property="og:image" content="https://mariaameliadf.github.io/mariamelia.df/foto_oficial.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Maria Amélia - Pré-candidata a Deputada Federal pelo DF">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mariaameliadf.github.io/mariamelia.df/">
+<meta property="twitter:title" content="Maria Amélia | Pré-candidata a Deputada Federal pelo DF">
+<meta property="twitter:description" content="Mais voz para o DF, mais força para o Brasil.">
+<meta property="twitter:image" content="https://mariaameliadf.github.io/mariamelia.df/foto_oficial.jpeg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='90' fill='%231a5c08'>♥︎</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><text y='150' font-size='155' fill='%231a5c08'>♥︎</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+<link rel="stylesheet" href="style.css">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.ftr-logo img, .nav-logo img, .mob-h img').forEach(function(img) {
+    img.onerror = function() {
+      this.style.display = 'none';
+      var fb = this.nextElementSibling;
+      if (fb && fb.classList.contains('logo-txt-fb')) fb.style.display = 'block';
+    };
+  });
+});
+</script>
+</head>
+<body>
+
+<!-- OVERLAY ESCURO, fundo do menu mobile -->
+<div class="mob-ov" id="mob-ov"></div>
+
+<!-- MENU MOBILE -->
+<nav class="mob-m" id="mob-m" aria-label="Menu mobile">
+  <div class="mob-h">
+    <img src="LOGO_MARIA_AMELIA_PRETO.svg" alt="Maria Amélia" width="120" height="40"
+         style="height:38px;width:auto;"
+         onerror="this.style.display='none'">
+    <button class="mob-x" id="mob-x" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="mob-ls">
+    <a href="#hero"     class="mob-l"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#quem"     class="mob-l"><i class="fa-solid fa-user"></i> História</a>
+    <a href="#historia" class="mob-l"><i class="fa-solid fa-timeline"></i> Trajetória</a>
+    <a href="#vila"     class="mob-l"><i class="fa-solid fa-heart"></i> Ações Sociais</a>
+    <a href="#pautas"   class="mob-l"><i class="fa-solid fa-list-check"></i> Bandeiras</a>
+    <a href="#redes"    class="mob-l"><i class="fa-solid fa-share-nodes"></i> Redes Sociais</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Maria Amélia - Início">
+        <img src="LOGO_MARIA_AMELIA_BRANCO.svg" alt="Maria Amélia" id="nav-logo-img"
+             onerror="this.onerror=null; this.src=''; this.alt='Maria Amélia'; this.style.cssText='font-size:1.1rem;font-weight:800;color:#0e3505;font-family:Poppins,sans-serif;';">
+      </a>
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="#hero"    class="nl" data-nav="hero">Home</a>
+        <a href="#quem"    class="nl" data-nav="quem">História</a>
+        <a href="#historia" class="nl" data-nav="historia">Trajetória</a>
+        <a href="#vila"    class="nl" data-nav="vila">Ações Sociais</a>
+        <a href="#pautas"  class="nl" data-nav="pautas">Bandeiras</a>
+        <a href="#redes"   class="nl" data-nav="redes">Redes Sociais</a>
+      </nav>
+      <button class="ham" id="ham" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+
+
+<!-- QUEM É MARIA AMÉLIA -->
+
+
+<!-- TRAJETÓRIA, linha do tempo -->
+
+
+<!-- AÇÕES SOCIAIS -->
 
 
 
-/* ══ HERO BADGE — desktop acima, mobile abaixo das tags ══ */
-.h-bdg-desktop { display: none; }  /* hidden — badge fica abaixo das tags */
-.h-bdg-mobile  { display: flex; justify-content: center; margin-top: 1.2rem; }  /* visível em todas as telas */
+<!-- ABRACE -->
 
-@media(max-width:768px) {
-  /* Mobile: esconde badge do topo, mostra o de baixo */
-  .h-bdg-desktop { display: none !important; }
-  .h-bdg-mobile  { display: flex !important; width: 100%; margin-top: .6rem; }
-  .h-bdg-mobile .h-bdg-part { width: 100%; justify-content: center; }
 
-  /* Foto mobile: foco abaixo do pescoço/no busto */
-  /* A foto_oficial.jpeg tem o rosto no terço superior */
-  /* Queremos mostrar do pescoço para cima — position: top */
-  .h-mobile-bg {
-    background-position: center 5% !important;
-    background-size: 160% !important;
+<!-- BANDEIRAS -->
+
+
+<!-- INSTAGRAM FEED -->
+
+
+<!-- GALERIA -->
+
+
+<!-- YOUTUBE -->
+
+
+<!-- DEPOIMENTOS -->
+
+
+<!-- REDES SOCIAIS -->
+
+
+<!-- FOOTER -->
+
+
+<!-- MODAL -->
+<div class="m-ov" id="modal" aria-modal="true" role="dialog" aria-labelledby="m-tit" aria-hidden="true">
+  <div class="m-box">
+    <button class="m-x" id="m-x" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+    <div class="m-ico" id="m-ico"><i class="fa-solid fa-list-check"></i></div>
+    <h2 class="m-tit" id="m-tit"></h2>
+    <p class="m-des" id="m-des"></p>
+    <div class="m-pri"><h4>Prioridades</h4><ul id="m-pris"></ul></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lbx-ov" id="lbx">
+  <button class="lbx-close" id="lbx-close" aria-label="Fechar">×</button>
+  <button class="lbx-nav lbx-prev" id="lbx-prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+  <img class="lbx-img" id="lbx-img" src="" alt="">
+  <button class="lbx-nav lbx-next" id="lbx-next" aria-label="Próxima"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lbx-caption" id="lbx-cap"></div>
+</div>
+
+<!-- LGPD -->
+<div id="lgpd">
+  <div class="container">
+    <div class="lg-in">
+      <span class="lg-ico">🍪</span>
+      <div class="lg-txt">
+        <h4>Privacidade e Cookies</h4>
+        <p>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
+      </div>
+      <div class="lg-acts">
+        <button class="lg-btn cus" id="lg-c">Personalizar</button>
+        <button class="lg-btn rej" id="lg-r">Rejeitar</button>
+        <button class="lg-btn acc" id="lg-a">Aceitar Todos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+<button id="btt" aria-label="Voltar ao topo"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Botão WhatsApp pulsante — lado direito inferior -->
+<a id="wpp-btn" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <img src="whatsapp_coracao.svg" alt="WhatsApp" style="width:70px;height:70px;display:block;object-fit:contain;">
+</a>
+
+<script src="main.js" defer></script>
+
+<!-- CURSOR PERSONALIZADO -->
+<div id="cursor-heart" aria-hidden="true">&#10084;</div>
+<script>
+  (function() {
+    var heart = document.getElementById('cursor-heart');
+    if (!heart) return;
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+    document.addEventListener('mousemove', function(e) {
+      heart.style.display = 'block';
+      heart.style.left = e.clientX + 'px';
+      heart.style.top  = e.clientY + 'px';
+    });
+    document.addEventListener('mouseleave', function() { heart.style.opacity = '0'; });
+    document.addEventListener('mouseenter', function() { heart.style.opacity = '1'; });
+    document.addEventListener('mousedown',  function() { heart.classList.add('click'); });
+    document.addEventListener('mouseup',    function() { heart.classList.remove('click'); });
+  })();
+</script>
+
+<script>
+/* ── Header: transparente no topo, branco ao rolar ── */
+(function() {
+  var hdr = document.getElementById('hdr');
+  if (!hdr) return;
+  function onScroll() {
+    if (window.scrollY > 60) { hdr.classList.add('sc'); } else { hdr.classList.remove('sc'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+<script>
+/* ── Scroll Spy ── */
+(function() {
+  var sections = ['hero','quem','historia','vila','pautas','redes'];
+  var links = {};
+  sections.forEach(function(id) {
+    var el = document.querySelector('[data-nav="' + id + '"]');
+    if (el) links[id] = el;
+  });
+  function getActive() {
+    var scrollY = window.scrollY + 80;
+    var active = 'hero';
+    sections.forEach(function(id) {
+      var sec = document.getElementById(id);
+      if (sec && sec.offsetTop <= scrollY) active = id;
+    });
+    return active;
+  }
+  function update() {
+    var active = getActive();
+    sections.forEach(function(id) {
+      var link = links[id];
+      if (!link) return;
+      if (id === active) { link.classList.add('nl-active'); } else { link.classList.remove('nl-active'); }
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
+
+
+<script>
+/* ── Depoimentos Carrossel ── */
+(function() {
+  var track  = document.getElementById('deps-track');
+  var dotsWr = document.getElementById('deps-dots');
+  var prev   = document.getElementById('deps-prev');
+  var next   = document.getElementById('deps-next');
+  if (!track) return;
+
+  var cards   = Array.from(track.children);
+  var total   = cards.length;
+  var perView = 3;
+  var steps   = 1;
+  var current = 0;
+  var autoTimer;
+  var GAP = 22.4; // 1.4rem in px
+
+  function calcLayout() {
+    perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+    steps   = Math.max(1, total - perView + 1);
+    // Set explicit pixel width on each card
+    var wrapW = track.parentElement.clientWidth;
+    var cardW = (wrapW - GAP * (perView - 1)) / perView;
+    cards.forEach(function(c) { c.style.width = cardW + 'px'; });
+    // Rebuild dots
+    dotsWr.innerHTML = '';
+    for (var i = 0; i < steps; i++) {
+      var d = document.createElement('button');
+      d.className = 'deps-dot' + (i === 0 ? ' on' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      d.dataset.i = i;
+      dotsWr.appendChild(d);
+    }
   }
 
-  /* Quem é mobile: esconder cards Heitor (placeholders) */
-  .q-imgs,
-  .q-imgs-mobile { display: none !important; }
-
-  /* Título hero mobile: compacto, sem espaço desnecessário */
-  .h-tit {
-    font-size: clamp(2rem, 9vw, 2.8rem) !important;
-    margin-bottom: .7rem !important;
+  function getCardW() {
+    return cards[0] ? cards[0].getBoundingClientRect().width + GAP : 0;
   }
 
-  /* Texto abaixo do título: mais espaço interno */
-  .h-inner {
-    padding: 4.5rem 0 2.5rem !important;
-  }
-}
-
-/* ══ QUEM É — mobile: foto centralizada como no screenshot ══ */
-@media(max-width:768px) {
-
-  /* Seção com altura mínima para mostrar a foto atrás */
-  #quem {
-    position: relative;
-    overflow: hidden;
+  function goTo(n) {
+    current = ((n % steps) + steps) % steps;
+    track.style.transform = 'translateX(-' + (current * getCardW()) + 'px)';
+    Array.from(dotsWr.children).forEach(function(d, idx) {
+      d.classList.toggle('on', idx === current);
+    });
   }
 
-
-
-  /* Overlay suave para legibilidade do texto */
-  #quem::after {
-    content: '';
-    position: absolute; inset: 0; z-index: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,.15) 0%,
-      rgba(255,255,255,.5) 40%,
-      rgba(255,255,255,.82) 65%,
-      rgba(255,255,255,.95) 100%
-    );
-    pointer-events: none;
-  }
-  #quem .container { position: relative; z-index: 1; }
-  #quem .q-grid { position: relative; z-index: 1; }
-
-  /* Texto escuro e legível sobre o fundo */
-  .q-txt p, .q-txt h2, .q-txt .pre-l { position: relative; z-index: 2; }
-
-  /* Remove o h-sub margin extra sem o vals */
-  .q-txt .btn { margin-top: 1.2rem; }
-}
-
-/* ══ H-SUB removido — ajustar espaçamento hero ══ */
-.h-sub { margin-bottom: 0; }  /* sem subtítulo, sem espaço */
-
-/* H-tags ficam logo após o título */
-.h-tit + .h-tags,
-.h-tit + .h-tags-row { margin-top: .8rem; }
-
-/* ══ HERO MOBILE — título centralizado, 2 linhas, sem ponto ══ */
-@media(max-width:768px) {
-
-  /* Centraliza toda a coluna de texto */
-  .h-txt { text-align: center; }
-
-  /* Título: tamanho que cabe em 2 linhas */
-  .h-tit {
-    font-size: clamp(2.2rem, 10vw, 3rem) !important;
-    text-align: center !important;
-    line-height: 1.1 !important;
-    white-space: normal !important;
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { goTo(current + 1); }, 4500);
   }
 
-  /* Tags centralizadas */
-  .h-tags-row {
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-  }
-  .h-tags-row .h-tag { flex: 1 1 auto; text-align: center; justify-content: center; }
-
-  /* Badge desktop: oculto */
-  .h-bdg-desktop { display: none !important; }
-
-  /* Badge mobile: visível, centralizado, abaixo das tags */
-  .h-bdg-mobile {
-    display: flex !important;
-    justify-content: center !important;
-    margin-top: 1rem !important;
-    width: 100% !important;
-  }
-  .h-bdg-mobile .h-bdg-part {
-    width: auto !important;
-    padding: 14px 28px !important;
-    font-size: .85rem !important;
-    box-shadow: 0 6px 20px rgba(254,220,80,.45);
-  }
-
-  /* Espaçamento entre título e tags */
-  .h-tit { margin-bottom: 1.2rem !important; }
-  .h-tags-row { gap: .5rem !important; margin-bottom: .2rem; }
-}
-
-/* ══ QUEM É — mobile: foto centralizada no rosto ══ */
-@media(max-width:768px) {
-  #quem .quem-bg {
-    opacity: .65 !important;
-    background-position: 70% 25% !important;
-    /* 70% direita, 25% topo = rosto aparece centralizado na tela */
-    background-size: 200% !important;
-    /* zoom para cortar bordas e focar no rosto */
-  }
-}
-
-/* ══ TRAJETÓRIA — título sem corte no mobile ══ */
-@media(max-width:768px) {
-  #historia .s-tit {
-    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
-    word-break: normal;
-    overflow-wrap: break-word;
-  }
-  /* Todos os títulos de seção menores no mobile para não cortar */
-  .s-tit {
-    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
-    word-break: normal;
-  }
-}
-
-/* ══ HERO TAGS — coluna (uma embaixo da outra) ══ */
-.h-tags-col {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: .5rem !important;
-  align-items: flex-start !important;
-}
-.h-tags-col .h-tag {
-  width: auto;
-}
-
-/* Desktop: tags em coluna centralizada */
-@media(min-width:769px) {
-  .h-tags-col { align-items: center !important; }
-}
-
-/* Badge "Faça Parte" — mais espaço acima */
-.h-bdg-mobile { margin-top: 1.8rem !important; }
-
-/* ══ BOTÃO WHATSAPP PULSANTE ══ */
-#wpp-btn {
-  position: fixed;
-  bottom: 1.6rem;
-  right: 5.5rem;
-  width: 72px; height: 72px;
-  display: flex; align-items: center; justify-content: center;
-  z-index: 800;
-  animation: wpp-pulse 2.2s ease-in-out infinite;
-  text-decoration: none;
-  overflow: visible;
-  background: none !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  border-radius: 0 !important;
-  outline: none !important;
-  -webkit-appearance: none;
-  appearance: none;
-}
-.wpp-btn-img {
-  width: 100px; height: 100px;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 4px 16px rgba(37,211,102,.6));
-}
-.wpp-btn-fallback {
-  width: 80px; height: 80px;
-  background: #25d366;
-  border-radius: 50%;
-  align-items: center; justify-content: center;
-  font-size: 1.8rem; color: #fff;
-}
-@keyframes wpp-pulse {
-  0%,100% { transform: scale(1); }
-  50%      { transform: scale(1.1); }
-}
-#wpp-btn:hover { animation-play-state: paused; transform: scale(1.18); }
-
-/* ══ SOCIAL EXTRA (enchentes, dom orione, igrejas) ══ */
-.social-extra { margin-top: 3rem; }
-.social-extra-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.4rem;
-}
-.social-extra-card {
-  background: var(--br);
-  border: 1px solid #daeac0;
-  border-radius: var(--rd);
-  padding: 1.5rem;
-  box-shadow: var(--s1);
-  display: flex; flex-direction: column; gap: .8rem;
-  transition: var(--tr);
-}
-.social-extra-card:hover { box-shadow: var(--s2); transform: translateY(-3px); }
-.social-extra-card.social-rs {
-  grid-column: span 1;
-  border-left: 4px solid #3b82f6; /* azul água */
-}
-.social-extra-ico {
-  width: 46px; height: 46px;
-  background: linear-gradient(135deg, var(--vd), var(--vl));
-  border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.1rem; flex-shrink: 0;
-}
-.social-rs .social-extra-ico { background: linear-gradient(135deg, #1e40af, #3b82f6); }
-.social-extra-txt h3 { font-size: .95rem; font-weight: 700; color: var(--ve); margin-bottom: .4rem; }
-.social-extra-txt p  { font-size: .83rem; color: var(--tx2); line-height: 1.7; margin: 0; }
-.social-extra-txt strong { color: var(--ve); }
-.social-yt-lbl { font-size: .78rem; font-weight: 600; color: var(--vm); margin: .8rem 0 .4rem; display: flex; align-items: center; gap: .4rem; }
-.social-yt-wrap { border-radius: var(--rds); overflow: hidden; }
-@media(max-width:900px){
-  .social-extra-grid { grid-template-columns: 1fr; }
-  .social-extra-card.social-rs { grid-column: span 1; }
-}
-
-/* ══ FOOTER — bandeiras novas ══ */
-
-/* ══ LIBERDADE — destaque na seção Quem é ══ */
-.liberdade-destaque {
-  display: flex; align-items: flex-start; gap: .85rem;
-  background: linear-gradient(135deg, rgba(45,122,15,.07), rgba(254,220,80,.1));
-  border: 1px solid rgba(45,122,15,.2);
-  border-left: 4px solid var(--vm);
-  border-radius: var(--rds);
-  padding: .9rem 1rem;
-  margin: 1rem 0 1.2rem;
-}
-.liberdade-destaque i {
-  color: var(--vm); font-size: 1.1rem; flex-shrink: 0; margin-top: .2rem;
-}
-.liberdade-destaque p {
-  font-size: .88rem !important;
-  color: var(--tx) !important;
-  line-height: 1.7 !important;
-  margin: 0 !important;
-  font-style: normal !important;
-}
-.liberdade-destaque strong { color: var(--vm) !important; }
-
-/* ══ SOCIAL EXTRA — título da seção ══ */
-.social-extra-title {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 700; color: var(--ve);
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-/* Grid 3 colunas → 5 cards: 3+2 */
-.social-extra-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
-}
-/* Último card (igrejas) — centraliza quando ficar sozinho na linha */
-.social-extra-card:last-child:nth-child(3n+2) {
-  grid-column: 2;
-}
-
-/* Link dentro dos cards */
-.social-extra-link {
-  display: inline-flex; align-items: center; gap: .4rem;
-  font-size: .78rem; font-weight: 600; color: var(--vm);
-  margin-top: .75rem; transition: var(--tr);
-  text-decoration: none;
-}
-.social-extra-link:hover { gap: .65rem; color: var(--vd); }
-
-@media(max-width:1024px){
-  .social-extra-grid { grid-template-columns: repeat(2,1fr); }
-  .social-extra-card:last-child:nth-child(3n+2) { grid-column: auto; }
-}
-@media(max-width:600px){
-  .social-extra-grid { grid-template-columns: 1fr; }
-  #wpp-btn { right: 4.5rem; width: 80px; height: 80px; }
-  #wpp-btn svg { width: 80px; height: 80px; }
-}
-
-/* ══ LOGO — garantir coração verde visível ao rolar ══ */
-#hdr.sc .nav-logo img {
-  filter: none !important;
-  /* Force SVG color channels intact */
-  image-rendering: crisp-edges;
-}
-/* Transição suave entre estados */
-.nav-logo img {
-  transition: filter .35s ease;
-}
-
-/* ══ LOGO SWAP — branco no topo, colorido ao rolar ══ */
-#hdr.sc #nav-logo-img { filter: none; }
-#hdr:not(.sc) #nav-logo-img { filter: none; }
-/* Logo transition */
-#nav-logo-img { transition: filter .3s ease; }
-
-/* ══ FOOTER — compacto e proporcional ══ */
-#ftr { padding: 2.5rem 0 0; }
-.ftr-grid {
-  grid-template-columns: 1.6fr 1fr 1.4fr 1fr !important;
-  gap: 2rem !important;
-  padding-bottom: 2rem !important;
-}
-.ftr-abt p { font-size: .77rem !important; line-height: 1.65 !important; }
-.f-col ul { gap: .38rem !important; }
-.f-col ul li a { font-size: .76rem !important; }
-.f-col h4 { margin-bottom: .7rem !important; font-size: .75rem !important; }
-.ftr-btm { padding: 1rem 0 !important; }
-.ftr-btm p, .ftr-btm a { font-size: .7rem !important; }
-
-/* Social extra section title banner */
-.social-title-banner {
-  background: var(--br);
-  padding: 3.5rem 0 2.5rem;
-  text-align: center;
-  border-bottom: 1px solid #daeac0;
-}
-.social-title-banner .s-pre { text-align: center; }
-.social-title-banner .s-tit { text-align: center; }
-.social-title-banner .s-ln  { margin: 10px auto 0; }
-
-/* ══ SOCIAL SECTIONS — ícone centralizado tipo ABRACE ══ */
-.social-sec-ico {
-  width: 64px; height: 64px;
-  background: linear-gradient(135deg, var(--vd), var(--vl));
-  border-radius: 20px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem; color: #fff;
-  margin: 0 auto 1rem;
-  box-shadow: 0 6px 20px rgba(26,92,8,.28);
-}
-
-/* ══ DEPOIMENTOS — carrossel automático ══ */
-#deps { background: var(--br); overflow: hidden; }
-
-.deps-carousel-wrap {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--rd);
-  margin-bottom: 1.5rem;
-  width: 100%;
-}
-
-.deps-track {
-  display: flex;
-  gap: 1.4rem;
-  transition: transform .55s cubic-bezier(.4,0,.2,1);
-  will-change: transform;
-  align-items: flex-start;
-  width: max-content; /* track grows as needed */
-}
-
-/* cada card no carrossel — largura FIXA baseada no container */
-.deps-track .dep-c {
-  flex-shrink: 0;
-  flex-grow: 0;
-  /* largura calculada em JS e aplicada via atributo style */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  box-sizing: border-box;
-}
-
-/* Setas de navegação */
-.deps-nav-btns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-.deps-arrow {
-  width: 46px; height: 46px;
-  border-radius: 50%;
-  border: 2px solid rgba(45,122,15,.28);
-  background: var(--br);
-  color: var(--vm);
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .9rem;
-  transition: var(--tr);
-  box-shadow: var(--s1);
-}
-.deps-arrow:hover { background: var(--vm); border-color: var(--vm); color: #fff; box-shadow: var(--s2); }
-.deps-dots { display: flex; gap: .45rem; }
-.deps-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(45,122,15,.22); border: none; cursor: pointer;
-  transition: var(--tr); padding: 0;
-}
-.deps-dot.on { background: var(--vm); transform: scale(1.35); }
-
-@media(max-width:1024px){
-  .deps-track .dep-c { flex: 0 0 calc(50% - .7rem); width: calc(50% - .7rem); }
-}
-@media(max-width:600px){
-  .deps-track .dep-c { flex: 0 0 100%; width: 100%; }
-}
-
-/* Vila: esconde título interno já que s-hd foi adicionado */
-#vila .vila-txt h2 { display: none; }
-#vila .vila-txt .s-ln { display: none; }
-
-/* WPP button — garantir fundo totalmente transparente */
-#wpp-btn {
-  background: none !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-#wpp-btn svg {
-  overflow: visible !important;
-  background: transparent !important;
-}
-
-/* ══════════════════════════════════════
-   MOBILE COMPLETO — revisão geral
-══════════════════════════════════════ */
-
-@media(max-width: 768px) {
-
-  /* Todas as seções sociais — abrace-grid vira 1 coluna */
-  .abrace-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
-  .abrace-photo-frame { height: 220px !important; }
-  .abrace-btns-row { flex-direction: column !important; gap: .7rem !important; }
-  .abrace-btns-row .btn { width: 100%; justify-content: center; }
-  .abrace-cards { gap: .6rem; }
-  .abrace-card-item { padding: .75rem; }
-
-  /* Social section icon */
-  .social-sec-ico { width: 52px; height: 52px; font-size: 1.3rem; }
-
-  /* Vila grid legado — ocultar */
-  .vila-grid { display: none !important; }
-  .vila-img-wrap { display: none !important; }
-
-  /* Carrossel depoimentos mobile */
-  .deps-carousel-wrap { border-radius: 12px; }
-
-  /* WPP button mobile */
-  #wpp-btn { right: 4.5rem; bottom: 1.4rem; width: 60px; height: 60px; }
-  #wpp-btn img { width: 60px; height: 60px; }
-
-  /* Social title banner */
-  .social-title-banner { padding: 2.5rem 0 2rem; }
-  .social-title-banner .s-tit { font-size: clamp(1.5rem, 5vw, 2rem) !important; }
-
-  /* Seções s-tit mobile */
-  .s-tit { font-size: clamp(1.5rem, 5.5vw, 2rem) !important; }
-  .s-sub { font-size: .85rem !important; }
-
-  /* Trajetória mobile */
-  .tl::before { left: 12px; }
-  .tl-i { display: flex !important; flex-direction: column !important; padding-left: 2rem; }
-  .tl-i:nth-child(even) .tl-c { text-align: left !important; }
-  .tl-dot { position: absolute; left: 4px; top: .4rem; }
-  .tl-img-col { width: 100%; height: 140px; order: -1; }
-  .tl-c { width: 100%; padding: 1rem; }
-  .tl-c h3 { font-size: .9rem; }
-  .tl-c p { font-size: .8rem; }
-
-  /* Bandeiras mobile */
-  .pautas-grid { grid-template-columns: 1fr !important; }
-  .pc { padding: 1.2rem; }
-
-  /* Redes mobile */
-  .redes-grid { grid-template-columns: 1fr 1fr !important; gap: .8rem !important; }
-
-  /* Instagram mobile */
-  .insta-grade { grid-template-columns: 1fr 1fr !important; }
-  .insta-gi-large { grid-column: span 2 !important; grid-row: span 1 !important; }
-
-  /* Galeria mobile */
-  .gal-grid { grid-template-columns: 1fr 1fr !important; }
-  .gi:nth-child(1) { grid-column: span 2; }
-
-  /* Footer mobile */
-  .ftr-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
-  .ftr-abt p { font-size: .8rem; }
-
-  /* Quem é mobile — fundo visível */
-  #quem .quem-bg {
-    opacity: .55 !important;
-    background-position: 65% 20% !important;
-    background-size: 180% !important;
-  }
-
-  /* Seção abrace mobile photo */
-  .abrace-photo-col { order: -1; }
-}
-
-@media(max-width: 480px) {
-  .redes-grid { grid-template-columns: 1fr !important; }
-  .insta-grade { grid-template-columns: 1fr !important; }
-  .insta-gi-large { grid-column: span 1 !important; }
-  .gal-grid { grid-template-columns: 1fr !important; }
-  .gi:nth-child(1) { grid-column: span 1; }
-  #wpp-btn { right: 4rem; width: 54px; height: 54px; }
-  #wpp-btn img { width: 54px; height: 54px; }
-  .abrace-card-item { flex-direction: column; gap: .5rem; }
-}
-
- }
-
-/* ══════════════════════════════════════════
-   AÇÕES SOCIAIS — MOSAIC LAYOUT
-══════════════════════════════════════════ */
-.acao-mosaic {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto auto;
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-
-/* Large card (Vila) — 3 cols wide, 2 rows tall */
-.amo-card.amo-large { grid-column: span 3; grid-row: span 2; min-height: 360px; }
-/* Normal cards — 2 cols each (3 fit in remaining 3 cols, 2 rows) */
-.amo-card:not(.amo-large):not(.amo-wide) { grid-column: span 2; }
-/* Wide card (Igrejas) — 3 cols wide */
-.amo-card.amo-wide { grid-column: span 3; }
-
-/* THE CARD */
-.amo-card {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  text-decoration: none;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 1.6rem;
-  min-height: 200px;
-  cursor: pointer;
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-.amo-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 24px 60px rgba(0,0,0,.25); }
-
-/* Gradient background via CSS var */
-.amo-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(145deg, var(--clr1), var(--clr2));
-  transition: opacity .35s ease;
-}
-/* Pattern overlay */
-.amo-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 80% 20%, rgba(255,255,255,.12) 0%, transparent 50%),
-                    radial-gradient(circle at 20% 80%, rgba(0,0,0,.15) 0%, transparent 50%);
-}
-
-/* Number watermark */
-.amo-num {
-  position: absolute; top: 1rem; right: 1.2rem; z-index: 1;
-  font-size: 4.5rem; font-weight: 900; line-height: 1;
-  color: rgba(255,255,255,.1); letter-spacing: -.05em;
-  font-family: 'Poppins', sans-serif;
-  pointer-events: none;
-}
-.amo-large .amo-num { font-size: 7rem; top: 1.2rem; right: 1.5rem; }
-
-/* Body */
-.amo-body {
-  position: relative; z-index: 2;
-  display: flex; flex-direction: column; gap: .45rem;
-}
-.amo-ico {
-  width: 44px; height: 44px;
-  background: rgba(255,255,255,.18);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.15rem; color: #fff;
-  margin-bottom: .3rem;
-  backdrop-filter: blur(8px);
-}
-.amo-large .amo-ico { width: 56px; height: 56px; font-size: 1.5rem; border-radius: 16px; }
-.amo-tag {
-  font-size: .66rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .12em; color: rgba(255,255,255,.7);
-}
-.amo-body h3 {
-  font-size: .95rem; font-weight: 700; color: #fff;
-  line-height: 1.25; margin: 0;
-}
-.amo-large .amo-body h3 { font-size: 1.4rem; }
-.amo-body p {
-  font-size: .78rem; color: rgba(255,255,255,.75);
-  line-height: 1.55; margin: 0;
-}
-.amo-large .amo-body p { font-size: .9rem; }
-
-/* CTA */
-.amo-cta {
-  position: relative; z-index: 2;
-  display: inline-flex; align-items: center; gap: .4rem;
-  margin-top: 1rem;
-  font-size: .75rem; font-weight: 700; color: rgba(255,255,255,.85);
-  border-top: 1px solid rgba(255,255,255,.15);
-  padding-top: .85rem;
-  transition: gap .25s ease, color .25s ease;
-}
-.amo-card:hover .amo-cta { gap: .7rem; color: #fff; }
-
-/* Responsive */
-@media(max-width:1100px) {
-  .acao-mosaic { grid-template-columns: repeat(4,1fr); }
-  .amo-card.amo-large { grid-column: span 2; grid-row: span 1; min-height: 240px; }
-  .amo-card:not(.amo-large):not(.amo-wide) { grid-column: span 2; }
-  .amo-card.amo-wide { grid-column: span 4; }
-}
-@media(max-width:700px) {
-  .acao-mosaic { grid-template-columns: 1fr 1fr; gap: .7rem; }
-  .amo-card.amo-large { grid-column: span 2; min-height: 200px; }
-  .amo-card:not(.amo-large):not(.amo-wide) { grid-column: span 1; min-height: 160px; }
-  .amo-card.amo-wide { grid-column: span 2; }
-  .amo-num { font-size: 3rem; }
-  .amo-large .amo-num { font-size: 4rem; }
-  .amo-card { padding: 1.1rem; min-height: 160px; }
-  .amo-body h3 { font-size: .85rem; }
-  .amo-large .amo-body h3 { font-size: 1.1rem; }
-}
-
-/* ══ FOOTER — mobile e compacto ══ */
-@media(max-width:768px) {
-  .ftr-grid { grid-template-columns: 1fr !important; gap: 1.8rem !important; }
-  #ftr { padding: 2.5rem 0 0; }
-  .ftr-abt { text-align: center; }
-  .ftr-abt .f-soc { justify-content: center; }
-  .ftr-logo { display: flex; justify-content: center; }
-  .f-col h4 { margin-top: .5rem; }
-}
-/* Desktop footer — 2 colunas para o texto longo quebrar melhor */
-.ftr-abt p { 
-  column-count: 1; 
-  max-width: 340px;
-}
-@media(min-width:1100px){
-  .ftr-grid { grid-template-columns: 1.2fr 1fr 1.3fr 1fr !important; }
-}
-
-/* ══════════════════════════════════════
-   AÇÕES SOCIAIS — MOSAICO BENTO GRID
-══════════════════════════════════════ */
-.acs-mosaic {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  gap: 1rem;
-}
-
-/* 2 grandes na primeira linha */
-.acs-item--lg {
-  grid-column: span 1;
-}
-/* Primeiros 2 items são grandes */
-.acs-item--lg:nth-child(1),
-.acs-item--lg:nth-child(2) {
-  grid-row: span 1;
-}
-
-.acs-item {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  transition: transform .35s ease, box-shadow .35s ease;
-  box-shadow: 0 8px 28px rgba(0,0,0,.2);
-}
-.acs-item--lg { min-height: 280px; }
-.acs-item:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 18px 48px rgba(0,0,0,.3); }
-
-/* Background gradient */
-.acs-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(150deg, var(--c1), var(--c2));
-}
-/* Subtle dot pattern overlay */
-.acs-bg::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,.08) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-/* Bottom gradient for text readability */
-.acs-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 60%);
-}
-
-/* Number watermark */
-.acs-num {
-  position: absolute;
-  top: 1rem; right: 1.2rem;
-  font-size: 4rem; font-weight: 800;
-  color: rgba(255,255,255,.1);
-  line-height: 1;
-  z-index: 1;
-  font-variant-numeric: tabular-nums;
-}
-.acs-item--lg .acs-num { font-size: 6rem; }
-
-/* Icon */
-.acs-ico-lg {
-  position: absolute;
-  top: 1.2rem; left: 1.2rem;
-  width: 44px; height: 44px;
-  background: rgba(255,255,255,.18);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; color: #fff;
-  z-index: 2;
-}
-.acs-item--lg .acs-ico-lg { width: 52px; height: 52px; font-size: 1.5rem; border-radius: 14px; }
-
-/* Info block */
-.acs-info {
-  position: relative; z-index: 2;
-  padding: 1.2rem 1.2rem 1rem;
-  display: flex; flex-direction: column; gap: .3rem;
-}
-.acs-tag {
-  font-size: .65rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .1em;
-  color: rgba(255,255,255,.65);
-}
-.acs-info h3 {
-  font-size: .95rem; font-weight: 700;
-  color: #fff; line-height: 1.25; margin: 0;
-}
-.acs-item--lg .acs-info h3 { font-size: 1.15rem; }
-.acs-info p {
-  font-size: .76rem; color: rgba(255,255,255,.75);
-  line-height: 1.5; margin: 0;
-  display: none; /* hidden on small, shown on large */
-}
-.acs-item--lg .acs-info p { display: block; }
-
-/* Arrow */
-.acs-arrow {
-  position: absolute;
-  bottom: 1rem; right: 1rem;
-  width: 32px; height: 32px;
-  background: rgba(255,255,255,.2);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .8rem; color: #fff;
-  z-index: 2;
-  transition: background .25s ease, transform .25s ease;
-}
-.acs-item:hover .acs-arrow {
-  background: rgba(255,255,255,.35);
-  transform: translate(2px,-2px);
-}
-
-/* Layout: first row 2 large + 1 small, second row 4 small */
-.acs-mosaic .acs-item:nth-child(1) { grid-column: 1 / 2; }
-.acs-mosaic .acs-item:nth-child(2) { grid-column: 2 / 3; }
-.acs-mosaic .acs-item:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 3; }
-.acs-mosaic .acs-item:nth-child(4),
-.acs-mosaic .acs-item:nth-child(5),
-.acs-mosaic .acs-item:nth-child(6),
-.acs-mosaic .acs-item:nth-child(7) { grid-column: span 1; }
-
-/* ══ FOOTER — 2 colunas, compacto ══ */
-.ftr-grid {
-  grid-template-columns: 1.8fr 1fr 1.4fr 1fr !important;
-  gap: 2rem !important;
-  padding-bottom: 1.8rem !important;
-}
-/* Texto do footer em 2 colunas para reduzir altura */
-.ftr-abt p {
-  column-count: 1 !important;
-  font-size: .78rem !important;
-  line-height: 1.6 !important;
-  color: rgba(255,255,255,.42) !important;
-  margin-top: .7rem !important;
-}
-#ftr { padding: 2rem 0 0 !important; }
-.ftr-btm { padding: .9rem 0 !important; }
-
-/* ══ MOBILE — MOSAICO ══ */
-@media(max-width: 900px) {
-  .acs-mosaic {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-  .acs-mosaic .acs-item { grid-column: span 1 !important; grid-row: span 1 !important; min-height: 170px; }
-  .acs-mosaic .acs-item--lg { min-height: 200px; }
-  .acs-item--lg .acs-num { font-size: 4rem; }
-  .acs-info p { display: none !important; }
-}
-@media(max-width: 520px) {
-  .acs-mosaic { grid-template-columns: 1fr; }
-  .acs-mosaic .acs-item { min-height: 140px; }
-  .acs-item--lg .acs-info p { display: block !important; }
-}
-
-/* ══ MOBILE FOOTER ══ */
-@media(max-width: 768px) {
-  .ftr-grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
-  .ftr-abt { grid-column: span 2; }
-  .f-col { }
-  .ftr-btm { flex-direction: column; gap: .5rem; text-align: center; }
-}
-@media(max-width: 480px) {
-  .ftr-grid { grid-template-columns: 1fr !important; }
-  .ftr-abt { grid-column: span 1; }
-}
+  prev.addEventListener('click', function() { goTo(current - 1); startAuto(); });
+  next.addEventListener('click', function() { goTo(current + 1); startAuto(); });
+  dotsWr.addEventListener('click', function(e) {
+    var d = e.target.closest('.deps-dot');
+    if (d) { goTo(parseInt(d.dataset.i)); startAuto(); }
+  });
+
+  window.addEventListener('resize', function() {
+    calcLayout();
+    goTo(0);
+  });
+
+  calcLayout();
+  goTo(0);
+  startAuto();
+})();
+</script>
+
+
+<script>
+/* ── Guardar posição do scroll ao clicar nas ações ── */
+document.querySelectorAll('.acao-item').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    sessionStorage.setItem('returnScroll', window.scrollY);
+    sessionStorage.setItem('returnFrom', 'acoes');
+  });
+});
+/* ── Ao voltar, restaurar posição ── */
+if (document.referrer.includes('acao-') && sessionStorage.getItem('returnScroll')) {
+  window.addEventListener('load', function() {
+    var y = parseInt(sessionStorage.getItem('returnScroll'));
+    if (y) { window.scrollTo(0, y); sessionStorage.removeItem('returnScroll'); }
+  });
+}
+</script>
+
+</body>
+</html>
