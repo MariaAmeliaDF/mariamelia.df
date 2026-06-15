@@ -1614,3 +1614,90 @@ section { padding: 4.5rem 0; }
   overflow: visible !important;
   background: transparent !important;
 }
+
+/* ══════════════════════════════════════
+   MOBILE COMPLETO — revisão geral
+══════════════════════════════════════ */
+
+@media(max-width: 768px) {
+
+  /* Todas as seções sociais — abrace-grid vira 1 coluna */
+  .abrace-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .abrace-photo-frame { height: 220px !important; }
+  .abrace-btns-row { flex-direction: column !important; gap: .7rem !important; }
+  .abrace-btns-row .btn { width: 100%; justify-content: center; }
+  .abrace-cards { gap: .6rem; }
+  .abrace-card-item { padding: .75rem; }
+
+  /* Social section icon */
+  .social-sec-ico { width: 52px; height: 52px; font-size: 1.3rem; }
+
+  /* Vila grid legado — ocultar */
+  .vila-grid { display: none !important; }
+  .vila-img-wrap { display: none !important; }
+
+  /* Carrossel depoimentos mobile */
+  .deps-carousel-wrap { border-radius: 12px; }
+
+  /* WPP button mobile */
+  #wpp-btn { right: 4.5rem; bottom: 1.4rem; width: 60px; height: 60px; }
+  #wpp-btn img { width: 60px; height: 60px; }
+
+  /* Social title banner */
+  .social-title-banner { padding: 2.5rem 0 2rem; }
+  .social-title-banner .s-tit { font-size: clamp(1.5rem, 5vw, 2rem) !important; }
+
+  /* Seções s-tit mobile */
+  .s-tit { font-size: clamp(1.5rem, 5.5vw, 2rem) !important; }
+  .s-sub { font-size: .85rem !important; }
+
+  /* Trajetória mobile */
+  .tl::before { left: 12px; }
+  .tl-i { display: flex !important; flex-direction: column !important; padding-left: 2rem; }
+  .tl-i:nth-child(even) .tl-c { text-align: left !important; }
+  .tl-dot { position: absolute; left: 4px; top: .4rem; }
+  .tl-img-col { width: 100%; height: 140px; order: -1; }
+  .tl-c { width: 100%; padding: 1rem; }
+  .tl-c h3 { font-size: .9rem; }
+  .tl-c p { font-size: .8rem; }
+
+  /* Bandeiras mobile */
+  .pautas-grid { grid-template-columns: 1fr !important; }
+  .pc { padding: 1.2rem; }
+
+  /* Redes mobile */
+  .redes-grid { grid-template-columns: 1fr 1fr !important; gap: .8rem !important; }
+
+  /* Instagram mobile */
+  .insta-grade { grid-template-columns: 1fr 1fr !important; }
+  .insta-gi-large { grid-column: span 2 !important; grid-row: span 1 !important; }
+
+  /* Galeria mobile */
+  .gal-grid { grid-template-columns: 1fr 1fr !important; }
+  .gi:nth-child(1) { grid-column: span 2; }
+
+  /* Footer mobile */
+  .ftr-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  .ftr-abt p { font-size: .8rem; }
+
+  /* Quem é mobile — fundo visível */
+  #quem .quem-bg {
+    opacity: .55 !important;
+    background-position: 65% 20% !important;
+    background-size: 180% !important;
+  }
+
+  /* Seção abrace mobile photo */
+  .abrace-photo-col { order: -1; }
+}
+
+@media(max-width: 480px) {
+  .redes-grid { grid-template-columns: 1fr !important; }
+  .insta-grade { grid-template-columns: 1fr !important; }
+  .insta-gi-large { grid-column: span 1 !important; }
+  .gal-grid { grid-template-columns: 1fr !important; }
+  .gi:nth-child(1) { grid-column: span 1; }
+  #wpp-btn { right: 4rem; width: 54px; height: 54px; }
+  #wpp-btn img { width: 54px; height: 54px; }
+  .abrace-card-item { flex-direction: column; gap: .5rem; }
+}
