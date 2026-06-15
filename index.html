@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="acs-mosaic">
 
-      <a href="acao-vila.html?from=acoes" class="acs-item acs-item--lg">
+      <a href="acao-vila.html?from=acoes" class="acs-item acs-item--xl">
         <div class="acs-bg" style="--c1:#0a2e04;--c2:#1a5c08"></div>
         <div class="acs-num">01</div>
         <div class="acs-ico-lg"><i class="fa-solid fa-heart-pulse"></i></div>
@@ -779,6 +779,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <footer id="ftr">
   <div class="container">
     <div class="ftr-grid">
+
+      <!-- Col 1: Logo + sobre + redes -->
       <div class="ftr-abt">
         <div class="ftr-logo"><img src="LOGO_MARIA_AMELIA_BRANCO.svg" alt="Maria Amélia" width="160" height="52" style="height:48px;width:auto;" onerror="this.style.display='none'"></div>
         <p>Empresária, confeiteira, esposa, mãe, avó e vice-presidente do PL Mulher no Distrito Federal. Pré-candidata a Deputada Federal pelo PL em Brasília. Mais voz para o DF. Mais força para o Brasil!</p>
@@ -790,40 +792,49 @@ document.addEventListener('DOMContentLoaded', function() {
           <a href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="f-col">
-        <h4>Links Rápidos</h4>
-        <ul>
-          <li><a href="#hero"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
-          <li><a href="#quem"><i class="fa-solid fa-chevron-right"></i> Quem é Maria Amélia</a></li>
-          <li><a href="#historia"><i class="fa-solid fa-chevron-right"></i> Trajetória</a></li>
-          <li><a href="#vila"><i class="fa-solid fa-chevron-right"></i> Ações Sociais</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Minhas Bandeiras</a></li>
-          <li><a href="#galeria"><i class="fa-solid fa-chevron-right"></i> Galeria</a></li>
-        </ul>
+
+      <!-- Col 2: Links rápidos + Bandeiras em 2 colunas -->
+      <div class="ftr-mid-col">
+        <div class="ftr-mid-inner">
+          <div class="f-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="#hero"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+              <li><a href="#quem"><i class="fa-solid fa-chevron-right"></i> Quem é Maria Amélia</a></li>
+              <li><a href="#historia"><i class="fa-solid fa-chevron-right"></i> Trajetória</a></li>
+              <li><a href="#acoes"><i class="fa-solid fa-chevron-right"></i> Ações Sociais</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Minhas Bandeiras</a></li>
+              <li><a href="#galeria"><i class="fa-solid fa-chevron-right"></i> Galeria</a></li>
+            </ul>
+          </div>
+          <div class="f-col f-col-bandeiras">
+            <h4>Bandeiras</h4>
+            <ul class="f-ul-2col">
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Família</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Defesa da Vida</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Empreendedorismo</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Lib. Religiosa</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Segurança</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Prot. Feminino</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Idosos</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Inclusão PcD</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Educação</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Meio Ambiente</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Agronegócio</a></li>
+              <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Liberdade</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="f-col">
-        <h4>Bandeiras</h4>
-        <ul>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Família como Alicerce</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Defesa da Vida</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Empreendedorismo</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Liberdade Religiosa</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Segurança Pública</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Protagonismo Feminino</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Políticas para Idosos</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Inclusão, PcD</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Educação</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Meio Ambiente e Animais</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Agronegócio</a></li>
-          <li><a href="#pautas"><i class="fa-solid fa-chevron-right"></i> Liberdade</a></li>
-        </ul>
-      </div>
+
+      <!-- Col 3: Contato -->
       <div class="f-col">
         <h4>Contato</h4>
         <div class="f-ct-i"><i class="fa-solid fa-envelope"></i><a href="mailto:mariaameliacomunicacao@gmail.com">E-mail</a></div>
         <div class="f-ct-i"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
         <div class="f-ct-i"><i class="fa-solid fa-location-dot"></i><span style="color:rgba(255,255,255,.45)">Distrito Federal, Brasil</span></div>
       </div>
+
     </div>
     <div class="ftr-btm">
       <p>© 2026 Maria Amélia, Todos os direitos reservados. Pré-candidatura pelo PL no Distrito Federal.</p>
