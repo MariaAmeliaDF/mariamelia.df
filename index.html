@@ -93,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
     autoplay muted loop playsinline
     poster="foto_oficial.jpeg"
     aria-hidden="true"
+    preload="auto"
+    disablepictureinpicture
+    x-webkit-airplay="allow"
   >
     <source src="FUNDO.mp4" type="video/mp4">
   </video>
@@ -1039,6 +1042,23 @@ if (document.referrer.includes('acao-') && sessionStorage.getItem('returnScroll'
 }
 </script>
 
+
+<script>
+/* ── Force video autoplay ── */
+(function() {
+  var v = document.querySelector('.h-video-bg');
+  if (!v) return;
+  v.muted = true;
+  var p = v.play();
+  if (p !== undefined) {
+    p.catch(function() {
+      // Autoplay blocked — poster image shows as fallback
+      v.style.display = 'none';
+    });
+  }
+})();
+</script>
+
 </body>
 </html
 
@@ -1368,6 +1388,23 @@ if (document.referrer.includes('acao-') && sessionStorage.getItem('returnScroll'
     if (y) { window.scrollTo(0, y); sessionStorage.removeItem('returnScroll'); }
   });
 }
+</script>
+
+
+<script>
+/* ── Force video autoplay ── */
+(function() {
+  var v = document.querySelector('.h-video-bg');
+  if (!v) return;
+  v.muted = true;
+  var p = v.play();
+  if (p !== undefined) {
+    p.catch(function() {
+      // Autoplay blocked — poster image shows as fallback
+      v.style.display = 'none';
+    });
+  }
+})();
 </script>
 
 </body>
