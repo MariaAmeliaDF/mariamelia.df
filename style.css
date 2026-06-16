@@ -1749,6 +1749,8 @@ section { padding: 4.5rem 0; }
 /* ── DEPOIMENTOS CARROSSEL ── */
 #deps { background: var(--br); overflow: hidden; }
 .deps-carousel-wrap { position: relative; overflow: hidden; border-radius: var(--rd); margin-bottom: 1.5rem; width: 100%; }
+.deps-track .dep-c { overflow: hidden; } /* prevent card content overflow */
+.deps-track .dep-c p { overflow-wrap: break-word; word-break: normal; white-space: normal; }
 .deps-track { display: flex; gap: 1.4rem; transition: transform .55s cubic-bezier(.4,0,.2,1); will-change: transform; align-items: flex-start; width: max-content; }
 .deps-track .dep-c { flex-shrink: 0; flex-grow: 0; word-wrap: break-word; overflow-wrap: break-word; white-space: normal; box-sizing: border-box; }
 .deps-nav-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
@@ -1875,10 +1877,15 @@ section { padding: 4.5rem 0; }
   .insta-grade { grid-template-columns: 1fr 1fr !important; }
   .insta-gi-large { grid-column: span 2 !important; grid-row: span 1 !important; }
 
-  /* Footer */
-  .ftr-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
-  .ftr-mid-inner { grid-template-columns: 1fr 1fr; }
-  .ftr-btm { flex-direction: column; gap: .5rem; text-align: center; }
+  /* Footer mobile — compacto e legível */
+  .ftr-grid { grid-template-columns: 1fr !important; gap: 1.2rem !important; padding-bottom: 1.5rem !important; }
+  .ftr-mid-inner { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+  .ftr-abt p { font-size: .8rem; line-height: 1.6; }
+  .f-col h4 { font-size: .75rem; margin-bottom: .5rem; }
+  .f-col ul li a { font-size: .75rem; }
+  .f-ul-2col li a { font-size: .7rem !important; }
+  .ftr-btm { flex-direction: column; gap: .4rem; text-align: center; padding: .8rem 0; }
+  .ftr-btm p, .ftr-btm a { font-size: .7rem; }
   .s-tit { font-size: clamp(1.6rem,6vw,2.2rem) !important; }
 
   /* WPP mobile */
@@ -1900,4 +1907,87 @@ section { padding: 4.5rem 0; }
   
   #wpp-btn { right: 4rem !important; width: 68px !important; height: 68px !important; }
   #wpp-btn img { width: 68px !important; height: 68px !important; }
+}
+
+/* ══ MOBILE — Footer e Depoimentos ══ */
+@media(max-width: 768px) {
+
+  /* Footer mobile — empilha tudo em 1 coluna limpa */
+  .ftr-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .ftr-mid-inner {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+  .ftr-abt { grid-column: span 1 !important; }
+  .f-col-bandeiras { grid-column: span 1 !important; }
+  .ftr-btm {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: .5rem !important;
+    text-align: center !important;
+  }
+
+  /* Depoimentos — sem corte de texto */
+  .deps-carousel-wrap { overflow: hidden; }
+  .deps-track .dep-c {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    min-width: 0 !important;
+  }
+  .dep-c p {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    -webkit-line-clamp: unset !important;
+    display: block !important;
+  }
+  /* Título "Histórias que Inspiram" não corta */
+  #deps .s-tit {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+}
+
+@media(max-width: 480px) {
+  .ftr-mid-inner {
+    grid-template-columns: 1fr !important;
+  }
+  .f-ul-2col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ══ MOBILE — fixes específicos ══ */
+@media(max-width: 768px) {
+  /* "Histórias que Inspiram" — título não cortar */
+  #deps .s-tit {
+    font-size: clamp(1.4rem, 5.5vw, 2rem) !important;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  #deps { padding: 3rem 0; }
+
+  /* Carousel cards no mobile */
+  .deps-track .dep-c { padding: 1.2rem; }
+  .dep-c p { font-size: .83rem !important; }
+
+  /* Footer mobile — grid empilhado */
+  #ftr { padding: 2rem 0 0; }
+  .ftr-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .ftr-mid-inner {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .f-soc { gap: .5rem; }
+  .f-soc a { width: 30px; height: 30px; font-size: .8rem; }
+  .ftr-logo img { height: 38px; }
 }
