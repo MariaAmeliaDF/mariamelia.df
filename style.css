@@ -1707,12 +1707,16 @@ section { padding: 4.5rem 0; }
 /* ── FOOTER — 3 colunas limpas ── */
 .ftr-grid {
   display: grid;
-  grid-template-columns: 1.3fr 2.2fr 1fr;
-  gap: 2.5rem;
-  padding-bottom: 2rem;
+  grid-template-columns: 1.5fr 2fr 1fr;
+  gap: 3.5rem;
+  padding-bottom: 2.2rem;
   border-bottom: 1px solid rgba(255,255,255,.06);
   align-items: start;
+  text-align: left;
 }
+.ftr-grid .f-col,
+.ftr-grid .ftr-abt { text-align: left; }
+.ftr-mid-inner { text-align: left; }
 .ftr-mid-col { display: flex; flex-direction: column; }
 .ftr-mid-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1.5rem; }
 .f-ul-2col {
@@ -1749,8 +1753,10 @@ section { padding: 4.5rem 0; }
 /* ── DEPOIMENTOS CARROSSEL ── */
 #deps { background: var(--br); overflow: hidden; }
 .deps-carousel-wrap { position: relative; overflow: hidden; border-radius: var(--rd); margin-bottom: 1.5rem; width: 100%; }
-.deps-track .dep-c { overflow: hidden; } /* prevent card content overflow */
+.deps-track .dep-c { overflow: visible; height: auto; } /* allow full content to show */
 .deps-track .dep-c p { overflow-wrap: break-word; word-break: normal; white-space: normal; }
+.deps-carousel-wrap { overflow: visible !important; } /* parent must not clip taller cards */
+#deps { overflow: visible !important; }
 .deps-track { display: flex; gap: 1.4rem; transition: transform .55s cubic-bezier(.4,0,.2,1); will-change: transform; align-items: flex-start; width: max-content; }
 .deps-track .dep-c { flex-shrink: 0; flex-grow: 0; word-wrap: break-word; overflow-wrap: break-word; white-space: normal; box-sizing: border-box; }
 .deps-nav-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
@@ -1813,9 +1819,9 @@ section { padding: 4.5rem 0; }
   .ham { display: flex; }
   section { padding: 3.5rem 0; }
 
-  /* Hero mobile */
-  .h-video-bg { display: none; }
-  .h-mobile-bg { display: block; background-position: center 5%; background-size: 160%; }
+  /* Hero mobile — vídeo continua tocando, sem fallback estático */
+  .h-video-bg { display: block !important; object-position: center 25%; }
+  .h-mobile-bg { display: none !important; }
   .h-video-overlay {
     background: linear-gradient(180deg,rgba(14,53,5,.25) 0%,rgba(14,53,5,.35) 25%,rgba(26,92,8,.72) 55%,rgba(14,53,5,.92) 80%,rgba(14,53,5,.97) 100%) !important;
   }
