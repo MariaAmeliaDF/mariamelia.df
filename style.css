@@ -544,9 +544,9 @@ section { padding: 4.5rem 0; }
 .f-soc { display: flex; gap: .6rem; margin-top: 1.05rem; }
 .f-soc a { width: 33px; height: 33px; border-radius: 8px; background: rgba(255,255,255,.06); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.5); font-size: .86rem; transition: var(--tr); }
 .f-soc a:hover { background: var(--vm); color: #fff; }
-.f-col h4 { font-size: .8rem; font-weight: 700; color: #fff; margin-bottom: 1.05rem; text-transform: uppercase; letter-spacing: .07em; }
+.f-col h4 { font-size: .8rem; font-weight: 700; color: #fff; margin-bottom: 1.05rem; text-transform: uppercase; letter-spacing: .07em; white-space: nowrap; }
 .f-col ul { display: flex; flex-direction: column; gap: .52rem; }
-.f-col ul li a { font-size: .8rem; color: rgba(255,255,255,.48); transition: var(--tr); display: flex; align-items: center; gap: .42rem; }
+.f-col ul li a { font-size: .78rem; color: rgba(255,255,255,.48); transition: var(--tr); display: flex; align-items: center; gap: .42rem; white-space: nowrap; }
 .f-col ul li a:hover { color: var(--am); padding-left: 3px; }
 .f-ct-i { display: flex; align-items: flex-start; gap: .68rem; margin-bottom: .75rem; font-size: .78rem; }
 .f-ct-i i { color: var(--vlim); font-size: .8rem; margin-top: .1rem; flex-shrink: 0; }
@@ -1497,15 +1497,10 @@ section { padding: 4.5rem 0; }
 
 /* ══ FOOTER — compacto e proporcional ══ */
 #ftr { padding: 2.5rem 0 0; }
-.ftr-grid {
-  grid-template-columns: 1.6fr 1fr 1.4fr 1fr !important;
-  gap: 2rem !important;
-  padding-bottom: 2rem !important;
-}
 .ftr-abt p { font-size: .77rem !important; line-height: 1.65 !important; }
-.f-col ul { gap: .38rem !important; }
-.f-col ul li a { font-size: .76rem !important; }
-.f-col h4 { margin-bottom: .7rem !important; font-size: .75rem !important; }
+.f-col ul { gap: .42rem !important; }
+.f-col ul li a { font-size: .78rem !important; }
+.f-col h4 { margin-bottom: .85rem !important; font-size: .78rem !important; }
 .ftr-btm { padding: 1rem 0 !important; }
 .ftr-btm p, .ftr-btm a { font-size: .7rem !important; }
 
@@ -1646,7 +1641,7 @@ section { padding: 4.5rem 0; }
   min-height: 300px;
 }
 /* ABRACE: mesma altura das pequenas agora */
-.acs-item--lg { min-height: 220px; }
+.acs-item--lg { min-height: 300px; }
 .acs-item:hover { transform: translateY(-6px) scale(1.015); box-shadow: 0 18px 48px rgba(0,0,0,.3); }
 .acs-bg {
   position: absolute; inset: 0; z-index: 0;
@@ -1718,7 +1713,7 @@ section { padding: 4.5rem 0; }
 .ftr-grid .ftr-abt { text-align: left; }
 .ftr-mid-inner { text-align: left; }
 .ftr-mid-col { display: flex; flex-direction: column; }
-.ftr-mid-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1.5rem; }
+.ftr-mid-inner { display: grid; grid-template-columns: 1.3fr 2fr; gap: 1.5rem; }
 .f-ul-2col {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
