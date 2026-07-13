@@ -131,3 +131,101 @@ if (trilho) {
     document.getElementById('ck-nao')?.addEventListener('click', () => decidir('0'));
   } catch (e) { /* silencioso */ }
 })();
+
+/* ============================================================
+   v3.1 — jingle, trajetória interativa e deck do Instagram
+   ============================================================ */
+
+/* ── Jingle ── */
+(() => {
+  const btn = document.getElementById('jingle-btn');
+  const audio = document.getElementById('jingle');
+  const ico = document.getElementById('jingle-ico');
+  if (!btn || !audio) return;
+  const atualizar = tocando => {
+    btn.classList.toggle('tocando', tocando);
+    btn.setAttribute('aria-pressed', String(tocando));
+    ico.className = tocando ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+  };
+  btn.addEventListener('click', () => {
+    if (audio.paused) { audio.play(); atualizar(true); }
+    else { audio.pause(); atualizar(false); }
+  });
+  audio.addEventListener('ended', () => { audio.currentTime = 0; atualizar(false); });
+})();
+
+/* ── Trajetória interativa ── */
+(() => {
+  const pts = [...document.querySelectorAll('.tlx-pt')];
+  const slides = [...document.querySelectorAll('.tlx-slide')];
+  const num = document.getElementById('tlx-n');
+  if (!slides.length) return;
+  let atual = 0, timer = null;
+  const ir = i => {
+    atual = (i + slides.length) % slides.length;
+    slides.forEach((s, j) => s.classList.toggle('ativo', j === atual));
+    pts.forEach((p, j) => {
+      p.classList.toggle('ativo', j === atual);
+      p.setAttribute('aria-selected', String(j === atual));
+    });
+    if (num) num.textContent = atual + 1;
+    pts[atual]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  };
+  const auto = () => { clearInterval(timer); timer = setInterval(() => ir(atual + 1), 8000); };
+  pts.forEach((p, i) => p.addEventListener('click', () => { ir(i); auto(); }));
+  document.getElementById('tlx-ant')?.addEventListener('click', () => { ir(atual - 1); auto(); });
+  document.getElementById('tlx-prx')?.addEventListener('click', () => { ir(atual + 1); auto(); });
+  // pausa o avanço automático quando fora da tela ou com o mouse em cima
+  const tlx = document.querySelector('.tlx');
+  tlx.addEventListener('mouseenter', () => clearInterval(timer));
+  tlx.addEventListener('mouseleave', auto);
+  new IntersectionObserver(e => e[0].isIntersecting ? auto() : clearInterval(timer), { threshold: .2 }).observe(tlx);
+  // gesto de arrastar no mobile
+  let x0 = null;
+  tlx.addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+  tlx.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) { ir(atual + (dx < 0 ? 1 : -1)); auto(); }
+    x0 = null;
+  }, { passive: true });
+})();
+
+/* ── Deck do Instagram ── */
+(() => {
+  const deck = document.getElementById('ig-deck');
+  if (!deck) return;
+  const cards = [...deck.querySelectorAll('.ig-card')];
+  let atual = 0, timer = null, animando = false;
+  const classesPara = off =>
+    off === 0 ? 'p0' : off === 1 ? 'p1' : off === 2 ? 'p2' : 'pfundo';
+  const pintar = () => cards.forEach((c, i) => {
+    const off = (i - atual + cards.length) % cards.length;
+    c.className = 'ig-card ' + classesPara(off);
+  });
+  const avancar = () => {
+    if (animando) return;
+    animando = true;
+    const saindo = cards[atual];
+    saindo.className = 'ig-card psaindo';
+    atual = (atual + 1) % cards.length;
+    cards.forEach((c, i) => {
+      if (c === saindo) return;
+      const off = (i - atual + cards.length) % cards.length;
+      c.className = 'ig-card ' + classesPara(off);
+    });
+    setTimeout(() => { pintar(); animando = false; }, 720);
+  };
+  const voltar = () => {
+    if (animando) return;
+    atual = (atual - 1 + cards.length) % cards.length;
+    pintar();
+  };
+  const auto = () => { clearInterval(timer); timer = setInterval(avancar, 5000); };
+  document.getElementById('ig-prx')?.addEventListener('click', () => { avancar(); auto(); });
+  document.getElementById('ig-ant')?.addEventListener('click', () => { voltar(); auto(); });
+  deck.addEventListener('mouseenter', () => clearInterval(timer));
+  deck.addEventListener('mouseleave', auto);
+  pintar();
+  new IntersectionObserver(e => e[0].isIntersecting ? auto() : clearInterval(timer), { threshold: .2 }).observe(deck);
+})();

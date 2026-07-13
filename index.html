@@ -23,7 +23,7 @@
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="assets/css/style.css">
@@ -49,7 +49,7 @@
         <a href="#acoes">Ações Sociais</a>
         <a href="#bandeiras">Bandeiras</a>
         <a href="#midia">Mídia</a>
-        <a href="#redes" class="btn btn-ouro"><i class="fa-solid fa-heart"></i> Faça Parte</a>
+        <a href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" class="btn btn-ouro"><i class="fa-solid fa-heart"></i> Faça Parte</a>
       </nav>
       <button id="ham" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -66,7 +66,7 @@
     <a class="mob-l" href="#midia">Mídia <i class="fa-solid fa-chevron-right"></i></a>
     <a class="mob-l" href="#depoimentos">Depoimentos <i class="fa-solid fa-chevron-right"></i></a>
     <a class="mob-l" href="#redes">Redes Sociais <i class="fa-solid fa-chevron-right"></i></a>
-    <a class="btn btn-ouro" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Fale com a Equipe</a>
+    <a class="btn btn-ouro" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Faça Parte da Nossa Caminhada</a>
   </nav>
 
   <!-- HERO -->
@@ -74,19 +74,21 @@
     <video autoplay muted loop playsinline poster="assets/img/poster-hero.webp" aria-hidden="true">
       <source src="assets/video/fundo.mp4" type="video/mp4">
     </video>
-    <div class="wrap hero-grid">
-      <div class="hero-txt">
-        <span class="hero-tag"><i class="fa-solid fa-star"></i> Faça parte da nossa caminhada</span>
-        <h1>Mais voz para o <em>DF</em>.<br>Mais força para o <em>Brasil</em>.</h1>
-        <div class="hero-cred">
-          <span><i class="fa-solid fa-check"></i> Vice-presidente do PL Mulher DF</span>
-          <span><i class="fa-solid fa-check"></i> Pré-candidata a Deputada Federal · PL</span>
-          <span><i class="fa-solid fa-check"></i> Fundadora da Maria Amélia Doces</span>
-        </div>
-        <div class="hero-cta">
-          <a class="btn btn-ouro" href="#quem"><i class="fa-solid fa-book-open"></i> Conheça a História</a>
-          <a class="btn btn-linha" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Fale com a Equipe</a>
-        </div>
+    <div class="wrap hero-centro">
+      <span class="hero-tag"><i class="fa-solid fa-star"></i> Pré-candidatura 2026 · Distrito Federal</span>
+      <h1>Mais voz para o <em>DF</em>.<br>Mais força para o <em>Brasil</em>.</h1>
+      <div class="hero-cred">
+        <span><i class="fa-solid fa-check"></i> Vice-presidente do PL Mulher DF</span>
+        <span><i class="fa-solid fa-check"></i> Pré-candidata a Deputada Federal · PL</span>
+        <span><i class="fa-solid fa-check"></i> Fundadora da Maria Amélia Doces</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-ouro" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Faça Parte da Nossa Caminhada</a>
+        <a class="btn btn-linha" href="#quem"><i class="fa-solid fa-book-open"></i> Conheça a História</a>
+        <button class="btn btn-linha jingle-btn" id="jingle-btn" aria-pressed="false">
+          <i class="fa-solid fa-play" id="jingle-ico"></i> Ouça o Jingle
+          <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        </button>
       </div>
       <div class="hero-foto">
         <div class="moldura">
@@ -98,7 +100,7 @@
         </div>
       </div>
     </div>
-    <span class="hero-scroll" aria-hidden="true">Role</span>
+    <audio id="jingle" src="assets/audio/jingle.mp3" preload="none"></audio>
   </section>
 
   <!-- Faixa de valores -->
@@ -139,134 +141,117 @@
         <p>De Bambuí a Brasília: cada capítulo costurado pelos mesmos valores.</p>
       </div>
 
-      <div class="tl">
-        <!-- 1968 -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <div class="foto-pend">
+      <div class="tlx rv">
+        <div class="tlx-nav" role="tablist" aria-label="Marcos da trajetória">
+        <button class="tlx-pt ativo" data-i="0" role="tab" aria-selected="true"><span class="tlx-no"></span><span class="tlx-rt">1968</span></button>
+        <button class="tlx-pt" data-i="1" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">Brasília</span></button>
+        <button class="tlx-pt" data-i="2" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">1989</span></button>
+        <button class="tlx-pt" data-i="3" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">2004</span></button>
+        <button class="tlx-pt" data-i="4" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">2013</span></button>
+        <button class="tlx-pt" data-i="5" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">Reconhecimento</span></button>
+        <button class="tlx-pt" data-i="6" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">Ações Sociais</span></button>
+        <button class="tlx-pt" data-i="7" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">PL Mulher</span></button>
+        <button class="tlx-pt" data-i="8" role="tab" aria-selected="false"><span class="tlx-no"></span><span class="tlx-rt">2025</span></button>
+        </div>
+        <div class="tlx-palco">
+        <article class="tlx-slide ativo" data-i="0">
+          <div class="tlx-midia"><div class="foto-pend">
               <i class="fa-regular fa-image"></i>
               <b>Foto a inserir — verificação</b>
               <small>Sugestão: foto de infância / família em Bambuí (MG)</small>
-            </div>
-            <div class="tl-corpo">
-              <span class="tl-ano">Origem · 1968</span>
-              <h3>Bambuí, Minas Gerais</h3>
-              <p>Maria Amélia nasceu em 1968, em Bambuí, Minas Gerais. Criada com os valores de fé, trabalho e amor à família, esses princípios se tornaram a base de tudo o que construiu ao longo da vida.</p>
-            </div>
+            </div></div>
+          <div class="tlx-info">
+            <span class="tl-ano">Origem · 1968</span>
+            <h3>Bambuí, Minas Gerais</h3>
+            <p>Maria Amélia nasceu em 1968, em Bambuí, Minas Gerais. Criada com os valores de fé, trabalho e amor à família, esses princípios se tornaram a base de tudo o que construiu ao longo da vida.</p>
           </div>
         </article>
-
-        <!-- Chegada a Brasília -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <div class="foto-pend">
+        <article class="tlx-slide" data-i="1">
+          <div class="tlx-midia"><div class="foto-pend">
               <i class="fa-regular fa-image"></i>
               <b>Foto a inserir — verificação</b>
               <small>Sugestão: foto da juventude ou dos primeiros anos na capital</small>
-            </div>
-            <div class="tl-corpo">
-              <span class="tl-ano">Chegada a Brasília</span>
-              <h3>Um Novo Começo na Capital</h3>
-              <p>Ainda jovem, Maria Amélia chegou a Brasília em busca de novas oportunidades. A capital federal se tornaria o cenário de toda a sua trajetória, onde construiu sua família, seu negócio e sua vida.</p>
-            </div>
+            </div></div>
+          <div class="tlx-info">
+            <span class="tl-ano">Chegada a Brasília</span>
+            <h3>Um Novo Começo na Capital</h3>
+            <p>Ainda jovem, Maria Amélia chegou a Brasília em busca de novas oportunidades. A capital federal se tornaria o cenário de toda a sua trajetória, onde construiu sua família, seu negócio e sua vida.</p>
           </div>
         </article>
-
-        <!-- 1989 -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <div class="foto-pend">
+        <article class="tlx-slide" data-i="2">
+          <div class="tlx-midia"><div class="foto-pend">
               <i class="fa-regular fa-image"></i>
               <b>Foto a inserir — verificação</b>
               <small>Sugestão: registro antigo dos primeiros bolos e encomendas</small>
-            </div>
-            <div class="tl-corpo">
-              <span class="tl-ano">1989</span>
-              <h3>Os Primeiros Bolos e Encomendas</h3>
-              <p>Em 1989, Maria Amélia começou a fazer bolos e doces em casa, atendendo encomendas para amigos e vizinhos. Dali, uma vocação foi florescendo e se transformaria em uma das maiores referências da confeitaria do Distrito Federal.</p>
-            </div>
+            </div></div>
+          <div class="tlx-info">
+            <span class="tl-ano">1989</span>
+            <h3>Os Primeiros Bolos e Encomendas</h3>
+            <p>Em 1989, Maria Amélia começou a fazer bolos e doces em casa, atendendo encomendas para amigos e vizinhos. Dali, uma vocação foi florescendo e se transformaria em uma das maiores referências da confeitaria do Distrito Federal.</p>
           </div>
         </article>
-
-        <!-- 2004 -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <div class="foto-pend">
+        <article class="tlx-slide" data-i="3">
+          <div class="tlx-midia"><div class="foto-pend">
               <i class="fa-regular fa-image"></i>
               <b>Foto a inserir — verificação</b>
               <small>Sugestão: fachada ou interior da primeira loja no Lago Sul</small>
-            </div>
-            <div class="tl-corpo">
-              <span class="tl-ano">2004</span>
-              <h3>Primeira Loja Física, Lago Sul</h3>
-              <p>Em 2004, abriu sua primeira loja física no Lago Sul, em espaço alugado. Os primeiros atendimentos presenciais marcaram o início de uma empresa que cresceria para se tornar sinônimo de qualidade e carinho no DF.</p>
-            </div>
+            </div></div>
+          <div class="tlx-info">
+            <span class="tl-ano">2004</span>
+            <h3>Primeira Loja Física, Lago Sul</h3>
+            <p>Em 2004, abriu sua primeira loja física no Lago Sul, em espaço alugado. Os primeiros atendimentos presenciais marcaram o início de uma empresa que cresceria para se tornar sinônimo de qualidade e carinho no DF.</p>
           </div>
         </article>
-
-        <!-- 2013 -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <img src="assets/img/foto-carro.webp" alt="Maria Amélia ao lado do carro da Maria Amélia Doces" loading="lazy">
-            <div class="tl-corpo">
-              <span class="tl-ano">2013</span>
-              <h3>Sede Própria, Jardim Botânico</h3>
-              <p>Em 2013, inaugurou a unidade do Jardim Botânico, que se tornaria a <strong>sede oficial</strong> da Maria Amélia Doces. Um marco que consolidou a empresa e abriu caminho para a expansão que se seguiu.</p>
-            </div>
+        <article class="tlx-slide" data-i="4">
+          <div class="tlx-midia"><img src="assets/img/foto-carro.webp" alt="Maria Amélia ao lado do carro da Maria Amélia Doces" loading="lazy"></div>
+          <div class="tlx-info">
+            <span class="tl-ano">2013</span>
+            <h3>Sede Própria, Jardim Botânico</h3>
+            <p>Em 2013, inaugurou a unidade do Jardim Botânico, que se tornaria a <strong>sede oficial</strong> da Maria Amélia Doces. Um marco que consolidou a empresa e abriu caminho para a expansão que se seguiu.</p>
           </div>
         </article>
-
-        <!-- Reconhecimento -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <img src="assets/img/foto-institucional.webp" alt="Maria Amélia com um de seus bolos na confeitaria" loading="lazy" style="object-position:center 30%">
-            <div class="tl-corpo">
-              <span class="tl-ano">Reconhecimento</span>
-              <h3>Confeiteira Reconhecida por Autoridades</h3>
-              <p>Seu talento e dedicação fizeram de Maria Amélia uma confeiteira reconhecida pelas maiores autoridades do país, construindo relações pautadas em valores e confiança.</p>
-            </div>
+        <article class="tlx-slide" data-i="5">
+          <div class="tlx-midia"><img src="assets/img/foto-institucional.webp" alt="Maria Amélia com um de seus bolos na confeitaria" loading="lazy" style="object-position:center 30%"></div>
+          <div class="tlx-info">
+            <span class="tl-ano">Reconhecimento</span>
+            <h3>Confeiteira Reconhecida por Autoridades</h3>
+            <p>Seu talento e dedicação fizeram de Maria Amélia uma confeiteira reconhecida pelas maiores autoridades do país, construindo relações pautadas em valores e confiança.</p>
           </div>
         </article>
-
-        <!-- Ações sociais -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <img src="assets/img/foto-pequenino.webp" alt="Maria Amélia com os acolhidos da Vila do Pequenino Jesus" loading="lazy">
-            <div class="tl-corpo">
-              <span class="tl-ano">Ações Sociais</span>
-              <h3>Uma Vida Dedicada ao Próximo</h3>
-              <p>Ao longo dos anos, Maria Amélia construiu uma trajetória sólida de responsabilidade social, apoiando instituições como a <strong>Vila do Pequenino Jesus</strong>, a <strong>ABRACE</strong>, o <strong>Instituto Dom Orione</strong>, o <strong>Abrigo Nosso Lar</strong> e o <strong>Lar dos Velhinhos Bezerra de Menezes</strong>. Para ela, a fé sem obras é vazia, e cada causa apoiada é uma forma concreta de servir ao próximo.</p>
-            </div>
+        <article class="tlx-slide" data-i="6">
+          <div class="tlx-midia"><img src="assets/img/foto-pequenino.webp" alt="Maria Amélia com os acolhidos da Vila do Pequenino Jesus" loading="lazy"></div>
+          <div class="tlx-info">
+            <span class="tl-ano">Ações Sociais</span>
+            <h3>Uma Vida Dedicada ao Próximo</h3>
+            <p>Ao longo dos anos, Maria Amélia construiu uma trajetória sólida de responsabilidade social, apoiando instituições como a <strong>Vila do Pequenino Jesus</strong>, a <strong>ABRACE</strong>, o <strong>Instituto Dom Orione</strong>, o <strong>Abrigo Nosso Lar</strong> e o <strong>Lar dos Velhinhos Bezerra de Menezes</strong>. Para ela, a fé sem obras é vazia, e cada causa apoiada é uma forma concreta de servir ao próximo.</p>
           </div>
         </article>
-
-        <!-- PL Mulher -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <div class="foto-pend">
+        <article class="tlx-slide" data-i="7">
+          <div class="tlx-midia"><div class="foto-pend">
               <i class="fa-regular fa-image"></i>
               <b>Foto a inserir — verificação</b>
               <small>Sugestão: foto da posse ou evento do PL Mulher DF</small>
-            </div>
-            <div class="tl-corpo">
-              <span class="tl-ano">Vice-Presidente PL Mulher DF</span>
-              <h3>Liderança Política com Propósito</h3>
-              <p>Por convite da Deputada Federal <strong>Bia Kicis</strong>, e reconhecida pela sua trajetória como empresária, mãe e mulher de fé, Maria Amélia assumiu a Vice-Presidência do PL Mulher no Distrito Federal, levando para a política os valores que sempre guiaram sua vida.</p>
-            </div>
+            </div></div>
+          <div class="tlx-info">
+            <span class="tl-ano">Vice-Presidente PL Mulher DF</span>
+            <h3>Liderança Política com Propósito</h3>
+            <p>Por convite da Deputada Federal <strong>Bia Kicis</strong>, e reconhecida pela sua trajetória como empresária, mãe e mulher de fé, Maria Amélia assumiu a Vice-Presidência do PL Mulher no Distrito Federal, levando para a política os valores que sempre guiaram sua vida.</p>
           </div>
         </article>
-
-        <!-- Lançamento -->
-        <article class="tl-item rv">
-          <div class="tl-card">
-            <img src="assets/img/foto-lancamento.webp" alt="Maria Amélia discursando no lançamento da pré-candidatura" loading="lazy">
-            <div class="tl-corpo">
-              <span class="tl-ano">19 mai 2025</span>
-              <h3>Lançamento da Pré-Candidatura</h3>
-              <p>Em 19 de maio de 2025, com a presença de <strong>Michelle Bolsonaro</strong> e da Deputada Federal <strong>Bia Kicis</strong>, Maria Amélia lançou oficialmente sua pré-candidatura a Deputada Federal pelo PL no Distrito Federal.</p>
-            </div>
+        <article class="tlx-slide" data-i="8">
+          <div class="tlx-midia"><img src="assets/img/foto-lancamento.webp" alt="Maria Amélia discursando no lançamento da pré-candidatura" loading="lazy"></div>
+          <div class="tlx-info">
+            <span class="tl-ano">19 mai 2025</span>
+            <h3>Lançamento da Pré-Candidatura</h3>
+            <p>Em 19 de maio de 2025, com a presença de <strong>Michelle Bolsonaro</strong> e da Deputada Federal <strong>Bia Kicis</strong>, Maria Amélia lançou oficialmente sua pré-candidatura a Deputada Federal pelo PL no Distrito Federal.</p>
           </div>
         </article>
+        </div>
+        <div class="tlx-ctrl">
+          <button class="tlx-seta" id="tlx-ant" aria-label="Marco anterior"><i class="fa-solid fa-arrow-left"></i></button>
+          <span class="tlx-cont"><b id="tlx-n">1</b> / 9</span>
+          <button class="tlx-seta" id="tlx-prx" aria-label="Próximo marco"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
   </section>
@@ -285,55 +270,45 @@
         <figcaption><b>Café da manhã de terça-feira</b>Toda semana, Maria Amélia abre as portas da sua fábrica para os acolhidos da Vila do Pequenino Jesus.</figcaption>
       </figure>
 
-      <div class="acoes-grid">
-        <a class="acao-card rv" href="acao-vila.html">
-          <span class="acao-meta">15 anos · Brasília DF</span>
-          <h3>Vila do Pequenino Jesus</h3>
-          <p>Acolhimento de pessoas com deficiência. Toda terça-feira Maria Amélia abre sua fábrica para os assistidos.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="acao-card rv" href="acao-abrace.html">
-          <span class="acao-meta">Desde 1986 · Crianças com câncer</span>
-          <h3>ABRACE</h3>
-          <p>Crianças e adolescentes com câncer recebem apoio integral. Maria Amélia realiza a festa de 15 anos.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="acao-card rv" href="acao-rs.html">
-          <span class="acao-meta">Mutirões · Campanha 2024</span>
-          <h3>Enchentes no Rio Grande do Sul</h3>
-          <p>Maior campanha humanitária de Brasília, com mutirões liderados por Maria Amélia.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="acao-card rv" href="acao-orione.html">
-          <span class="acao-meta">+50 anos · Lago Sul</span>
-          <h3>Instituto Dom Orione</h3>
-          <p>Acolhimento de pessoas com deficiências múltiplas em uma missão de caridade com mais de 50 anos.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="acao-card rv" href="acao-nossolar.html">
-          <span class="acao-meta">Desde 1973 · Núcleo Bandeirante</span>
-          <h3>Abrigo Nosso Lar</h3>
-          <p>Proteção a crianças vulneráveis e enfermas, com acolhimento de famílias em tratamento no DF.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="acao-card rv" href="acao-bezerra.html">
-          <span class="acao-meta">74 idosos · Sobradinho</span>
-          <h3>Lar dos Velhinhos Bezerra de Menezes</h3>
-          <p>Dignidade e cuidado integral na terceira idade, com presença e apoio constantes.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="acao-card rv" href="acao-igrejas.html">
-          <span class="acao-meta">Fé em ação · DF</span>
-          <h3>Comunidades Católicas</h3>
-          <p>Doações e presença ativa nas comunidades católicas do Distrito Federal.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="acao-card rv" href="acao-ativar.html">
-          <span class="acao-meta">Terceira idade · DF</span>
-          <h3>Projeto Ativar Longevidade</h3>
-          <p>Qualidade de vida e atividades físicas, recreativas e sociais para a pessoa idosa.</p>
-          <span class="mais">Saiba mais <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
+      <div class="acoesx-grid">
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">15 anos · Brasília DF</span><h3>Vila do Pequenino Jesus</h3></div>
+          <p>Fundada em 2009, acolhe pessoas com deficiência física e intelectual no DF. <strong>Toda terça-feira</strong>, Maria Amélia abre as portas da sua fábrica para receber os acolhidos em um café da manhã especial — um momento simples que fortalece laços e reafirma o olhar de amor e respeito ao próximo.</p>
+          <a class="acaox-lk" href="https://viladopequeninojesus.com.br/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> viladopequeninojesus.com.br</a>
+        </article>
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">Desde 1986 · Crianças com câncer</span><h3>ABRACE</h3></div>
+          <p>Apoio integral a crianças e adolescentes com câncer, hemopatias e doenças complexas em Brasília. Maria Amélia caminha há anos ao lado da instituição e realiza a tradicional <strong>festa de 15 anos</strong> das adolescentes assistidas — realização de sonhos, autoestima e lembranças para a vida toda.</p>
+          <a class="acaox-lk" href="https://abrace.com.br/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> abrace.com.br</a>
+        </article>
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">Mutirões · Campanha 2024</span><h3>Enchentes no Rio Grande do Sul</h3></div>
+          <p>Diante da maior tragédia climática do RS, Maria Amélia liderou em Brasília uma das <strong>maiores campanhas humanitárias</strong> da capital: centenas de doadores, empresários e voluntários, com mutirões de arrecadação e triagem para que alimentos, roupas e recursos chegassem rápido a quem precisava.</p>
+        </article>
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">+50 anos · Lago Sul</span><h3>Instituto Dom Orione</h3></div>
+          <p>Fundado em 1970, acolhe jovens e adultos com deficiências múltiplas, oferecendo moradia inclusiva, saúde e educação especializada. Maria Amélia apoia com <strong>doações e presença ativa</strong> — e os acolhidos também participam dos cafés de terça-feira na fábrica.</p>
+          <a class="acaox-lk" href="https://institutodomorione.com.br/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> institutodomorione.com.br</a>
+        </article>
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">Desde 1973 · Núcleo Bandeirante</span><h3>Abrigo Nosso Lar</h3></div>
+          <p>Acolhe crianças e adolescentes em situação de risco, incluindo crianças enfermas e acompanhantes vindos de outros estados para tratamento no DF. Maria Amélia apoia com doações e visitas, porque <strong>toda criança merece um lar seguro</strong>, digno e cheio de amor.</p>
+          <a class="acaox-lk" href="https://www.nossolardf.org.br/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> nossolardf.org.br</a>
+        </article>
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">74 idosos · Sobradinho</span><h3>Lar dos Velhinhos Bezerra de Menezes</h3></div>
+          <p>Mais de 74 idosos acolhidos com assistência médica, fisioterapia, terapia ocupacional e musicoterapia. Maria Amélia leva <strong>presença, carinho e confraternizações</strong> ao longo do ano — uma forma de honrar quem construiu o passado que sustenta o nosso presente.</p>
+          <a class="acaox-lk" href="https://www.lardosvelhinhos.org.br/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> lardosvelhinhos.org.br</a>
+        </article>
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">Fé em ação · DF</span><h3>Comunidades Católicas</h3></div>
+          <p>Apoio a eventos, festividades e iniciativas que fortalecem a fé e unem as famílias do Distrito Federal. Para Maria Amélia, <strong>a fé é combustível para a ação</strong>: cada doação e cada presença são formas concretas de se doar e servir ao próximo.</p>
+        </article>
+        <article class="acaox rv">
+          <div class="acaox-topo"><span class="acao-meta">Terceira idade · DF</span><h3>Projeto Ativar Longevidade</h3></div>
+          <p>Atividades físicas, recreativas, cognitivas, culturais e sociais dedicadas à pessoa idosa no DF, idealizado por João do Lago. Maria Amélia apoia essa causa que valoriza <strong>envelhecer com propósito</strong>, movimento e alegria.</p>
+          <a class="acaox-lk" href="https://www.instagram.com/projetoativardf" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @projetoativardf</a>
+        </article>
       </div>
     </div>
   </section>
@@ -486,21 +461,35 @@
             <p>Com a presença de Michelle Bolsonaro e da Dep. Federal Bia Kicis, Maria Amélia apresentou seu projeto político para o Distrito Federal.</p>
           </div>
         </div>
-        <div class="midia-social">
-          <a class="social-cta rv" href="https://www.instagram.com/mariaamelia.df/" target="_blank" rel="noopener noreferrer">
-            <i class="grande fa-brands fa-instagram"></i>
-            <b>@mariaamelia.df</b>
-            <p>Fotos, stories e bastidores da pré-candidatura, todos os dias no Instagram.</p>
-            <span>Seguir no Instagram <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-          <a class="social-cta rv" href="https://www.flickr.com/photos/204380075@N06/" target="_blank" rel="noopener noreferrer">
-            <i class="grande fa-solid fa-camera-retro"></i>
-            <b>Galeria Oficial</b>
-            <p>Fotos reais da pré-candidatura, eventos e ações de Maria Amélia no Distrito Federal.</p>
-            <span>Ver galeria completa no Flickr <i class="fa-solid fa-arrow-right"></i></span>
-          </a>
+        <div class="midia-insta rv">
+          <div class="ig-deck" id="ig-deck">
+          <div class="ig-card" data-i="0">
+            <iframe src="https://www.instagram.com/p/DZGeiefxb5E/embed" loading="lazy" title="Post do Instagram de Maria Amélia" allowtransparency="true" scrolling="no"></iframe>
+          </div>
+          <div class="ig-card" data-i="1">
+            <iframe src="https://www.instagram.com/p/DZGLBVNttxx/embed" loading="lazy" title="Post do Instagram de Maria Amélia" allowtransparency="true" scrolling="no"></iframe>
+          </div>
+          <div class="ig-card" data-i="2">
+            <iframe src="https://www.instagram.com/p/DZDk0XsGOCX/embed" loading="lazy" title="Post do Instagram de Maria Amélia" allowtransparency="true" scrolling="no"></iframe>
+          </div>
+          <div class="ig-card" data-i="3">
+            <iframe src="https://www.instagram.com/p/DYsukdJEYAk/embed" loading="lazy" title="Post do Instagram de Maria Amélia" allowtransparency="true" scrolling="no"></iframe>
+          </div>
+          <div class="ig-card" data-i="4">
+            <iframe src="https://www.instagram.com/p/DYkbuQYxCv2/embed" loading="lazy" title="Post do Instagram de Maria Amélia" allowtransparency="true" scrolling="no"></iframe>
+          </div>
+          <div class="ig-card" data-i="5">
+            <iframe src="https://www.instagram.com/p/DVoWb6LkdWl/embed" loading="lazy" title="Post do Instagram de Maria Amélia" allowtransparency="true" scrolling="no"></iframe>
+          </div>
+          </div>
+          <div class="ig-ctrl">
+            <button class="tlx-seta" id="ig-ant" aria-label="Post anterior"><i class="fa-solid fa-arrow-left"></i></button>
+            <a class="btn btn-ouro" href="https://www.instagram.com/mariaamelia.df/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Seguir @mariaamelia.df</a>
+            <button class="tlx-seta" id="ig-prx" aria-label="Próximo post"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
         </div>
       </div>
+      <p class="midia-flickr rv">Quer ver mais? Acesse a <a href="https://www.flickr.com/photos/204380075@N06/" target="_blank" rel="noopener noreferrer">galeria oficial completa no Flickr <i class="fa-solid fa-arrow-right"></i></a></p>
     </div>
   </section>
 
@@ -515,19 +504,6 @@
     </div>
     <div class="dep-trilho" id="dep-trilho">
       <!-- preenchido via JS (duplicado para o loop contínuo) -->
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section id="participe">
-    <div class="wrap rv">
-      <span class="etiqueta clara" style="justify-content:center;display:inline-flex">Faça parte</span>
-      <h2>Faça parte da nossa <em>caminhada</em></h2>
-      <p>Mais voz para o DF. Mais força para o Brasil. Siga, compartilhe e caminhe junto.</p>
-      <div class="hero-cta">
-        <a class="btn btn-zap" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Fale com a Equipe</a>
-        <a class="btn btn-linha" href="https://www.instagram.com/mariaamelia.df/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Seguir no Instagram</a>
-      </div>
     </div>
   </section>
 

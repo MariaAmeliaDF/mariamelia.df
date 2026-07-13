@@ -24,6 +24,7 @@ assets/
   js/main.js          Interações (menu, modal, depoimentos, cookies)
   img/                Fotos otimizadas em WebP
   video/fundo.mp4     Vídeo do hero
+  audio/jingle.mp3    Jingle oficial (player no hero)
   logo/               Logos SVG
 ```
 
