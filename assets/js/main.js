@@ -237,7 +237,6 @@ if (trilho) {
   const audio = document.getElementById('jingle');
   const player = document.getElementById('hdr-player');
   const ico = document.getElementById('hp-ico');
-  const ov = document.getElementById('som-ov');
   if (!audio || !player) return;
 
   const estado = tocando => {
@@ -252,14 +251,4 @@ if (trilho) {
   audio.addEventListener('ended', () => { audio.currentTime = 0; estado(false); });
   audio.addEventListener('pause', () => estado(false));
   audio.addEventListener('play', () => estado(true));
-
-  // Overlay: entrar com ou sem som
-  if (ov) {
-    const fechar = () => { ov.classList.add('out'); setTimeout(() => ov.remove(), 600); };
-    document.getElementById('som-sim')?.addEventListener('click', () => {
-      audio.play().then(() => estado(true)).catch(() => {});
-      fechar();
-    });
-    document.getElementById('som-nao')?.addEventListener('click', fechar);
-  }
 })();
