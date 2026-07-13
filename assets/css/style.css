@@ -840,3 +840,8 @@ footer{padding:2.6rem 0 0}
 #zap-f{background:none;box-shadow:none;width:66px;height:66px}
 #zap-f:hover{transform:scale(1.08)}
 #zap-f img{width:100%;height:100%;filter:drop-shadow(0 6px 14px rgba(13,57,7,.45))}
+
+/* v3.2.3 — botão do WhatsApp de volta ao círculo (com o coração) */
+#zap-f{background:var(--areia);box-shadow:0 10px 30px rgba(37,211,102,.45);width:60px;height:60px;animation:pulso 2.6s ease-in-out infinite}
+#zap-f:hover{transform:scale(1.1)}
+#zap-f img{width:62%;height:62%;filter:none}
