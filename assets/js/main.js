@@ -229,3 +229,37 @@ if (trilho) {
   pintar();
   new IntersectionObserver(e => e[0].isIntersecting ? auto() : clearInterval(timer), { threshold: .2 }).observe(deck);
 })();
+
+/* ============================================================
+   v3.2 — overlay de som e player do jingle no header
+   ============================================================ */
+(() => {
+  const audio = document.getElementById('jingle');
+  const player = document.getElementById('hdr-player');
+  const ico = document.getElementById('hp-ico');
+  const ov = document.getElementById('som-ov');
+  if (!audio || !player) return;
+
+  const estado = tocando => {
+    player.classList.toggle('tocando', tocando);
+    player.setAttribute('aria-pressed', String(tocando));
+    if (ico) ico.className = tocando ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+  };
+  player.addEventListener('click', () => {
+    if (audio.paused) { audio.play().then(() => estado(true)).catch(() => {}); }
+    else { audio.pause(); estado(false); }
+  });
+  audio.addEventListener('ended', () => { audio.currentTime = 0; estado(false); });
+  audio.addEventListener('pause', () => estado(false));
+  audio.addEventListener('play', () => estado(true));
+
+  // Overlay: entrar com ou sem som
+  if (ov) {
+    const fechar = () => { ov.classList.add('out'); setTimeout(() => ov.remove(), 600); };
+    document.getElementById('som-sim')?.addEventListener('click', () => {
+      audio.play().then(() => estado(true)).catch(() => {});
+      fechar();
+    });
+    document.getElementById('som-nao')?.addEventListener('click', fechar);
+  }
+})();

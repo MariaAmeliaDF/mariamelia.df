@@ -18,7 +18,7 @@
   <meta name="twitter:description" content="Mais voz para o DF. Mais força para o Brasil.">
   <meta name="twitter:image" content="assets/img/foto-oficial.webp">
 
-  <link rel="icon" href="assets/logo/logo-preto.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo/bandeira-brasil.svg" type="image/svg+xml">
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,19 @@
     <div class="fio"></div>
   </div>
 
+
+  <!-- Escolha de som -->
+  <div id="som-ov" role="dialog" aria-modal="true" aria-label="Preferência de som">
+    <div class="som-box">
+      <img src="assets/logo/logo-branco.svg" alt="Maria Amélia">
+      <p>Bem-vindo(a)! Como você prefere navegar?</p>
+      <div class="som-btns">
+        <button class="btn btn-ouro" id="som-sim"><i class="fa-solid fa-volume-high"></i> Entrar com som</button>
+        <button class="btn btn-linha" id="som-nao"><i class="fa-solid fa-volume-xmark"></i> Entrar sem som</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header id="hdr">
     <div class="wrap">
@@ -49,7 +62,11 @@
         <a href="#acoes">Ações Sociais</a>
         <a href="#bandeiras">Bandeiras</a>
         <a href="#midia">Mídia</a>
-        <a href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" class="btn btn-ouro"><i class="fa-solid fa-heart"></i> Faça Parte</a>
+        <button id="hdr-player" aria-label="Tocar ou pausar o jingle" aria-pressed="false">
+          <i class="fa-solid fa-play" id="hp-ico"></i>
+          <span class="hp-tit">Jingle</span>
+          <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        </button>
       </nav>
       <button id="ham" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -66,7 +83,7 @@
     <a class="mob-l" href="#midia">Mídia <i class="fa-solid fa-chevron-right"></i></a>
     <a class="mob-l" href="#depoimentos">Depoimentos <i class="fa-solid fa-chevron-right"></i></a>
     <a class="mob-l" href="#redes">Redes Sociais <i class="fa-solid fa-chevron-right"></i></a>
-    <a class="btn btn-ouro" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Faça Parte da Nossa Caminhada</a>
+    <a class="btn btn-ouro" href="https://maria-amelia.xyz" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-heart"></i> Faça Parte da Nossa Caminhada</a>
   </nav>
 
   <!-- HERO -->
@@ -74,22 +91,7 @@
     <video autoplay muted loop playsinline poster="assets/img/poster-hero.webp" aria-hidden="true">
       <source src="assets/video/fundo.mp4" type="video/mp4">
     </video>
-    <div class="wrap hero-centro">
-      <span class="hero-tag"><i class="fa-solid fa-star"></i> Pré-candidatura 2026 · Distrito Federal</span>
-      <h1>Mais voz para o <em>DF</em>.<br>Mais força para o <em>Brasil</em>.</h1>
-      <div class="hero-cred">
-        <span><i class="fa-solid fa-check"></i> Vice-presidente do PL Mulher DF</span>
-        <span><i class="fa-solid fa-check"></i> Pré-candidata a Deputada Federal · PL</span>
-        <span><i class="fa-solid fa-check"></i> Fundadora da Maria Amélia Doces</span>
-      </div>
-      <div class="hero-cta">
-        <a class="btn btn-ouro" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Faça Parte da Nossa Caminhada</a>
-        <a class="btn btn-linha" href="#quem"><i class="fa-solid fa-book-open"></i> Conheça a História</a>
-        <button class="btn btn-linha jingle-btn" id="jingle-btn" aria-pressed="false">
-          <i class="fa-solid fa-play" id="jingle-ico"></i> Ouça o Jingle
-          <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        </button>
-      </div>
+    <div class="wrap hero-lado">
       <div class="hero-foto">
         <div class="moldura">
           <img src="assets/img/foto-oficial.webp" alt="Retrato oficial de Maria Amélia" fetchpriority="high">
@@ -99,8 +101,20 @@
           <div><b>Fé · Família · Trabalho</b><small>Brasília, Distrito Federal</small></div>
         </div>
       </div>
+      <div class="hero-txt2">
+        <span class="hero-tag"><i class="fa-solid fa-star"></i> Pré-candidata 2026 · Distrito Federal</span>
+        <h1>Mais voz para o <em>DF</em>.<br>Mais força para o <em>Brasil</em>.</h1>
+        <div class="hero-cred">
+          <span><i class="fa-solid fa-check"></i> Vice-presidente do PL Mulher DF</span>
+          <span><i class="fa-solid fa-check"></i> Pré-candidata a Deputada Federal · PL</span>
+          <span><i class="fa-solid fa-check"></i> Fundadora da Maria Amélia Doces</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-ouro" href="https://maria-amelia.xyz" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-heart"></i> Faça Parte da Nossa Caminhada</a>
+        </div>
+      </div>
     </div>
-    <audio id="jingle" src="assets/audio/jingle.mp3" preload="none"></audio>
+    <audio id="jingle" src="assets/audio/jingle.mp3" preload="auto"></audio>
   </section>
 
   <!-- Faixa de valores -->
@@ -113,13 +127,17 @@
 
   <!-- QUEM É -->
   <section id="quem">
+    <div class="wrap">
+      <div class="sec-cab centro rv">
+        <span class="etiqueta">Conheça a trajetória</span>
+        <h2>Quem é <span class="destaque">Maria Amélia</span></h2>
+      </div>
+    </div>
     <div class="wrap quem-grid">
       <figure class="quem-foto rl">
         <img src="assets/img/foto-institucional.webp" alt="Maria Amélia na confeitaria Maria Amélia Doces" loading="lazy">
       </figure>
       <div class="quem-txt rr">
-        <span class="etiqueta">Conheça a trajetória</span>
-        <h2>Quem é <span class="destaque">Maria Amélia</span></h2>
         <p>Natural de <strong>Bambuí, Minas Gerais</strong>, Maria Amélia escolheu Brasília para construir sua vida, sua família e sua história.</p>
         <p>Mulher de fé, esposa, mãe, avó e empresária, acredita que valores como <strong>responsabilidade, trabalho, família e liberdade</strong> são a base para transformar realidades.</p>
         <p>Sua trajetória no empreendedorismo, na política e no trabalho social reforça seu compromisso com pessoas, oportunidades e desenvolvimento para o Distrito Federal.</p>
@@ -155,11 +173,6 @@
         </div>
         <div class="tlx-palco">
         <article class="tlx-slide ativo" data-i="0">
-          <div class="tlx-midia"><div class="foto-pend">
-              <i class="fa-regular fa-image"></i>
-              <b>Foto a inserir — verificação</b>
-              <small>Sugestão: foto de infância / família em Bambuí (MG)</small>
-            </div></div>
           <div class="tlx-info">
             <span class="tl-ano">Origem · 1968</span>
             <h3>Bambuí, Minas Gerais</h3>
@@ -167,11 +180,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="1">
-          <div class="tlx-midia"><div class="foto-pend">
-              <i class="fa-regular fa-image"></i>
-              <b>Foto a inserir — verificação</b>
-              <small>Sugestão: foto da juventude ou dos primeiros anos na capital</small>
-            </div></div>
           <div class="tlx-info">
             <span class="tl-ano">Chegada a Brasília</span>
             <h3>Um Novo Começo na Capital</h3>
@@ -179,11 +187,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="2">
-          <div class="tlx-midia"><div class="foto-pend">
-              <i class="fa-regular fa-image"></i>
-              <b>Foto a inserir — verificação</b>
-              <small>Sugestão: registro antigo dos primeiros bolos e encomendas</small>
-            </div></div>
           <div class="tlx-info">
             <span class="tl-ano">1989</span>
             <h3>Os Primeiros Bolos e Encomendas</h3>
@@ -191,11 +194,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="3">
-          <div class="tlx-midia"><div class="foto-pend">
-              <i class="fa-regular fa-image"></i>
-              <b>Foto a inserir — verificação</b>
-              <small>Sugestão: fachada ou interior da primeira loja no Lago Sul</small>
-            </div></div>
           <div class="tlx-info">
             <span class="tl-ano">2004</span>
             <h3>Primeira Loja Física, Lago Sul</h3>
@@ -203,7 +201,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="4">
-          <div class="tlx-midia"><img src="assets/img/foto-carro.webp" alt="Maria Amélia ao lado do carro da Maria Amélia Doces" loading="lazy"></div>
           <div class="tlx-info">
             <span class="tl-ano">2013</span>
             <h3>Sede Própria, Jardim Botânico</h3>
@@ -211,7 +208,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="5">
-          <div class="tlx-midia"><img src="assets/img/foto-institucional.webp" alt="Maria Amélia com um de seus bolos na confeitaria" loading="lazy" style="object-position:center 30%"></div>
           <div class="tlx-info">
             <span class="tl-ano">Reconhecimento</span>
             <h3>Confeiteira Reconhecida por Autoridades</h3>
@@ -219,7 +215,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="6">
-          <div class="tlx-midia"><img src="assets/img/foto-pequenino.webp" alt="Maria Amélia com os acolhidos da Vila do Pequenino Jesus" loading="lazy"></div>
           <div class="tlx-info">
             <span class="tl-ano">Ações Sociais</span>
             <h3>Uma Vida Dedicada ao Próximo</h3>
@@ -227,11 +222,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="7">
-          <div class="tlx-midia"><div class="foto-pend">
-              <i class="fa-regular fa-image"></i>
-              <b>Foto a inserir — verificação</b>
-              <small>Sugestão: foto da posse ou evento do PL Mulher DF</small>
-            </div></div>
           <div class="tlx-info">
             <span class="tl-ano">Vice-Presidente PL Mulher DF</span>
             <h3>Liderança Política com Propósito</h3>
@@ -239,7 +229,6 @@
           </div>
         </article>
         <article class="tlx-slide" data-i="8">
-          <div class="tlx-midia"><img src="assets/img/foto-lancamento.webp" alt="Maria Amélia discursando no lançamento da pré-candidatura" loading="lazy"></div>
           <div class="tlx-info">
             <span class="tl-ano">19 mai 2025</span>
             <h3>Lançamento da Pré-Candidatura</h3>
@@ -259,7 +248,7 @@
   <!-- AÇÕES SOCIAIS -->
   <section id="acoes">
     <div class="wrap">
-      <div class="sec-cab rv">
+      <div class="sec-cab centro rv">
         <span class="etiqueta">Ações Sociais</span>
         <h2>Solidariedade e <span class="destaque">Responsabilidade Social</span></h2>
         <p>Maria Amélia acredita que cuidar dos mais vulneráveis é o verdadeiro sentido da ação política.</p>
@@ -448,7 +437,7 @@
   <!-- MÍDIA -->
   <section id="midia">
     <div class="wrap">
-      <div class="sec-cab rv">
+      <div class="sec-cab centro rv">
         <span class="etiqueta clara">Canal Oficial &amp; Redes</span>
         <h2>Maria Amélia na <span class="destaque-ouro">Mídia</span></h2>
         <p>Assista ao lançamento da pré-candidatura e acompanhe os bastidores da caminhada.</p>
@@ -560,7 +549,7 @@
   </footer>
 
   <!-- Flutuantes -->
-  <a id="zap-f" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a id="zap-f" href="https://wa.me/5561920033480" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"><img src="assets/logo/whatsapp-coracao.svg" alt=""></a>
   <button id="btt" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
 
   <!-- Cookies -->
