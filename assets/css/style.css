@@ -845,3 +845,9 @@ footer{padding:2.6rem 0 0}
 #zap-f{background:var(--areia);box-shadow:0 10px 30px rgba(37,211,102,.45);width:60px;height:60px;animation:pulso 2.6s ease-in-out infinite}
 #zap-f:hover{transform:scale(1.1)}
 #zap-f img{width:62%;height:62%;filter:none}
+
+/* v3.2.4 — ícone original do WhatsApp e foto da capa maior */
+#zap-f{background:#25d366;color:#fff}
+#zap-f:hover{transform:scale(1.1)}
+.hero-lado .hero-foto .moldura{width:min(395px,76vw)}
+@media (max-width:1024px){.hero-lado .hero-foto .moldura{width:min(320px,68vw)}}
