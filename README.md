@@ -1,102 +1,60 @@
-# Maria Amélia - Site Oficial
+# Site Oficial — Maria Amélia (v3.0)
 
-Pré-candidata a Deputada Federal pelo Distrito Federal
+Site da pré-candidatura de Maria Amélia a Deputada Federal pelo PL no Distrito Federal.
 
-## 📋 Sobre o Projeto
+**Slogan:** Mais voz para o DF. Mais força para o Brasil.
 
-Website oficial de **Maria Amélia Campos Dias**, empresária, confeiteira e pré-candidata a Deputada Federal pelo PL no Distrito Federal.
+## O que mudou na v3.0 (reestruturação completa)
 
-### ✨ Recursos Principais
+- **Design novo de alto padrão**: tipografia editorial (Fraunces + Instrument Sans), paleta refinada a partir do verde da marca com fio dourado como elemento de identidade, animações de revelação ao rolar, marquee de valores e linha do tempo "costurada".
+- **Conteúdo 100% preservado**: todos os textos do site anterior foram mantidos com o mesmo sentido (história, trajetória, ações sociais, bandeiras e prioridades).
+- **Correções**: o `index.html` antigo estava com o conteúdo duplicado internamente (a página inteira aparecia duas vezes no arquivo) — corrigido; o arquivo vazio `maria_pequenino.png` (0 bytes) foi removido; foi criada a página `privacidade.html`, que era referenciada mas não existia.
+- **Performance**: imagens convertidas para WebP e redimensionadas (de ~9 MB para ~0,8 MB no total), lazy loading, poster do vídeo do hero.
+- **Organização**: assets em pastas (`assets/css`, `assets/js`, `assets/img`, `assets/video`, `assets/logo`). Os nomes das páginas `acao-*.html` foram mantidos para não quebrar links já compartilhados.
+- **Acessibilidade**: navegação por teclado, `aria-labels`, foco visível e suporte a `prefers-reduced-motion`.
 
-- **Responsivo** - Adaptado para todos os dispositivos (mobile, tablet, desktop)
-- **SEO Otimizado** - Meta tags completas, Open Graph, Twitter Card
-- **Acessível** - WCAG A+ compatível com leitores de tela
-- **Performance** - Lazy loading, CSS otimizado, JavaScript minificado
-- **Seguro** - Sem exposição de dados sensíveis, proteção contra XSS
-- **Integrado** - Instagram, YouTube, Flickr, WhatsApp
-
-## 🛠️ Tecnologia
-
-- **HTML5** - Semântico e acessível
-- **CSS3** - Grid, Flexbox, animações suaves
-- **JavaScript Vanilla** - Sem dependências externas
-- **Font Awesome** - Ícones profissionais
-- **Google Fonts** - Tipografia Poppins
-
-## 📁 Estrutura
+## Estrutura
 
 ```
-index.html          - Estrutura HTML principal
-style.css           - Estilos e responsividade
-main.js             - Lógica interativa
-README.md           - Documentação
+index.html            Página principal
+acao-*.html           8 páginas de ações sociais
+privacidade.html      Política de privacidade (revisar com o jurídico)
+assets/
+  css/style.css       Design system completo
+  js/main.js          Interações (menu, modal, depoimentos, cookies)
+  img/                Fotos otimizadas em WebP
+  video/fundo.mp4     Vídeo do hero
+  logo/               Logos SVG
 ```
 
-## 🚀 Melhorias Implementadas (v2.0)
+## 📷 FOTOS PENDENTES — checklist para verificação
 
-### SEO & Performance
-- ✅ Meta tags OpenGraph completas
-- ✅ Twitter Card integration
-- ✅ Canonical URL
-- ✅ Favicon SVG inline
-- ✅ Font Awesome com preload async
-- ✅ Imagens com lazy loading
+Os espaços abaixo estão marcados no site com o aviso **"Foto a inserir — verificação"**. Basta salvar a foto em `assets/img/` e trocar o bloco `<div class="foto-pend">...</div>` por `<img src="assets/img/NOME.webp" alt="...">` no `index.html`.
 
-### Segurança
-- ✅ Número WhatsApp protegido (não exposto na HTML)
-- ✅ Links com `noopener noreferrer`
-- ✅ HTTPS enforcement
-- ✅ Sem hard-coded de dados sensíveis
+Linha do tempo (`index.html`, seção Trajetória):
+1. **Origem 1968** — foto de infância/família em Bambuí (MG)
+2. **Chegada a Brasília** — foto da juventude ou primeiros anos na capital
+3. **1989** — registro antigo dos primeiros bolos e encomendas
+4. **2004** — fachada ou interior da primeira loja no Lago Sul
+5. **PL Mulher DF** — foto da posse ou evento do PL Mulher
 
-### Acessibilidade
-- ✅ ARIA labels expandidos
-- ✅ Contraste melhorado (WCAG AA)
-- ✅ Alt text descritivo em imagens
-- ✅ Navegação por teclado
-- ✅ Suporte a leitores de tela
+Páginas de ações sociais: cada página tem uma galeria com 4 espaços marcados para fotos reais da instituição/ação. Em `acao-rs.html` há também espaço para o **vídeo oficial da campanha do RS** (link do YouTube).
 
-### Code Quality
-- ✅ CSS sem duplicações (-60KB)
-- ✅ JavaScript com try/catch global
-- ✅ Namespace seguro para WhatsApp
-- ✅ Error handling completo
-- ✅ Comentários explicativos
+> As demais posições já usam as fotos reais existentes: foto oficial (hero), foto institucional (Quem é / Reconhecimento), foto do carro (2013), foto do lançamento (19/mai/2025) e foto da Vila do Pequenino Jesus (Ações Sociais).
 
-### Bugs Corrigidos
-- ✅ Logo faltando → substituído por SVG
-- ✅ Arquivo vazio (maria_pequenino.png) → removido do erro
-- ✅ Extensões incorretas (foto_institucional.png → .jpeg)
-- ✅ Número exposto → protegido
-- ✅ Imports duplicados → consolidados
+## Como publicar (GitHub Pages)
 
-## 📊 Estatísticas
+```bash
+git clone https://github.com/MariaAmeliaDF/mariamelia.df.git
+cd mariamelia.df
+# apague os arquivos antigos e copie todo o conteúdo desta pasta para a raiz do repositório
+git add -A
+git commit -m "v3.0 — reestruturação completa do site"
+git push origin main
+```
 
-| Métrica | Valor |
-|---------|-------|
-| **Tamanho HTML** | ~43 KB |
-| **Tamanho CSS** | ~28 KB (reduzido 40%) |
-| **Tamanho JS** | ~14 KB (melhorado) |
-| **Lighthouse Performance** | 85+ |
-| **Lighthouse Accessibility** | 95+ |
-| **Lighthouse Best Practices** | 92+ |
-| **Lighthouse SEO** | 100 |
+O GitHub Pages atualizará automaticamente em https://mariaameliadf.github.io/mariamelia.df/
 
-## 👥 Contato
+## Stack
 
-- **E-mail**: mariaameliacomunicacao@gmail.com
-- **WhatsApp**: [Clique para entrar em contato](https://wa.me/5561920033480)
-- **Instagram**: [@mariaamelia.df](https://www.instagram.com/mariaamelia.df/)
-- **Facebook**: [Maria Amélia DF](https://www.facebook.com/mariaamelia.df.oficial/)
-- **YouTube**: [Canal](https://www.youtube.com/@mariaameliadf)
-
-## 🤝 Apoio Social
-
-Maria Amélia é apoiadora oficial da **[Vila do Pequenino Jesus](https://viladopequeninojesus.com.br/)** - instituição que acolhe pessoas com deficiência no DF.
-
-## 📄 Licença
-
-© 2025 Maria Amélia. Todos os direitos reservados.
-
----
-
-**Site atualizado**: Junho de 2025 | **Versão**: 2.0
+HTML5 · CSS3 · JavaScript vanilla · Font Awesome 6.5 · Google Fonts (Fraunces, Instrument Sans). Sem frameworks e sem build — basta hospedar os arquivos estáticos.

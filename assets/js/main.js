@@ -1,0 +1,133 @@
+/* ============================================================
+   MARIA AMÉLIA — SITE OFICIAL · v3.0
+   main.js
+   ============================================================ */
+'use strict';
+
+/* ── Loader ── */
+window.addEventListener('load', () => {
+  const l = document.getElementById('ldr');
+  setTimeout(() => {
+    l && l.classList.add('out');
+    setTimeout(() => l && l.remove(), 700);
+  }, 900);
+});
+
+/* ── Header + voltar ao topo ── */
+const hdr = document.getElementById('hdr');
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => {
+  hdr && hdr.classList.toggle('sc', scrollY > 60);
+  btt && btt.classList.toggle('sh', scrollY > 500);
+}, { passive: true });
+btt?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ── Scroll suave com compensação do header ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
+    e.preventDefault();
+    window.scrollTo({
+      top: t.getBoundingClientRect().top + scrollY - (hdr?.offsetHeight || 76) - 12,
+      behavior: 'smooth'
+    });
+  });
+});
+
+/* ── Menu mobile ── */
+const ham = document.getElementById('ham');
+const mobM = document.getElementById('mob-m');
+const mobOv = document.getElementById('mob-ov');
+const mobX = document.getElementById('mob-x');
+const abrirMenu = () => {
+  mobM?.classList.add('on'); mobOv?.classList.add('on'); ham?.classList.add('on');
+  ham?.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+};
+const fecharMenu = () => {
+  mobM?.classList.remove('on'); mobOv?.classList.remove('on'); ham?.classList.remove('on');
+  ham?.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+};
+ham?.addEventListener('click', () => ham.classList.contains('on') ? fecharMenu() : abrirMenu());
+mobX?.addEventListener('click', fecharMenu);
+mobOv?.addEventListener('click', fecharMenu);
+document.querySelectorAll('.mob-l').forEach(l => l.addEventListener('click', fecharMenu));
+
+/* ── Reveal on scroll ── */
+const obs = new IntersectionObserver(entradas => {
+  entradas.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('vs'); obs.unobserve(e.target); }
+  });
+}, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv,.rl,.rr').forEach(el => obs.observe(el));
+
+/* ── Modal das bandeiras ── */
+const modal = document.getElementById('modal');
+const abrirModal = card => {
+  if (!modal) return;
+  document.getElementById('m-ico').innerHTML = `<i class="fa-solid ${card.dataset.ico}"></i>`;
+  document.getElementById('m-tit').textContent = card.dataset.tit;
+  document.getElementById('m-des').textContent = card.dataset.des;
+  const ul = document.getElementById('m-pris');
+  ul.innerHTML = '';
+  (card.dataset.pri || '').split('|').filter(Boolean).forEach(p => {
+    const li = document.createElement('li');
+    li.textContent = p;
+    ul.appendChild(li);
+  });
+  modal.classList.add('on');
+  document.body.style.overflow = 'hidden';
+};
+const fecharModal = () => {
+  modal?.classList.remove('on');
+  document.body.style.overflow = '';
+};
+document.querySelectorAll('.band-card').forEach(c => c.addEventListener('click', () => abrirModal(c)));
+document.getElementById('m-x')?.addEventListener('click', fecharModal);
+modal?.addEventListener('click', e => { if (e.target === modal) fecharModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { fecharModal(); fecharMenu(); } });
+
+/* ── Depoimentos (trilho contínuo) ── */
+const DEPOIMENTOS = [
+  { t: 'Conheço a Maria Amélia há anos pelos doces maravilhosos que ela faz para nossa família. Quando soube da pré-candidatura, não tive dúvida: é exatamente o tipo de mulher que o DF precisa, trabalhadora, de fé e com valores de verdade.', n: 'Paula M.', c: 'Cliente da Maria Amélia Doces' },
+  { t: 'O apoio dela à Vila do Pequenino Jesus não é de fachada. Ela aparece toda semana, abraça, ajuda de verdade e leva os acolhidos para tomar café na fábrica. Isso é o que a diferencia. Política feita com coração e presença real.', n: 'Rosana T.', c: 'Voluntária da Vila Pequenino Jesus' },
+  { t: 'Como empreendedora, me identifico muito com a história dela. Veio do nada, construiu uma empresa referência no DF e agora quer fazer pela população o que fez pelos seus clientes: entregar qualidade, compromisso e resultado.', n: 'Carla F.', c: 'Empreendedora · Taguatinga, DF' },
+  { t: 'Uma mulher conservadora, de família e de fé, que não tem vergonha de defender seus valores. O DF precisa desse tipo de representante na Câmara, com coragem, autenticidade e vontade real de servir ao povo.', n: 'João G.', c: 'Empresário · Brasília, DF' },
+  { t: 'Fiquei emocionada no lançamento da pré-candidatura. Ver a Michelle e a Bia Kicis ao lado dela mostrou que não é uma candidatura qualquer, é um movimento de mulheres com propósito, fé e amor pelo Brasil.', n: 'Ana L.', c: 'Moradora do Gama, DF' },
+  { t: 'A Maria Amélia é uma mulher que vive o que prega. Católica praticante, mãe dedicada, avó presente e empresária de sucesso. Ela representa as mulheres reais do Brasil, que trabalham, criam família e ainda encontram tempo para servir ao próximo.', n: 'Márcia S.', c: 'Professora · Ceilândia, DF' },
+  { t: 'Trabalho com ela há mais de dez anos e posso afirmar: a Maria Amélia trata cada funcionário como família. Ela gerou emprego, renda e dignidade para dezenas de pessoas no DF. Uma candidata que sabe o que é trabalho de verdade.', n: 'Fernanda B.', c: 'Colaboradora da Maria Amélia Doces' },
+  { t: 'O que mais me impressiona nela é a consistência. Não é candidata de campanha, ela já está nas ruas, nas instituições, nas igrejas e nas comunidades há anos. Quando entrar na política, vai chegar preparada e com raízes profundas no DF.', n: 'Luciano A.', c: 'Pastor · Samambaia, DF' },
+  { t: 'Como mãe, quero ver na Câmara alguém que entenda minha realidade: filhos, trabalho, fé e família. A Maria Amélia vive isso todos os dias. Ela não fala de pauta feminina pela teoria, ela a vive na prática, todos os dias.', n: 'Tatiane R.', c: 'Mãe e empreendedora · Sobradinho, DF' }
+];
+const trilho = document.getElementById('dep-trilho');
+if (trilho) {
+  const render = d => `
+    <article class="dep-card">
+      <span class="aspas" aria-hidden="true">“</span>
+      <p>${d.t}</p>
+      <div class="dep-quem">
+        <span class="ini">${d.n.charAt(0)}</span>
+        <div><b>${d.n}</b><small>${d.c}</small></div>
+      </div>
+    </article>`;
+  // duplicado para o loop infinito do marquee
+  trilho.innerHTML = DEPOIMENTOS.map(render).join('') + DEPOIMENTOS.map(render).join('');
+}
+
+/* ── Cookies ── */
+(() => {
+  const box = document.getElementById('cookies');
+  if (!box) return;
+  try {
+    if (document.cookie.includes('ma_ck=')) return;
+    setTimeout(() => box.classList.add('sh'), 2200);
+    const decidir = v => {
+      document.cookie = `ma_ck=${v};path=/;max-age=${60 * 60 * 24 * 180};SameSite=Lax`;
+      box.classList.remove('sh');
+    };
+    document.getElementById('ck-sim')?.addEventListener('click', () => decidir('1'));
+    document.getElementById('ck-nao')?.addEventListener('click', () => decidir('0'));
+  } catch (e) { /* silencioso */ }
+})();

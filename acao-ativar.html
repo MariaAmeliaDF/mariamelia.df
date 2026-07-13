@@ -1,187 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projeto Ativar Longevidade, Maria Amélia</title>
-<meta name="description" content="Atividades físicas, recreativas e sociais para qualidade de vida da pessoa idosa no DF.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='90' fill='%231a5c08'>&#9829;&#65038;</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
-<link rel="stylesheet" href="style.css">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Poppins',sans-serif;color:#162b07;background:#fff;line-height:1.7;}
-img{max-width:100%;height:auto;display:block;}
-a{text-decoration:none;color:inherit;}
-.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
-
-.pg-bar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid #daeac0;padding:.65rem 0;}
-.pg-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
-.pg-logo{height:34px;width:auto;display:block;}
-.pg-back{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#1e3a5f,#3b6ea8);color:#fff;font-size:.8rem;font-weight:600;padding:.5rem 1.1rem;border-radius:50px;transition:opacity .2s ease;}
-.pg-back:hover{opacity:.88;}
-
-/* ── HERO COM CARROSSEL DE FOTOS ── */
-.pg-hero{
-  position:relative;overflow:hidden;
-  min-height:380px;
-  display:flex;align-items:center;justify-content:center;
-}
-.pg-hero-slides{position:absolute;inset:0;z-index:0;}
-.pg-hero-slide{
-  position:absolute;inset:0;
-  background:linear-gradient(150deg,#1e3a5f 0%,#3b6ea8 100%);
-  opacity:0;transition:opacity 1.2s ease;
-  display:flex;align-items:center;justify-content:center;
-}
-.pg-hero-slide.active{opacity:1;}
-.pg-hero-slide-ph{
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  color:rgba(255,255,255,.18);
-}
-.pg-hero-slide-ph i{font-size:3rem;}
-.pg-hero-slide-ph span{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;}
-.pg-hero::before{
-  content:'';position:absolute;inset:0;z-index:1;
-  background:linear-gradient(150deg,rgba(10,30,5,.55) 0%,rgba(10,30,5,.75) 100%);
-}
-.pg-hero-dots{
-  position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);
-  z-index:3;display:flex;gap:.4rem;
-}
-.pg-hero-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);transition:all .3s ease;}
-.pg-hero-dot.on{background:#fff;width:20px;border-radius:4px;}
-.pg-hero-inner{position:relative;z-index:2;text-align:center;padding:3.5rem 0;}
-.pg-hero-ico{width:72px;height:72px;border-radius:20px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;margin:0 auto 1.2rem;}
-.pg-hero h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:.6rem;}
-.pg-hero h1 span{color:#fedc50;}
-.pg-hero-tag{
-  display:inline-block;background:rgba(255,255,255,.16);color:#fff;
-  font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
-  padding:.3rem .85rem;border-radius:50px;margin-bottom:.9rem;
-}
-.pg-hero-sub{font-size:1rem;color:rgba(255,255,255,.85);max-width:560px;margin:0 auto;}
-
-.pg-content{padding:3.5rem 0 4rem;}
-.pg-content p{font-size:.95rem;color:#3d5c1a;line-height:1.85;margin-bottom:1.1rem;}
-.pg-content strong{color:#0e3505;font-weight:600;}
-.pg-content h2{font-size:1.5rem;font-weight:700;color:#0e3505;margin:2rem 0 .8rem;}
-.pg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0;}
-.pg-card{background:#f4f8f0;border:1px solid #daeac0;border-radius:14px;padding:1.2rem;display:flex;gap:.8rem;align-items:flex-start;}
-.pg-card-ico{width:40px;height:40px;flex-shrink:0;background:linear-gradient(135deg,#1e3a5f,#3b6ea8);border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;}
-.pg-card h4{font-size:.84rem;font-weight:700;color:#0e3505;margin-bottom:.22rem;}
-.pg-card p{font-size:.78rem;color:#3d5c1a;line-height:1.5;margin:0;}
-.pg-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:2.5rem 0;}
-.pg-gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:3/4;background:#f4f8f0;border:1px dashed #b5d88a;position:relative;}
-.pg-gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
-.pg-gallery-item:hover img{transform:scale(1.05);}
-.pg-gallery-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:#4aaa1a;}
-.pg-gallery-placeholder i{font-size:1.8rem;opacity:.5;}
-.pg-gallery-placeholder span{font-size:.7rem;font-weight:700;opacity:.6;text-transform:uppercase;letter-spacing:.1em;}
-.pg-btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem;}
-.btn-pg{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:50px;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:all .3s ease;}
-.btn-pg-main{background:linear-gradient(135deg,#1e3a5f,#3b6ea8);color:#fff;box-shadow:0 4px 18px rgba(26,92,8,.25);}
-.btn-pg-main:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,92,8,.35);}
-.btn-pg-out{background:transparent;color:#2d7a0f;border:2px solid #2d7a0f;}
-.btn-pg-out:hover{background:#2d7a0f;color:#fff;}
-.pg-divider{height:3px;background:linear-gradient(90deg,#1e3a5f,#fedc50);border-radius:2px;margin:2.5rem 0;width:60px;}
-.pg-footer{background:#061a02;color:rgba(255,255,255,.5);padding:2rem 0;text-align:center;}
-.pg-footer img{height:34px;width:auto;margin:0 auto .7rem;display:block;}
-.pg-footer p{font-size:.73rem;}
-.pg-footer a{color:#fedc50;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;margin-top:.6rem;}
-@media(max-width:768px){
-  .pg-hero{min-height:300px;}
-  .pg-hero h1{font-size:1.8rem;}
-  .pg-cards{grid-template-columns:1fr;}
-  .pg-gallery{grid-template-columns:repeat(2,1fr);}
-  .pg-btns{flex-direction:column;}
-  .btn-pg{justify-content:center;width:100%;}
-}
-@media(max-width:480px){.pg-gallery{grid-template-columns:repeat(2,1fr);}}
-</style>
-<script>
-function goBack() {
-  var ref = document.referrer;
-  if (ref && ref.indexOf('index.html') !== -1) { history.back(); }
-  else { window.location.href = 'index.html#acoes'; }
-}
-/* Carrossel automático da capa */
-(function() {
-  document.addEventListener('DOMContentLoaded', function() {
-    var slides = document.querySelectorAll('.pg-hero-slide');
-    var dots = document.querySelectorAll('.pg-hero-dot');
-    if (slides.length < 2) return;
-    var idx = 0;
-    setInterval(function() {
-      slides[idx].classList.remove('active');
-      dots[idx].classList.remove('on');
-      idx = (idx + 1) % slides.length;
-      slides[idx].classList.add('active');
-      dots[idx].classList.add('on');
-    }, 3500);
-  });
-})();
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Ativar Longevidade · Maria Amélia</title>
+  <meta name="description" content="Atividades físicas, recreativas e sociais para qualidade de vida da pessoa idosa no DF.">
+  <link rel="icon" href="assets/logo/logo-preto.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div class="pg-bar">
-  <div class="container pg-bar-inner">
-    <a href="index.html"><img src="LOGO_MARIA_AMELIA_PRETO.svg" alt="Maria Amélia" class="pg-logo"></a>
-    <a href="javascript:goBack()" class="pg-back"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
-  </div>
-</div>
 
-<div class="pg-hero">
-  <div class="pg-hero-slides">
-    <div class="pg-hero-slide active"><div class="pg-hero-slide-ph"><i class="fa-solid fa-image"></i><span>Foto 1</span></div></div>
-    <div class="pg-hero-slide"><div class="pg-hero-slide-ph"><i class="fa-solid fa-image"></i><span>Foto 2</span></div></div>
-    <div class="pg-hero-slide"><div class="pg-hero-slide-ph"><i class="fa-solid fa-image"></i><span>Foto 3</span></div></div>
-    <div class="pg-hero-slide"><div class="pg-hero-slide-ph"><i class="fa-solid fa-image"></i><span>Foto 4</span></div></div>
-  </div>
-  <div class="container pg-hero-inner">
-    <div class="pg-hero-ico"><i class="fa-solid fa-person-walking"></i></div>
-    <span class="pg-hero-tag">Terceira idade · DF</span>
-    <h1>Projeto <span>Ativar Longevidade</span></h1>
-    <p class="pg-hero-sub">Atividades físicas, recreativas e sociais para qualidade de vida da pessoa idosa no DF.</p>
-  </div>
-  <div class="pg-hero-dots">
-    <span class="pg-hero-dot on"></span><span class="pg-hero-dot"></span><span class="pg-hero-dot"></span><span class="pg-hero-dot"></span>
-  </div>
-</div>
+  <header class="pg-hero">
+    <a class="pg-voltar" href="index.html#acoes"><i class="fa-solid fa-arrow-left"></i> Voltar ao site</a>
+    <div class="wrap">
+      <span class="etiqueta">Terceira idade · DF</span>
+      <h1>Projeto <em>Ativar Longevidade</em></h1>
+      <p class="lead">Atividades físicas, recreativas e sociais para qualidade de vida da pessoa idosa no DF.</p>
+    </div>
+  </header>
 
-<div class="pg-content">
-  <div class="container">
-    <p>O <strong>Projeto Ativar Longevidade</strong> é um grupo de atividades físicas, recreativas, cognitivas, culturais, sociais e filantrópicas dedicado à qualidade de vida da pessoa idosa no Distrito Federal.</p>
-<p>Idealizado por <strong>João do Lago</strong>, grande amigo de Maria Amélia, o projeto acredita que envelhecer com propósito, movimento e alegria é um direito de todos. Maria Amélia apoia essa causa que valoriza a terceira idade com dignidade e energia, entendendo que apoiar é também uma forma de servir.</p>
-<div class="pg-divider"></div>
-<div class="pg-cards">
-  <div class="pg-card"><div class="pg-card-ico"><i class="fa-solid fa-person-walking"></i></div><div><h4>Atividades físicas e recreativas</h4><p>Movimento e bem-estar para a terceira idade</p></div></div>
-  <div class="pg-card"><div class="pg-card-ico"><i class="fa-solid fa-brain"></i></div><div><h4>Estímulo cognitivo e cultural</h4><p>Atividades que mantêm a mente ativa e conectada</p></div></div>
-  <div class="pg-card"><div class="pg-card-ico"><i class="fa-solid fa-hand-holding-heart"></i></div><div><h4>Ação social e filantrópica</h4><p>Solidariedade entre os participantes do projeto</p></div></div>
-</div>
-<h2>Galeria</h2>
-<div class="pg-gallery">
-  <div class="pg-gallery-item"><div class="pg-gallery-placeholder"><i class="fa-solid fa-image"></i><span>Foto 1</span></div></div>
-  <div class="pg-gallery-item"><div class="pg-gallery-placeholder"><i class="fa-solid fa-image"></i><span>Foto 2</span></div></div>
-  <div class="pg-gallery-item"><div class="pg-gallery-placeholder"><i class="fa-solid fa-image"></i><span>Foto 3</span></div></div>
-  <div class="pg-gallery-item"><div class="pg-gallery-placeholder"><i class="fa-solid fa-image"></i><span>Foto 4</span></div></div>
-</div>
-<div class="pg-btns">
-  <a href="https://www.instagram.com/projetoativardf?igsh=cm9tazM0eGhpNGxw" target="_blank" class="btn-pg btn-pg-main"><i class="fa-brands fa-instagram"></i> @projetoativardf</a>
-  <a href="https://www.instagram.com/ativarlongevidade?igsh=czBzMG10YTNzdDhy" target="_blank" class="btn-pg btn-pg-out"><i class="fa-brands fa-instagram"></i> @ativarlongevidade</a>
-</div>
-  </div>
-</div>
+  <main class="pg-corpo">
+    <div class="wrap">
+      <p>O <strong>Projeto Ativar Longevidade</strong> é um grupo de atividades físicas, recreativas, cognitivas, culturais, sociais e filantrópicas dedicado à qualidade de vida da pessoa idosa no Distrito Federal.</p>
+      <p>Idealizado por <strong>João do Lago</strong>, grande amigo de Maria Amélia, o projeto acredita que envelhecer com propósito, movimento e alegria é um direito de todos. Maria Amélia apoia essa causa que valoriza a terceira idade com dignidade e energia, entendendo que apoiar é também uma forma de servir.</p>
+      <div class="pg-hl">
+        <article><i class="fa-solid fa-person-walking"></i><b>Atividades físicas e recreativas</b><p>Movimento e bem-estar para a terceira idade</p></article>
+        <article><i class="fa-solid fa-brain"></i><b>Estímulo cognitivo e cultural</b><p>Atividades que mantêm a mente ativa e conectada</p></article>
+        <article><i class="fa-solid fa-hand-holding-heart"></i><b>Ação social e filantrópica</b><p>Solidariedade entre os participantes do projeto</p></article>
+      </div>
 
-<div class="pg-footer">
-  <div class="container">
-    <img src="LOGO_MARIA_AMELIA_BRANCO.svg" alt="Maria Amélia">
-    <p>&copy; 2026 Maria Amélia , Pré-candidata a Deputada Federal pelo DF, PL</p>
-    <a href="javascript:goBack()"><i class="fa-solid fa-arrow-left"></i> Voltar ao site</a>
-  </div>
-</div>
+      <div class="pg-acao-links">
+        <a class="btn btn-cheio" href="https://www.instagram.com/projetoativardf?igsh=cm9tazM0eGhpNGxw" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @projetoativardf</a>
+        <a class="btn btn-linha-verde" href="https://www.instagram.com/ativarlongevidade?igsh=czBzMG10YTNzdDhy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @ativarlongevidade</a>
+      </div>
+    </div>
+  </main>
+
+  <section class="pg-galeria">
+    <div class="wrap">
+      <h2>Galeria</h2>
+      <div class="pg-galeria-grid">
+        <div class="foto-pend clara"><i class="fa-regular fa-image"></i><b>Foto a inserir</b><small>verificação</small></div>
+        <div class="foto-pend clara"><i class="fa-regular fa-image"></i><b>Foto a inserir</b><small>verificação</small></div>
+        <div class="foto-pend clara"><i class="fa-regular fa-image"></i><b>Foto a inserir</b><small>verificação</small></div>
+        <div class="foto-pend clara"><i class="fa-regular fa-image"></i><b>Foto a inserir</b><small>verificação</small></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pg-ft">
+    <div class="wrap">
+      <span>© 2026 Maria Amélia · Pré-candidata a Deputada Federal pelo DF · PL</span>
+      <a href="index.html">Voltar ao site <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </footer>
+
 </body>
 </html>
