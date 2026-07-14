@@ -245,3 +245,22 @@ if (trilho) {
   audio.addEventListener('pause', () => estado(false));
   audio.addEventListener('play', () => estado(true));
 })();
+
+/* ============================================================
+   v3.6 — destaque da seção atual na barra inferior (mobile)
+   ============================================================ */
+(() => {
+  const itens = [...document.querySelectorAll('.bm-item')];
+  if (!itens.length) return;
+  const secoes = itens
+    .map(i => document.getElementById(i.dataset.sec))
+    .filter(Boolean);
+  const marcar = () => {
+    const meio = scrollY + innerHeight * 0.4;
+    let atual = secoes[0];
+    secoes.forEach(s => { if (s.offsetTop <= meio) atual = s; });
+    itens.forEach(i => i.classList.toggle('ativo', i.dataset.sec === atual.id));
+  };
+  window.addEventListener('scroll', marcar, { passive: true });
+  marcar();
+})();
