@@ -1111,3 +1111,13 @@ footer{padding:0}
 @media (max-width:560px){
   .ft-base{flex-direction:column;text-align:center;gap:.35rem}
 }
+
+/* v3.9 — faixa com as 35 RAs (loop mais lento) e rótulo do som no mobile */
+.marquee{animation-duration:150s}
+@media (max-width:820px){
+  #hdr .wrap{grid-template-columns:auto 1fr auto}
+  #hdr-player{width:auto;height:auto;border-radius:999px;padding:.5rem .95rem;gap:.45rem}
+  #hdr-player .hp-tit{display:inline;font-size:.74rem;white-space:nowrap}
+  #hdr-player .eq{position:static;transform:none;height:11px}
+  #hdr .logo img{height:32px}
+}
