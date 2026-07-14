@@ -1124,3 +1124,6 @@ footer{padding:0}
 
 /* v3.9.1 — etiquetas das seções (AÇÕES SOCIAIS, TRAJETÓRIA...) em branco */
 .etiqueta,.etiqueta.clara{color:#fff}
+
+/* v3.9.1 — etiquetas das seções em branco */
+.etiqueta,.etiqueta.clara{color:#fff}
