@@ -1192,3 +1192,27 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
 
 /* peso extrabold garantido nos títulos principais */
 #hero h1,.hero-txt2 h1,.sec-cab h2,#m-tit{font-weight:800!important}
+
+/* ============================================================
+   v4.1 — ações sociais: carrossel igual no PC e no mobile,
+   cards clicáveis abrindo modal (como as bandeiras)
+   ============================================================ */
+.acoesx-wrap{position:relative}
+.acoesx-grid{
+  display:flex!important;overflow-x:auto;gap:1.1rem;
+  grid-template-columns:none;
+  scroll-snap-type:x mandatory;padding:.3rem .2rem 1.1rem;
+  scrollbar-width:none;
+}
+.acoesx-grid::-webkit-scrollbar{display:none}
+.acaox{
+  min-width:min(370px,84vw);max-width:min(370px,84vw);
+  scroll-snap-align:start;cursor:pointer;text-align:left;
+}
+.acaox .mais{color:var(--ouro);font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:.45rem;position:relative;z-index:1;transition:var(--tr)}
+.acaox:hover .mais{gap:.8rem}
+.acoesx-ctrl{display:flex;justify-content:center;gap:1rem;margin-top:.6rem}
+.acoesx-ctrl .tlx-seta{border-color:rgba(255,255,255,.3)}
+
+/* Fotos trocadas: enquadramento do banner e da foto do Quem é */
+.quem-foto img{object-position:center 18%}

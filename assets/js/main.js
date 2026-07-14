@@ -63,11 +63,26 @@ const abrirModal = card => {
   document.getElementById('m-des').textContent = card.dataset.des;
   const ul = document.getElementById('m-pris');
   ul.innerHTML = '';
-  (card.dataset.pri || '').split('|').filter(Boolean).forEach(p => {
+  const pris = (card.dataset.pri || '').split('|').filter(Boolean);
+  pris.forEach(p => {
     const li = document.createElement('li');
     li.textContent = p;
     ul.appendChild(li);
   });
+  document.querySelector('.m-pri').style.display = pris.length ? '' : 'none';
+  // link externo opcional (ações sociais)
+  let lk = document.getElementById('m-lk');
+  if (lk) lk.remove();
+  if (card.dataset.lk) {
+    lk = document.createElement('a');
+    lk.id = 'm-lk';
+    lk.className = 'btn btn-cheio';
+    lk.style.marginTop = '1.4rem';
+    lk.target = '_blank'; lk.rel = 'noopener noreferrer';
+    lk.href = card.dataset.lk;
+    lk.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square"></i> ${card.dataset.lkt || 'Visitar site'}`;
+    document.querySelector('.m-box').appendChild(lk);
+  }
   modal.classList.add('on');
   document.body.style.overflow = 'hidden';
 };
@@ -75,7 +90,7 @@ const fecharModal = () => {
   modal?.classList.remove('on');
   document.body.style.overflow = '';
 };
-document.querySelectorAll('.band-card').forEach(c => c.addEventListener('click', () => abrirModal(c)));
+document.querySelectorAll('.band-card, .acaox').forEach(c => c.addEventListener('click', () => abrirModal(c)));
 document.getElementById('m-x')?.addEventListener('click', fecharModal);
 modal?.addEventListener('click', e => { if (e.target === modal) fecharModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { fecharModal(); fecharMenu(); } });
@@ -263,4 +278,14 @@ if (trilho) {
   };
   window.addEventListener('scroll', marcar, { passive: true });
   marcar();
+})();
+
+
+/* ── Carrossel das ações sociais ── */
+(() => {
+  const trilho = document.getElementById('acoes-carrossel');
+  if (!trilho) return;
+  const passo = () => (trilho.querySelector('.acaox')?.offsetWidth || 340) + 16;
+  document.getElementById('ac-prx')?.addEventListener('click', () => trilho.scrollBy({ left: passo(), behavior: 'smooth' }));
+  document.getElementById('ac-ant')?.addEventListener('click', () => trilho.scrollBy({ left: -passo(), behavior: 'smooth' }));
 })();
