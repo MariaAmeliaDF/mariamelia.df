@@ -1121,3 +1121,6 @@ footer{padding:0}
   #hdr-player .eq{position:static;transform:none;height:11px}
   #hdr .logo img{height:32px}
 }
+
+/* v3.9.1 — etiquetas das seções (AÇÕES SOCIAIS, TRAJETÓRIA...) em branco */
+.etiqueta,.etiqueta.clara{color:#fff}
