@@ -1326,3 +1326,62 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   #valores-faixa{margin-top:-2.6rem;padding:.7rem 0}
   .acoes-banner img{aspect-ratio:4/5}
 }
+
+/* ============================================================
+   v4.4 — fachada como fundo das ações, mural em movimento,
+   faixa das RAs fechando o hero, foto visível no mobile
+   ============================================================ */
+
+/* Faixa das RAs presa ao fim do hero */
+#hero #valores-faixa{
+  position:absolute;left:0;right:0;bottom:0;margin:0;z-index:3;
+}
+#hero{padding-bottom:8.5rem}
+.hero-ia{bottom:4.2rem}
+
+/* Fundo do hero: menos gradiente na base para a foto aparecer sob a fita */
+#hero::before{
+  background:
+    linear-gradient(90deg,rgba(7,31,3,.9) 0%,rgba(7,31,3,.6) 40%,rgba(7,31,3,.06) 72%,transparent 100%),
+    linear-gradient(rgba(7,31,3,.3),transparent 26%);
+}
+
+/* Ações sociais: fachada como plano de fundo */
+#acoes{
+  background:
+    linear-gradient(rgba(7,28,3,.88),rgba(9,36,5,.93)),
+    url('../img/fachada.webp') center 32%/cover no-repeat,
+    var(--floresta-2);
+}
+
+/* Mural com movimento contínuo */
+.mural-linha{overflow:hidden;margin-bottom:1.15rem;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+}
+.mural-trilho{display:flex;gap:1.15rem;width:max-content;padding:.25rem .1rem}
+.mural-trilho.anima{animation:mural 60s linear infinite}
+.mural-linha[data-dir="dir"] .mural-trilho.anima{animation-direction:reverse}
+.mural-linha:hover .mural-trilho.anima{animation-play-state:paused}
+@keyframes mural{to{transform:translateX(-50%)}}
+.mural .acaox{min-width:370px;max-width:370px;background:rgba(9,30,4,.55)}
+.mural .acaox:hover{background:rgba(9,30,4,.75)}
+
+/* Mobile: linhas viram trilhos de arrasto e o hero mostra o rosto dela */
+@media (max-width:820px){
+  #hero{padding-bottom:7.5rem;min-height:86svh}
+  .hero-bg{object-position:76% 24%}
+  #hero::before{
+    background:
+      linear-gradient(rgba(7,31,3,.34),transparent 24%,transparent 40%,rgba(7,31,3,.72) 66%,rgba(7,31,3,.96) 100%);
+  }
+  .hero-ia{bottom:3.6rem}
+  .mural-linha{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+    -webkit-mask-image:none;mask-image:none}
+  .mural-linha::-webkit-scrollbar{display:none}
+  .mural-trilho{animation:none!important}
+  .mural .acaox{min-width:82vw;max-width:82vw;scroll-snap-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .mural-trilho.anima{animation:none}
+}

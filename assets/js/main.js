@@ -90,7 +90,11 @@ const fecharModal = () => {
   modal?.classList.remove('on');
   document.body.style.overflow = '';
 };
-document.querySelectorAll('.band-card, .acaox').forEach(c => c.addEventListener('click', () => abrirModal(c)));
+document.querySelectorAll('.band-card').forEach(c => c.addEventListener('click', () => abrirModal(c)));
+document.getElementById('mural-acoes')?.addEventListener('click', e => {
+  const c = e.target.closest('.acaox');
+  if (c) abrirModal(c);
+});
 document.getElementById('m-x')?.addEventListener('click', fecharModal);
 modal?.addEventListener('click', e => { if (e.target === modal) fecharModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { fecharModal(); fecharMenu(); } });
@@ -288,4 +292,20 @@ if (trilho) {
   const passo = () => (trilho.querySelector('.acaox')?.offsetWidth || 340) + 16;
   document.getElementById('ac-prx')?.addEventListener('click', () => trilho.scrollBy({ left: passo(), behavior: 'smooth' }));
   document.getElementById('ac-ant')?.addEventListener('click', () => trilho.scrollBy({ left: -passo(), behavior: 'smooth' }));
+})();
+
+
+/* ── Mural de ações: loop contínuo no desktop ── */
+(() => {
+  const trilhos = document.querySelectorAll('.mural-trilho');
+  if (!trilhos.length) return;
+  if (window.matchMedia('(min-width: 821px)').matches) {
+    trilhos.forEach(t => {
+      t.innerHTML += t.innerHTML;
+      t.classList.add('anima');
+      t.querySelectorAll('.rv').forEach(el => el.classList.add('vs'));
+    });
+  } else {
+    document.querySelectorAll('.mural .rv').forEach(el => el.classList.add('vs'));
+  }
 })();
