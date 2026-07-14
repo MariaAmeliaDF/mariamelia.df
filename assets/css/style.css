@@ -1274,3 +1274,19 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   #hero .hero-conteudo h1{font-size:clamp(2.1rem,8.5vw,2.8rem)}
   .hero-conteudo .hero-cta,.hero-conteudo .hero-cta .btn{width:100%;justify-content:center}
 }
+
+/* v4.2.1 — banner da fachada em resolução coerente + selo discreto de IA */
+.acoes-banner{max-width:880px;margin-inline:auto;margin-bottom:3rem}
+.acoes-banner img{aspect-ratio:16/11;object-position:center 58%}
+@media (max-width:820px){
+  .acoes-banner img{aspect-ratio:4/5;object-position:center 45%}
+}
+.hero-ia{
+  position:absolute;right:1.1rem;bottom:.85rem;z-index:2;
+  font-size:.66rem;letter-spacing:.08em;color:rgba(255,255,255,.45);
+  background:rgba(7,31,3,.35);backdrop-filter:blur(4px);
+  padding:.28rem .7rem;border-radius:999px;pointer-events:none;
+}
+@media (max-width:820px){
+  .hero-ia{right:.8rem;bottom:.7rem;font-size:.6rem}
+}
