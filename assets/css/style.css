@@ -1127,3 +1127,68 @@ footer{padding:0}
 
 /* v3.9.1 — etiquetas das seções em branco */
 .etiqueta,.etiqueta.clara{color:#fff}
+
+/* ============================================================
+   v4.0 — tipografia moderna (Plus Jakarta Sans, pegada da
+   referência), ações sociais em vidro com número fantasma,
+   correção da fonte azul (iOS) nas bandeiras
+   ============================================================ */
+
+/* Fonte azul dos botões no iPhone (bandeiras) */
+button{color:inherit}
+
+/* Tipografia nova em todo o site */
+:root{
+  --display:"Plus Jakarta Sans",system-ui,sans-serif;
+  --texto:"Plus Jakarta Sans",system-ui,sans-serif;
+}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em}
+.destaque,.destaque-ouro{font-style:normal;font-weight:800}
+.sec-cab h2 .destaque{color:var(--ouro)}
+#hero h1 em,.hero-txt2 h1 em{font-style:normal}
+.marquee span{font-style:normal;font-weight:600;font-size:.95rem;letter-spacing:.04em}
+.tl-ano{font-weight:800}
+.etiqueta{font-weight:700}
+.dep-card .aspas{font-style:normal}
+.acoes-banner figcaption b,.video-info b,.som-box p{font-style:normal}
+
+/* Ações sociais — cards de vidro com número fantasma (referência) */
+#acoes{position:relative}
+.acaox{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-radius:22px;position:relative;overflow:hidden;
+  padding:1.9rem 1.8rem 1.7rem;
+}
+.acaox::before{content:none}
+.acaox::after{ /* número fantasma */
+  content:attr(data-n);
+  position:absolute;right:1.1rem;bottom:.2rem;z-index:0;
+  font-family:var(--display);font-weight:800;font-size:5.6rem;line-height:1;
+  color:rgba(226,179,60,.16);pointer-events:none;
+}
+.acaox:hover{transform:translateY(-5px);border-color:rgba(226,179,60,.5);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.acaox h3{color:#fff;position:relative;z-index:1}
+.acaox p{color:rgba(255,255,255,.75);position:relative;z-index:1}
+.acaox strong{color:var(--lima)}
+.acaox .acao-meta{color:var(--ouro)}
+.acaox-lk{
+  color:var(--ouro-claro);border:1.5px solid rgba(226,179,60,.55);border-radius:999px;
+  padding:.5rem 1.05rem;font-size:.82rem;z-index:1;
+}
+.acaox-lk:hover{background:var(--ouro);color:var(--floresta);gap:.5rem}
+
+/* Mobile: carrossel deslizável com o próximo card aparecendo */
+@media (max-width:820px){
+  .acoesx-grid{
+    display:flex;overflow-x:auto;gap:1rem;
+    scroll-snap-type:x mandatory;padding:0 .2rem 1rem;
+    scrollbar-width:none;
+  }
+  .acoesx-grid::-webkit-scrollbar{display:none}
+  .acaox{min-width:84%;scroll-snap-align:center}
+}
+
+/* peso extrabold garantido nos títulos principais */
+#hero h1,.hero-txt2 h1,.sec-cab h2,#m-tit{font-weight:800!important}
