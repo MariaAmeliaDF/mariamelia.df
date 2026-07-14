@@ -1015,3 +1015,49 @@ footer{background:#071F03;border-top:1px solid rgba(226,179,60,.25);padding:3.4r
   #btt{display:none}
   #cookies{bottom:82px}
 }
+
+/* ============================================================
+   v3.7 — correção do estouro horizontal, timeline mobile em
+   pílulas, foto da capa em arco com brilho
+   ============================================================ */
+
+/* Estouro horizontal: nada pode vazar da largura da tela */
+html,body{overflow-x:hidden;max-width:100vw}
+#mob-m{visibility:hidden}
+#mob-m.on{visibility:visible}
+#valores-faixa{max-width:100vw}
+
+/* Foto da capa: moldura em arco, anel dourado e brilho de fundo */
+.hero-lado .hero-foto{position:relative}
+.hero-lado .hero-foto .moldura{
+  border-radius:999px 999px 30px 30px;
+  border:none;
+  box-shadow:0 34px 80px rgba(0,0,0,.5);
+}
+.hero-lado .hero-foto .moldura img{
+  filter:saturate(1.06) contrast(1.03);
+  object-position:center top;
+}
+.hero-lado .hero-foto::before{ /* anel dourado */
+  content:'';position:absolute;inset:-15px;pointer-events:none;
+  border:1.5px solid rgba(226,179,60,.65);
+  border-radius:999px 999px 36px 36px;
+}
+.hero-lado .hero-foto::after{ /* brilho suave atrás */
+  content:'';position:absolute;inset:-70px -95px;z-index:-1;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(159,211,53,.25),rgba(226,179,60,.08) 55%,transparent 75%);
+}
+
+/* Timeline mobile: navegação por pílulas (sem linha quebrada) */
+@media (max-width:820px){
+  .tlx-nav::before{content:none}
+  .tlx-no{display:none}
+  .tlx-nav{gap:.55rem;padding:.2rem .2rem .9rem;justify-content:flex-start}
+  .tlx-pt{
+    flex-direction:row;flex-shrink:0;min-width:auto;
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+    border-radius:999px;padding:.52rem 1.05rem;color:rgba(255,255,255,.75);
+  }
+  .tlx-pt.ativo{background:var(--ouro);border-color:var(--ouro);color:var(--floresta);box-shadow:0 0 0 4px rgba(226,179,60,.2)}
+  .tlx-rt{font-size:.72rem;letter-spacing:.06em}
+}
