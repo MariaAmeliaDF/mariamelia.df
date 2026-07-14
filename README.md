@@ -59,3 +59,9 @@ O GitHub Pages atualizará automaticamente em https://mariaameliadf.github.io/ma
 ## Stack
 
 HTML5 · CSS3 · JavaScript vanilla · Font Awesome 6.5 · Google Fonts (Fraunces, Instrument Sans). Sem frameworks e sem build — basta hospedar os arquivos estáticos.
+
+## Atualizações e cache
+
+Os links de `style.css` e `main.js` no `index.html` carregam um parâmetro de versão (`?v=...`).
+**Sempre que editar o CSS ou o JS, troque esse valor** (qualquer texto novo serve — ex.: a data).
+Isso força os navegadores dos visitantes a baixarem a versão nova em vez de usarem a antiga do cache.
