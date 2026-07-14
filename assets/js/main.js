@@ -4,15 +4,6 @@
    ============================================================ */
 'use strict';
 
-/* ── Loader ── */
-window.addEventListener('load', () => {
-  const l = document.getElementById('ldr');
-  setTimeout(() => {
-    l && l.classList.add('out');
-    setTimeout(() => l && l.remove(), 700);
-  }, 900);
-});
-
 /* ── Header + voltar ao topo ── */
 const hdr = document.getElementById('hdr');
 const btt = document.getElementById('btt');
@@ -169,7 +160,9 @@ if (trilho) {
       p.setAttribute('aria-selected', String(j === atual));
     });
     if (num) num.textContent = atual + 1;
-    pts[atual]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    const nav = document.querySelector('.tlx-nav');
+    const p = pts[atual];
+    if (nav && p) nav.scrollTo({ left: p.offsetLeft - nav.clientWidth / 2 + p.clientWidth / 2, behavior: 'smooth' });
   };
   const auto = () => { clearInterval(timer); timer = setInterval(() => ir(atual + 1), 8000); };
   pts.forEach((p, i) => p.addEventListener('click', () => { ir(i); auto(); }));

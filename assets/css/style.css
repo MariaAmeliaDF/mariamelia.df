@@ -851,3 +851,121 @@ footer{padding:2.6rem 0 0}
 #zap-f:hover{transform:scale(1.1)}
 .hero-lado .hero-foto .moldura{width:min(395px,76vw)}
 @media (max-width:1024px){.hero-lado .hero-foto .moldura{width:min(320px,68vw)}}
+
+/* v3.4 — compilado de redes sociais antes do rodapé */
+#redes{background:var(--areia);padding-top:5.5rem}
+.redes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.rede-card{
+  background:#fff;border:1px solid var(--linha);border-radius:var(--raio);
+  padding:1.7rem 1.6rem;display:flex;flex-direction:column;gap:.2rem;
+  transition:var(--tr);position:relative;overflow:hidden;
+}
+.rede-card b{font-size:1.12rem;margin-top:.75rem}
+.rede-card small{color:var(--tinta-2);font-size:.88rem}
+.rede-ico{
+  width:52px;height:52px;border-radius:14px;color:#fff;font-size:1.35rem;
+  display:flex;align-items:center;justify-content:center;transition:var(--tr);
+}
+.rede-ir{
+  margin-top:1rem;color:var(--verde);font-weight:600;font-size:.88rem;
+  display:inline-flex;align-items:center;gap:.45rem;transition:var(--tr);
+}
+.rede-card:hover{transform:translateY(-5px);box-shadow:var(--sombra-m)}
+.rede-card:hover .rede-ir{gap:.8rem}
+.rd-ig .rede-ico{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.rd-wa .rede-ico{background:#25d366}
+.rd-yt .rede-ico{background:#ff0000}
+.rd-fb .rede-ico{background:#1877f2}
+.rd-x  .rede-ico{background:#0f1419}
+.rd-fl .rede-ico{background:linear-gradient(90deg,#0063dc 50%,#ff0084 50%)}
+.rd-ig:hover{border-color:#cc2366}.rd-wa:hover{border-color:#25d366}
+.rd-yt:hover{border-color:#ff0000}.rd-fb:hover{border-color:#1877f2}
+.rd-x:hover{border-color:#0f1419}.rd-fl:hover{border-color:#0063dc}
+@media (max-width:820px){.redes-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.redes-grid{grid-template-columns:1fr}.rede-card{flex-direction:row;align-items:center;flex-wrap:wrap;gap:.9rem}.rede-card b{margin:0}.rede-card small{width:100%;order:3;margin-left:calc(52px + .9rem);margin-top:-.9rem}.rede-ir{margin:0 0 0 auto}}
+
+/* ============================================================
+   v3.5 — REVISÃO GERAL
+   Tema escuro unificado (títulos brancos), correção do bug de
+   rolagem/zoom, timeline mobile, rodapé reespaçado
+   ============================================================ */
+
+/* Títulos de todas as seções em branco (fundo verde profundo) */
+.sec-cab h2{color:#fff}
+.sec-cab p{color:rgba(255,255,255,.75)}
+.etiqueta{color:var(--lima)}
+.sec-cab h2 .destaque{color:var(--ouro)}
+
+#quem{background:var(--floresta)}
+#acoes{background:var(--floresta-2)}
+#bandeiras{background:var(--floresta)}
+#midia{background:var(--floresta-2)}
+#depoimentos{background:var(--floresta)}
+#redes{background:var(--floresta-2)}
+
+/* Textos da seção Quem é sobre o fundo escuro */
+.quem-txt p{color:rgba(255,255,255,.78)}
+.quem-txt strong{color:var(--lima)}
+.quem-foto::before{border-color:rgba(226,179,60,.65)}
+
+/* Fundo do terço sem "fixed" (causava sensação de zoom ao rolar) */
+#trajetoria{
+  background:
+    linear-gradient(rgba(9,40,5,.8),rgba(10,44,5,.92)),
+    url('../img/fundo-terco.webp') center 20%/cover no-repeat scroll,
+    var(--floresta);
+}
+
+/* Cards claros ganham borda sutil para descolar do fundo escuro */
+.acaox,.band-card,.dep-card,.rede-card{border-color:rgba(255,255,255,.06)}
+.acao-meta{color:var(--verde)}
+
+/* Depoimentos: cartões sobre o escuro */
+.dep-card{box-shadow:0 14px 40px rgba(0,0,0,.28)}
+
+/* Marquee de valores: transição para o tema escuro */
+#valores-faixa{border-bottom:1px solid rgba(255,255,255,.06)}
+
+/* Rodapé reespaçado e separado */
+footer{background:#071F03;border-top:1px solid rgba(226,179,60,.25);padding:3.4rem 0 0}
+.ft-grid{gap:2.6rem;padding-bottom:2.4rem}
+.ft-grid img{height:44px;margin-bottom:1rem}
+.ft-grid h4{margin-bottom:1rem}
+.ft-grid li{margin-bottom:.55rem}
+.ft-base{padding:1.3rem 0;gap:1.2rem}
+
+/* Header: no topo o fundo é escuro; ao rolar continua o vidro claro */
+#hdr.sc{background:rgba(9,32,4,.9)}
+#hdr.sc .nav-d a{color:rgba(255,255,255,.88)}
+#hdr.sc .logo .lg-branco{display:block}
+#hdr.sc .logo .lg-preto{display:none}
+#hdr.sc #ham span{background:#fff}
+
+/* Player "Aumente o som" mais discreto no mobile */
+@media (max-width:820px){
+  #hdr-player{padding:.5rem .9rem;font-size:.78rem;gap:.45rem}
+}
+
+/* Timeline no mobile — reconfigurada */
+@media (max-width:820px){
+  .tlx-nav{
+    justify-content:flex-start;gap:1.1rem;padding:.4rem .4rem 1rem;
+    scroll-snap-type:x proximity;
+  }
+  .tlx-nav::before{top:.95rem}
+  .tlx-pt{min-width:auto;scroll-snap-align:center;flex-shrink:0}
+  .tlx-rt{font-size:.66rem;letter-spacing:.05em}
+  .tlx-no{width:12px;height:12px}
+  .tlx-info{padding:1.9rem 1.3rem 2.1rem}
+  .tlx-info h3{font-size:1.45rem}
+  .tlx-info p{font-size:.95rem}
+  .tlx-ctrl{gap:1rem;margin-top:.2rem}
+  .tlx-seta{width:42px;height:42px}
+}
+@media (max-width:560px){
+  .hero-lado .hero-foto .moldura{width:min(300px,80vw)}
+  #hero{padding:6.5rem 0 3.5rem}
+  .sec-cab{margin-bottom:2.4rem}
+  section{padding:4rem 0}
+  .ft-base{flex-direction:column;text-align:center;gap:.5rem}
+}
