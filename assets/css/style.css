@@ -1451,3 +1451,59 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   #hdr-player .hp-tit2{display:none}
   #hdr-player{width:38px;height:38px;padding:0;justify-content:center;border-radius:50%}
 }
+
+/* ============================================================
+   v4.7 — fundo novo das ações, ícones em bolha, X fixo no
+   modal, transições fluidas e dobras (seções) uniformes
+   ============================================================ */
+
+/* Fundo novo da seção de ações */
+#acoes{
+  background:
+    linear-gradient(rgba(7,28,3,.9),rgba(9,36,5,.94)),
+    url('../img/acoes-fundo.webp') center 40%/cover no-repeat,
+    var(--floresta-2);
+}
+
+/* Ícone em bolha nos cards (referência) */
+.acaox-ico{
+  width:62px;height:62px;border-radius:50%;flex-shrink:0;
+  background:var(--areia);color:var(--verde);font-size:1.45rem;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(0,0,0,.3);
+  position:relative;z-index:1;margin-bottom:1rem;
+  border:2px solid rgba(226,179,60,.55);
+}
+
+/* X do modal sempre visível durante a rolagem */
+#m-x{
+  position:sticky;top:0;float:right;margin:-1.2rem -1rem 0 0;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--areia);box-shadow:0 4px 14px rgba(13,57,7,.25);
+  display:flex;align-items:center;justify-content:center;z-index:10;
+  border:1px solid var(--linha);
+}
+#m-x:hover{background:var(--ouro);color:var(--floresta)}
+
+/* Transições mais fluidas */
+.rv,.rl,.rr{transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.rv{transform:translateY(20px)}
+.rl{transform:translateX(-24px)}
+.rr{transform:translateX(24px)}
+#modal{transition:opacity .4s ease,visibility .4s ease}
+.m-box{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+#modal.on .m-box{transform:none}
+.tlx-slide{transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1),visibility .65s}
+.mural-trilho.anima{will-change:transform}
+.dep-trilho,.marquee{will-change:transform}
+.acaox,.band-card,.rede-card,.btn,.tlx-seta{transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,background .35s ease,border-color .35s ease,color .35s ease}
+
+/* Dobras uniformes: mesmo respiro em todas as seções */
+#quem,#trajetoria,#acoes,#bandeiras,#midia,#depoimentos,#redes{padding:5.5rem 0}
+.sec-cab,.sec-cab.centro{margin-bottom:2.8rem}
+@media (max-width:820px){
+  #quem,#trajetoria,#acoes,#bandeiras,#midia,#depoimentos,#redes{padding:4rem 0}
+  .sec-cab,.sec-cab.centro{margin-bottom:2.2rem}
+  .bm-item{font-size:.62rem}
+  .bm-item i{font-size:1.05rem}
+}
