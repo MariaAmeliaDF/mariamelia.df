@@ -1507,3 +1507,83 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   .bm-item{font-size:.62rem}
   .bm-item i{font-size:1.05rem}
 }
+
+/* ============================================================
+   v4.8 — capa mais distante, header maior, barra das RAs
+   visível, mural em linha única sempre em movimento, botão do
+   WhatsApp maior, painel de canais, bandeiras compactas
+   ============================================================ */
+
+/* Capa: rosto mais distante e elegante */
+.hero-bg{transform:scale(.94);transform-origin:60% 22%;object-position:center 24%}
+#hero{background:#0A2703}
+@media (max-width:820px){
+  #hero{min-height:74svh;padding:5.4rem 0 6.8rem}
+  .hero-bg{transform:none;object-position:72% 14%}
+  #hero .hero-conteudo h1{font-size:clamp(1.9rem,7.4vw,2.5rem)}
+  .hero-cred span{font-size:.8rem;padding:.42rem .85rem}
+}
+
+/* Header mais alto (PC e mobile) */
+#hdr{padding:1.45rem 0}
+#hdr.sc{padding:1rem 0}
+#hdr .logo img{height:50px}
+@media (max-width:820px){
+  #hdr{padding:1rem 0}
+  #hdr.sc{padding:1rem 0}
+  #hdr .logo img{height:24px}
+}
+@media (max-width:413px){
+  #hdr .logo img{height:24px}
+}
+
+/* Mural: uma linha só, sempre em movimento */
+.mural-trilho.anima{animation:mural 80s linear infinite}
+@media (max-width:820px){
+  .mural-linha{overflow:hidden;scroll-snap-type:none}
+  .mural-trilho{animation:mural 80s linear infinite!important;width:max-content}
+  .mural .acaox{min-width:300px;max-width:300px}
+  .mural-linha{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+}
+
+/* Botão do WhatsApp maior */
+#zap-f{width:70px;height:70px;font-size:2rem}
+@media (max-width:820px){
+  #zap-f{width:62px;height:62px;font-size:1.75rem;bottom:88px}
+}
+
+/* Painel de canais (referência) */
+.canais-painel{
+  background:linear-gradient(165deg,var(--verde) 0%,var(--floresta) 90%);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:26px;padding:1.6rem 1.8rem;
+  display:flex;flex-direction:column;gap:.4rem;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+.canal-item{
+  display:flex;align-items:center;gap:1.1rem;
+  padding:.75rem .4rem;border-radius:16px;transition:var(--tr);
+}
+.canal-item:hover{background:rgba(255,255,255,.08);padding-left:.9rem}
+.canal-ico{
+  width:52px;height:52px;border-radius:50%;flex-shrink:0;
+  background:var(--ouro);color:var(--floresta);font-size:1.3rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.canal-item b{color:#fff;font-size:1.08rem;font-weight:600}
+
+/* Bandeiras compactas e proporcionais */
+.band-grid{grid-template-columns:repeat(4,1fr);gap:1rem}
+.band-card{padding:1.35rem 1.25rem;gap:.55rem;border-radius:16px}
+.band-ico{width:42px;height:42px;border-radius:12px;font-size:1.05rem}
+.band-card h3{font-size:1.02rem}
+.band-card p{font-size:.83rem}
+.band-card .mais{font-size:.82rem}
+@media (max-width:1024px){.band-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:820px){
+  .band-grid{grid-template-columns:1fr 1fr;gap:.75rem}
+  .band-card{padding:1.05rem .95rem}
+  .band-card p{display:none}
+  .band-ico{width:38px;height:38px;font-size:.95rem}
+  .band-card h3{font-size:.9rem}
+}

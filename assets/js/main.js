@@ -299,13 +299,9 @@ if (trilho) {
 (() => {
   const trilhos = document.querySelectorAll('.mural-trilho');
   if (!trilhos.length) return;
-  if (window.matchMedia('(min-width: 821px)').matches) {
-    trilhos.forEach(t => {
-      t.innerHTML += t.innerHTML;
-      t.classList.add('anima');
-      t.querySelectorAll('.rv').forEach(el => el.classList.add('vs'));
-    });
-  } else {
-    document.querySelectorAll('.mural .rv').forEach(el => el.classList.add('vs'));
-  }
+  trilhos.forEach(t => {
+    t.innerHTML += t.innerHTML;
+    t.classList.add('anima');
+    t.querySelectorAll('.rv').forEach(el => el.classList.add('vs'));
+  });
 })();
