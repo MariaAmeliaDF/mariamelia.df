@@ -1857,3 +1857,18 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
 @media (max-width:820px){
   #hero{padding-bottom:7rem}
 }
+
+/* v5.4 — capa sem quebra na direita (PC) e painel de redes compacto */
+@media (min-width:821px){
+  .hero-bg{transform:none;object-position:center 26%}
+}
+
+.canais-painel{max-width:620px;margin-inline:auto;padding:1.15rem 1.3rem;gap:.15rem}
+.canal-item{padding:.55rem .5rem;gap:.9rem;border-radius:13px}
+.canal-ico{width:42px;height:42px;font-size:1.05rem}
+.canal-item b{font-size:.98rem}
+@media (max-width:820px){
+  .canais-painel{max-width:100%;padding:1rem 1.05rem}
+  .canal-ico{width:40px;height:40px;font-size:1rem}
+  .canal-item b{font-size:.94rem}
+}
