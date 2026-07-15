@@ -1662,3 +1662,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
       linear-gradient(rgba(7,31,3,.34),transparent 24%,transparent 42%,rgba(7,31,3,.68) 68%,rgba(7,31,3,.88) 100%);
   }
 }
+
+/* v4.9.2 — selo de IA no topo da capa no mobile (rodapé ficou justo) */
+@media (max-width:820px){
+  .hero-ia{top:4.5rem;bottom:auto;left:auto;right:.8rem}
+}
