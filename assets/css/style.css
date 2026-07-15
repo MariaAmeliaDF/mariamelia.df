@@ -1684,3 +1684,15 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   #quem{padding-top:1.4rem}
   #quem .sec-cab{margin-bottom:1.6rem}
 }
+
+/* v5.1 — mobile: ela mais distante na capa e barra das RAs mais fina */
+@media (max-width:820px){
+  .hero-bg{object-position:center top}
+  #hero::before{
+    background:linear-gradient(rgba(7,31,3,.3),transparent 22%,transparent 46%,rgba(7,31,3,.5) 66%,rgba(7,31,3,.78) 100%);
+  }
+  #hero #valores-faixa{padding:.5rem 0}
+  #valores-faixa .marquee span{font-size:.78rem;padding:0 1.1rem}
+  #hero{padding-bottom:3.4rem}
+  .hero-ia{top:4.2rem;font-size:.55rem}
+}
