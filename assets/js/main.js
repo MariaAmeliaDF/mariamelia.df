@@ -254,7 +254,7 @@ if (trilho) {
   const estado = tocando => {
     player.classList.toggle('tocando', tocando);
     player.setAttribute('aria-pressed', String(tocando));
-    if (ico) ico.className = tocando ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+    if (ico) ico.className = tocando ? 'fa-solid fa-pause' : 'fa-solid fa-music';
   };
   player.addEventListener('click', () => {
     if (audio.paused) { audio.play().then(() => estado(true)).catch(() => {}); }

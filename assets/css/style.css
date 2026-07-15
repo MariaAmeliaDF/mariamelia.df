@@ -1872,3 +1872,32 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   .canal-ico{width:40px;height:40px;font-size:1rem}
   .canal-item b{font-size:.94rem}
 }
+
+/* v5.5 — header do PC ocupando a linha inteira + ícone de som criativo */
+@media (min-width:821px){
+  #hdr .wrap{width:min(1560px,94%)}
+}
+
+/* Nota musical balançando no botão de som (parada) */
+#hdr-player #hp-ico.fa-music{
+  animation:balanca 2.6s ease-in-out infinite;
+  transform-origin:50% 80%;
+}
+@keyframes balanca{
+  0%,100%{transform:rotate(-10deg)}
+  50%{transform:rotate(12deg)}
+}
+/* anéis de som irradiando do botão (convite) */
+#hdr-player{position:relative}
+#hdr-player:not(.tocando)::after{
+  content:'';position:absolute;inset:-3px;border-radius:999px;
+  border:1.5px solid rgba(226,179,60,.55);
+  animation:irradia 2.6s ease-out infinite;pointer-events:none;
+}
+@keyframes irradia{
+  0%{opacity:.8;transform:scale(1)}
+  70%,100%{opacity:0;transform:scale(1.22)}
+}
+@media (prefers-reduced-motion:reduce){
+  #hdr-player::after,#hdr-player #hp-ico.fa-music{animation:none}
+}
