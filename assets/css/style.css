@@ -1652,3 +1652,13 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   .band-miolo{padding:0 1.1rem}
   .band-it.aberto .band-miolo{padding:0 1.1rem 1.2rem}
 }
+
+/* v4.9.1 — capa mobile fecha rente à barra das RAs */
+@media (max-width:820px){
+  #hero{padding-bottom:3.3rem;min-height:70svh}
+  .hero-ia{bottom:3rem;font-size:.58rem}
+  #hero::before{
+    background:
+      linear-gradient(rgba(7,31,3,.34),transparent 24%,transparent 42%,rgba(7,31,3,.68) 68%,rgba(7,31,3,.88) 100%);
+  }
+}
