@@ -1901,3 +1901,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
 @media (prefers-reduced-motion:reduce){
   #hdr-player::after,#hdr-player #hp-ico.fa-music{animation:none}
 }
+
+/* v5.5.1 — barra das RAs logo abaixo do botão (posição da seta) */
+@media (max-width:820px){
+  #hero{padding-bottom:4.4rem}
+}
