@@ -1852,3 +1852,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
   #bandeiras::after,.band-it::after{animation:none}
   .band-cab .band-ico,.band-seta{animation:none!important}
 }
+
+/* v5.3.1 — CTA um pouco mais para baixo no mobile */
+@media (max-width:820px){
+  #hero{padding-bottom:7rem}
+}
