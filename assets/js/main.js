@@ -305,3 +305,25 @@ if (trilho) {
     t.querySelectorAll('.rv').forEach(el => el.classList.add('vs'));
   });
 })();
+
+/* ── Acordeão das bandeiras ── */
+(() => {
+  const cabs = document.querySelectorAll('.band-cab');
+  if (!cabs.length) return;
+  cabs.forEach(c => c.addEventListener('click', () => {
+    const it = c.parentElement;
+    const estava = it.classList.contains('aberto');
+    document.querySelectorAll('.band-it.aberto').forEach(o => {
+      o.classList.remove('aberto');
+      o.querySelector('.band-cab').setAttribute('aria-expanded', 'false');
+    });
+    if (!estava) {
+      it.classList.add('aberto');
+      c.setAttribute('aria-expanded', 'true');
+      setTimeout(() => {
+        const r = it.getBoundingClientRect();
+        if (r.top < 90) window.scrollBy({ top: r.top - 100, behavior: 'smooth' });
+      }, 420);
+    }
+  }));
+})();
