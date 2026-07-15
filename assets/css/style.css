@@ -1667,3 +1667,13 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
 @media (max-width:820px){
   .hero-ia{top:4.5rem;bottom:auto;left:auto;right:.8rem}
 }
+
+/* v5.0 — capa mobile em retrato cobrindo a 1ª tela inteira até a barra */
+@media (max-width:820px){
+  #hero{min-height:100svh;padding-bottom:5.4rem}
+  .hero-bg{object-position:center top;transform:none}
+  #hero::before{
+    background:
+      linear-gradient(rgba(7,31,3,.28),transparent 26%,transparent 44%,rgba(7,31,3,.62) 68%,rgba(7,31,3,.85) 100%);
+  }
+}
