@@ -1677,3 +1677,10 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
       linear-gradient(rgba(7,31,3,.28),transparent 26%,transparent 44%,rgba(7,31,3,.62) 68%,rgba(7,31,3,.85) 100%);
   }
 }
+
+/* v5.0.1 — mobile ainda mais rente: capa→barra→História sem vãos */
+@media (max-width:820px){
+  #hero{padding-bottom:3.9rem}
+  #quem{padding-top:1.4rem}
+  #quem .sec-cab{margin-bottom:1.6rem}
+}
