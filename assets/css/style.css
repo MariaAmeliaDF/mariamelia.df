@@ -1906,3 +1906,62 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
 @media (max-width:820px){
   #hero{padding-bottom:4.4rem}
 }
+
+/* ============================================================
+   v5.6 — rodapé estilo referência (PC), barra de rolagem
+   dourada, barra das RAs na posição da seta
+   ============================================================ */
+
+/* Barra de rolagem dourada (PC) */
+html{scrollbar-color:var(--ouro) #0A2703;scrollbar-width:thin}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:#0A2703}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--ouro),#c99a2e);border-radius:8px;border:2px solid #0A2703}
+::-webkit-scrollbar-thumb:hover{background:var(--ouro-claro)}
+
+/* Barra das RAs na posição da seta */
+@media (max-width:820px){
+  #hero{padding-bottom:4rem}
+}
+
+/* Rodapé estilo referência, somente PC */
+.rn-logo-b,.rn-frase,.rn-links,.rn-foto,.rn-redes h3{display:none}
+.rn-logo-p{display:none}
+@media (min-width:821px){
+  #redes{background:linear-gradient(180deg,#E9BC49 0%,var(--ouro) 100%);padding:4.2rem 0 3.4rem}
+  #redes .sec-cab{display:none}
+  .redes-nik{
+    display:grid;grid-template-columns:1.05fr .7fr .9fr 1.15fr;
+    gap:2.2rem;align-items:center;
+  }
+  .rn-marca{display:flex;flex-direction:column;gap:.4rem}
+  .rn-logo-p{display:block;width:min(240px,90%)}
+  .rn-frase{
+    display:block;font-family:"Caveat",cursive;font-weight:700;
+    font-size:2.3rem;line-height:1.05;color:var(--floresta);
+    transform:rotate(-4deg);margin-top:.6rem;
+  }
+  .rn-links{display:flex;flex-direction:column;gap:0;align-self:center}
+  .rn-links a{
+    color:var(--floresta);font-weight:800;font-size:.95rem;
+    letter-spacing:.08em;text-transform:uppercase;
+    padding:.85rem .1rem;border-bottom:2px solid rgba(13,57,7,.45);
+    transition:var(--tr);
+  }
+  .rn-links a:hover{padding-left:.6rem;border-color:var(--floresta)}
+  .rn-foto{display:flex;align-items:flex-end;justify-content:center;align-self:end;margin-bottom:-3.4rem}
+  .rn-foto img{
+    width:min(300px,100%);
+    filter:drop-shadow(0 18px 40px rgba(13,57,7,.35));
+  }
+  .rn-redes{display:block}
+  .rn-redes h3{
+    display:block;color:var(--floresta);font-size:1.5rem;font-weight:800;
+    margin-bottom:.9rem;
+  }
+  #redes .canais-painel{margin:0;max-width:100%;box-shadow:0 24px 55px rgba(13,57,7,.3)}
+}
+@media (max-width:820px){
+  .redes-nik{display:block}
+  .rn-marca,.rn-links,.rn-foto{display:none}
+}
