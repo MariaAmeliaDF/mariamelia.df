@@ -2004,3 +2004,67 @@ html{scrollbar-color:var(--ouro) #0A2703;scrollbar-width:thin}
 .tlx{max-width:1000px}
 .band-acc{max-width:860px}
 .dep-card{width:380px}
+
+/* ============================================================
+   v5.8 — verde mais leve em todo o site, ícones das bandeiras
+   interativos (giro 3D, ondulação), frase nova no rodapé
+   ============================================================ */
+
+/* Paleta mais leve e viva */
+:root{
+  --floresta:#17512B;
+  --floresta-2:#1B5E33;
+}
+#hero{background:#164C29}
+footer{background:#123F21}
+::-webkit-scrollbar-track{background:#123F21}
+html{scrollbar-color:var(--ouro) #123F21}
+#hero #valores-faixa{background:rgba(18,63,33,.55)}
+
+/* Overlays das fotos mais leves */
+#trajetoria{
+  background:
+    linear-gradient(rgba(18,58,30,.72),rgba(20,70,37,.85)),
+    url('../img/fundo-terco.webp') center 20%/cover no-repeat scroll,
+    var(--floresta);
+}
+#acoes{
+  background:
+    linear-gradient(rgba(16,52,27,.82),rgba(20,70,37,.88)),
+    url('../img/acoes-fundo.webp') center 40%/cover no-repeat,
+    var(--floresta-2);
+}
+#hero::before{
+  background:
+    linear-gradient(90deg,rgba(10,40,20,.78) 0%,rgba(10,40,20,.46) 40%,rgba(10,40,20,.03) 72%,transparent 100%),
+    linear-gradient(rgba(10,40,20,.2),transparent 26%);
+}
+@media (max-width:820px){
+  #hero::before{
+    background:linear-gradient(rgba(10,40,20,.2),transparent 22%,transparent 48%,rgba(10,40,20,.4) 66%,rgba(12,45,23,.68) 100%);
+  }
+}
+.mural .acaox{background:rgba(16,50,26,.5)}
+.mural .acaox:hover{background:rgba(16,50,26,.72)}
+.tlx-palco .tlx-slide{background:rgba(15,48,25,.5)}
+
+/* Ícones das bandeiras: giro 3D no hover + ondulação dourada */
+.band-cab .band-ico{
+  transition:transform .7s cubic-bezier(.22,1,.36,1),background .4s ease,color .4s ease;
+  position:relative;
+}
+.band-cab:hover .band-ico{transform:rotateY(360deg) scale(1.08);background:var(--ouro);color:var(--floresta)}
+.band-cab .band-ico::after{
+  content:'';position:absolute;inset:-4px;border-radius:inherit;
+  border:2px solid rgba(226,179,60,.7);opacity:0;transform:scale(.9);
+}
+.band-cab:hover .band-ico::after{animation:ondula .8s ease-out}
+@keyframes ondula{
+  0%{opacity:.9;transform:scale(.92)}
+  100%{opacity:0;transform:scale(1.45)}
+}
+.band-it.aberto .band-ico{transform:rotateY(360deg)}
+@media (prefers-reduced-motion:reduce){
+  .band-cab:hover .band-ico{transform:none}
+  .band-cab .band-ico::after{animation:none!important}
+}
