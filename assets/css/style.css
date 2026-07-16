@@ -2120,3 +2120,47 @@ html{scrollbar-color:var(--ouro) #123F21}
   #redes .etiqueta{color:var(--verde)}
   #redes .sec-cab p{color:var(--tinta-2)}
 }
+
+/* ============================================================
+   v6.0 — trajetória com o rosto centralizado (mobile), Ações
+   Sociais em branco, Redes de volta ao verde no mobile
+   ============================================================ */
+
+/* Trajetória: rosto dela centralizado no mobile */
+@media (max-width:820px){
+  #trajetoria{
+    background:
+      linear-gradient(rgba(18,58,30,.7),rgba(20,70,37,.84)),
+      url('../img/fundo-terco.webp') 63% 22%/cover no-repeat scroll,
+      var(--floresta);
+  }
+}
+
+/* Ações Sociais em branco */
+#acoes{background:#FBFAF4}
+#acoes .sec-cab h2{color:var(--tinta)}
+#acoes .sec-cab h2 .destaque{color:var(--verde)}
+#acoes .etiqueta{color:var(--verde)}
+#acoes .sec-cab p{color:var(--tinta-2)}
+.mural .acaox{
+  background:#fff;border:1px solid var(--linha);
+  box-shadow:0 8px 24px rgba(13,57,7,.07);backdrop-filter:none;
+}
+.mural .acaox:hover{background:#fff;border-color:rgba(226,179,60,.6);box-shadow:0 16px 40px rgba(13,57,7,.13)}
+.acaox h3{color:var(--tinta)}
+.acaox p{color:var(--tinta-2)}
+.acaox strong{color:var(--verde)}
+.acaox .acao-meta{color:var(--tinta-2)}
+.acaox-sub{color:#9C7514}
+.acaox::after{color:rgba(226,179,60,.3)}
+.acoesx-ctrl .tlx-seta{border-color:rgba(23,81,43,.45);color:var(--verde)}
+.acoesx-ctrl .tlx-seta:hover{background:var(--ouro);border-color:var(--ouro);color:var(--floresta)}
+
+/* Redes Sociais de volta ao verde no mobile */
+@media (max-width:820px){
+  #redes{background:var(--floresta)}
+  #redes .sec-cab h2{color:#fff}
+  #redes .sec-cab h2 .destaque{color:var(--ouro)}
+  #redes .etiqueta{color:#fff}
+  #redes .sec-cab p{color:rgba(255,255,255,.75)}
+}
