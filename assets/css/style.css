@@ -1970,3 +1970,37 @@ html{scrollbar-color:var(--ouro) #0A2703;scrollbar-width:thin}
 @media (min-width:821px){
   .redes-nik{grid-template-columns:1.1fr .75fr 1.25fr;gap:3rem}
 }
+
+/* ============================================================
+   v5.7 — laterais aproveitadas, fotos mais claras, rodapé
+   mais estreito, respiros conferidos
+   ============================================================ */
+
+/* Conteúdo ocupando melhor as laterais */
+.wrap{width:min(1440px,94%)}
+
+/* Fotos mais claras (capa e retrato) */
+.hero-bg{filter:brightness(1.09) saturate(1.06)}
+#hero::before{
+  background:
+    linear-gradient(90deg,rgba(7,31,3,.82) 0%,rgba(7,31,3,.5) 40%,rgba(7,31,3,.04) 72%,transparent 100%),
+    linear-gradient(rgba(7,31,3,.22),transparent 26%);
+}
+@media (max-width:820px){
+  #hero::before{
+    background:linear-gradient(rgba(7,31,3,.22),transparent 22%,transparent 48%,rgba(7,31,3,.42) 66%,rgba(7,31,3,.7) 100%);
+  }
+}
+.quem-foto img{filter:brightness(1.06) saturate(1.03)}
+
+/* Rodapé dourado mais estreito */
+@media (min-width:821px){
+  .redes-nik{max-width:1040px;margin-inline:auto}
+}
+
+/* Respiros coerentes com o texto */
+.sec-cab{max-width:720px}
+.sec-cab p{font-size:1.02rem}
+.tlx{max-width:1000px}
+.band-acc{max-width:860px}
+.dep-card{width:380px}
