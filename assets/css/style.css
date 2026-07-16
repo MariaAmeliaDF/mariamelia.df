@@ -1965,3 +1965,8 @@ html{scrollbar-color:var(--ouro) #0A2703;scrollbar-width:thin}
   .redes-nik{display:block}
   .rn-marca,.rn-links,.rn-foto{display:none}
 }
+
+/* v5.6.1 — rodapé sem a foto recortada (grade em 3 colunas) */
+@media (min-width:821px){
+  .redes-nik{grid-template-columns:1.1fr .75fr 1.25fr;gap:3rem}
+}
