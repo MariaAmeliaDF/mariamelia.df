@@ -2068,3 +2068,55 @@ html{scrollbar-color:var(--ouro) #123F21}
   .band-cab:hover .band-ico{transform:none}
   .band-cab .band-ico::after{animation:none!important}
 }
+
+/* ============================================================
+   v5.9 — seções sem foto em BRANCO (alternância clara/escura)
+   ============================================================ */
+
+/* Fundos claros nas seções sem imagem */
+#quem,#bandeiras,#midia{background:#FBFAF4}
+#depoimentos{background:var(--areia)}
+
+/* Textos dessas seções no tom escuro */
+#quem .sec-cab h2,#bandeiras .sec-cab h2,#midia .sec-cab h2,#depoimentos .sec-cab h2{color:var(--tinta)}
+#quem .sec-cab h2 .destaque,#bandeiras .sec-cab h2 .destaque,#midia .sec-cab h2 .destaque-ouro,#depoimentos .sec-cab h2 .destaque{color:var(--verde)}
+#quem .etiqueta,#bandeiras .etiqueta,#midia .etiqueta,#depoimentos .etiqueta{color:var(--verde)}
+#quem .sec-cab p,#bandeiras .sec-cab p,#midia .sec-cab p,#depoimentos .sec-cab p{color:var(--tinta-2)}
+.quem-txt p{color:var(--tinta-2)}
+.quem-txt strong{color:var(--verde)}
+
+/* Bandeiras: acordeão claro */
+#bandeiras::after{opacity:.55}
+.band-it{background:#fff;border-color:var(--linha);backdrop-filter:none}
+.band-it:hover{border-color:rgba(226,179,60,.6)}
+.band-it.aberto{background:#fff}
+.band-cab h3{color:var(--tinta)}
+.band-cab{color:var(--tinta)}
+.band-miolo p{color:var(--tinta-2)}
+.band-miolo h4{color:#9C7514}
+.band-pris li{color:var(--tinta);border-bottom-color:var(--linha)}
+.band-it::after{ /* brilho de varredura visível no claro */
+  background:linear-gradient(105deg,transparent,rgba(226,179,60,.14) 45%,rgba(226,179,60,.26) 55%,transparent);
+}
+.band-it{box-shadow:0 6px 20px rgba(13,57,7,.06)}
+.band-it.aberto{box-shadow:0 14px 36px rgba(13,57,7,.12)}
+
+/* Mídia: componentes sobre o claro */
+.video-box{border-color:var(--linha);background:var(--floresta)}
+.midia-flickr{color:var(--tinta-2)}
+.midia-flickr a{color:var(--verde);border-bottom-color:rgba(30,107,16,.4)}
+#midia .tlx-seta{border-color:rgba(23,81,43,.45);color:var(--verde)}
+#midia .tlx-seta:hover{background:var(--ouro);border-color:var(--ouro);color:var(--floresta)}
+.ig-card{border-color:var(--linha)}
+
+/* Depoimentos: cartões com contorno suave */
+.dep-card{border-color:var(--linha);box-shadow:0 10px 30px rgba(13,57,7,.08)}
+
+/* Redes: branco no mobile (no PC segue o dourado) */
+@media (max-width:820px){
+  #redes{background:#FBFAF4}
+  #redes .sec-cab h2{color:var(--tinta)}
+  #redes .sec-cab h2 .destaque{color:var(--verde)}
+  #redes .etiqueta{color:var(--verde)}
+  #redes .sec-cab p{color:var(--tinta-2)}
+}
