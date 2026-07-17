@@ -2164,3 +2164,19 @@ html{scrollbar-color:var(--ouro) #123F21}
   #redes .etiqueta{color:#fff}
   #redes .sec-cab p{color:rgba(255,255,255,.75)}
 }
+
+/* v5.9.1 — rosto centralizado no fundo da Trajetória (mobile) e
+   Redes Sociais de volta ao verde no mobile (só ela e a hero escuras) */
+@media (max-width:820px){
+  #trajetoria{
+    background:
+      linear-gradient(rgba(18,58,30,.72),rgba(20,70,37,.85)),
+      url('../img/fundo-terco.webp') 67% 22%/cover no-repeat scroll,
+      var(--floresta);
+  }
+  #redes{background:var(--floresta-2)}
+  #redes .sec-cab h2{color:#fff}
+  #redes .sec-cab h2 .destaque{color:var(--ouro)}
+  #redes .etiqueta{color:#fff}
+  #redes .sec-cab p{color:rgba(255,255,255,.75)}
+}
