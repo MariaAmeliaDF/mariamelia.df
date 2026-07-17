@@ -2180,3 +2180,26 @@ html{scrollbar-color:var(--ouro) #123F21}
   #redes .etiqueta{color:#fff}
   #redes .sec-cab p{color:rgba(255,255,255,.75)}
 }
+
+/* v6.0.1 — Ações Sociais DE VOLTA com a imagem de fundo
+   (cards brancos por cima, títulos claros) */
+#acoes{
+  background:
+    linear-gradient(rgba(16,52,27,.84),rgba(20,70,37,.9)),
+    url('../img/acoes-fundo.webp') center 40%/cover no-repeat,
+    var(--floresta-2)!important;
+}
+#acoes .sec-cab h2{color:#fff}
+#acoes .sec-cab h2 .destaque{color:var(--ouro)}
+#acoes .etiqueta{color:#fff}
+#acoes .sec-cab p{color:rgba(255,255,255,.78)}
+.acoesx-ctrl .tlx-seta{border-color:rgba(255,255,255,.4);color:#fff}
+.acoesx-ctrl .tlx-seta:hover{background:var(--ouro);border-color:var(--ouro);color:var(--floresta)}
+@media (max-width:820px){
+  #acoes{
+    background:
+      linear-gradient(rgba(16,52,27,.84),rgba(20,70,37,.9)),
+      url('../img/acoes-fundo.webp') center 40%/cover no-repeat scroll,
+      var(--floresta-2)!important;
+  }
+}
