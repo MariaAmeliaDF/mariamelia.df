@@ -19,10 +19,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const t = document.querySelector(a.getAttribute('href'));
     if (!t) return;
     e.preventDefault();
-    window.scrollTo({
-      top: t.getBoundingClientRect().top + scrollY - (hdr?.offsetHeight || 76) - 12,
-      behavior: 'smooth'
-    });
+    const destino = t.getBoundingClientRect().top + scrollY - (hdr?.offsetHeight || 76) - 12;
+    const inicio = scrollY, dist = destino - inicio, dur = Math.min(1100, 500 + Math.abs(dist) * 0.25);
+    let t0 = null;
+    document.documentElement.style.scrollBehavior = 'auto';
+    const suave = ts => {
+      if (!t0) t0 = ts;
+      const p = Math.min(1, (ts - t0) / dur);
+      const e2 = p < .5 ? 4*p*p*p : 1 - Math.pow(-2*p+2,3)/2;
+      window.scrollTo(0, inicio + dist * e2);
+      if (p < 1) requestAnimationFrame(suave);
+      else document.documentElement.style.scrollBehavior = '';
+    };
+    requestAnimationFrame(suave);
   });
 });
 
@@ -295,15 +304,34 @@ if (trilho) {
 })();
 
 
-/* ── Mural de ações: loop contínuo no desktop ── */
+/* ── Mural de ações: deslize contínuo guiado por JS, com setas ── */
 (() => {
-  const trilhos = document.querySelectorAll('.mural-trilho');
-  if (!trilhos.length) return;
-  trilhos.forEach(t => {
-    t.innerHTML += t.innerHTML;
-    t.classList.add('anima');
-    t.querySelectorAll('.rv').forEach(el => el.classList.add('vs'));
-  });
+  const t = document.querySelector('.mural-trilho');
+  if (!t) return;
+  t.innerHTML += t.innerHTML;
+  t.querySelectorAll('.rv').forEach(el => el.classList.add('vs'));
+  let x = 0, alvo = null, pausado = false, largura = 0;
+  const medir = () => { largura = t.scrollWidth / 2; };
+  medir(); addEventListener('resize', medir);
+  const passo = () => (t.querySelector('.acaox')?.offsetWidth || 340) + 18;
+  const tique = () => {
+    if (alvo !== null) {
+      const d = alvo - x;
+      x += d * 0.12;
+      if (Math.abs(d) < .6) { x = alvo; alvo = null; }
+    } else if (!pausado) {
+      x += 0.55;
+    }
+    if (x >= largura) x -= largura;
+    if (x < 0) x += largura;
+    t.style.transform = `translate3d(${-x}px,0,0)`;
+    requestAnimationFrame(tique);
+  };
+  requestAnimationFrame(tique);
+  t.closest('.mural-linha')?.addEventListener('mouseenter', () => pausado = true);
+  t.closest('.mural-linha')?.addEventListener('mouseleave', () => pausado = false);
+  document.getElementById('mural-prx')?.addEventListener('click', () => alvo = (alvo ?? x) + passo());
+  document.getElementById('mural-ant')?.addEventListener('click', () => alvo = (alvo ?? x) - passo());
 })();
 
 /* ── Acordeão das bandeiras ── */
@@ -326,4 +354,20 @@ if (trilho) {
       }, 420);
     }
   }));
+})();
+
+
+/* ── Bandeiras: holofote e inclinação 3D seguindo o mouse ── */
+(() => {
+  if (!window.matchMedia('(hover:hover)').matches) return;
+  document.querySelectorAll('.band-card').forEach(c => {
+    c.addEventListener('pointermove', e => {
+      const r = c.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      c.style.setProperty('--mx', (px*100) + '%');
+      c.style.setProperty('--my', (py*100) + '%');
+      c.style.transform = `translateY(-5px) perspective(700px) rotateX(${(py-.5)*-7}deg) rotateY(${(px-.5)*8}deg)`;
+    });
+    c.addEventListener('pointerleave', () => { c.style.transform = ''; });
+  });
 })();

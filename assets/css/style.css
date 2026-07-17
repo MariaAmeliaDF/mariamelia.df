@@ -2282,3 +2282,39 @@ html{scrollbar-color:var(--ouro) #123F21}
 #depoimentos .etiqueta{color:#fff}
 #depoimentos .sec-cab p{color:rgba(255,255,255,.78)}
 .dep-card{border-color:rgba(255,255,255,.1);box-shadow:0 14px 40px rgba(0,0,0,.22)}
+
+/* ============================================================
+   v6.3 — bandeiras dinâmicas (holofote + inclinação 3D),
+   setas no mural, transições de rolagem naturais
+   ============================================================ */
+.mural-trilho{animation:none!important}
+.mural-ctrl{display:flex;justify-content:center;gap:1rem;margin-top:1.1rem}
+.mural-ctrl .tlx-seta{border-color:rgba(255,255,255,.4);color:#fff}
+.mural-ctrl .tlx-seta:hover{background:var(--ouro);border-color:var(--ouro);color:var(--floresta)}
+
+/* Holofote dourado seguindo o mouse nos quadradinhos */
+.band-card::before{
+  content:'';position:absolute;inset:0;z-index:0;opacity:0;transition:opacity .35s ease;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(226,179,60,.2),transparent 65%);
+  pointer-events:none;
+}
+.band-card:hover::before{opacity:1}
+.band-card > *{position:relative;z-index:1}
+.band-card{transform-style:preserve-3d;will-change:transform}
+@media (prefers-reduced-motion:reduce){
+  .band-card::before{display:none}
+}
+
+/* v6.3.1 — frase do rodapé contida e menor que a logo */
+@media (min-width:821px){
+  .rn-frase{
+    font-size:1.55rem;line-height:1.12;max-width:250px;
+    transform:rotate(-3deg);margin-top:.55rem;
+  }
+}
+
+/* v6.3.2 — frase do rodapé em 2 linhas dentro da largura da logo */
+@media (min-width:821px){
+  .rn-frase{font-size:1.38rem;max-width:242px;white-space:nowrap;line-height:1.15}
+  .rn-frase br + *{white-space:nowrap}
+}
