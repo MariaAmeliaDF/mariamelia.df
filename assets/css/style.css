@@ -2318,3 +2318,13 @@ html{scrollbar-color:var(--ouro) #123F21}
   .rn-frase{font-size:1.38rem;max-width:242px;white-space:nowrap;line-height:1.15}
   .rn-frase br + *{white-space:nowrap}
 }
+
+/* v6.3.3 — marca do rodapé como a referência: logo e frase centralizadas, sem rotação */
+@media (min-width:821px){
+  .rn-marca{align-items:center;text-align:center}
+  .rn-logo-p{width:min(250px,90%)}
+  .rn-frase{
+    transform:none;max-width:none;white-space:normal;
+    font-size:1.6rem;line-height:1.18;text-align:center;margin-top:.45rem;
+  }
+}
