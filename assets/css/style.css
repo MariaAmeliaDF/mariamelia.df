@@ -2328,3 +2328,15 @@ html{scrollbar-color:var(--ouro) #123F21}
     font-size:1.6rem;line-height:1.18;text-align:center;margin-top:.45rem;
   }
 }
+
+/* v6.3.4 — rodapé ocupando toda a largura da seção (marca à esquerda) */
+@media (min-width:821px){
+  .redes-nik{
+    max-width:none;
+    grid-template-columns:auto auto minmax(400px,540px);
+    justify-content:space-between;column-gap:3.5rem;
+  }
+  .rn-marca{justify-self:start}
+  .rn-links{justify-self:center}
+  .rn-redes{justify-self:end;width:100%}
+}
