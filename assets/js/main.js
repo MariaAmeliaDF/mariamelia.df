@@ -155,23 +155,6 @@ if (trilho) {
    v3.1 — jingle, trajetória interativa e deck do Instagram
    ============================================================ */
 
-/* ── Jingle ── */
-(() => {
-  const btn = document.getElementById('jingle-btn');
-  const audio = document.getElementById('jingle');
-  const ico = document.getElementById('jingle-ico');
-  if (!btn || !audio) return;
-  const atualizar = tocando => {
-    btn.classList.toggle('tocando', tocando);
-    btn.setAttribute('aria-pressed', String(tocando));
-    ico.className = tocando ? 'fa-solid fa-pause' : 'fa-solid fa-play';
-  };
-  btn.addEventListener('click', () => {
-    if (audio.paused) { audio.play(); atualizar(true); }
-    else { audio.pause(); atualizar(false); }
-  });
-  audio.addEventListener('ended', () => { audio.currentTime = 0; atualizar(false); });
-})();
 
 /* ── Trajetória interativa ── */
 (() => {
@@ -254,25 +237,6 @@ if (trilho) {
 /* ============================================================
    v3.2 — overlay de som e player do jingle no header
    ============================================================ */
-(() => {
-  const audio = document.getElementById('jingle');
-  const player = document.getElementById('hdr-player');
-  const ico = document.getElementById('hp-ico');
-  if (!audio || !player) return;
-
-  const estado = tocando => {
-    player.classList.toggle('tocando', tocando);
-    player.setAttribute('aria-pressed', String(tocando));
-    if (ico) ico.className = tocando ? 'fa-solid fa-pause' : 'fa-solid fa-music';
-  };
-  player.addEventListener('click', () => {
-    if (audio.paused) { audio.play().then(() => estado(true)).catch(() => {}); }
-    else { audio.pause(); estado(false); }
-  });
-  audio.addEventListener('ended', () => { audio.currentTime = 0; estado(false); });
-  audio.addEventListener('pause', () => estado(false));
-  audio.addEventListener('play', () => estado(true));
-})();
 
 /* ============================================================
    v3.6 — destaque da seção atual na barra inferior (mobile)
