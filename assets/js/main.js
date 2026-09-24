@@ -110,11 +110,11 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { fecharModa
 
 /* ── Depoimentos (trilho contínuo) ── */
 const DEPOIMENTOS = [
-  { t: 'Conheço a Maria Amélia há anos pelos doces maravilhosos que ela faz para nossa família. Quando soube da pré-candidatura, não tive dúvida: é exatamente o tipo de mulher que o DF precisa, trabalhadora, de fé e com valores de verdade.', n: 'Paula M.', c: 'Cliente da Maria Amélia Doces' },
+  { t: 'Conheço a Maria Amélia há anos pelos doces maravilhosos que ela faz para nossa família. Quando soube da candidatura, não tive dúvida: é exatamente o tipo de mulher que o DF precisa, trabalhadora, de fé e com valores de verdade.', n: 'Paula M.', c: 'Cliente da Maria Amélia Doces' },
   { t: 'O apoio dela à Vila do Pequenino Jesus não é de fachada. Ela aparece toda semana, abraça, ajuda de verdade e leva os acolhidos para tomar café na fábrica. Isso é o que a diferencia. Política feita com coração e presença real.', n: 'Rosana T.', c: 'Voluntária da Vila Pequenino Jesus' },
   { t: 'Como empreendedora, me identifico muito com a história dela. Veio do nada, construiu uma empresa referência no DF e agora quer fazer pela população o que fez pelos seus clientes: entregar qualidade, compromisso e resultado.', n: 'Carla F.', c: 'Empreendedora · Taguatinga, DF' },
   { t: 'Uma mulher conservadora, de família e de fé, que não tem vergonha de defender seus valores. O DF precisa desse tipo de representante na Câmara, com coragem, autenticidade e vontade real de servir ao povo.', n: 'João G.', c: 'Empresário · Brasília, DF' },
-  { t: 'Fiquei emocionada no lançamento da pré-candidatura. Ver a Michelle e a Bia Kicis ao lado dela mostrou que não é uma candidatura qualquer, é um movimento de mulheres com propósito, fé e amor pelo Brasil.', n: 'Ana L.', c: 'Moradora do Gama, DF' },
+  { t: 'Fiquei emocionada no lançamento da candidatura. Ver a Michelle e a Bia Kicis ao lado dela mostrou que não é uma candidatura qualquer, é um movimento de mulheres com propósito, fé e amor pelo Brasil.', n: 'Ana L.', c: 'Moradora do Gama, DF' },
   { t: 'A Maria Amélia é uma mulher que vive o que prega. Católica praticante, mãe dedicada, avó presente e empresária de sucesso. Ela representa as mulheres reais do Brasil, que trabalham, criam família e ainda encontram tempo para servir ao próximo.', n: 'Márcia S.', c: 'Professora · Ceilândia, DF' },
   { t: 'Trabalho com ela há mais de dez anos e posso afirmar: a Maria Amélia trata cada funcionário como família. Ela gerou emprego, renda e dignidade para dezenas de pessoas no DF. Uma candidata que sabe o que é trabalho de verdade.', n: 'Fernanda B.', c: 'Colaboradora da Maria Amélia Doces' },
   { t: 'O que mais me impressiona nela é a consistência. Não é candidata de campanha, ela já está nas ruas, nas instituições, nas igrejas e nas comunidades há anos. Quando entrar na política, vai chegar preparada e com raízes profundas no DF.', n: 'Luciano A.', c: 'Pastor · Samambaia, DF' },
@@ -334,4 +334,51 @@ if (trilho) {
     });
     c.addEventListener('pointerleave', () => { c.style.transform = ''; });
   });
+})();
+
+/* ── Capa: vídeo de abertura → foto da campanha ── */
+(() => {
+  const hero = document.getElementById('hero');
+  const video = document.getElementById('hero-video');
+  const slides = [...document.querySelectorAll('[data-hero-slide]')];
+  const atual = document.getElementById('hero-slide-current');
+  const anterior = document.getElementById('hero-prev');
+  const proximo = document.getElementById('hero-next');
+  const som = document.getElementById('hero-sound');
+  if (!hero || !video || slides.length !== 2) return;
+
+  let indice = 0;
+  const irPara = (proximoIndice, reiniciarVideo = false) => {
+    indice = (proximoIndice + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      const ativo = i === indice;
+      slide.classList.toggle('is-active', ativo);
+      slide.setAttribute('aria-hidden', String(!ativo));
+    });
+    if (atual) atual.textContent = String(indice + 1).padStart(2, '0');
+    som?.toggleAttribute('hidden', indice !== 0);
+    if (indice === 0) {
+      if (reiniciarVideo) video.currentTime = 0;
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  };
+
+  video.addEventListener('ended', () => irPara(1));
+  video.addEventListener('error', () => irPara(1));
+  anterior?.addEventListener('click', () => irPara(indice - 1, indice === 1));
+  proximo?.addEventListener('click', () => irPara(indice + 1));
+  som?.addEventListener('click', () => {
+    video.muted = !video.muted;
+    som.setAttribute('aria-pressed', String(!video.muted));
+    som.setAttribute('aria-label', video.muted ? 'Ativar som do vídeo' : 'Desativar som do vídeo');
+    const icone = som.querySelector('i');
+    const rotulo = som.querySelector('.hero-sound-label');
+    icone?.classList.toggle('fa-volume-xmark', video.muted);
+    icone?.classList.toggle('fa-volume-high', !video.muted);
+    if (rotulo) rotulo.textContent = video.muted ? 'Ativar som' : 'Som ativado';
+    if (!video.paused) video.play().catch(() => {});
+  });
+  video.play().catch(() => {});
 })();
