@@ -464,14 +464,14 @@ footer{background:var(--floresta-2);color:rgba(255,255,255,.75);padding:4.5rem 0
 .ft-base a:hover{color:var(--lima)}
 
 /* ── Flutuantes ── */
-#zap-f{
+#email-f{
   position:fixed;bottom:1.6rem;right:1.6rem;z-index:800;
   width:60px;height:60px;border-radius:50%;background:#25d366;
   display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.7rem;
   box-shadow:0 10px 30px rgba(37,211,102,.45);transition:var(--tr);
   animation:pulso 2.6s ease-in-out infinite;
 }
-#zap-f:hover{transform:scale(1.1)}
+#email-f:hover{transform:scale(1.1)}
 @keyframes pulso{0%,100%{box-shadow:0 10px 30px rgba(37,211,102,.45)}50%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 14px rgba(37,211,102,0)}}
 #btt{
   position:fixed;bottom:1.8rem;left:1.6rem;z-index:800;
@@ -802,11 +802,11 @@ footer{padding:2.6rem 0 0}
 .tlx-palco .tlx-slide{background:rgba(9,36,5,.55)}
 
 /* Coração pulsante do WhatsApp */
-#zap-f{
+#email-f{
   background:var(--areia);
   animation:none;
 }
-#zap-f img{width:62%;height:62%;object-fit:contain;animation:batida 1.6s ease-in-out infinite}
+#email-f img{width:62%;height:62%;object-fit:contain;animation:batida 1.6s ease-in-out infinite}
 @keyframes batida{
   0%,100%{transform:scale(1)}
   14%{transform:scale(1.18)}
@@ -837,18 +837,18 @@ footer{padding:2.6rem 0 0}
 }
 
 /* v3.2.2 — coração do WhatsApp sem o círculo branco */
-#zap-f{background:none;box-shadow:none;width:66px;height:66px}
-#zap-f:hover{transform:scale(1.08)}
-#zap-f img{width:100%;height:100%;filter:drop-shadow(0 6px 14px rgba(13,57,7,.45))}
+#email-f{background:none;box-shadow:none;width:66px;height:66px}
+#email-f:hover{transform:scale(1.08)}
+#email-f img{width:100%;height:100%;filter:drop-shadow(0 6px 14px rgba(13,57,7,.45))}
 
 /* v3.2.3 — botão do WhatsApp de volta ao círculo (com o coração) */
-#zap-f{background:var(--areia);box-shadow:0 10px 30px rgba(37,211,102,.45);width:60px;height:60px;animation:pulso 2.6s ease-in-out infinite}
-#zap-f:hover{transform:scale(1.1)}
-#zap-f img{width:62%;height:62%;filter:none}
+#email-f{background:var(--areia);box-shadow:0 10px 30px rgba(37,211,102,.45);width:60px;height:60px;animation:pulso 2.6s ease-in-out infinite}
+#email-f:hover{transform:scale(1.1)}
+#email-f img{width:62%;height:62%;filter:none}
 
 /* v3.2.4 — ícone original do WhatsApp e foto da capa maior */
-#zap-f{background:#25d366;color:#fff}
-#zap-f:hover{transform:scale(1.1)}
+#email-f{background:#25d366;color:#fff}
+#email-f:hover{transform:scale(1.1)}
 .hero-lado .hero-foto .moldura{width:min(395px,76vw)}
 @media (max-width:1024px){.hero-lado .hero-foto .moldura{width:min(320px,68vw)}}
 
@@ -1011,7 +1011,7 @@ footer{background:#071F03;border-top:1px solid rgba(226,179,60,.25);padding:3.4r
 
   /* Elementos flutuantes acima da barra */
   body{padding-bottom:70px}
-  #zap-f{bottom:86px;right:1rem;width:54px;height:54px;font-size:1.5rem}
+  #email-f{bottom:86px;right:1rem;width:54px;height:54px;font-size:1.5rem}
   #btt{display:none}
   #cookies{bottom:82px}
 }
@@ -1547,9 +1547,9 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em}
 }
 
 /* Botão do WhatsApp maior */
-#zap-f{width:70px;height:70px;font-size:2rem}
+#email-f{width:70px;height:70px;font-size:2rem}
 @media (max-width:820px){
-  #zap-f{width:62px;height:62px;font-size:1.75rem;bottom:88px}
+  #email-f{width:62px;height:62px;font-size:1.75rem;bottom:88px}
 }
 
 /* Painel de canais (referência) */
@@ -2778,3 +2778,6 @@ footer,.pg-ft{background:var(--ink);border-top:4px solid var(--gold-2223)}
 @media (max-width:820px){
   #hero:has(.hero-slide-video.is-active)::before{background:rgba(6,16,8,.14)!important}
 }
+
+/* Contato por e-mail */
+#email-f{background:var(--verde);color:#fff;box-shadow:0 8px 24px rgba(13,57,7,.25);animation:none}
